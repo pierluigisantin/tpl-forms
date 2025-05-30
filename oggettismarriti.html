@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Segnalazione Call Center</title>
+  <title>Form Oggetti Smarriti</title>
   <link rel="stylesheet" href="webToCaseStyle.css" />
 
   <script src="https://unpkg.com/i18next@22.4.10/i18next.min.js"></script>
@@ -12,40 +12,28 @@
   <!-- POI Tippy.js -->
   <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="https://www.google.com/recaptcha/api.js"></script>
-  <script src="callcenter_traduzioni.js"></script>
 <script>
 
  function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
 </script>
   <script src="webToCaseUtils.js"></script>
- 
+  <script src="oggettismarriti_traduzioni.js"></script>
 <script>
      var lang;
       let t;
   var aziendaId;
 
     const requiredFields = [
-
+      "tipoSoggetto",
       "nome",
       "cognome",
       "nazione",
-  
-      "indirizzo",
-
       "mail",
-      "prefissotelefonico",
-      "numerotelefonico",
-      "accounttpl",
-      "tipoproblema",
-      "dataoraevento",
- 
-      "descrizione"
-
+      "accountTpl",
+      "descrizione",
+      "privacy"
 ];
   
-
-
-
     const comuneListId = "comuniList";
     const nazioniListId = "nazioniList";
     const campoNazioneId = "00NbU0000001klm";
@@ -69,26 +57,44 @@
 }
 
 
+    function caricaTipoLuogo() {
+        const selectTipoLuogo = document.getElementById("00NbU0000002yGD");
+        selectTipoLuogo.innerHTML = "";
+        const options = t("labels.tipoluogoOptions", { returnObjects: true });
+
+        options.forEach((opt, index) => {
+          const optionEl = document.createElement("option");
+          optionEl.textContent = opt;
+          optionEl.value = opt;
 
 
 
+          selectTipoLuogo.appendChild(optionEl);
+        });
 
-   //carica tipo problema     
-  function caricaTipoProblema() {
-  const selectTipoSoggetto = document.getElementById("00NbU0000003VIb");
+}
+
+
+
+   //carica tipo soggetto     
+  function caricaTipoSoggetto() {
+  const selectTipoSoggetto = document.getElementById("00NbU0000001klb");
   selectTipoSoggetto.innerHTML = "";
-  const options = t("labels.tipoproblemaOptions", { returnObjects: true });
+  const options = t("labels.tipoSoggettoOptions", { returnObjects: true });
 
   options.forEach((opt, index) => {
     const optionEl = document.createElement("option");
     optionEl.textContent = opt;
     optionEl.value = opt;
 
-
+    // Imposta la prima opzione come selezionata di default
+    if (index === 1) {
+      optionEl.selected = true;
+    }
 
     selectTipoSoggetto.appendChild(optionEl);
   });
-     
+    toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper");
 }
 
 
@@ -113,25 +119,32 @@
         caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
         caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t);
 
-   
-
-   
-
-     
-
-        document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
-          toggleIndirizzo("00NbU0000001klm", "indirizzoItaliaWrapper", lang);
-          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
+        document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
+          aziendaId=e.target.value;
+          const servizioId='';
+          caricaServizi("00NbU0000002hld", serviziUrl, e.target.value, lang, t);
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId,aziendaId, t);
         });
 
+        document.getElementById("00NbU0000002hld")?.addEventListener("change", e => {
+          const servizioId = e.target.value;
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId,aziendaId, t);
+        });
 
+        document.getElementById("00NbU0000001klj")?.addEventListener("change", e => {
+          caricaFermate("00NbU0000001klk", fermateUrl, e.target.value, t);
+        });
 
+        document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
+          toggleIndirizzo("00NbU0000001klm", "indirizzoWrapper", lang);
+        });
 
+        document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
+          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper",["privato cittadino", "individual"]);
+        });
 
-
-       
-        caricaTipoProblema();
-
+       caricaTipoSoggetto();
+        caricaTipoLuogo();
 
 
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
@@ -142,8 +155,9 @@
             aggiornaEtichette(newT, fields);
             caricaDatalistComuniENazioni(comuniNazioniUrl, newLang, comuneListId, nazioniListId, campoNazioneId);
             const aziendaId = document.getElementById("00NbU0000002bl3").value;
-            
-            caricaTipoProblema();
+            caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
+            caricaTipoSoggetto();
+            caricaTipoLuogo();
           });
         });
 
@@ -155,7 +169,6 @@
             e.preventDefault();
           }
           formattaDataEvento("data_evento_visible", "00NbU0000001klh");
- 
 
 
           const validCampi = validazioneCampiObbligatori("formReclamo", t);
@@ -197,7 +210,9 @@
         <input type="hidden" name="debugEmail" value="p.santin@e-deimos.it">
 
         <fieldset>
-             <legend><span id="label_legendanagrafica"></span></legend>
+             <legend><span id="label_legendanagrafica">Dati anagrafici della persona che presenta il reclamo</span></legend>
+
+
 
               <label for="00NbU0000001kln" id="label_nome" ></label>
               <input id="00NbU0000001kln" name="00NbU0000001kln" type="text" />
@@ -207,22 +222,14 @@
               <input id="00NbU0000001klf" name="00NbU0000001klf" type="text" />
 
 
-
-    
-
-
-
-
               <label for="00NbU0000001klm" id="label_nazione" ></label>
               <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
               <datalist id="nazioniList"></datalist>
 
 
-
+              <div id="indirizzoWrapper">
                 <label for="00NbU0000001kli" id="label_indirizzo" ></label>
                   <input id="00NbU0000001kli" name="00NbU0000001kli" type="text" />                
-
-          <div id="indirizzoItaliaWrapper">
 
 
                   <label for="00NbU0000001klg" id="label_comune" >Comune:</label>
@@ -230,33 +237,7 @@
                   <datalist id="comuniList"></datalist>
 
 
-          </div>
-
-          <div id="indirizzoEsteroWrapper" style="display:none">
-
-
-
-              <label for="00NbU0000003Id7" id="label_citta"></label>
-              <input  id="00NbU0000003Id7" maxlength="255" name="00NbU0000003Id7" size="20" type="text" />
-
-
-              <label for="00NbU0000003Iej" id="label_localita"></label>
-              <input  id="00NbU0000003Iej" maxlength="255" name="00NbU0000003Iej" size="20" type="text" />
-
-
-              <label for="00NbU0000001kld" id="label_cap"></label>
-              <input  id="00NbU0000001kld" maxlength="20" name="00NbU0000001kld" size="20" type="text" />
-
-
-              <label for="00NbU0000001klp" id="label_provincia"></label>
-              <input  id="00NbU0000001klp" maxlength="100" name="00NbU0000001klp" size="20" type="text" />
-
-
-          </div>
-
-
-
-          
+              </div>
 
 
 
@@ -264,41 +245,31 @@
               <input  id="email" maxlength="80" name="email" size="20"  />
 
 
-                     <label for="00NbU0000002yEb" id="label_abbonatosino">Reclamo Abbonato si/no:</label>
-                     <select  id="00NbU0000002yEb" name="00NbU0000002yEb" title="Reclamo Abbonato si/no">
-                       <option value="">--None--</option>
-                       <option value="Si/Yes">Si/Yes</option>
-                     <option value="No">No</option>
-                     </select><br>
+                      <label for="00NbU0000002837" id="label_prefissotelefonico" ></label>
+                      <select  id="00NbU0000002837"  name="00NbU0000002837"  >
+                      </select>
 
-                         <label for="00NbU0000001kls" id="label_numerotesserinoidentificativo"></label>
-                         <input id="00NbU0000001kls" name="00NbU0000001kls" type="text" />
+              <label for="00NbU0000001klo" id="label_numerotelefonico" ></label>
+              <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
+
+          <label for="00NbU0000002yEb" id="label_abbonatosino">Reclamo Abbonato si/no:</label>
+          <select  id="00NbU0000002yEb" name="00NbU0000002yEb" title="Reclamo Abbonato si/no"><option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
+          </select><br>
+
+              <label for="00NbU0000001kls" id="label_numerotesserinoidentificativo"></label>
+              <input id="00NbU0000001kls" name="00NbU0000001kls" type="text" />
 
 
 
 
         </fieldset>
-
         <fieldset>
-          <legend>
-            <span id="label_legendadaticontatto"></span>
-          </legend>
-
-          <label for="00NbU0000002837" id="label_prefissotelefonico" ></label>
-                  <select  id="00NbU0000002837"  name="00NbU0000002837"  >
-                  </select>
-
-          <label for="00NbU0000001klo" id="label_numerotelefonico" ></label>
-          <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
+           <legend><span id="label_legendainfoevento"> </span></legend>
 
 
 
-
-          
-
-
-
-               <label for="00NbU0000002bl3" id="label_accounttpl" >
+               <label for="00NbU0000002bl3" id="label_accountTpl" >
               </label>
               <select id="00NbU0000002bl3" name="00NbU0000002bl3">
 
@@ -306,26 +277,53 @@
 
 
 
-          
+
+                 <label for="00NbU0000002hld" id="label_servizio" class="required">
+              </label>
+              <select id="00NbU0000002hld" name="00NbU0000002hld">
+
+              </select>
+
+
+
+
+
+
+
+
+
 
 
                 <label for="data_evento_visible" id="label_dataoraevento"></label>
                 <input id="data_evento_visible" type="datetime-local" />
                 <input id="00NbU0000001klh" name="00NbU0000001klh" size="20" type="text" style="display:none;" />
 
+      
 
-          
-
-
-              
-
+                <label for="00NbU0000002yHp" id="label_comuneevento"> </label>
+                <input  id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniList"/>
 
 
 
-     
-          <label for="00NbU0000003VIb" id="label_tipoproblema"></label   >   
-          <select  id="00NbU0000003VIb"  name="00NbU0000003VIb"  >
-          </select>
+
+
+
+
+
+
+
+              <label for="00NbU0000001klj" id="label_linea"  >
+              </label>
+              <select id="00NbU0000001klj" name="00NbU0000001klj">
+              </select>
+
+
+
+         
+
+
+                <label for="00NbU0000002hnF" id="label_direzione"></label>
+                <input  id="00NbU0000002hnF" maxlength="255" name="00NbU0000002hnF" size="20" type="text" /><br>
 
 
 
@@ -342,32 +340,25 @@
          </fieldset>
 
 
+      
+
+       
 
 
 
 
-
-
-        <!--flag segnalazione call center-->
+        <!--flag reclamo-->
         <input
-          id="00NbU0000003VGz"
-          name="00NbU0000003VGz"
+          id="00NJ6000006biAk"
+          name="00NJ6000006biAk"
           type="hidden"
           value="1"
         />
 
-        <input type="hidden"  id="external" name="external" value="1" />
-
-    
-
-
-
+        <input type="hidden"  id="external" name="external" value="1" /><br>
         <br>
-        <br>
-        <br>
-        <div class="g-recaptcha" data-sitekey="6LcKTugqAAAAAB9mkWg5p3floGYNeNVAXY6Z6c8P"></div>
+        <div class="g-recaptcha" data-sitekey="6LcKTugqAAAAAB9mkWg5p3floGYNeNVAXY6Z6c8P"></div><br>
         <div id="captchaError" class="error-message" style="display: none;"></div>
-
 
         <input type="submit" id="submitBtn" value="Invia Reclamo" />
       </form>
