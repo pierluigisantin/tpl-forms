@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Reclamo</title>
+  <link rel="stylesheet" href="/webToCaseStyle.css" />
+
+  <script src="https://unpkg.com/i18next@22.4.10/i18next.min.js"></script>
+  <!-- PRIMA Popper.js -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <!-- POI Tippy.js -->
+  <script src="https://unpkg.com/tippy.js@6"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+
+ function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+</script>
+  <script src="webToCaseUtils.js"></script>
+  <script src="reclamo_traduzioni.js"></script>
+<script>
+     var lang;
+      let t;
+  var aziendaId;
+
+    const requiredFields = [
+      "tipoSoggetto",
+      "nome",
+      "cognome",
+      "nazione",
+      "mail",
+      "accountTpl",
+      "descrizione",
+      "privacy"
+];
+  /*
+     const resources = {
+  it: {
+    translation: {
+      labels: {
+        legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE PRESENTA IL RECLAMO",
+
+        erroreCampoObbligatorio: "Devi compilare questo campo",
+        seleziona: "--Seleziona--",
+
+        tipoSoggetto: "Chi è il soggetto che presenta il reclamo",
+        tipoSoggettoOptions: ["--Seleziona--", "Privato cittadino", "Azienda", "Ente pubblico", "Associazione"],
+        ragioneSociale: "Nome associazione, ente pubblico o azienda",
+        nome: "Nome",
+        cognome: "Cognome",
+        nazione: "Nazionalità",
+        indirizzo: "Indirizzo di residenza o domicilio",
+
+        comune: "Comune",
+
+        prefissotelefonico:"Prefisso telefonico internazionale",
+        numerotelefonico:"Numero di cellulare",
+        mail: "E-mail",
+
+        abbonatosino:"Abbonato",
+        numerotesserinoidentificativo: `Numero di tesserino identificativo Tpl Fvg (se il reclamante ne è titolare)`,
+
+
+        legendainfoevento:"INFORMAZIONI SULL’EVENTO",
+        accountTpl: "Azienda di riferimento",
+        servizio: "Tipo di servizio",
+        dataoraevento: "Data e ora dell'evento",
+        tipoluogo:"L’evento si è verificato",
+        tipoluogoOptions: ["--Seleziona--", "A bordo", "A terra (fermate, capolinea, autostazioni)", "In una rivendita o in una biglietteria", "Altro o non pertinente"],
+
+        comuneevento:"Comune dove l’evento si è verificato",
+        frazioneevento:"Località o frazione dove l’evento si è verificato",
+
+
+        linea: "Linea eventualmente interessata",
+        fermata: "Fermata dove l’evento si è verificato",
+        direzione: "Direzione (indicare il capolinea o l’approdo di destinazione)",
+        nvettura: "Numero di matricola dell’autobus",
+
+
+
+        descrizione: "Descrizione dell'evento",
+        introdescrizione:"Descrivi l’evento o il problema in modo sintetico ma completo, fornendo tutte le informazioni utili per la ricostruzione dei fatti. Se il reclamo viene presentato da una persona diversa da chi ha subito il disservizio, indica anche i dati anagrafici di quest’ultimo. Se l’evento è avvenuto presso una biglietteria, una rivendita o in un altro contesto specifico, indicalo in questa descrizione. Se desideri allegare immagini, titoli di viaggio o altri documenti utili, potrai farlo rispondendo alla e-mail di notifica che riceverai dopo aver compilato questo form.",
+
+        consensoobbligatorio:"CONSENSO OBBLIGATORIO",
+        privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto",
+        consensofacoltativo:"CONSENSI FACOLTATIVI",
+        indaginidemoscopiche:"Acconsento a essere contattato da Tpl Fvg, anche tramite e-mail, per partecipare a indagini demoscopiche o ricerche di mercato sul livello di soddisfazione e sull’utilizzo dei servizi di trasporto pubblico locale",
+        attivitacommerciali:"Acconsento a ricevere comunicazioni relative a offerte commerciali, promozioni, agevolazioni o sconti su prodotti, servizi e attività di Tpl Fvg o delle aziende consorziate",
+        analisipreferenze:"Acconsento all’analisi delle mie preferenze e abitudini di utilizzo del trasporto pubblico locale, anche mediante elaborazioni elettroniche, al fine di migliorare l’offerta, soddisfare specifiche esigenze, orientare la pianificazione del servizio e ricevere comunicazioni personalizzate da parte di Tpl Fvg o delle aziende consorziate",
+        comunicazionepartner:"Acconsento a ricevere comunicazioni pubblicitarie, promozioni e informazioni commerciali relative a prodotti, servizi e attività di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate",
+        cessioneterzi:"Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing",
+
+
+
+       invia:"Invia reclamo"
+
+
+
+
+      },
+      tooltips: {
+
+
+
+        tipoSoggetto: "Indica se stai presentando un reclamo a titolo personale o se lo fai per conto di un’associazione, un’azienda o un ente pubblico.",
+
+        numerotesserinoidentificativo:`<div>
+              È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo, sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/>
+              <img src="https://cdn.glitch.global/93d8b30d-b038-4944-afb8-a0b565f26744/abbonamento_tipo.png?v=1747813818162" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
+            </div>`,
+
+        accountTpl:"Seleziona l’azienda territorialmente competente. Se non sai quale azienda indicare, o se l’evento non è riconducibile a una singola azienda consorziata, scegli l’opzione TPL FVG.",
+        servizio:"Indica il servizio a cui l’evento è collegato. Se l’evento non riguarda uno dei servizi indicati, o se l’evento non è direttamente riferibile a uno dei servizi in elenco, seleziona l’opzione ALTRI ASPETTI DEL SERVIZIO. Se non conosci il tipo di servizio, non compilare questo campo.",
+        linea:"Questo campo si attiva dopo aver selezionato l’azienda di riferimento, da cui dipendono le linee proposte. Se come azienda di riferimento hai selezionato TPL FVG, l’elenco includerà tutte le linee operate da Tpl Fvg in Friuli Venezia Giulia e nelle aree confinanti. Se la segnalazione o l’evento non sono collegati a una linea, puoi lasciare questo campo in bianco.",
+        fermata:"Indica, se lo ritieni utile, la fermata dove l’evento si è verificato. Per visualizzare l’elenco delle fermate, devi prima selezionare una linea nel campo precedente. Ti saranno mostrate solo le fermate servite dalla linea indicata. Se la fermata è servita da più linee, puoi selezionare una qualsiasi delle linee in transito. Se la segnalazione o l’evento non riguardano una fermata specifica, puoi lasciare questo campo in bianco.",
+        dataoraevento:"Indica la data e l’ora dell’evento. Se il problema non è legato a un singolo episodio, come nel caso di un dispositivo che non funziona o di un’anomalia al sito o a una delle nostre app, inserisci la data e l’ora in cui hai rilevato il problema.",
+        frazioneevento:"Se possibile, indica la località o la frazione in cui il fatto è avvenuto. Spesso è molto importante conoscere il luogo in cui l’evento si è verificato, per poter effettuare i necessari controlli e intervenire in modo più efficace.",
+        nvettura:"Il numero di matricola dell’autobus è un codice identificativo composto da tre o quattro cifre, generalmente visibile sia all’esterno sia all’interno del mezzo. Il numero di matricola non coincide mai con il numero di linea.",
+        descrizione:""
+      }
+    }
+  },
+  en: {
+    translation: {
+      labels: {
+        legendanagrafica:"PERSONAL DETAILS OF THE PERSON SUBMITTING THE COMPLAINT",
+
+        erroreCampoObbligatorio: "You must fill in this field",
+        seleziona: "--Select--",
+
+        tipoSoggetto: "Who is submitting the complaint",
+        tipoSoggettoOptions: ["--Select--", "Individual", "Company", "Public entity", "Association"],
+        ragioneSociale: "Name of association, public entity or company",
+        nome: "First Name",
+        cognome: "Last Name",
+        nazione: "Country",
+        indirizzo: "Residential or mailing address",
+
+        comune: "Municipality",
+
+        prefissotelefonico:"International Phone Prefix",
+        numerotelefonico:"Mobile Phone Number",
+        mail: "E-mail",
+
+        abbonatosino:"Pass holder",
+        numerotesserinoidentificativo:"Tpl Fvg Identification card number (if the complainant holds one)",
+
+
+        legendainfoevento:"EVENT INFORMATION",
+        accountTpl: "Reference Company",
+        servizio: "Type of service",
+        dataoraevento: "Date and Time of the Event",
+        tipoluogo:"Where did the event occur?",
+        tipoluogoOptions: ["--Select--", "Onboard", "On the ground", "At a ticket office or authorized reseller", "Other or not applicable"],
+
+        comuneevento:"Municipality where the event occurred",
+        frazioneevento:"Locality or hamlet where the event occurred",
+
+
+        linea: "Line involved",
+        fermata: "Bus Stop where the event occurred",
+        direzione: "Direction (specify the terminal or landing destination)",
+        nvettura: "Bus fleet number",
+
+
+
+        descrizione: "Description of the event",
+        introdescrizione:"Briefly but clearly describe the event or issue, providing all the information needed to reconstruct what happened. If the complaint is being submitted by someone other than the person who experienced the issue, please also include that person’s personal details. If the event took place at a ticket office, a sales point, or in another specific setting, mention it in your description. If you wish to attach images, travel tickets, or other relevant documents, you can do so by replying to the notification e-mail you will receive after completing this form.",
+
+        consensoobbligatorio:"MANDATORY CONSENT",
+        privacy: "I declare that I have read and understood the Tpl Fvg privacy policy, available on the website www.tplfvg.it and accessible via the link provided below",
+        consensofacoltativo:"OPTIONAL CONSENTS",
+        indaginidemoscopiche:"I consent to being contacted by Tpl Fvg, including via email, to participate in surveys or market research regarding customer satisfaction and the use of public transport services",
+        attivitacommerciali:"I consent to receiving communications  regarding commercial offers, promotions, discounts, or special deals related to the products, services, and activities of Tpl Fvg or the member companies of the Tpl Fvg consortium",
+        analisipreferenze:"I consent to the analysis of my preferences and habits in the use of public transport services, including through electronic processing, in order to improve the service offering, meet specific needs, support service planning, and receive personalized communications from Tpl Fvg or the member companies of the Tpl Fvg consortium",
+        comunicazionepartner:"I consent to receiving advertising, promotional content, and commercial information regarding products, services, and activities of third-party entities, partners of Tpl Fvg or the member companies of the Tpl Fvg consortium",
+        cessioneterzi:"I consent to the sharing of my personal data with third parties for commercial and marketing purpose",
+
+
+       invia:"Submit complain"
+
+
+
+
+      },
+      tooltips: {
+
+
+
+        tipoSoggetto: "Indicate whether you are submitting the complaint on your own behalf or on behalf of an association, a company, or a public institution",
+        numerotesserinoidentificativo:"It is the seven-digit number that uniquely identifies the pass holder. It appears both on the Tpl Fvg identification card and on all passes purchased using that card",
+        accountTpl:"Select the company responsible for the area concerned. If you are unsure which company to choose, or if the event is not clearly linked to one of the consortium’s companies, select the TPL FVG option",
+        servizio:"Indicate the service related to the event. If the event does not concern any of the listed services, or cannot be clearly linked to one of them, select the OTHER ASPECTS OF THE SERVICE option. If you are unsure about the type of service, you may leave this field blank",
+        linea: "This field becomes active after selecting the reference company. The available lines depend on the selected company. If you selected TPL FVG as the reference company, the list will include all lines operated by Tpl Fvg in Friuli Venezia Giulia and surrounding areas. If the event or report is not related to a specific line, you may leave this field blank",
+        fermata: "If you consider it useful, indicate the stop where the event occurred. To view the list of stops, you must first select a line in the previous field. Only the stops served by the selected line will be displayed. If the stop is served by multiple lines, you may select any of them. If the report or event does not concern a specific stop, you can leave this field blank",
+        dataoraevento:"Enter the date and time of the event. If the issue is not linked to a single episode - such as a malfunctioning device or an anomaly on the website or one of our apps - please indicate the date and time when you noticed the problem",
+        frazioneevento:"If possible, indicate the locality where the event occurred. Knowing the exact place is often very important to carry out the necessary checks and respond more effectively",
+        nvettura:"The fleet number of the bus is a three or four-digit identification code, usually visible both outside and inside the vehicle. The fleet number never matches the route number",
+        descrizione:""
+      }
+    }
+  }
+};*/
+    const comuneListId = "comuniList";
+    const nazioniListId = "nazioniList";
+    const campoNazioneId = "00NbU0000001klm";
+
+  var fields = [];/* [
+  ["tipoSoggetto", "00NbU0000001klb"],
+  ["ragioneSociale", "00NbU0000001klq"],
+  ["nome", "00NbU0000001kln"],
+  ["cognome", "00NbU0000001klf"],
+  ["nazione", "00NbU0000001klm"],
+  ["indirizzo", "00NbU0000001kli"],
+  ["cap", "00NbU0000001kld"],
+  ["comune", "00NbU0000001klg"],
+  ["descrizione", "description"],
+  ["privacy", "00NbU0000000KEr"],
+  ["mail", "email"],
+  ["accountTpl", "00NbU0000002bl3"],
+  ["servizio", "00NbU0000002hld"],
+  ["linea", "00NbU0000001klj"],
+  ["fermata", "00NbU0000001klk"],
+  ["dataoraevento", "data_evento_visible"],
+  ["nvettura", "00NJ6000002ydRf"],
+  ["direzione", "00NbU0000002hnF"],
+  ["indaginidemoscopiche", "00NbU0000002hs5"],
+  ["attivitacommerciali", "00NbU0000002hth"],
+  ["analisipreferenze", "00NbU0000002hvJ"],
+  ["comunicazionepartner", "00NbU0000002hwv"],
+  ["prefissotelefonico", "00NbU0000002837"],
+  ["numerotelefonico", "00NbU0000001klo"],
+  ["numerotesserinoidentificativo", "00NbU0000001kls"] 
+];*/
+  function attivaDebugSubmit() {
+  const campiDebug = [
+    "00NbU0000001kln", // nome
+    "00NbU0000001klf", // cognome
+    "email",           // email
+    "description",     // descrizione
+    "orgid", "retURL", "debug", "debugEmail"
+  ];
+
+  const form = document.getElementById("formReclamo");
+  Array.from(form.elements).forEach(el => {
+    if (!campiDebug.includes(el.name)) {
+      el.removeAttribute("name");
+    }
+  });
+}
+
+
+    function caricaTipoLuogo() {
+        const selectTipoLuogo = document.getElementById("00NbU0000002yGD");
+        selectTipoLuogo.innerHTML = "";
+        const options = t("labels.tipoluogoOptions", { returnObjects: true });
+
+        options.forEach((opt, index) => {
+          const optionEl = document.createElement("option");
+          optionEl.textContent = opt;
+          optionEl.value = opt;
+
+
+
+          selectTipoLuogo.appendChild(optionEl);
+        });
+
+}
+
+
+
+   //carica tipo soggetto     
+  function caricaTipoSoggetto() {
+  const selectTipoSoggetto = document.getElementById("00NbU0000001klb");
+  selectTipoSoggetto.innerHTML = "";
+  const options = t("labels.tipoSoggettoOptions", { returnObjects: true });
+
+  options.forEach((opt, index) => {
+    const optionEl = document.createElement("option");
+    optionEl.textContent = opt;
+    optionEl.value = opt;
+
+    // Imposta la prima opzione come selezionata di default
+    if (index === 1) {
+      optionEl.selected = true;
+    }
+
+    selectTipoSoggetto.appendChild(optionEl);
+  });
+    toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper");
+}
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      fields = estraiCampiDaLabel();
+
+       lang = new URLSearchParams(location.search).get("lang") || "it";
+
+      i18next.init({ lng: lang, resources }, (_, tInstance) => {
+          t = tInstance; // 👈 assegna t a una variabile globale
+          aggiornaEtichette(t, fields);
+
+         const comuniNazioniUrl = "https://tplfvg.my.salesforce-sites.com/forms/resource/ComuniNazioni";
+         const aziendeTplUrl="https://tplfvg.my.salesforce-sites.com/forms/resource/AziendeTPL_json";
+         const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
+         const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
+         const fermateUrl= "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
+         const prefissiUrl ="https://form-tpl-final.glitch.me/prefissi.json"
+
+        caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
+        caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
+        caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t);
+
+        document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
+          aziendaId=e.target.value;
+          const servizioId='';
+          caricaServizi("00NbU0000002hld", serviziUrl, e.target.value, lang, t);
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId,aziendaId, t);
+        });
+
+        document.getElementById("00NbU0000002hld")?.addEventListener("change", e => {
+          const servizioId = e.target.value;
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId,aziendaId, t);
+        });
+
+        document.getElementById("00NbU0000001klj")?.addEventListener("change", e => {
+          caricaFermate("00NbU0000001klk", fermateUrl, e.target.value, t);
+        });
+
+        document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
+          toggleIndirizzo("00NbU0000001klm", "indirizzoWrapper", lang);
+        });
+
+        document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
+          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper",["privato cittadino", "individual"]);
+        });
+
+       caricaTipoSoggetto();
+        caricaTipoLuogo();
+
+
+        document.getElementById("languageSwitcher")?.addEventListener("change", e => {
+          const newLang = e.target.value;
+          lang = newLang;
+          i18next.changeLanguage(newLang, () => {
+            const newT = i18next.t.bind(i18next);
+            aggiornaEtichette(newT, fields);
+            caricaDatalistComuniENazioni(comuniNazioniUrl, newLang, comuneListId, nazioniListId, campoNazioneId);
+            const aziendaId = document.getElementById("00NbU0000002bl3").value;
+            caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
+            caricaTipoSoggetto();
+            caricaTipoLuogo();
+          });
+        });
+
+        document.getElementById("formReclamo")?.addEventListener("submit", e => {
+          //attivaDebugSubmit(); // <<<< Abilita solo alcuni campi
+
+
+          if (!validazioneCampiObbligatori("formReclamo", t)) {
+            e.preventDefault();
+          }
+          formattaDataEvento("data_evento_visible", "00NbU0000001klh");
+
+
+          const validCampi = validazioneCampiObbligatori("formReclamo", t);
+
+          const validCaptcha = validaCaptcha(t, "captchaError");
+
+          if (!validCampi || !validCaptcha) {
+            e.preventDefault();
+            return;
+          }
+
+
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="form-container">
+      <select id="languageSwitcher">
+        <option value="it">🇮🇹 Italiano</option>
+        <option value="en">🇬🇧 English</option>
+      </select>
+    <br>
+      <form id="formReclamo"   method="POST" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D06000001Tz0T" novalidate>
+
+        <input type="hidden" name="orgid" value="00D06000001Tz0T" />
+        <input
+          type="hidden"
+          name="retURL"
+          value=""
+        />
+
+
+        <input type="hidden" name="captcha_settings" value='{"keyname":"captchatplv2","fallback":"true","orgId":"00D06000001Tz0T","ts":""}'>
+
+
+       <input type="hidden" name="debug" value="1">
+        <input type="hidden" name="debugEmail" value="p.santin@e-deimos.it">
+
+        <fieldset>
+             <legend><span id="label_legendanagrafica">Dati anagrafici della persona che presenta il reclamo</span></legend>
+
+          <label for="00NbU0000001klb" id="label_tipoSoggetto" ></label> 
+              <select id="00NbU0000001klb" name="00NbU0000001klb">
+              </select>
+
+
+              <div id="ragioneSocialeWrapper">
+                <label for="00NbU0000001klq" id="label_ragioneSociale" ></label>
+                <input id="00NbU0000001klq" name="00NbU0000001klq" type="text" />
+                <div class="error-message" id="error_ragioneSociale"></div>
+              </div>
+
+
+              <label for="00NbU0000001kln" id="label_nome" ></label>
+              <input id="00NbU0000001kln" name="00NbU0000001kln" type="text" />
+
+
+              <label for="00NbU0000001klf" id="label_cognome" ></label>
+              <input id="00NbU0000001klf" name="00NbU0000001klf" type="text" />
+
+
+              <label for="00NbU0000001klm" id="label_nazione" ></label>
+              <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
+              <datalist id="nazioniList"></datalist>
+
+
+              <div id="indirizzoWrapper">
+                <label for="00NbU0000001kli" id="label_indirizzo" ></label>
+                  <input id="00NbU0000001kli" name="00NbU0000001kli" type="text" />                
+
+
+                  <label for="00NbU0000001klg" id="label_comune" >Comune:</label>
+                  <input id="00NbU0000001klg" name="00NbU0000001klg" list="comuniList" />
+                  <datalist id="comuniList"></datalist>
+
+
+              </div>
+
+
+
+               <label for="email" id="label_mail" >Email:</label> 
+              <input  id="email" maxlength="80" name="email" size="20"  />
+
+
+                      <label for="00NbU0000002837" id="label_prefissotelefonico" ></label>
+                      <select  id="00NbU0000002837"  name="00NbU0000002837"  >
+                      </select>
+
+              <label for="00NbU0000001klo" id="label_numerotelefonico" ></label>
+              <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
+
+          <label for="00NbU0000002yEb" id="label_abbonatosino">Reclamo Abbonato si/no:</label>
+          <select  id="00NbU0000002yEb" name="00NbU0000002yEb" title="Reclamo Abbonato si/no"><option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
+          </select><br>
+
+              <label for="00NbU0000001kls" id="label_numerotesserinoidentificativo"></label>
+              <input id="00NbU0000001kls" name="00NbU0000001kls" type="text" />
+
+
+
+
+        </fieldset>
+        <fieldset>
+           <legend><span id="label_legendainfoevento"> </span></legend>
+
+
+
+               <label for="00NbU0000002bl3" id="label_accountTpl" >
+              </label>
+              <select id="00NbU0000002bl3" name="00NbU0000002bl3">
+
+              </select>
+
+
+
+
+                 <label for="00NbU0000002hld" id="label_servizio" class="required">
+              </label>
+              <select id="00NbU0000002hld" name="00NbU0000002hld">
+
+              </select>
+
+
+
+
+
+
+
+
+
+
+
+                <label for="data_evento_visible" id="label_dataoraevento"></label>
+                <input id="data_evento_visible" type="datetime-local" />
+                <input id="00NbU0000001klh" name="00NbU0000001klh" size="20" type="text" style="display:none;" />
+
+                <label for="00NbU0000002yGD" id="label_tipoluogo"></label>
+                <select  id="00NbU0000002yGD"  name="00NbU0000002yGD"  >
+              </select>
+
+                <label for="00NbU0000002yHp" id="label_comuneevento"> </label>
+                <input  id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniList"/>
+
+
+
+
+
+
+
+
+                <label  for="00NbU0000002yJR" id="label_frazioneevento"></label>
+                <input  id="00NbU0000002yJR" maxlength="255" name="00NbU0000002yJR" size="20" type="text" />
+
+              <label for="00NbU0000001klj" id="label_linea"  >
+              </label>
+              <select id="00NbU0000001klj" name="00NbU0000001klj">
+              </select>
+
+
+
+              <label for="00NbU0000001klk" id="label_fermata"  >
+              </label>
+              <select id="00NbU0000001klk" name="00NbU0000001klk">
+              </select>
+
+
+                <label for="00NbU0000002hnF" id="label_direzione"></label>
+                <input  id="00NbU0000002hnF" maxlength="255" name="00NbU0000002hnF" size="20" type="text" /><br>
+
+
+
+                <label for="00NJ6000002ydRf" id="label_nvettura"></label>
+                <input id="00NJ6000002ydRf" name="00NJ6000002ydRf" type="text" />
+
+
+
+
+                <label for="description" id="label_descrizione"></label>
+                <em>
+                    <span id='label_introdescrizione'></span>
+                </em>
+                  <textarea id="description" name="description" rows="10" maxlength="30000"></textarea>
+
+         </fieldset>
+
+
+      <fieldset>
+        <legend><span id="label_consensoobbligatorio"> </span></legend>
+
+
+        <label for="00NbU0000000KEr"   id="label_privacy" ></label>
+        <select  id="00NbU0000000KEr" name="00NbU0000000KEr"  >
+          <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+        <option value="No">No</option>
+        </select><br>
+    </fieldset>
+    <fieldset>
+
+         <legend><span id="label_consensofacoltativo"> </span></legend>   
+
+        <label for="00NbU0000002hs5" id="label_indaginidemoscopiche"></label>
+        <select  id="00NbU0000002hs5" name="00NbU0000002hs5"  >
+          <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+        <option value="No">No</option>       
+
+        </select><br>
+
+      <label for="00NbU0000002hth" id="label_attivitacommerciali"></label>
+        <select  id="00NbU0000002hth" name="00NbU0000002hth"  >
+          <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+        <option value="No">No</option>
+        </select><br>
+
+       <label for="00NbU0000002hvJ" id="label_analisipreferenze"></label>
+        <select  id="00NbU0000002hvJ" name="00NbU0000002hvJ"  >
+          <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+        <option value="No">No</option>
+        </select><br>
+
+
+      <label for="00NbU0000002hwv"  id="label_comunicazionepartner"></label>
+        <select  id="00NbU0000002hwv" name="00NbU0000002hwv"  >
+          <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+        <option value="No">No</option>
+        </select><br>
+
+        <label for="00NbU0000002yOH" id="label_cessioneterzi"></label>
+        <select  id="00NbU0000002yOH" name="00NbU0000002yOH" title="Acconsente cessione terzi"><option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+        <option value="No">No</option>
+        </select><br>
+
+
+
+
+
+
+
+       </fieldset>  
+
+
+
+
+
+        <!--flag reclamo-->
+        <input
+          id="00NJ6000006biAk"
+          name="00NJ6000006biAk"
+          type="hidden"
+          value="1"
+        />
+
+        <input type="hidden"  id="external" name="external" value="1" /><br>
+        <br>
+        <div class="g-recaptcha" data-sitekey="6LcKTugqAAAAAB9mkWg5p3floGYNeNVAXY6Z6c8P"></div><br>
+        <div id="captchaError" class="error-message" style="display: none;"></div>
+
+        <input type="submit" id="submitBtn" value="Invia Reclamo" />
+      </form>
+    </div>
+</body>
+</html>

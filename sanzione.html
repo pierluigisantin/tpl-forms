@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Sanzione</title>
+  <link rel="stylesheet" href="/webToCaseStyle.css" />
+
+  <script src="https://unpkg.com/i18next@22.4.10/i18next.min.js"></script>
+  <!-- PRIMA Popper.js -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <!-- POI Tippy.js -->
+  <script src="https://unpkg.com/tippy.js@6"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+
+ function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+</script>
+  <script src="webToCaseUtils.js"></script>
+   <script src="sanzione_traduzioni.js"></script>
+<script>
+     var lang;
+      let t;
+  var aziendaId;
+
+    const requiredFields = [
+      "tipoSoggetto",
+      "nome",
+      "cognome",
+      "nazione",
+      "datanascitadichiarante",
+      "indirizzo",
+      "comune",
+      "mail",
+      "prefissotelefonico",
+      "numerotelefonico",
+      "accounttpl",
+      "numeroverbale",
+      "dataoraevento",
+      "tipoluogo",
+      "comuneevento",
+      "descrizione"
+
+];
+  /*
+
+     const resources = {
+  it: {
+    translation: {
+      labels: {
+
+        erroreCampoObbligatorio: "Devi compilare questo campo",
+        seleziona: "--Seleziona--",
+        codiceFiscaleNonValido:"Il codice fiscale inserito non è valido",
+
+        legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE PRESENTA IL RICORSO (PERSONA SANZIONATA SE MAGGIORENNE, OPPURE GENITORE O TUTORE SE MINORENNE)",
+        nome:"Nome",
+        cognome:"Cognome",
+        cfdichiarante:"Codice fiscale (obbligatorio per chi ne sia in possesso)",
+        datanascitadichiarante:"Data di nascita",
+        tipoSoggetto:"In qualità di",
+        tipoSoggettoOptions: ["--Seleziona--", "Persona sanzionata", "Genitore o tutore della persona sanzionata", "Ente o associazione in rappresentanza della persona sanzionata"],
+        ragioneSociale:"Ente o associazione",
+        nazione:"Nazionalità",
+        comune:"Comune",
+        indirizzo:"Indirizzo di residenza per l’eventuale invio di documentazione cartacea",
+        nomecassettalettere:"Nome indicato sulla cassetta delle lettere",
+        citta:"Città",
+        localita:"Località",
+        cap:"CAP",
+        provincia:"Provincia",
+        mail:"E-mail",
+        prefissotelefonico:"Prefisso telefonico internazionale",
+        numerotelefonico:"Numero di cellulare",
+
+
+        legendadatisazionato:"DATI ANAGRAFICI DELLA PERSONA SANZIONATA ",
+        nomesulverbale:"Nome",
+        cognomesulverbale:"Cognome",
+        datanascitasulverbale:"Data di nascita",
+        cfsulverbale:"Codice fiscale (obbligatorio per chi ne sia in possesso)",
+
+
+        legendainfoevento:"DATI SULLA SANZIONE",
+        accounttpl:"Azienda che ha emesso la sanzione",
+        numeroverbale:"Numero del verbale",
+        dataoraevento:"Data e ora della sanzione",
+        linea:"Nome della linea",
+        nvettura:"Numero di matricola dell’autobus",
+        tipoluogo:"La sanzione è stata emessa",
+        tipoluogoOptions: ["--Seleziona--", "A bordo", "A terra", "Non lo so"],       
+        comuneevento:"Comune dove la sanzione è stata emessa",
+        descrizione:"Scritto difensivo",
+        introdescrizione:"Spiega i motivi per cui contesti la sanzione, in modo sintetico ma completo. Tpl Fvg e le aziende consorziate effettueranno tutte le verifiche necessarie per ricostruire l’evento, analizzando gli orari di convalida, i tracciati satellitari degli autobus, i dati dei dispositivi contapasseggeri, gli orari in cui i controlli sono stati effettuati e i verbali redatti dagli agenti verificatori. Inoltre, ai sensi dell’articolo 48 del decreto-legge 24 aprile 2017, n. 50, potranno essere utilizzate anche le immagini registrate dai sistemi di videosorveglianza installati a bordo dei mezzi. Prima di presentare ricorso, assicurati che vi siano motivazioni oggettive e documentabili a sostegno della contestazione: la perdita del titolo di viaggio, per esempio, o la mancata convalida per dimenticanza non costituiscono motivi sufficienti per accogliere un ricorso. Nel caso in cui il ricorso venga respinto, potrà essere richiesto al trasgressore il pagamento della sanzione nella misura massima di 210 euro, oltre al prezzo del biglietto e alle eventuali spese di procedimento",
+        avvertenzaprimadiinvio:"Dopo aver completato la compilazione del form, riceverai una notifica di apertura del caso via e-mail. Sarà necessario rispondere a tale e-mail allegando:1)	copia del verbale della sanzione (se disponibile);2)	copia fronte e retro di un documento d’identità della persona sanzionata, se questa è maggiorenne, oppure di un genitore o di un tutore legale se la persona sanzionata è minorenne; 3)	altri documenti utili all’istruttoria",
+        invia:"Invia ricorso",
+
+        ultimo:""
+      },
+      tooltips: {
+        indirizzo:"Indicare l’indirizzo completo, comprensivo del numero civico",
+        dataoraevento:"Indicare la data e l’ora di emissione del verbale",
+        linea:"Questo campo si attiva dopo aver selezionato l’azienda che ha emesso la sanzione, da cui dipendono le linee proposte. La linea è generalmente rilevabile anche dal verbale",
+        nvettura:"Il numero di matricola dell’autobus è un codice identificativo composto da tre o quattro cifre, generalmente visibile sia all’esterno sia all’interno del mezzo. Il numero di matricola (che non coincide mai con il numero di linea) è generalmente rilevabile anche dal verbale",
+        comuneevento:"Il comune dove la sanzione è stata emessa è rilevabile anche dal verbale",
+        ultimo:""
+      }
+    }
+  },
+  en: {
+    translation: {
+      labels: {
+        erroreCampoObbligatorio: "You must fill this field",
+        seleziona: "--Select--",
+        codiceFiscaleNonValido:"The fiscal/tax code entered is not valid",
+
+        legendanagrafica:"PERSONAL DETAILS OF THE PERSON SUBMITTING THE APPEAL (FINED PERSON IF OF LEGAL AGE, OR PARENT/LEGAL GUARDIAN IF THE FINED PERSON IS A MINOR)",
+        nome:"Name",
+        cognome:"Last name",
+        cfdichiarante:"Fiscal/Tax code (mandatory if available)",
+        datanascitadichiarante:"Date of birth",
+        tipoSoggetto:"Acting as",
+        tipoSoggettoOptions: ["--Select--", "Fined person", "Parent or legal guardian of the fined person", "Entity or association representing the fined person"],
+        ragioneSociale:"Entity or association ",
+        nazione:"Country",
+        comune:"Municipality",
+        indirizzo:"Residential address for possible postal correspondence",
+        nomecassettalettere:"Name as it appears on the mailbox",
+        citta:"City ",
+        localita:"Locality",
+        cap:"Postal code",
+        provincia:"Province or district",
+        mail:"E-mail",
+        prefissotelefonico:"International phone prefix ",
+        numerotelefonico:"Mobile phone number",
+
+
+        legendadatisazionato:"PERSONAL DETAILS OF THE FINED PERSON",
+        nomesulverbale:"First name",
+        cognomesulverbale:"Last name",
+        datanascitasulverbale:"Date of birth",
+        cfsulverbale:"Fiscal/Tax code (mandatory if available)",
+
+
+        legendainfoevento:"FINE DETAILS",
+        accounttpl:"Company that issued the fine ",
+        numeroverbale:"Fine report number",
+        dataoraevento:"Date and time of the fine",
+        linea:"Line name",
+        nvettura:"Bus fleet number",
+        tipoluogo:"The fine was issued",
+        tipoluogoOptions: ["--Select--", "On board", "On the ground", "I don't know"],       
+        comuneevento:"Municipality where the fine was issued",
+        descrizione:"Defense statement",
+        introdescrizione:"Briefly but clearly explain the reasons why you are challenging the penalty. Tpl Fvg and its consortium companies will carry out all necessary checks, including analysis of ticket validation times, GPS tracking data of the buses, passenger counting device data, inspection times, and reports completed by the inspection staff. In addition, pursuant to Article 48 of Decree-Law no. 50 of 24 April 2017, footage recorded by onboard video surveillance systems may also be used. Before submitting an appeal, please ensure that you have objective and verifiable reasons to support your claim: for example, loss of a travel pass or failure to validate due to forgetfulness are not considered sufficient grounds for accepting an appeal. If the appeal is rejected, the offender may be required to pay the full penalty of up to €210, in addition to the ticket price and any applicable administrative fees",
+        avvertenzaprimadiinvio:"After completing the form, you will receive an e-mail confirming the opening of your case. You must reply to that e-mail and attach the following documents:1)	a copy of the penalty notice (if available);2)	a front and back copy of the ID document of the person fined, if they are of legal age, or of a parent or legal guardian if the person fined is a minor;3)	any other documents relevant to the review process.",
+        invia:"Contest a fine",
+
+        ultimo:""
+
+      },
+      tooltips: {
+        indirizzo:"Please enter the full address, including the street number",
+        dataoraevento:"Enter the date and time the penalty notice was issued, as indicated on the notice",
+        linea:"This field is activated after selecting the company that issued the fine. The line is usually indicated in the fine report as well",
+        nvettura:"The bus fleet number is a unique identification code made up of three or four digits, usually visible both on the outside and inside of the vehicle. The fleet number (which is never the same as the line number) is usually also indicated in the fine report",
+        comuneevento:"The municipality where the fine was issued is usually indicated in the fine report as well",
+        ultimo:""
+
+
+
+      }
+    }
+  }
+};
+
+*/
+    const comuneListId = "comuniList";
+    const nazioniListId = "nazioniList";
+    const campoNazioneId = "00NbU0000001klm";
+
+  var fields = [];
+  function attivaDebugSubmit() {
+  const campiDebug = [
+    "00NbU0000001kln", // nome
+    "00NbU0000001klf", // cognome
+    "email",           // email
+    "description",     // descrizione
+    "orgid", "retURL", "debug", "debugEmail"
+  ];
+
+  const form = document.getElementById("formReclamo");
+  Array.from(form.elements).forEach(el => {
+    if (!campiDebug.includes(el.name)) {
+      el.removeAttribute("name");
+    }
+  });
+}
+
+
+    function caricaTipoLuogo() {
+        const selectTipoLuogo = document.getElementById("00NbU0000002yGD");
+        selectTipoLuogo.innerHTML = "";
+        const options = t("labels.tipoluogoOptions", { returnObjects: true });
+
+        options.forEach((opt, index) => {
+          const optionEl = document.createElement("option");
+          optionEl.textContent = opt;
+          optionEl.value = opt;
+
+
+
+          selectTipoLuogo.appendChild(optionEl);
+        });
+
+}
+
+
+
+   //carica tipo soggetto     
+  function caricaTipoSoggetto() {
+  const selectTipoSoggetto = document.getElementById("00NbU0000001klb");
+  selectTipoSoggetto.innerHTML = "";
+  const options = t("labels.tipoSoggettoOptions", { returnObjects: true });
+
+  options.forEach((opt, index) => {
+    const optionEl = document.createElement("option");
+    optionEl.textContent = opt;
+    optionEl.value = opt;
+
+    // Imposta la prima opzione come selezionata di default
+    if (index === 1) {
+      optionEl.selected = true;
+    }
+
+    selectTipoSoggetto.appendChild(optionEl);
+  });
+    toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper");
+}
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      fields = estraiCampiDaLabel();
+
+       lang = new URLSearchParams(location.search).get("lang") || "it";
+
+      i18next.init({ lng: lang, resources }, (_, tInstance) => {
+          t = tInstance; // 👈 assegna t a una variabile globale
+          aggiornaEtichette(t, fields);
+
+         const comuniNazioniUrl = "https://tplfvg.my.salesforce-sites.com/forms/resource/ComuniNazioni";
+         const aziendeTplUrl="https://tplfvg.my.salesforce-sites.com/forms/resource/AziendeTPL_json";
+         const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
+         const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
+         const fermateUrl= "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
+         const prefissiUrl ="https://form-tpl-final.glitch.me/prefissi.json"
+
+        caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
+        caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
+        caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t);
+
+        document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
+          aziendaId=e.target.value;
+
+          const servizioId="";
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId,aziendaId, t);
+        });
+
+        document.getElementById("00NbU0000002hld")?.addEventListener("change", e => {
+          const servizioId = e.target.value;
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId,aziendaId, t);
+        });
+
+        document.getElementById("00NbU0000001klj")?.addEventListener("change", e => {
+          caricaFermate("00NbU0000001klk", fermateUrl, e.target.value, t);
+        });
+
+        document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
+          toggleIndirizzo("00NbU0000001klm", "indirizzoItaliaWrapper", lang);
+          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
+        });
+
+        document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
+          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper",[ "fined person", "persona sanzionata","Genitore o tutore della persona sanzionata","Parent or legal guardian of the fined person"]);
+        });
+
+       caricaTipoSoggetto();
+        caricaTipoLuogo();
+
+
+        document.getElementById("00NbU0000003FDp")?.addEventListener("blur", () => {
+          validaCampoCodiceFiscale("00NbU0000003FDp", t);
+        });
+          document.getElementById("00NbU0000003FLt")?.addEventListener("blur", () => {
+          validaCampoCodiceFiscale("00NbU0000003FLt", t);
+        });
+
+
+
+        document.getElementById("languageSwitcher")?.addEventListener("change", e => {
+          const newLang = e.target.value;
+          lang = newLang;
+          i18next.changeLanguage(newLang, () => {
+            const newT = i18next.t.bind(i18next);
+            aggiornaEtichette(newT, fields);
+            caricaDatalistComuniENazioni(comuniNazioniUrl, newLang, comuneListId, nazioniListId, campoNazioneId);
+            const aziendaId = document.getElementById("00NbU0000002bl3").value;
+            caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
+            caricaTipoSoggetto();
+            caricaTipoLuogo();
+          });
+        });
+
+        document.getElementById("formReclamo")?.addEventListener("submit", e => {
+          //attivaDebugSubmit(); // <<<< Abilita solo alcuni campi
+
+
+          if (!validazioneCampiObbligatori("formReclamo", t)) {
+            e.preventDefault();
+          }
+          formattaDataEvento("data_evento_visible", "00NbU0000001klh");
+          formattaDataEvento("datanascitadichiarante_visible","00NbU0000001oaf");
+          formattaDataEvento("datanascitaverbale_visible","00NbU0000001olx");
+
+
+          const validCampi = validazioneCampiObbligatori("formReclamo", t);
+
+          const validCaptcha = validaCaptcha(t, "captchaError");
+
+          if (!validCampi || !validCaptcha) {
+            e.preventDefault();
+            return;
+          }
+
+
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="form-container">
+      <select id="languageSwitcher">
+        <option value="it">🇮🇹 Italiano</option>
+        <option value="en">🇬🇧 English</option>
+      </select>
+    <br>
+      <form id="formReclamo"   method="POST" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D06000001Tz0T" novalidate>
+
+        <input type="hidden" name="orgid" value="00D06000001Tz0T" />
+        <input
+          type="hidden"
+          name="retURL"
+          value=""
+        />
+
+
+        <input type="hidden" name="captcha_settings" value='{"keyname":"captchatplv2","fallback":"true","orgId":"00D06000001Tz0T","ts":""}'>
+
+
+       <input type="hidden" name="debug" value="1">
+        <input type="hidden" name="debugEmail" value="p.santin@e-deimos.it">
+
+        <fieldset>
+             <legend><span id="label_legendanagrafica"></span></legend>
+
+              <label for="00NbU0000001kln" id="label_nome" ></label>
+              <input id="00NbU0000001kln" name="00NbU0000001kln" type="text" />
+
+
+              <label for="00NbU0000001klf" id="label_cognome" ></label>
+              <input id="00NbU0000001klf" name="00NbU0000001klf" type="text" />
+
+
+
+          <label for="00NbU0000001klb" id="label_tipoSoggetto" ></label> 
+              <select id="00NbU0000001klb" name="00NbU0000001klb">
+              </select>
+
+
+              <div id="ragioneSocialeWrapper" style="display:none">
+                <label for="00NbU0000001klq" id="label_ragioneSociale" ></label>
+                <input id="00NbU0000001klq" name="00NbU0000001klq" type="text" />
+                <div class="error-message" id="error_ragioneSociale"></div>
+              </div>
+
+          <label for="datanascitadichiarante_visible" id="label_datanascitadichiarante"></label>
+          <input id="datanascitadichiarante_visible" type="date" />
+          <input  id="00NbU0000001oaf" name="00NbU0000001oaf" size="12" type="text" style="display:none"/>
+
+
+
+
+          <label for="00NbU0000003FDp" id="label_cfdichiarante"></label>
+          <input  id="00NbU0000003FDp" maxlength="50" name="00NbU0000003FDp" size="20" type="text" />
+
+
+
+
+
+
+              <label for="00NbU0000001klm" id="label_nazione" ></label>
+              <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
+              <datalist id="nazioniList"></datalist>
+
+
+
+                <label for="00NbU0000001kli" id="label_indirizzo" ></label>
+                  <input id="00NbU0000001kli" name="00NbU0000001kli" type="text" />                
+
+          <div id="indirizzoItaliaWrapper">
+
+
+                  <label for="00NbU0000001klg" id="label_comune" >Comune:</label>
+                  <input id="00NbU0000001klg" name="00NbU0000001klg" list="comuniList" />
+                  <datalist id="comuniList"></datalist>
+
+
+          </div>
+
+          <div id="indirizzoEsteroWrapper" style="display:none">
+
+
+
+              <label for="00NbU0000003Id7" id="label_citta"></label>
+              <input  id="00NbU0000003Id7" maxlength="255" name="00NbU0000003Id7" size="20" type="text" />
+
+
+              <label for="00NbU0000003Iej" id="label_localita"></label>
+              <input  id="00NbU0000003Iej" maxlength="255" name="00NbU0000003Iej" size="20" type="text" />
+
+
+              <label for="00NbU0000001kld" id="label_cap"></label>
+              <input  id="00NbU0000001kld" maxlength="20" name="00NbU0000001kld" size="20" type="text" />
+
+
+              <label for="00NbU0000001klp" id="label_provincia"></label>
+              <input  id="00NbU0000001klp" maxlength="100" name="00NbU0000001klp" size="20" type="text" />
+
+
+          </div>
+
+
+
+           <label for="00NbU0000003FFR" id="label_nomecassettalettere"></label>
+          <input  id="00NbU0000003FFR" maxlength="255" name="00NbU0000003FFR" size="20" type="text" />
+
+
+
+
+               <label for="email" id="label_mail" >Email:</label> 
+              <input  id="email" maxlength="80" name="email" size="20"  />
+
+
+                      <label for="00NbU0000002837" id="label_prefissotelefonico" ></label>
+                      <select  id="00NbU0000002837"  name="00NbU0000002837"  >
+                      </select>
+
+              <label for="00NbU0000001klo" id="label_numerotelefonico" ></label>
+              <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
+
+
+
+
+
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            <span id="label_legendadatisazionato"></span>
+          </legend>
+
+
+
+          <label for="00NbU0000001odt" id="label_nomesulverbale"></label>
+          <input  id="00NbU0000001odt" maxlength="100" name="00NbU0000001odt" size="20" type="text" />
+
+
+          <label for="00NbU0000001ofV" id="label_cognomesulverbale"></label>
+          <input  id="00NbU0000001ofV" maxlength="200" name="00NbU0000001ofV" size="20" type="text" />
+
+            <label for="datanascitaverbale_visible" id="label_datanascitasulverbale"></label>
+          <input id="datanascitaverbale_visible" type="date" />
+         <input  id="00NbU0000001olx" name="00NbU0000001olx"  type="text" style="display:none" />
+
+
+          <label for="00NbU0000003FLt" id="label_cfsulverbale"></label>
+          <input  id="00NbU0000003FLt" maxlength="50" name="00NbU0000003FLt" size="20" type="text" />
+
+        </fieldset>
+
+        <fieldset>
+           <legend><span id="label_legendainfoevento"> </span></legend>
+
+
+
+               <label for="00NbU0000002bl3" id="label_accounttpl" >
+              </label>
+              <select id="00NbU0000002bl3" name="00NbU0000002bl3">
+
+              </select>
+
+
+
+          <label for="00NbU0000001oVp" id="label_numeroverbale"></label>
+          <input  id="00NbU0000001oVp" maxlength="20" name="00NbU0000001oVp" size="20" type="text" />
+
+
+
+
+                <label for="data_evento_visible" id="label_dataoraevento"></label>
+                <input id="data_evento_visible" type="datetime-local" />
+                <input id="00NbU0000001klh" name="00NbU0000001klh" size="20" type="text" style="display:none;" />
+
+
+            <label for="00NbU0000001klj" id="label_linea"  >
+              </label>
+              <select id="00NbU0000001klj" name="00NbU0000001klj">             
+
+              </select>
+
+           <label for="00NJ6000002ydRf" id="label_nvettura"></label>
+                <input id="00NJ6000002ydRf" name="00NJ6000002ydRf" type="text" />
+
+
+                <label for="00NbU0000002yGD" id="label_tipoluogo"></label>
+                <select  id="00NbU0000002yGD"  name="00NbU0000002yGD"  >
+              </select>
+
+                <label for="00NbU0000002yHp" id="label_comuneevento"> </label>
+                <input  id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniList"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <label for="description" id="label_descrizione"></label>
+                <em>
+                    <span id='label_introdescrizione'></span>
+                </em>
+                  <textarea id="description" name="description" rows="10" maxlength="30000"></textarea>
+
+         </fieldset>
+
+
+
+
+
+
+
+
+        <!--flag ricorso sanzione-->
+        <input
+          id="00NbU0000001oQz"
+          name="00NbU0000001oQz"
+          type="hidden"
+          value="1"
+        />
+
+        <input type="hidden"  id="external" name="external" value="1" />
+
+        <em>
+                    <span id='label_avvertenzaprimadiinvio'></span>
+                </em>
+
+
+
+        <br>
+        <br>
+        <br>
+        <div class="g-recaptcha" data-sitekey="6LcKTugqAAAAAB9mkWg5p3floGYNeNVAXY6Z6c8P"></div>
+        <div id="captchaError" class="error-message" style="display: none;"></div>
+
+
+        <input type="submit" id="submitBtn" value="Invia Reclamo" />
+      </form>
+    </div>
+</body>
+</html>

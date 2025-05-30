@@ -1,0 +1,9 @@
+{
+  "aziende": [
+    { "id": "001bU000007ZgOZQA0", "name": "Apt Gorizia" },
+    { "id": "001bU000007ZTeSQAW", "name": "Arriva Udine" },
+    { "id": "001bU000007ZbggQAC", "name": "Atap Pordenone" },
+  { "id": "001bU000007ZNZ2QAO", "name": "Trieste Trasporti" },
+  { "id": "001bU000007Q8fWQAS", "name": "Tpl Fvg" }
+  ]
+}
