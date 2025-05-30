@@ -71,7 +71,7 @@ const resources = {
 
         numerotesserinoidentificativo:`<div>
               È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo, sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/>
-              <img src="https://cdn.glitch.global/93d8b30d-b038-4944-afb8-a0b565f26744/abbonamento_tipo.png?v=1747813818162" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
+              <img src="abbonamento_tipo.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
             </div>`,
 
         accountTpl:"Seleziona l’azienda territorialmente competente. Se non sai quale azienda indicare, o se l’evento non è riconducibile a una singola azienda consorziata, scegli l’opzione TPL FVG.",
