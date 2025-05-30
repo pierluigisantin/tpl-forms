@@ -24,7 +24,21 @@
   var aziendaId;
 
     const requiredFields = [
+
+      "nome",
+      "cognome",
+      "nazione",
   
+      "indirizzo",
+
+      "mail",
+      "prefissotelefonico",
+      "numerotelefonico",
+      "accounttpl",
+      "tipoproblema",
+      "dataoraevento",
+ 
+      "descrizione"
 
 ];
   
@@ -33,16 +47,49 @@
   it: {
     translation: {
       labels: {
-        legendanagrafica:""
+        legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE SEGNALA IL PROBLEMA",
         erroreCampoObbligatorio: "Devi compilare questo campo",
         seleziona: "--Seleziona--",
-        codiceFiscaleNonValido:"Il codice fiscale inserito non è valido",
+        nome:"Nome",
+        cognome:"Cognome",
+        nazione:"Nazionalità",
+        indirizzo:"Indirizzo di residenza (via, piazza, corso, n° civico",
+        comune:"Comune",
+        citta:"Città",
+        localita:"Località",
+        cap:"CAP",
+        provincia:"Provincia",
+        mail:"E-mail",
+        abbonatosino:"Abbonato",
+        numerotesserinoidentificativo:"Numero di tesserino identificativo Tpl Fvg (se ne sei titolare)",
 
-
+        legendadaticontatto:"INFORMAZIONI SUL CONTATTO",
+        prefissotelefonico:"Prefisso telefonico internazionale del numero d cui si è contattato il call center",
+        numerotelefonico:"Numero di telefono da cui si è contattato il call center",
+        dataoraevento:"Data e ora in cui il contatto è avvenuto",
+        accounttpl:"A quale azienda si riferiva la tua chiamata?",
+        tipoproblema:"Quale problema hai riscontrato?",
+        tipoproblemaOptions: ["--Seleziona--", 
+                              "Tempi di attesa troppo lunghi", 
+                              "Non sono riuscito a parlare con un operatore", 
+                              "La chiamata è stata interrotta prima della conclusione",
+                              "L’operatore non mi ha fornito assistenza o non ha saputo rispondere alla mia richiesta",
+                              "L’operatore mi ha dato una risposta sbagliata o incompleta",
+                              "L’operatore è stato scortese o poco professionale",
+                              "Altro"                              
+                             ],
+        descrizione:"Descrizione dell'evento",
+        introdescrizione:"Descrivi il problema in modo sintetico ma completo, fornendo tutte le informazioni utili per la ricostruzione della chiamata. Se desideri allegare immagini, titoli di viaggio o altri documenti utili, potrai farlo rispondendo alla e-mail di notifica che riceverai dopo aver compilato questo form.",
+        invia:"Invia segnalazione",
         ultimo:""
       },
       tooltips: {
-
+        dataoraevento:"Se non ricordi con esattezza la data e l’ora del contatto, indica un dato approssimativo: ci aiuterà a risalire alla chiamata",
+        accounttpl:"Indica l’azienda a cui era riferita la tua chiamata: se non la conosci, o se la chiamata riguardava servizi non riconducibili a una singola azienda consorziata, seleziona l’opzione TPL FVG",
+        numerotesserinoidentificativo:`<div>
+          È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo, sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/>
+          <img src="abbonamento_tipo.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
+        </div>`,
         ultimo:""
       }
     }
@@ -50,17 +97,53 @@
   en: {
     translation: {
       labels: {
+        legendanagrafica:"PERSONAL DETAILS OF THE PERSON REPORTING THE ISSUE",
         erroreCampoObbligatorio: "You must fill this field",
         seleziona: "--Select--",
-        codiceFiscaleNonValido:"The fiscal/tax code entered is not valid",
+        nome:"First Name",
+        cognome:"Last Name",
+        nazione:"Country",
+        indirizzo:"Address (street, square, avenue, number) ",
+        comune:"Municipality",
+        citta:"City",
+        localita:"Locality",
+        cap:"Zip Code",
+        provincia:"Province",
+        mail:"E-mail",
+        abbonatosino:"Pass holder",
+        numerotesserinoidentificativo:"Tpl Fvg identification card number (if the complainant holds one)",
 
+        legendadaticontatto:"CONTACT INFORMATION",
+        prefissotelefonico:"International telephone prefix of the number used to contact the call center",
+        numerotelefonico:"Phone number used to contact the call center ",
+        dataoraevento:"Date and time of contact",
+        accounttpl:"Which company was your call regarding?",
+          
 
+        tipoproblema:"What problem did you encounter?",
+        tipoproblemaOptions: ["--Select--", 
+                              "Waiting times were too long", 
+                              "I was unable to speak with an operator", 
+                              "The call was disconnected before it was completed",
+                              "The operator did not assist me or was unable to answer my request",
+                              "The operator gave me an incorrect or incomplete response",
+                              "The operator was rude or unprofessional",
+                              "Other"
+                             ],
+        descrizione:"Description of the event",
+        introdescrizione:"Please describe the issue briefly but thoroughly, providing all information useful for reconstructing the call. If you wish to attach images, travel tickets, or other relevant documents, you can do so by replying directly to the notification e-mail you will receive after submitting this form.",
+        invia:"Report issue",
 
         ultimo:""
 
       },
       tooltips: {
-
+        dataoraevento:"If you don’t remember the exact date and time of the contact, please provide an approximate one: it will help us trace the call.",
+        accounttpl:"Select the company your call referred to. If you're not sure, or if the call concerned services not attributable to a specific consortium company, select the TPL FVG option",
+        numerotesserinoidentificativo:`<div>
+          It is the seven-digit number that uniquely identifies the subscriber: you can find it both on the identification card and on the subscriptions purchased using that card.<br/>
+          <img src="abbonamento_tipo.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
+        </div>`,
         ultimo:""
 
 
@@ -94,44 +177,26 @@
 }
 
 
-    function caricaTipoLuogo() {
-        const selectTipoLuogo = document.getElementById("00NbU0000002yGD");
-        selectTipoLuogo.innerHTML = "";
-        const options = t("labels.tipoluogoOptions", { returnObjects: true });
-
-        options.forEach((opt, index) => {
-          const optionEl = document.createElement("option");
-          optionEl.textContent = opt;
-          optionEl.value = opt;
 
 
 
-          selectTipoLuogo.appendChild(optionEl);
-        });
 
-}
-
-
-
-   //carica tipo soggetto     
-  function caricaTipoSoggetto() {
-  const selectTipoSoggetto = document.getElementById("00NbU0000001klb");
+   //carica tipo problema     
+  function caricaTipoProblema() {
+  const selectTipoSoggetto = document.getElementById("00NbU0000003VIb");
   selectTipoSoggetto.innerHTML = "";
-  const options = t("labels.tipoSoggettoOptions", { returnObjects: true });
+  const options = t("labels.tipoproblemaOptions", { returnObjects: true });
 
   options.forEach((opt, index) => {
     const optionEl = document.createElement("option");
     optionEl.textContent = opt;
     optionEl.value = opt;
 
-    // Imposta la prima opzione come selezionata di default
-    if (index === 1) {
-      optionEl.selected = true;
-    }
+
 
     selectTipoSoggetto.appendChild(optionEl);
   });
-    toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper");
+     
 }
 
 
@@ -156,41 +221,24 @@
         caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
         caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t);
 
-        document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
-          aziendaId=e.target.value;
+   
 
-          const servizioId="";
-          caricaLinee("00NbU0000001klj", lineeUrl, servizioId,aziendaId, t);
-        });
+   
 
-        document.getElementById("00NbU0000002hld")?.addEventListener("change", e => {
-          const servizioId = e.target.value;
-          caricaLinee("00NbU0000001klj", lineeUrl, servizioId,aziendaId, t);
-        });
-
-        document.getElementById("00NbU0000001klj")?.addEventListener("change", e => {
-          caricaFermate("00NbU0000001klk", fermateUrl, e.target.value, t);
-        });
+     
 
         document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
           toggleIndirizzo("00NbU0000001klm", "indirizzoItaliaWrapper", lang);
           toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
         });
 
-        document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
-          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper",[ "fined person", "persona sanzionata","Genitore o tutore della persona sanzionata","Parent or legal guardian of the fined person"]);
-        });
-
-       caricaTipoSoggetto();
-        caricaTipoLuogo();
 
 
-        document.getElementById("00NbU0000003FDp")?.addEventListener("blur", () => {
-          validaCampoCodiceFiscale("00NbU0000003FDp", t);
-        });
-          document.getElementById("00NbU0000003FLt")?.addEventListener("blur", () => {
-          validaCampoCodiceFiscale("00NbU0000003FLt", t);
-        });
+
+
+
+       
+        caricaTipoProblema();
 
 
 
@@ -202,9 +250,8 @@
             aggiornaEtichette(newT, fields);
             caricaDatalistComuniENazioni(comuniNazioniUrl, newLang, comuneListId, nazioniListId, campoNazioneId);
             const aziendaId = document.getElementById("00NbU0000002bl3").value;
-            caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
-            caricaTipoSoggetto();
-            caricaTipoLuogo();
+            
+            caricaTipoProblema();
           });
         });
 
@@ -216,8 +263,7 @@
             e.preventDefault();
           }
           formattaDataEvento("data_evento_visible", "00NbU0000001klh");
-          formattaDataEvento("datanascitadichiarante_visible","00NbU0000001oaf");
-          formattaDataEvento("datanascitaverbale_visible","00NbU0000001olx");
+ 
 
 
           const validCampi = validazioneCampiObbligatori("formReclamo", t);
@@ -343,30 +389,20 @@
 
         <fieldset>
           <legend>
-            <span id="label_legendadatisazionato"></span>
+            <span id="label_legendadaticontatto"></span>
           </legend>
 
+          <label for="00NbU0000002837" id="label_prefissotelefonico" ></label>
+                  <select  id="00NbU0000002837"  name="00NbU0000002837"  >
+                  </select>
+
+          <label for="00NbU0000001klo" id="label_numerotelefonico" ></label>
+          <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
 
 
-          <label for="00NbU0000001odt" id="label_nomesulverbale"></label>
-          <input  id="00NbU0000001odt" maxlength="100" name="00NbU0000001odt" size="20" type="text" />
 
 
-          <label for="00NbU0000001ofV" id="label_cognomesulverbale"></label>
-          <input  id="00NbU0000001ofV" maxlength="200" name="00NbU0000001ofV" size="20" type="text" />
-
-            <label for="datanascitaverbale_visible" id="label_datanascitasulverbale"></label>
-          <input id="datanascitaverbale_visible" type="date" />
-         <input  id="00NbU0000001olx" name="00NbU0000001olx"  type="text" style="display:none" />
-
-
-          <label for="00NbU0000003FLt" id="label_cfsulverbale"></label>
-          <input  id="00NbU0000003FLt" maxlength="50" name="00NbU0000003FLt" size="20" type="text" />
-
-        </fieldset>
-
-        <fieldset>
-           <legend><span id="label_legendainfoevento"> </span></legend>
+          
 
 
 
@@ -378,10 +414,7 @@
 
 
 
-          <label for="00NbU0000001oVp" id="label_numeroverbale"></label>
-          <input  id="00NbU0000001oVp" maxlength="20" name="00NbU0000001oVp" size="20" type="text" />
-
-
+          
 
 
                 <label for="data_evento_visible" id="label_dataoraevento"></label>
@@ -389,37 +422,18 @@
                 <input id="00NbU0000001klh" name="00NbU0000001klh" size="20" type="text" style="display:none;" />
 
 
-            <label for="00NbU0000001klj" id="label_linea"  >
-              </label>
-              <select id="00NbU0000001klj" name="00NbU0000001klj">             
-
-              </select>
-
-           <label for="00NJ6000002ydRf" id="label_nvettura"></label>
-                <input id="00NJ6000002ydRf" name="00NJ6000002ydRf" type="text" />
+          
 
 
-                <label for="00NbU0000002yGD" id="label_tipoluogo"></label>
-                <select  id="00NbU0000002yGD"  name="00NbU0000002yGD"  >
-              </select>
-
-                <label for="00NbU0000002yHp" id="label_comuneevento"> </label>
-                <input  id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniList"/>
+              
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+     
+          <label for="00NbU0000003VIb" id="label_tipoproblema"></label   >   
+          <select  id="00NbU0000003VIb"  name="00NbU0000003VIb"  >
+          </select>
 
 
 
@@ -442,19 +456,17 @@
 
 
 
-        <!--flag ricorso sanzione-->
+        <!--flag segnalazione call center-->
         <input
-          id="00NbU0000001oQz"
-          name="00NbU0000001oQz"
+          id="00NbU0000003VGz"
+          name="00NbU0000003VGz"
           type="hidden"
           value="1"
         />
 
         <input type="hidden"  id="external" name="external" value="1" />
 
-        <em>
-                    <span id='label_avvertenzaprimadiinvio'></span>
-                </em>
+    
 
 
 
