@@ -31,7 +31,7 @@ const resources = {
         ultimo: ""
       },
       tooltips: {
-        accountTpl: ": Se possibile, indica l’azienda a cui compete il servizio dove presumi che sia avvenuto lo smarrimento. Se non sai quale azienda indicare, scegli l’opzione TPL FVG",
+        accountTpl: "Se possibile, indica l’azienda a cui compete il servizio dove presumi che sia avvenuto lo smarrimento. Se non sai quale azienda indicare, scegli l’opzione TPL FVG",
         servizio:"Seleziona il servizio dove presumi che lo smarrimento sia avvenuto. Se non sai quale servizio indicare, non compilare questo campo",
         dataoraevento:"Anche se non sei certo di quando lo smarrimento sia avvenuto, indica una data e un’ora presunte",
         linea:"Questo campo si attiva dopo aver selezionato l’azienda di riferimento. Le linee proposte dipendono dall’azienda selezionata. Se come azienda di riferimento hai selezionato TPL FVG, l’elenco includerà tutte le linee operate da Tpl Fvg in Friuli Venezia Giulia e nelle aree confinanti. Se non sai su quale linea sia avvenuto lo smarrimento, non compilare questo campo",
@@ -42,13 +42,40 @@ const resources = {
   en: {
     translation: {
       labels: {
-
+        erroreCampoObbligatorio: "You must fill this field",
+          seleziona: "--Select--",
+          legendanagrafica: "PERSONAL DETAILS",
+          nome: "First name",
+          cognome: "Last name",
+          nazione: "Country",
+          comune: "Municipality",
+          indirizzo: "Residential address (street, square, avenue, street n°) ",
+          citta: "City",
+          localita: "Locality",
+          cap: "ZIP Code",
+          provincia: "Province",
+          mail: "E-mail",
+          prefissotelefonico: "International phone prefix ",
+          numerotelefonico: "Phone number",
+          legendainfoevento: "WHERE DO YOU BELIEVE THE ITEM WAS LOST?",
+          accountTpl: "Reference company",
+          servizio: "Type of service",
+          dataoraevento: "Date and time of the loss",
+          comuneevento: "Municipality where the loss presumably occurred",
+          linea: "Line where the loss presumably occurred",
+          direzione: "Direction (specify the terminal or landing destination)",
+          descrizione: "Description of the lost item",
+          introdescrizione: "Please describe the lost item in as much detail as possible. Indicate, if available, the color, any names or labels, the material, and other distinguishing features. Examples of lost items include: backpacks, bags, drawing portfolios, books, mobile phones, wallets, keys, glasses, clothing, tickets, or travel passes. A detailed description helps facilitate the identification of the item. If you wish to attach images or other useful documents, you may do so by replying directly to the notification email you will receive after completing this form",
+          invia: "Report lost item",
 
         ultimo: ""
 
       },
       tooltips: {
-
+        accountTpl: "If possible, indicate the company responsible for the service where you believe the item was lost. If you are unsure which company to select, choose the TPL FVG option",
+          servizio:"Select the service where you believe the item was lost. If you are not sure which service to indicate, leave this field blank",
+          dataoraevento:"Even if you're not sure when the item was lost, please provide an estimated date and time",
+          linea:"This field becomes active after selecting the relevant company. The available routes depend on the selected company. If you selected TPL FVG as the company, the list will include all routes operated by Tpl Fvg in Friuli Venezia Giulia and neighboring areas. If you are not sure on which route the item was lost, leave this field blank",
         ultimo: ""
 
 
