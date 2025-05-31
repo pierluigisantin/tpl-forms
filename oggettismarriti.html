@@ -57,45 +57,11 @@
 }
 
 
-    function caricaTipoLuogo() {
-        const selectTipoLuogo = document.getElementById("00NbU0000002yGD");
-        selectTipoLuogo.innerHTML = "";
-        const options = t("labels.tipoluogoOptions", { returnObjects: true });
-
-        options.forEach((opt, index) => {
-          const optionEl = document.createElement("option");
-          optionEl.textContent = opt;
-          optionEl.value = opt;
+   
 
 
 
-          selectTipoLuogo.appendChild(optionEl);
-        });
-
-}
-
-
-
-   //carica tipo soggetto     
-  function caricaTipoSoggetto() {
-  const selectTipoSoggetto = document.getElementById("00NbU0000001klb");
-  selectTipoSoggetto.innerHTML = "";
-  const options = t("labels.tipoSoggettoOptions", { returnObjects: true });
-
-  options.forEach((opt, index) => {
-    const optionEl = document.createElement("option");
-    optionEl.textContent = opt;
-    optionEl.value = opt;
-
-    // Imposta la prima opzione come selezionata di default
-    if (index === 1) {
-      optionEl.selected = true;
-    }
-
-    selectTipoSoggetto.appendChild(optionEl);
-  });
-    toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper");
-}
+  
 
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -143,8 +109,7 @@
           toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper",["privato cittadino", "individual"]);
         });
 
-       caricaTipoSoggetto();
-        caricaTipoLuogo();
+
 
 
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
@@ -156,8 +121,7 @@
             caricaDatalistComuniENazioni(comuniNazioniUrl, newLang, comuneListId, nazioniListId, campoNazioneId);
             const aziendaId = document.getElementById("00NbU0000002bl3").value;
             caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
-            caricaTipoSoggetto();
-            caricaTipoLuogo();
+
           });
         });
 
@@ -252,13 +216,7 @@
               <label for="00NbU0000001klo" id="label_numerotelefonico" ></label>
               <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
 
-          <label for="00NbU0000002yEb" id="label_abbonatosino">Reclamo Abbonato si/no:</label>
-          <select  id="00NbU0000002yEb" name="00NbU0000002yEb" title="Reclamo Abbonato si/no"><option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
-          <option value="No">No</option>
-          </select><br>
-
-              <label for="00NbU0000001kls" id="label_numerotesserinoidentificativo"></label>
-              <input id="00NbU0000001kls" name="00NbU0000001kls" type="text" />
+        
 
 
 
@@ -347,10 +305,10 @@
 
 
 
-        <!--flag reclamo-->
+        <!--flag oggetti smarriti-->
         <input
-          id="00NJ6000006biAk"
-          name="00NJ6000006biAk"
+          id="00NbU0000001shV"
+          name="00NbU0000001shV"
           type="hidden"
           value="1"
         />
