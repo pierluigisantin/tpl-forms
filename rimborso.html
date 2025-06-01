@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Rimborso</title>
+  <link rel="stylesheet" href="webToCaseStyle.css" />
+
+  <script src="https://unpkg.com/i18next@22.4.10/i18next.min.js"></script>
+  <!-- PRIMA Popper.js -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <!-- POI Tippy.js -->
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+
+    function timestamp() {var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);} } setInterval(timestamp, 500); 
+  </script>
+  <script src="webToCaseUtils.js"></script>
+  <script src="rimborso_traduzioni.js"></script>
+  <script>
+    var lang;
+    let t;
+    var aziendaId;
+
+    const requiredFields = [
+      "tipoSoggetto",
+      "nome",
+      "cognome",
+      "nazione",
+      "mail",
+      "accountTpl",
+      "descrizione",
+      "privacy"
+    ];
+
+    const comuneListId = "comuniList";
+    const nazioniListId = "nazioniList";
+    const campoNazioneId = "00NbU0000001klm";
+
+    var fields = [];
+    function attivaDebugSubmit() {
+      const campiDebug = [
+        "00NbU0000001kln", // nome
+        "00NbU0000001klf", // cognome
+        "email",           // email
+        "description",     // descrizione
+        "orgid", "retURL", "debug", "debugEmail"
+      ];
+
+      const form = document.getElementById("formReclamo");
+      Array.from(form.elements).forEach(el => {
+        if (!campiDebug.includes(el.name)) {
+          el.removeAttribute("name");
+        }
+      });
+    }
+
+
+    function caricaTipoLuogo() {
+      const selectTipoLuogo = document.getElementById("00NbU0000002yGD");
+      selectTipoLuogo.innerHTML = "";
+      const options = t("labels.tipoluogoOptions", {returnObjects: true});
+
+      options.forEach((opt, index) => {
+        const optionEl = document.createElement("option");
+        optionEl.textContent = opt;
+        optionEl.value = opt;
+
+
+
+        selectTipoLuogo.appendChild(optionEl);
+      });
+
+    }
+
+
+
+    //carica tipo soggetto     
+    function caricaTipoSoggetto() {
+      const selectTipoSoggetto = document.getElementById("00NbU0000001klb");
+      selectTipoSoggetto.innerHTML = "";
+      const options = t("labels.tipoSoggettoOptions", {returnObjects: true});
+
+      options.forEach((opt, index) => {
+        const optionEl = document.createElement("option");
+        optionEl.textContent = opt;
+        optionEl.value = opt;
+
+        // Imposta la prima opzione come selezionata di default
+        if (index === 1) {
+          optionEl.selected = true;
+        }
+
+        selectTipoSoggetto.appendChild(optionEl);
+      });
+      toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper");
+    }
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      fields = estraiCampiDaLabel();
+
+      lang = new URLSearchParams(location.search).get("lang") || "it";
+
+      i18next.init({lng: lang, resources}, (_, tInstance) => {
+        t = tInstance; // 👈 assegna t a una variabile globale
+        aggiornaEtichette(t, fields);
+
+        const comuniNazioniUrl = "https://tplfvg.my.salesforce-sites.com/forms/resource/ComuniNazioni";
+        const aziendeTplUrl = "https://tplfvg.my.salesforce-sites.com/forms/resource/AziendeTPL_json";
+        const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
+        const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
+        const fermateUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
+        const prefissiUrl = "https://form-tpl-final.glitch.me/prefissi.json"
+
+        caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
+        caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
+        caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t);
+
+        document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
+          aziendaId = e.target.value;
+          const servizioId = '';
+          caricaServizi("00NbU0000002hld", serviziUrl, e.target.value, lang, t);
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t);
+        });
+
+        document.getElementById("00NbU0000002hld")?.addEventListener("change", e => {
+          const servizioId = e.target.value;
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t);
+        });
+
+        document.getElementById("00NbU0000001klj")?.addEventListener("change", e => {
+          caricaFermate("00NbU0000001klk", fermateUrl, e.target.value, t);
+        });
+
+        document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
+          toggleIndirizzo("00NbU0000001klm", "indirizzoWrapper", lang);
+        });
+
+        document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
+          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper", ["privato cittadino", "individual"]);
+        });
+
+        caricaTipoSoggetto();
+        caricaTipoLuogo();
+
+
+        document.getElementById("languageSwitcher")?.addEventListener("change", e => {
+          const newLang = e.target.value;
+          lang = newLang;
+          i18next.changeLanguage(newLang, () => {
+            const newT = i18next.t.bind(i18next);
+            aggiornaEtichette(newT, fields);
+            caricaDatalistComuniENazioni(comuniNazioniUrl, newLang, comuneListId, nazioniListId, campoNazioneId);
+            const aziendaId = document.getElementById("00NbU0000002bl3").value;
+            caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
+            caricaTipoSoggetto();
+            caricaTipoLuogo();
+          });
+        });
+
+        document.getElementById("formReclamo")?.addEventListener("submit", e => {
+          //attivaDebugSubmit(); // <<<< Abilita solo alcuni campi
+
+
+          if (!validazioneCampiObbligatori("formReclamo", t)) {
+            e.preventDefault();
+          }
+          formattaDataEvento("data_evento_visible", "00NbU0000001klh");
+
+
+          const validCampi = validazioneCampiObbligatori("formReclamo", t);
+
+          const validCaptcha = validaCaptcha(t, "captchaError");
+
+          if (!validCampi || !validCaptcha) {
+            e.preventDefault();
+            return;
+          }
+
+
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="form-container">
+    <select id="languageSwitcher">
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+    <br>
+    <form id="formReclamo" method="POST"
+      action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D06000001Tz0T" novalidate>
+
+      <input type="hidden" name="orgid" value="00D06000001Tz0T" />
+      <input type="hidden" name="retURL" value="" />
+
+
+      <input type="hidden" name="captcha_settings"
+        value='{"keyname":"captchatplv2","fallback":"true","orgId":"00D06000001Tz0T","ts":""}'>
+
+
+      <input type="hidden" name="debug" value="1">
+      <input type="hidden" name="debugEmail" value="p.santin@e-deimos.it">
+
+      <fieldset>
+        <legend><span id="label_legendanagrafica"></span></legend>
+
+        <label for="00NbU0000001klb" id="label_tipoSoggetto"></label>
+        <select id="00NbU0000001klb" name="00NbU0000001klb">
+        </select>
+
+
+        <div id="ragioneSocialeWrapper">
+          <label for="00NbU0000001klq" id="label_ragioneSociale"></label>
+          <input id="00NbU0000001klq" name="00NbU0000001klq" type="text" />
+          <div class="error-message" id="error_ragioneSociale"></div>
+        </div>
+
+
+        <label for="00NbU0000001kln" id="label_nome"></label>
+        <input id="00NbU0000001kln" name="00NbU0000001kln" type="text" />
+
+
+        <label for="00NbU0000001klf" id="label_cognome"></label>
+        <input id="00NbU0000001klf" name="00NbU0000001klf" type="text" />
+
+        <label for="00NbU0000003FDp" id="label_cfdichiarante"></label>
+        <input id="00NbU0000003FDp" maxlength="50" name="00NbU0000003FDp" size="20" type="text" />
+
+
+        <label for="00NbU0000001klm" id="label_nazione"></label>
+        <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
+        <datalist id="nazioniList"></datalist>
+
+
+
+        <label for="00NbU0000001kli" id="label_indirizzo"></label>
+        <input id="00NbU0000001kli" name="00NbU0000001kli" type="text" />
+
+
+        <div id="indirizzoItaliaWrapper">
+
+
+          <label for="00NbU0000001klg" id="label_comune">Comune:</label>
+          <input id="00NbU0000001klg" name="00NbU0000001klg" list="comuniList" />
+          <datalist id="comuniList"></datalist>
+
+
+        </div>
+
+        <div id="indirizzoEsteroWrapper" style="display:none">
+
+
+
+          <label for="00NbU0000003Id7" id="label_citta"></label>
+          <input id="00NbU0000003Id7" maxlength="255" name="00NbU0000003Id7" size="20" type="text" />
+
+
+          <label for="00NbU0000003Iej" id="label_localita"></label>
+          <input id="00NbU0000003Iej" maxlength="255" name="00NbU0000003Iej" size="20" type="text" />
+
+
+          <label for="00NbU0000001kld" id="label_cap"></label>
+          <input id="00NbU0000001kld" maxlength="20" name="00NbU0000001kld" size="20" type="text" />
+
+
+          <label for="00NbU0000001klp" id="label_provincia"></label>
+          <input id="00NbU0000001klp" maxlength="100" name="00NbU0000001klp" size="20" type="text" />
+
+
+        </div>
+
+
+
+
+
+
+        <label for="email" id="label_mail">Email:</label>
+        <input id="email" maxlength="80" name="email" size="20" />
+
+
+        <label for="00NbU0000002837" id="label_prefissotelefonico"></label>
+        <select id="00NbU0000002837" name="00NbU0000002837">
+        </select>
+
+        <label for="00NbU0000001klo" id="label_numerotelefonico"></label>
+        <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
+
+
+
+
+
+      </fieldset>
+      <fieldset>
+        <legend><span id="label_datiintestatario"> </span></legend>
+        <label for="00NbU0000001odt" id="label_nomeintestatario">Nome </label>
+        <input id="00NbU0000001odt" maxlength="100" name="00NbU0000001odt" size="20" type="text" />
+
+        <label for="00NbU0000001ofV" id="label_cognomeintestatario"></label>
+        <input id="00NbU0000001ofV" maxlength="200" name="00NbU0000001ofV" size="20" type="text" />
+
+        <label for="00NbU0000001olx" id="label_datanascitaintestatario"></label>
+        <input  id="00NbU0000001olx" name="00NbU0000001olx" type="date"  /> 
+
+        <label for="00NbU0000003FLt" id="label_cfintestatario"></label>
+        <input  id="00NbU0000003FLt" maxlength="50" name="00NbU0000003FLt" size="20" type="text" />
+
+          <label for="00NbU0000001oij" id="label_nazioneintestatario"></label>
+          <input id="00NbU0000001oij" name="00NbU0000001oij" list="nazioniList"/>
+
+          
+
+
+        
+      </fieldset>
+      <fieldset>
+        <legend><span id="label_legendainfoevento"> </span></legend>
+
+
+
+        <label for="00NbU0000002bl3" id="label_accountTpl">
+        </label>
+        <select id="00NbU0000002bl3" name="00NbU0000002bl3">
+
+        </select>
+
+
+
+
+        <label for="00NbU0000002hld" id="label_servizio" class="required">
+        </label>
+        <select id="00NbU0000002hld" name="00NbU0000002hld">
+
+        </select>
+
+
+
+
+
+
+
+
+
+
+
+        <label for="data_evento_visible" id="label_dataoraevento"></label>
+        <input id="data_evento_visible" type="datetime-local" />
+        <input id="00NbU0000001klh" name="00NbU0000001klh" size="20" type="text" style="display:none;" />
+
+        <label for="00NbU0000002yGD" id="label_tipoluogo"></label>
+        <select id="00NbU0000002yGD" name="00NbU0000002yGD">
+        </select>
+
+        <label for="00NbU0000002yHp" id="label_comuneevento"> </label>
+        <input id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniList" />
+
+
+
+
+
+
+
+
+        <label for="00NbU0000002yJR" id="label_frazioneevento"></label>
+        <input id="00NbU0000002yJR" maxlength="255" name="00NbU0000002yJR" size="20" type="text" />
+
+        <label for="00NbU0000001klj" id="label_linea">
+        </label>
+        <select id="00NbU0000001klj" name="00NbU0000001klj">
+        </select>
+
+
+
+        <label for="00NbU0000001klk" id="label_fermata">
+        </label>
+        <select id="00NbU0000001klk" name="00NbU0000001klk">
+        </select>
+
+
+        <label for="00NbU0000002hnF" id="label_direzione"></label>
+        <input id="00NbU0000002hnF" maxlength="255" name="00NbU0000002hnF" size="20" type="text" /><br>
+
+
+
+        <label for="00NJ6000002ydRf" id="label_nvettura"></label>
+        <input id="00NJ6000002ydRf" name="00NJ6000002ydRf" type="text" />
+
+
+
+
+        <label for="description" id="label_descrizione"></label>
+        <em>
+          <span id='label_introdescrizione'></span>
+        </em>
+        <textarea id="description" name="description" rows="10" maxlength="30000"></textarea>
+
+      </fieldset>
+
+
+
+
+
+
+
+
+
+      <!--flag richiesta rimborso-->
+      <input id="00NJ6000002ydRg" name="00NJ6000002ydRg" type="hidden" value="1" />
+
+      <input type="hidden" id="external" name="external" value="1" /><br>
+      <br>
+      <div class="g-recaptcha" data-sitekey="6LcKTugqAAAAAB9mkWg5p3floGYNeNVAXY6Z6c8P"></div><br>
+      <div id="captchaError" class="error-message" style="display: none;"></div>
+
+      <input type="submit" id="submitBtn" value="Invia Reclamo" />
+    </form>
+  </div>
+</body>
+
+</html>
