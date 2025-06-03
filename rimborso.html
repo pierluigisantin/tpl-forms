@@ -58,22 +58,7 @@
     }
 
 
-    function caricaTipoLuogo() {
-      const selectTipoLuogo = document.getElementById("00NbU0000002yGD");
-      selectTipoLuogo.innerHTML = "";
-      const options = t("labels.tipoluogoOptions", {returnObjects: true});
 
-      options.forEach((opt, index) => {
-        const optionEl = document.createElement("option");
-        optionEl.textContent = opt;
-        optionEl.value = opt;
-
-
-
-        selectTipoLuogo.appendChild(optionEl);
-      });
-
-    }
 
 
 
@@ -120,32 +105,31 @@
         caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
         caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t);
 
-        document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
-          aziendaId = e.target.value;
-          const servizioId = '';
-          caricaServizi("00NbU0000002hld", serviziUrl, e.target.value, lang, t);
-          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t);
-        });
+   
 
-        document.getElementById("00NbU0000002hld")?.addEventListener("change", e => {
-          const servizioId = e.target.value;
-          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t);
-        });
+       
 
-        document.getElementById("00NbU0000001klj")?.addEventListener("change", e => {
-          caricaFermate("00NbU0000001klk", fermateUrl, e.target.value, t);
-        });
+       
 
         document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
-          toggleIndirizzo("00NbU0000001klm", "indirizzoWrapper", lang);
+          toggleIndirizzo("00NbU0000001klm", "indirizzoItaliaWrapper", lang);
+          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
         });
 
+        //pippo
+        document.getElementById("00NbU0000001oij")?.addEventListener("change", () => {
+          toggleIndirizzo("00NbU0000001oij", "indirizzoInteressatoItaliaWrapper", lang);
+          toggleIndirizzo("00NbU0000001oij", "indirizzoInteressatoEsteroWrapper", lang, true);
+        });
+        
+
         document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
-          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper", ["privato cittadino", "individual"]);
+          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper", ["persona fisica", "individual"]);
         });
 
         caricaTipoSoggetto();
-        caricaTipoLuogo();
+
+
 
 
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
@@ -158,7 +142,7 @@
             const aziendaId = document.getElementById("00NbU0000002bl3").value;
             caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
             caricaTipoSoggetto();
-            caricaTipoLuogo();
+
           });
         });
 
@@ -217,10 +201,10 @@
         </select>
 
 
-        <div id="ragioneSocialeWrapper">
+        <div id="ragioneSocialeWrapper" style="display:none;">
           <label for="00NbU0000001klq" id="label_ragioneSociale"></label>
           <input id="00NbU0000001klq" name="00NbU0000001klq" type="text" />
-          <div class="error-message" id="error_ragioneSociale"></div>
+
         </div>
 
 
@@ -234,6 +218,8 @@
         <label for="00NbU0000003FDp" id="label_cfdichiarante"></label>
         <input id="00NbU0000003FDp" maxlength="50" name="00NbU0000003FDp" size="20" type="text" />
 
+        <label for="00NbU0000001oaf" id="label_datanascitadichiarante"></label>
+          <input  id="00NbU0000001oaf" name="00NbU0000001oaf"   type="date" /> 
 
         <label for="00NbU0000001klm" id="label_nazione"></label>
         <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
@@ -307,31 +293,35 @@
         <input id="00NbU0000001ofV" maxlength="200" name="00NbU0000001ofV" size="20" type="text" />
 
         <label for="00NbU0000001olx" id="label_datanascitaintestatario"></label>
-        <input  id="00NbU0000001olx" name="00NbU0000001olx" type="date"  /> 
+        <input id="00NbU0000001olx" name="00NbU0000001olx" type="date" />
 
         <label for="00NbU0000003FLt" id="label_cfintestatario"></label>
-        <input  id="00NbU0000003FLt" maxlength="50" name="00NbU0000003FLt" size="20" type="text" />
+        <input id="00NbU0000003FLt" maxlength="50" name="00NbU0000003FLt" size="20" type="text" />
 
-          <label for="00NbU0000001oij" id="label_nazioneintestatario"></label>
-          <input id="00NbU0000001oij" name="00NbU0000001oij" list="nazioniList"/>
+        <label for="00NbU0000001oij" id="label_nazioneintestatario"></label>
+        <input id="00NbU0000001oij" name="00NbU0000001oij" list="nazioniList" />
 
-        <label for="00NbU0000003VaL" id="label_indirizzointestatario"></label>  
-        <input  id="00NbU0000003VaL" maxlength="255" name="00NbU0000003VaL" size="20" type="text" />
+        <label for="00NbU0000003VaL" id="label_indirizzointestatario"></label>
+        <input id="00NbU0000003VaL" maxlength="255" name="00NbU0000003VaL" size="20" type="text" />
+        <div id="indirizzoInteressatoItaliaWrapper">
+              <label for="00NbU0000003jLZ" id="label_comuneintestatario"></label>
+              <input id="00NbU0000003jLZ" maxlength="255" name="00NbU0000003jLZ" size="20" list="comuniList" />
+          </div>
+        <div  id="indirizzoInteressatoEsteroWrapper" style="display:none;">
+                  <label for="00NbU0000003ivl" id="label_cittaintestatario"></label>
+                  <input id="00NbU0000003ivl" maxlength="255" name="00NbU0000003ivl" size="20" type="text" />
+          
+                  <label for="00NbU0000003j0b" id="label_capintestatario"></label>
+                  <input id="00NbU0000003j0b" maxlength="100" name="00NbU0000003j0b" size="20" type="text" /><br>
+          
+                  <label for="00NbU0000003ixN" id="label_localitaintestatario"></label>
+                  <input id="00NbU0000003ixN" maxlength="255" name="00NbU0000003ixN" size="20" type="text" />
+          
+                  <label for="00NbU0000003iyz" id="label_provinciaintestatario"></label>
+                  <input id="00NbU0000003iyz" maxlength="255" name="00NbU0000003iyz" size="20" type="text" />
+          </div>
 
-        <label for="00NbU0000003ivl" id="label_cittaintestatario"></label>  
-        <input  id="00NbU0000003ivl" maxlength="255" name="00NbU0000003ivl" size="20" type="text" />
 
-        <label for="00NbU0000003j0b" id="label_capintestatario"></label>
-        <input  id="00NbU0000003j0b" maxlength="100" name="00NbU0000003j0b" size="20" type="text" /><br>
-
-        <label for="00NbU0000003ixN" id="label_localitaintestatario"></label>  
-        <input  id="00NbU0000003ixN" maxlength="255" name="00NbU0000003ixN" size="20" type="text" />
-
-        <label for="00NbU0000003iyz" id="label_provinciaintestatario"></label>  
-        <input  id="00NbU0000003iyz" maxlength="255" name="00NbU0000003iyz" size="20" type="text" />
-
-
-        
       </fieldset>
       <fieldset>
         <legend><span id="label_datiabbonamento"> </span></legend>
@@ -347,65 +337,36 @@
 
 
 
-        
+
 
         <label for="00NbU0000001kls" id="label_numerotesserinoidentificativo"></label>
         <input id="00NbU0000001kls" name="00NbU0000001kls" type="text" />
 
+      <label for="00NbU0000003Vbx" id="label_dataemissione"> </label>
+      <input  id="00NbU0000003Vbx" name="00NbU0000003Vbx"   type="date" />
+
+        <label for="00NbU0000003VdZ" id="label_numeroserialeabbonamento"></label>
+        <input id="00NbU0000003VdZ" maxlength="100" name="00NbU0000003VdZ" size="20" type="text" /><br>
 
 
-        Numero seriale abbonamento:<input  id="00NbU0000003VdZ" maxlength="100" name="00NbU0000003VdZ" size="20" type="text" /><br>
-
-        Importo pagato:<input  id="00NbU0000003VfB" name="00NbU0000003VfB" size="20" type="text" /><br>
-
-        IBAN per rimborso:<input  id="00NbU0000003Vgn" maxlength="50" name="00NbU0000003Vgn" size="20" type="text" /><br>
-
-        Nome cognome IBAN:<input  id="00NbU0000003ViP" maxlength="255" name="00NbU0000003ViP" size="20" type="text" /><br>
-
-        Comune o stato intestatario IBAN:<input  id="00NbU0000003Vk1" maxlength="255" name="00NbU0000003Vk1" size="20" type="text" /><br>
+        <label for="00NbU0000003VfB" id="label_importopagato"></label>
+        <input id="00NbU0000003VfB" name="00NbU0000003VfB" size="20" type="text" /><br>
 
 
+        <label for="00NbU0000003Vgn" id="label_ibanrimborso"></label>
+        <input id="00NbU0000003Vgn" maxlength="50" name="00NbU0000003Vgn" size="20" type="text" /><br>
 
+        <label for="00NbU0000003ViP" id="label_nomecognomeintestatarioiban"></label>
+        <input id="00NbU0000003ViP" maxlength="255" name="00NbU0000003ViP" size="20" type="text" /><br>
 
-
-
-        <label for="00NbU0000002yGD" id="label_tipoluogo"></label>
-        <select id="00NbU0000002yGD" name="00NbU0000002yGD">
-        </select>
-
-        <label for="00NbU0000002yHp" id="label_comuneevento"> </label>
-        <input id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniList" />
+        <label for="00NbU0000003Vk1" id="label_comuneiban"></label>
+        <input id="00NbU0000003Vk1" maxlength="255" name="00NbU0000003Vk1" size="20" type="text" /><br>
 
 
 
 
 
 
-
-
-        <label for="00NbU0000002yJR" id="label_frazioneevento"></label>
-        <input id="00NbU0000002yJR" maxlength="255" name="00NbU0000002yJR" size="20" type="text" />
-
-        <label for="00NbU0000001klj" id="label_linea">
-        </label>
-        <select id="00NbU0000001klj" name="00NbU0000001klj">
-        </select>
-
-
-
-        <label for="00NbU0000001klk" id="label_fermata">
-        </label>
-        <select id="00NbU0000001klk" name="00NbU0000001klk">
-        </select>
-
-
-        <label for="00NbU0000002hnF" id="label_direzione"></label>
-        <input id="00NbU0000002hnF" maxlength="255" name="00NbU0000002hnF" size="20" type="text" /><br>
-
-
-
-        <label for="00NJ6000002ydRf" id="label_nvettura"></label>
-        <input id="00NJ6000002ydRf" name="00NJ6000002ydRf" type="text" />
 
 
 
