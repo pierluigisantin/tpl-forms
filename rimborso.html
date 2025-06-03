@@ -108,7 +108,12 @@
    
 
        
-
+        document.getElementById("00NbU0000003FDp")?.addEventListener("blur", () => {
+          validaCampoCodiceFiscale("00NbU0000003FDp", t);
+        });
+        document.getElementById("00NbU0000003FLt")?.addEventListener("blur", () => {
+          validaCampoCodiceFiscale("00NbU0000003FLt", t);
+        });
        
 
         document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
@@ -116,7 +121,7 @@
           toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
         });
 
-        //pippo
+         
         document.getElementById("00NbU0000001oij")?.addEventListener("change", () => {
           toggleIndirizzo("00NbU0000001oij", "indirizzoInteressatoItaliaWrapper", lang);
           toggleIndirizzo("00NbU0000001oij", "indirizzoInteressatoEsteroWrapper", lang, true);
@@ -153,7 +158,9 @@
           if (!validazioneCampiObbligatori("formReclamo", t)) {
             e.preventDefault();
           }
-          formattaDataEvento("data_evento_visible", "00NbU0000001klh");
+          formattaDataEvento("datanascitadichiarante_visible", "00NbU0000001oaf");
+          formattaDataEvento("datanascitaintestatario_visible","00NbU0000001olx");
+          formattaDataEvento("dataemissione_visible","00NbU0000003Vbx");
 
 
           const validCampi = validazioneCampiObbligatori("formReclamo", t);
@@ -218,8 +225,9 @@
         <label for="00NbU0000003FDp" id="label_cfdichiarante"></label>
         <input id="00NbU0000003FDp" maxlength="50" name="00NbU0000003FDp" size="20" type="text" />
 
-        <label for="00NbU0000001oaf" id="label_datanascitadichiarante"></label>
-          <input  id="00NbU0000001oaf" name="00NbU0000001oaf"   type="date" /> 
+        <label for="datanascitadichiarante_visible" id="label_datanascitadichiarante"></label>
+        <input id="datanascitadichiarante_visible" type="date" />
+          <input  id="00NbU0000001oaf" name="00NbU0000001oaf"   type="text" size="20" style="display:none;" /> 
 
         <label for="00NbU0000001klm" id="label_nazione"></label>
         <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
@@ -292,8 +300,9 @@
         <label for="00NbU0000001ofV" id="label_cognomeintestatario"></label>
         <input id="00NbU0000001ofV" maxlength="200" name="00NbU0000001ofV" size="20" type="text" />
 
-        <label for="00NbU0000001olx" id="label_datanascitaintestatario"></label>
-        <input id="00NbU0000001olx" name="00NbU0000001olx" type="date" />
+        <label for="datanascitaintestatario_visible" id="label_datanascitaintestatario"></label>
+        <input id="datanascitaintestatario_visible" type="date" />
+        <input id="00NbU0000001olx" name="00NbU0000001olx" type="text" size="20" style="display:none" />
 
         <label for="00NbU0000003FLt" id="label_cfintestatario"></label>
         <input id="00NbU0000003FLt" maxlength="50" name="00NbU0000003FLt" size="20" type="text" />
@@ -342,25 +351,26 @@
         <label for="00NbU0000001kls" id="label_numerotesserinoidentificativo"></label>
         <input id="00NbU0000001kls" name="00NbU0000001kls" type="text" />
 
-      <label for="00NbU0000003Vbx" id="label_dataemissione"> </label>
-      <input  id="00NbU0000003Vbx" name="00NbU0000003Vbx"   type="date" />
+      <label for="dataemissione_visible" id="label_dataemissione"> </label>
+      <input id="dataemissione_visible" type="date" />"  
+      <input  id="00NbU0000003Vbx" name="00NbU0000003Vbx"   type="text" size="20" style="display:none" />
 
         <label for="00NbU0000003VdZ" id="label_numeroserialeabbonamento"></label>
         <input id="00NbU0000003VdZ" maxlength="100" name="00NbU0000003VdZ" size="20" type="text" /><br>
 
 
         <label for="00NbU0000003VfB" id="label_importopagato"></label>
-        <input id="00NbU0000003VfB" name="00NbU0000003VfB" size="20" type="text" /><br>
+        <input id="00NbU0000003VfB" name="00NbU0000003VfB" size="20" type="text" /> 
 
 
         <label for="00NbU0000003Vgn" id="label_ibanrimborso"></label>
-        <input id="00NbU0000003Vgn" maxlength="50" name="00NbU0000003Vgn" size="20" type="text" /><br>
+        <input id="00NbU0000003Vgn" maxlength="50" name="00NbU0000003Vgn" size="20" type="text" /> 
 
         <label for="00NbU0000003ViP" id="label_nomecognomeintestatarioiban"></label>
-        <input id="00NbU0000003ViP" maxlength="255" name="00NbU0000003ViP" size="20" type="text" /><br>
+        <input id="00NbU0000003ViP" maxlength="255" name="00NbU0000003ViP" size="20" type="text" /> 
 
         <label for="00NbU0000003Vk1" id="label_comuneiban"></label>
-        <input id="00NbU0000003Vk1" maxlength="255" name="00NbU0000003Vk1" size="20" type="text" /><br>
+        <input id="00NbU0000003Vk1" maxlength="255" name="00NbU0000003Vk1" size="20" type="text" /> 
 
 
 

@@ -82,6 +82,7 @@ const resources = {
         cognome:"Last name",
         datanascitadichiarante:"Date of birth",
         cfdichiarante:"Codice fiscale del richiedente (obbligatorio per chi ne sia in possesso)",
+        codiceFiscaleNonValido:"Codice fiscale non valido",
         nazione:"Nazionalità",
         indirizzo:"Indirizzo di residenza (via, piazza, corso, n° civico)",
         comune:"Comune",
