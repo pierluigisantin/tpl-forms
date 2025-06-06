@@ -376,6 +376,9 @@ function validazioneCampiObbligatori(formId, t) {
     const input = document.getElementById(inputId);
     const errorId = "error_" + inputId;
 
+    // Se l'input non esiste o non è visibile, salta la validazione
+    if (!input || input.offsetParent === null) return;
+
     let error = document.getElementById(errorId);
     if (!error) {
       error = document.createElement("div");
@@ -385,11 +388,22 @@ function validazioneCampiObbligatori(formId, t) {
     }
 
     input.classList.remove("error");
+    input.removeAttribute("aria-invalid");
     error.textContent = "";
 
-    if (!input.value.trim()) {
+    let isEmpty = false;
+
+    if (input.tagName === "INPUT" || input.tagName === "TEXTAREA") {
+      isEmpty = !input.value.trim();
+    } else if (input.tagName === "SELECT") {
+      isEmpty = !input.value;
+    }
+
+    if (isEmpty) {
       input.classList.add("error");
-      error.textContent = t("labels.erroreCampoObbligatorio");
+      input.setAttribute("aria-invalid", "true");
+      const customMessage = input.getAttribute("data-error-message");
+      error.textContent = customMessage || t("labels.erroreCampoObbligatorio");
       if (!firstInvalid) firstInvalid = input;
       hasError = true;
     }
@@ -398,6 +412,7 @@ function validazioneCampiObbligatori(formId, t) {
   if (firstInvalid) firstInvalid.focus();
   return !hasError;
 }
+
 
 function aggiornaEtichette(t, fields) {
   fields.forEach(([key, id]) => {
