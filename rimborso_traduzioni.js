@@ -5,6 +5,7 @@ const resources = {
       labels: {
         legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE RICHIEDE IL RIMBORSO",
         erroreCampoObbligatorio: "Devi compilare questo campo",
+        valoreNonValidoDatalist: "Devi selezionare un valore dalla lista",
         seleziona: "--Seleziona--",
         tipoSoggetto: "Chi è il soggetto che presenta il reclamo",
         tipoSoggettoOptions: ["--Seleziona--", "Persona fisica", "Associazione o ente"
@@ -73,6 +74,7 @@ const resources = {
     translation: {
       labels: {
         erroreCampoObbligatorio: "You must fill this field",
+        valoreNonValidoDatalist: "You must select a value from list",
         seleziona: "--Select--",
         tipoSoggetto: "Who is requesting the refund?",
         tipoSoggettoOptions: ["--Select--", "Individual", "Association or organization"

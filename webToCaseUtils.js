@@ -515,3 +515,30 @@ function validaCampoCodiceFiscale(idCampo, t) {
 
   return true;
 }
+function enforceDatalistConstraint(inputEl, t) {
+  if (!inputEl || !inputEl.list) {
+    console.warn("Campo input non valido o senza datalist associata.");
+    return;
+  }
+
+  const datalist = inputEl.list;
+  const inputId = inputEl.id;
+
+  inputEl.addEventListener("input", () => {
+    const val = inputEl.value;
+    const isValid = Array.from(datalist.options).some(opt => opt.value === val);
+
+    const errorDiv = document.getElementById("error_" + inputId);
+
+    if (!isValid && val.trim() !== "") {
+      inputEl.classList.add("error");
+      mostraErroreCampo(
+        inputId,
+        t?.("labels.valoreNonValidoDatalist") || "Seleziona un valore dalla lista"
+      );
+    } else {
+      inputEl.classList.remove("error");
+      if (errorDiv) errorDiv.textContent = "";
+    }
+  });
+}

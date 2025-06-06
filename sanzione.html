@@ -156,6 +156,13 @@
        caricaTipoSoggetto();
         caricaTipoLuogo();
 
+        //nazione
+        enforceDatalistConstraint(document.getElementById("00NbU0000001klm"),t);
+        //comune
+        enforceDatalistConstraint(document.getElementById("00NbU0000001klg"),t);
+        //comune-evento
+        enforceDatalistConstraint(document.getElementById("00NbU0000002yHp"),t);
+
 
         document.getElementById("00NbU0000003FDp")?.addEventListener("blur", () => {
           validaCampoCodiceFiscale("00NbU0000003FDp", t);

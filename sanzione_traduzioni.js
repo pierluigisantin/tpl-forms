@@ -7,7 +7,7 @@
         erroreCampoObbligatorio: "Devi compilare questo campo",
         seleziona: "--Seleziona--",
         codiceFiscaleNonValido:"Il codice fiscale inserito non è valido",
-
+        valoreNonValidoDatalist: "Devi selezionare un valore dalla lista",
         legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE PRESENTA IL RICORSO (PERSONA SANZIONATA SE MAGGIORENNE, OPPURE GENITORE O TUTORE SE MINORENNE)",
         nome:"Nome",
         cognome:"Cognome",
@@ -68,7 +68,7 @@
         erroreCampoObbligatorio: "You must fill this field",
         seleziona: "--Select--",
         codiceFiscaleNonValido:"The fiscal/tax code entered is not valid",
-
+        valoreNonValidoDatalist: "You must select a value from list",
         legendanagrafica:"PERSONAL DETAILS OF THE PERSON SUBMITTING THE APPEAL (FINED PERSON IF OF LEGAL AGE, OR PARENT/LEGAL GUARDIAN IF THE FINED PERSON IS A MINOR)",
         nome:"Name",
         cognome:"Last name",

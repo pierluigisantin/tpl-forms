@@ -3,7 +3,7 @@ const resources = {
     translation: {
       labels: {
         legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE PRESENTA IL RECLAMO",
-
+        valoreNonValidoDatalist:"Devi selezionare un valore valido dalla lista",
         erroreCampoObbligatorio: "Devi compilare questo campo",
         seleziona: "--Seleziona--",
 
@@ -89,7 +89,7 @@ const resources = {
     translation: {
       labels: {
         legendanagrafica:"PERSONAL DETAILS OF THE PERSON SUBMITTING THE COMPLAINT",
-
+        valoreNonValidoDatalist:"You must selecta a value from list",
         erroreCampoObbligatorio: "You must fill in this field",
         seleziona: "--Select--",
 
