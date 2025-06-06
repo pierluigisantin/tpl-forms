@@ -71,14 +71,7 @@ function caricaServizi(selectId, url, idAzienda, lang, t) {
           idAzienda === "001bU000007Q8fWQAS" // TPL FVG
       );
 
-      // Ordina alfabeticamente in base al nome visualizzato
-      serviziFiltrati.sort((a, b) => {
-        const nomeA =
-          lang === "en" && a.Nome_in_inglese__c ? a.Nome_in_inglese__c : a.Name;
-        const nomeB =
-          lang === "en" && b.Nome_in_inglese__c ? b.Nome_in_inglese__c : b.Name;
-        return -1 * nomeA.localeCompare(nomeB);
-      });
+    
 
       serviziFiltrati.forEach((servizio) => {
         const opt = document.createElement("option");

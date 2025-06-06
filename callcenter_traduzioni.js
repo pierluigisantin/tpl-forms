@@ -11,7 +11,7 @@ const resources = {
         cognome: "Cognome",
         nazione: "Nazionalità",
         indirizzo: "Indirizzo di residenza (via, piazza, corso)",
-        ncivico:"N° civico",
+        ncivico: "N° civico",
         comune: "Comune",
         citta: "Città",
         localita: "Località",
@@ -39,6 +39,15 @@ const resources = {
         descrizione: "Descrizione dell'evento",
         introdescrizione: "Descrivi il problema in modo sintetico ma completo, fornendo tutte le informazioni utili per la ricostruzione della chiamata. Se desideri allegare immagini, titoli di viaggio o altri documenti utili, potrai farlo rispondendo alla e-mail di notifica che riceverai dopo aver compilato questo form.",
         invia: "Invia segnalazione",
+        consensoobbligatorio: "CONSENSO OBBLIGATORIO",
+        privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto",
+        consensofacoltativo: "CONSENSI FACOLTATIVI",
+        indaginidemoscopiche: "Acconsento a essere contattato da Tpl Fvg, anche tramite e-mail, per partecipare a indagini demoscopiche o ricerche di mercato sul livello di soddisfazione e sull’utilizzo dei servizi di trasporto pubblico locale",
+        attivitacommerciali: "Acconsento a ricevere comunicazioni relative a offerte commerciali, promozioni, agevolazioni o sconti su prodotti, servizi e attività di Tpl Fvg o delle aziende consorziate",
+        analisipreferenze: "Acconsento all’analisi delle mie preferenze e abitudini di utilizzo del trasporto pubblico locale, anche mediante elaborazioni elettroniche, al fine di migliorare l’offerta, soddisfare specifiche esigenze, orientare la pianificazione del servizio e ricevere comunicazioni personalizzate da parte di Tpl Fvg o delle aziende consorziate",
+        comunicazionepartner: "Acconsento a ricevere comunicazioni pubblicitarie, promozioni e informazioni commerciali relative a prodotti, servizi e attività di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate",
+        cessioneterzi: "Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing",
+
         ultimo: ""
       },
       tooltips: {
@@ -63,7 +72,7 @@ const resources = {
         cognome: "Last Name",
         nazione: "Country",
         indirizzo: "Address (street, square, avenue) ",
-        ncivico:"Street N°",
+        ncivico: "Street N°",
         comune: "Municipality",
         citta: "City",
         localita: "Locality",
@@ -92,6 +101,15 @@ const resources = {
         ],
         descrizione: "Description of the event",
         introdescrizione: "Please describe the issue briefly but thoroughly, providing all information useful for reconstructing the call. If you wish to attach images, travel tickets, or other relevant documents, you can do so by replying directly to the notification e-mail you will receive after submitting this form.",
+        consensoobbligatorio: "CONSENSO OBBLIGATORIO",
+        privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto",
+        consensofacoltativo: "CONSENSI FACOLTATIVI",
+        indaginidemoscopiche: "Acconsento a essere contattato da Tpl Fvg, anche tramite e-mail, per partecipare a indagini demoscopiche o ricerche di mercato sul livello di soddisfazione e sull’utilizzo dei servizi di trasporto pubblico locale",
+        attivitacommerciali: "Acconsento a ricevere comunicazioni relative a offerte commerciali, promozioni, agevolazioni o sconti su prodotti, servizi e attività di Tpl Fvg o delle aziende consorziate",
+        analisipreferenze: "Acconsento all’analisi delle mie preferenze e abitudini di utilizzo del trasporto pubblico locale, anche mediante elaborazioni elettroniche, al fine di migliorare l’offerta, soddisfare specifiche esigenze, orientare la pianificazione del servizio e ricevere comunicazioni personalizzate da parte di Tpl Fvg o delle aziende consorziate",
+        comunicazionepartner: "Acconsento a ricevere comunicazioni pubblicitarie, promozioni e informazioni commerciali relative a prodotti, servizi e attività di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate",
+        cessioneterzi: "Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing",
+
         invia: "Report issue",
 
         ultimo: ""

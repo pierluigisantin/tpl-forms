@@ -117,8 +117,9 @@
           t = tInstance; // 👈 assegna t a una variabile globale
           aggiornaEtichette(t, fields);
 
-         const comuniNazioniUrl = "https://tplfvg.my.salesforce-sites.com/forms/resource/ComuniNazioni";
-         const aziendeTplUrl="https://tplfvg.my.salesforce-sites.com/forms/resource/AziendeTPL_json";
+        const comuniServizioUrl="comuni_servizio.json"
+        const comuniNazioniUrl = "valori_comuni_nazioni.json";
+        const aziendeTplUrl = "aziendeTPL.json";
          const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
          const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
          const fermateUrl= "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
@@ -127,6 +128,7 @@
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
         caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
         caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t);
+         caricaDatalistComuni(comuniServizioUrl, t, "comuniServizioList");
 
         document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
           aziendaId=e.target.value;
@@ -419,7 +421,8 @@
               </select>
 
                 <label for="00NbU0000002yHp" id="label_comuneevento"> </label>
-                <input  id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniList"/>
+                <input  id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniServizioList"/>
+          <datalist id="comuniServizioList"></datalist>
 
 
 
@@ -452,7 +455,58 @@
 
 
 
+        <fieldset>
+          <legend><span id="label_consensoobbligatorio"> </span></legend>
 
+
+          <label for="00NbU0000000KEr"   id="label_privacy" ></label>
+          <select  id="00NbU0000000KEr" name="00NbU0000000KEr"  >
+            <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
+          </select><br>
+        </fieldset>
+        <fieldset>
+
+           <legend><span id="label_consensofacoltativo"> </span></legend>   
+
+          <label for="00NbU0000002hs5" id="label_indaginidemoscopiche"></label>
+          <select  id="00NbU0000002hs5" name="00NbU0000002hs5"  >
+            <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>       
+
+          </select><br>
+
+        <label for="00NbU0000002hth" id="label_attivitacommerciali"></label>
+          <select  id="00NbU0000002hth" name="00NbU0000002hth"  >
+            <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
+          </select><br>
+
+         <label for="00NbU0000002hvJ" id="label_analisipreferenze"></label>
+          <select  id="00NbU0000002hvJ" name="00NbU0000002hvJ"  >
+            <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
+          </select><br>
+
+
+        <label for="00NbU0000002hwv"  id="label_comunicazionepartner"></label>
+          <select  id="00NbU0000002hwv" name="00NbU0000002hwv"  >
+            <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
+          </select><br>
+
+          <label for="00NbU0000002yOH" id="label_cessioneterzi"></label>
+          <select  id="00NbU0000002yOH" name="00NbU0000002yOH" title="Acconsente cessione terzi"><option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
+          </select><br>
+
+
+
+
+
+
+
+         </fieldset>  
 
 
 

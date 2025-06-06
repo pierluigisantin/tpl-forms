@@ -72,7 +72,7 @@ const resources = {
 
         numerotesserinoidentificativo:`<div>
               È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo, sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/>
-              <img src="abbonamento_tipo.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
+              <img src="immagine_tooltip_abbonamenti.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
             </div>`,
 
         accountTpl:"Seleziona l’azienda territorialmente competente. Se non sai quale azienda indicare, o se l’evento non è riconducibile a una singola azienda consorziata, scegli l’opzione TPL FVG.",
@@ -155,7 +155,10 @@ const resources = {
 
 
         tipoSoggetto: "Indicate whether you are submitting the complaint on your own behalf or on behalf of an association, a company, or a public institution",
-        numerotesserinoidentificativo:"It is the seven-digit number that uniquely identifies the pass holder. It appears both on the Tpl Fvg identification card and on all passes purchased using that card",
+        numerotesserinoidentificativo:`<div>
+            It is the seven-digit number that uniquely identifies the pass holder. It appears both on the Tpl Fvg identification card and on all passes purchased using that card.<br/>
+            <img src="immagine_tooltip_abbonamenti.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
+          </div>`,
         accountTpl:"Select the company responsible for the area concerned. If you are unsure which company to choose, or if the event is not clearly linked to one of the consortium’s companies, select the TPL FVG option",
         servizio:"Indicate the service related to the event. If the event does not concern any of the listed services, or cannot be clearly linked to one of them, select the OTHER ASPECTS OF THE SERVICE option. If you are unsure about the type of service, you may leave this field blank",
         linea: "This field becomes active after selecting the reference company. The available lines depend on the selected company. If you selected TPL FVG as the reference company, the list will include all lines operated by Tpl Fvg in Friuli Venezia Giulia and surrounding areas. If the event or report is not related to a specific line, you may leave this field blank",

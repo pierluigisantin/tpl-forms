@@ -108,8 +108,9 @@
           t = tInstance; // 👈 assegna t a una variabile globale
           aggiornaEtichette(t, fields);
 
-         const comuniNazioniUrl = "https://tplfvg.my.salesforce-sites.com/forms/resource/ComuniNazioni";
-         const aziendeTplUrl="https://tplfvg.my.salesforce-sites.com/forms/resource/AziendeTPL_json";
+        const comuniNazioniUrl = "valori_comuni_nazioni.json";
+        const comuniServizioUrl = "comuni_servizio.json";
+        const aziendeTplUrl = "aziendeTPL.json";
          const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
          const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
          const fermateUrl= "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
@@ -118,6 +119,7 @@
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
         caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
         caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t);
+        caricaDatalistComuni(comuniServizioUrl, t, "comuniServizioList");
 
         document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
           aziendaId=e.target.value;
@@ -165,6 +167,7 @@
             const newT = i18next.t.bind(i18next);
             aggiornaEtichette(newT, fields);
             caricaDatalistComuniENazioni(comuniNazioniUrl, newLang, comuneListId, nazioniListId, campoNazioneId);
+            caricaDatalistComuni(comuniServizioUrl, t, "comuniServizioList");
             const aziendaId = document.getElementById("00NbU0000002bl3").value;
             caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
             caricaTipoSoggetto();
@@ -361,8 +364,8 @@
               </select>
 
                 <label for="00NbU0000002yHp" id="label_comuneevento"> </label>
-                <input  id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniList"/>
-
+                <input  id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniServizioList"/>
+          <datalist id="comuniServizioList"></datalist>
 
 
 

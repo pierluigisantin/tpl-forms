@@ -29,6 +29,15 @@ const resources = {
         direzione: "Direzione (indicare il capolinea o l’approdo di destinazione)",
         descrizione: "Descrizione dell'oggetto smarrito",
         introdescrizione: "Descrivi l'oggetto smarrito in modo dettagliato. Indica, se possibile, il colore, eventuali scritte o nomi presenti, il materiale o altre caratteristiche distintive. Esempi di oggetti smarriti possono essere: zaini, borse, cartelle da disegno, libri, cellulari, portafogli, chiavi, occhiali, indumenti, biglietti o abbonamenti. Una descrizione precisa aiuta a facilitare l’identificazione dell’oggetto. Se desideri allegare immagini o altri documenti utili, potrai farlo rispondendo direttamente alla e-mail di notifica che riceverai al termine della compilazione di questo form",
+        consensoobbligatorio:"CONSENSO OBBLIGATORIO",
+          privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto",
+          consensofacoltativo:"CONSENSI FACOLTATIVI",
+          indaginidemoscopiche:"Acconsento a essere contattato da Tpl Fvg, anche tramite e-mail, per partecipare a indagini demoscopiche o ricerche di mercato sul livello di soddisfazione e sull’utilizzo dei servizi di trasporto pubblico locale",
+          attivitacommerciali:"Acconsento a ricevere comunicazioni relative a offerte commerciali, promozioni, agevolazioni o sconti su prodotti, servizi e attività di Tpl Fvg o delle aziende consorziate",
+          analisipreferenze:"Acconsento all’analisi delle mie preferenze e abitudini di utilizzo del trasporto pubblico locale, anche mediante elaborazioni elettroniche, al fine di migliorare l’offerta, soddisfare specifiche esigenze, orientare la pianificazione del servizio e ricevere comunicazioni personalizzate da parte di Tpl Fvg o delle aziende consorziate",
+          comunicazionepartner:"Acconsento a ricevere comunicazioni pubblicitarie, promozioni e informazioni commerciali relative a prodotti, servizi e attività di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate",
+          cessioneterzi:"Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing",
+
         invia: "Invia segnalazione",
         ultimo: ""
       },
@@ -70,6 +79,15 @@ const resources = {
         direzione: "Direction (specify the terminal or landing destination)",
         descrizione: "Description of the lost item",
         introdescrizione: "Please describe the lost item in as much detail as possible. Indicate, if available, the color, any names or labels, the material, and other distinguishing features. Examples of lost items include: backpacks, bags, drawing portfolios, books, mobile phones, wallets, keys, glasses, clothing, tickets, or travel passes. A detailed description helps facilitate the identification of the item. If you wish to attach images or other useful documents, you may do so by replying directly to the notification email you will receive after completing this form",
+        consensoobbligatorio:"CONSENSO OBBLIGATORIO",
+          privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto",
+          consensofacoltativo:"CONSENSI FACOLTATIVI",
+          indaginidemoscopiche:"Acconsento a essere contattato da Tpl Fvg, anche tramite e-mail, per partecipare a indagini demoscopiche o ricerche di mercato sul livello di soddisfazione e sull’utilizzo dei servizi di trasporto pubblico locale",
+          attivitacommerciali:"Acconsento a ricevere comunicazioni relative a offerte commerciali, promozioni, agevolazioni o sconti su prodotti, servizi e attività di Tpl Fvg o delle aziende consorziate",
+          analisipreferenze:"Acconsento all’analisi delle mie preferenze e abitudini di utilizzo del trasporto pubblico locale, anche mediante elaborazioni elettroniche, al fine di migliorare l’offerta, soddisfare specifiche esigenze, orientare la pianificazione del servizio e ricevere comunicazioni personalizzate da parte di Tpl Fvg o delle aziende consorziate",
+          comunicazionepartner:"Acconsento a ricevere comunicazioni pubblicitarie, promozioni e informazioni commerciali relative a prodotti, servizi e attività di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate",
+          cessioneterzi:"Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing",
+
         invia: "Report lost item",
 
         ultimo: ""

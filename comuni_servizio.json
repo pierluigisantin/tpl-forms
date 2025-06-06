@@ -1,0 +1,5709 @@
+{
+  "comuni": [
+    {
+      "nome": "ALDINO/ALDEIN",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "ANDRIANO/ANDRIAN",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "ANTERIVO/ALTREI",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "APPIANO SULLA STRADA DEL VINO/EPPAN AN DER WEINSTRAßE",
+      "cap": 39057,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "AVELENGO/HAFLING",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "BADIA/ABTEI",
+      "cap": 39036,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "BARBIANO/BARBIAN",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "BOLZANO/BOZEN",
+      "cap": 39100,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "BRAIES/PRAGS",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "BRENNERO/BRENNER",
+      "cap": 39041,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "BRESSANONE/BRIXEN",
+      "cap": 39042,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "BRONZOLO/BRANZOLL",
+      "cap": 39051,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "BRUNICO/BRUNECK",
+      "cap": 39031,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CAINES/KUENS",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CALDARO SULLA STRADA DEL VINO/KALTERN AN DER WEINSTRAßE",
+      "cap": 39052,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CAMPO DI TRENS/FREIENFELD",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CAMPO TURES/SAND IN TAUFERS",
+      "cap": 39032,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CASTELBELLO-CIARDES/KASTELBELL-TSCHARS",
+      "cap": 39020,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CASTELROTTO/KASTELRUTH",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CERMES/TSCHERMS",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CHIENES/KIENS",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CHIUSA/KLAUSEN",
+      "cap": 39043,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CORNEDO ALL'ISARCO/KARNEID",
+      "cap": 39053,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CORTACCIA SULLA STRADA DEL VINO/KURTATSCH AN DER WEINSTRAßE",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CORTINA SULLA STRADA DEL VINO/KURTINIG AN DER WEINSTRAßE",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CORVARA IN BADIA/CORVARA",
+      "cap": 39033,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "CURON VENOSTA/GRAUN IM VINSCHGAU",
+      "cap": 39027,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "DOBBIACO/TOBLACH",
+      "cap": 39034,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "EGNA/NEUMARKT",
+      "cap": 39044,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "FALZES/PFALZEN",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "FIÈ ALLO SCILIAR/VÖLS AM SCHLERN",
+      "cap": 39050,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "FORTEZZA/FRANZENSFESTE",
+      "cap": 39045,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "FUNES/VILLNÖß",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "GAIS/GAIS",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "GARGAZZONE/GARGAZON",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "GLORENZA/GLURNS",
+      "cap": 39020,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "LACES/LATSCH",
+      "cap": 39021,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "LAGUNDO/ALGUND",
+      "cap": 39022,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "LAION/LAJEN",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "LAIVES/LEIFERS",
+      "cap": 39055,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "LANA/LANA",
+      "cap": 39011,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "LASA/LAAS",
+      "cap": 39023,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "LAUREGNO/LAUREIN",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "LUSON/LÜSEN",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "MAGRÈ SULLA STRADA DEL VINO/MARGREID AN DER WEINSTRAßE",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "MALLES VENOSTA/MALS",
+      "cap": 39024,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "MAREBBE/ENNEBERG",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "MARLENGO/MARLING",
+      "cap": 39020,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "MARTELLO/MARTELL",
+      "cap": 39020,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "MELTINA/MÖLTEN",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "MERANO/MERAN",
+      "cap": 39012,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "MONGUELFO-TESIDO/WELSBERG-TAISTEN",
+      "cap": 39035,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "MONTAGNA SULLA STRADA DEL VINO/MONTAN AN DER WEINSTRAßE",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "MOSO IN PASSIRIA/MOOS IN PASSEIER",
+      "cap": 39013,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "NALLES/NALS",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "NATURNO/NATURNS",
+      "cap": 39025,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "NAZ-SCIAVES/NATZ-SCHABS",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "NOVA LEVANTE/WELSCHNOFEN",
+      "cap": 39056,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "NOVA PONENTE/DEUTSCHNOFEN",
+      "cap": 39050,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "ORA/AUER",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "ORTISEI/ST. ULRICH",
+      "cap": 39046,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "PARCINES/PARTSCHINS",
+      "cap": 39020,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "PERCA/PERCHA",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "PLAUS/PLAUS",
+      "cap": 39025,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "PONTE GARDENA/WAIDBRUCK",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "POSTAL/BURGSTALL",
+      "cap": 39014,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "PRATO ALLO STELVIO/PRAD AM STILFSERJOCH",
+      "cap": 39026,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "PREDOI/PRETTAU",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "PROVES/PROVEIS",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "RACINES/RATSCHINGS",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "RASUN-ANTERSELVA/RASEN-ANTHOLZ",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "RENON/RITTEN",
+      "cap": 39054,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "RIFIANO/RIFFIAN",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "RIO DI PUSTERIA/MÜHLBACH",
+      "cap": 39037,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "RODENGO/RODENECK",
+      "cap": 39037,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SALORNO SULLA STRADA DEL VINO/SALURN AN DER WEINSTRAßE",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SAN CANDIDO/INNICHEN",
+      "cap": 39038,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SAN GENESIO ATESINO/JENESIEN",
+      "cap": 39050,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SAN LEONARDO IN PASSIRIA/ST. LEONHARD IN PASSEIER",
+      "cap": 39015,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SAN LORENZO DI SEBATO/ST. LORENZEN",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SAN MARTINO IN BADIA/ST. MARTIN IN THURN",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SAN MARTINO IN PASSIRIA/ST. MARTIN IN PASSEIER",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SAN PANCRAZIO/ST. PANKRAZ",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SANTA CRISTINA VALGARDENA/ST. CHRISTINA IN GRÖDEN",
+      "cap": 39047,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SARENTINO/SARNTAL",
+      "cap": 39058,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SCENA/SCHENNA",
+      "cap": 39017,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SELVA DEI MOLINI/MÜHLWALD",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SELVA DI VAL GARDENA/WOLKENSTEIN IN GRÖDEN",
+      "cap": 39048,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SENALES/SCHNALS",
+      "cap": 39020,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SESTO/SEXTEN",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SILANDRO/SCHLANDERS",
+      "cap": 39028,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SLUDERNO/SCHLUDERNS",
+      "cap": 39020,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "STELVIO/STILFS",
+      "cap": 39029,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "TERENTO/TERENTEN",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "TERLANO/TERLAN",
+      "cap": 39018,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "TERMENO SULLA STRADA DEL VINO/TRAMIN AN DER WEINSTRAßE",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "TESIMO/TISENS",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "TIRES/TIERS",
+      "cap": 39050,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "TIROLO/TIROL",
+      "cap": 39019,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "TRODENA NEL PARCO NATURALE/TRUDEN IM NATURPARK",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "TUBRE/TAUFERS IM MÜNSTERTAL",
+      "cap": 39020,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "ULTIMO/ULTEN",
+      "cap": 39016,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VADENA/PFATTEN",
+      "cap": 39051,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VALDAORA/OLANG",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VAL DI VIZZE/PFITSCH",
+      "cap": 39049,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VALLE AURINA/AHRNTAL",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VALLE DI CASIES/GSIES",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VANDOIES/VINTL",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VARNA/VAHRN",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VERANO/VÖRAN",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VILLABASSA/NIEDERDORF",
+      "cap": 39039,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VILLANDRO/VILLANDERS",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VIPITENO/STERZING",
+      "cap": 39049,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "VELTURNO/FELDTHURNS",
+      "cap": 39040,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "LA VALLE/WENGEN",
+      "cap": 39030,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "SENALE-SAN FELICE/UNSERE LIEBE FRAU IM WALDE-ST. FELIX",
+      "cap": 39010,
+      "provincia": "BZ"
+    },
+    {
+      "nome": "ALA",
+      "cap": 38061,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ALBIANO",
+      "cap": 38041,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ALDENO",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ANDALO",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ARCO",
+      "cap": 38062,
+      "provincia": "TN"
+    },
+    {
+      "nome": "AVIO",
+      "cap": 38063,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BASELGA DI PINÈ",
+      "cap": 38042,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BEDOLLO",
+      "cap": 38043,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BESENELLO",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BIENO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BLEGGIO SUPERIORE",
+      "cap": 38071,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BOCENAGO",
+      "cap": 38080,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BONDONE",
+      "cap": 38080,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BORGO VALSUGANA",
+      "cap": 38051,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BRENTONICO",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BRESIMO",
+      "cap": 38020,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CADERZONE TERME",
+      "cap": 38080,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CALCERANICA AL LAGO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CALDES",
+      "cap": 38022,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CALDONAZZO",
+      "cap": 38052,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CALLIANO",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CAMPITELLO DI FASSA",
+      "cap": 38031,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CAMPODENNO",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CANAL SAN BOVO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CANAZEI",
+      "cap": 38032,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CAPRIANA",
+      "cap": 38030,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CARISOLO",
+      "cap": 38080,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CARZANO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CASTEL CONDINO",
+      "cap": 38082,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CASTELLO-MOLINA DI FIEMME",
+      "cap": 38030,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CASTELLO TESINO",
+      "cap": 38053,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CASTELNUOVO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CAVALESE",
+      "cap": 38033,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CAVARENO",
+      "cap": 38011,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CAVEDAGO",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CAVEDINE",
+      "cap": 38073,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CAVIZZANA",
+      "cap": 38022,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CIMONE",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CINTE TESINO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CIS",
+      "cap": 38020,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CIVEZZANO",
+      "cap": 38045,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CLES",
+      "cap": 38023,
+      "provincia": "TN"
+    },
+    {
+      "nome": "COMMEZZADURA",
+      "cap": 38020,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CROVIANA",
+      "cap": 38027,
+      "provincia": "TN"
+    },
+    {
+      "nome": "DAMBEL",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "DENNO",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "DRENA",
+      "cap": 38074,
+      "provincia": "TN"
+    },
+    {
+      "nome": "DRO",
+      "cap": 38074,
+      "provincia": "TN"
+    },
+    {
+      "nome": "FAI DELLA PAGANELLA",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "FIAVÈ",
+      "cap": 38075,
+      "provincia": "TN"
+    },
+    {
+      "nome": "FIEROZZO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "FOLGARIA",
+      "cap": 38064,
+      "provincia": "TN"
+    },
+    {
+      "nome": "FORNACE",
+      "cap": 38040,
+      "provincia": "TN"
+    },
+    {
+      "nome": "FRASSILONGO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "GARNIGA TERME",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "GIOVO",
+      "cap": 38030,
+      "provincia": "TN"
+    },
+    {
+      "nome": "GIUSTINO",
+      "cap": 38086,
+      "provincia": "TN"
+    },
+    {
+      "nome": "GRIGNO",
+      "cap": 38055,
+      "provincia": "TN"
+    },
+    {
+      "nome": "IMER",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ISERA",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "LAVARONE",
+      "cap": 38046,
+      "provincia": "TN"
+    },
+    {
+      "nome": "LAVIS",
+      "cap": 38015,
+      "provincia": "TN"
+    },
+    {
+      "nome": "LEVICO TERME",
+      "cap": 38056,
+      "provincia": "TN"
+    },
+    {
+      "nome": "LIVO",
+      "cap": 38020,
+      "provincia": "TN"
+    },
+    {
+      "nome": "LONA-LASES",
+      "cap": 38040,
+      "provincia": "TN"
+    },
+    {
+      "nome": "LUSERNA",
+      "cap": 38040,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MALÉ",
+      "cap": 38027,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MASSIMENO",
+      "cap": 38086,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MAZZIN",
+      "cap": 38030,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MEZZANA",
+      "cap": 38020,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MEZZANO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MEZZOCORONA",
+      "cap": 38016,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MEZZOLOMBARDO",
+      "cap": 38017,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MOENA",
+      "cap": 38035,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MOLVENO",
+      "cap": 38018,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MORI",
+      "cap": 38065,
+      "provincia": "TN"
+    },
+    {
+      "nome": "NAGO-TORBOLE",
+      "cap": 38069,
+      "provincia": "TN"
+    },
+    {
+      "nome": "NOGAREDO",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "NOMI",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "NOVALEDO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "OSPEDALETTO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "OSSANA",
+      "cap": 38026,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PALÙ DEL FERSINA",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PANCHIÀ",
+      "cap": 38030,
+      "provincia": "TN"
+    },
+    {
+      "nome": "RONZO-CHIENIS",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PEIO",
+      "cap": 38024,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PELLIZZANO",
+      "cap": 38020,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PELUGO",
+      "cap": 38079,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PERGINE VALSUGANA",
+      "cap": 38057,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PIEVE TESINO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PINZOLO",
+      "cap": 38086,
+      "provincia": "TN"
+    },
+    {
+      "nome": "POMAROLO",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PREDAZZO",
+      "cap": 38037,
+      "provincia": "TN"
+    },
+    {
+      "nome": "RABBI",
+      "cap": 38020,
+      "provincia": "TN"
+    },
+    {
+      "nome": "RIVA DEL GARDA",
+      "cap": 38066,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ROMENO",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "RONCEGNO TERME",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "RONCHI VALSUGANA",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "RONZONE",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ROVERÈ DELLA LUNA",
+      "cap": 38030,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ROVERETO",
+      "cap": 38068,
+      "provincia": "TN"
+    },
+    {
+      "nome": "RUFFRÈ-MENDOLA",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "RUMO",
+      "cap": 38020,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SAGRON MIS",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SAMONE",
+      "cap": 38059,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SAN MICHELE ALL'ADIGE",
+      "cap": 38098,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SANT'ORSOLA TERME",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SANZENO",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SARNONICO",
+      "cap": 38011,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SCURELLE",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SEGONZANO",
+      "cap": 38047,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SFRUZ",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SORAGA DI FASSA",
+      "cap": 38030,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SOVER",
+      "cap": 38048,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SPIAZZO",
+      "cap": 38088,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SPORMAGGIORE",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SPORMINORE",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "STENICO",
+      "cap": 38070,
+      "provincia": "TN"
+    },
+    {
+      "nome": "STORO",
+      "cap": 38089,
+      "provincia": "TN"
+    },
+    {
+      "nome": "STREMBO",
+      "cap": 38080,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TELVE",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TELVE DI SOPRA",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TENNA",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TENNO",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TERRAGNOLO",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TERZOLAS",
+      "cap": 38027,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TESERO",
+      "cap": 38038,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TIONE DI TRENTO",
+      "cap": 38079,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TON",
+      "cap": 38010,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TORCEGNO",
+      "cap": 38050,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TRAMBILENO",
+      "cap": 38068,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TRENTO",
+      "cap": 38121,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TRENTO",
+      "cap": 38122,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TRENTO",
+      "cap": 38123,
+      "provincia": "TN"
+    },
+    {
+      "nome": "VALFLORIANA",
+      "cap": 38040,
+      "provincia": "TN"
+    },
+    {
+      "nome": "VALLARSA",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "VERMIGLIO",
+      "cap": 38029,
+      "provincia": "TN"
+    },
+    {
+      "nome": "VIGNOLA-FALESINA",
+      "cap": 38057,
+      "provincia": "TN"
+    },
+    {
+      "nome": "VILLA LAGARINA",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "VOLANO",
+      "cap": 38060,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ZIANO DI FIEMME",
+      "cap": 38030,
+      "provincia": "TN"
+    },
+    {
+      "nome": "COMANO TERME",
+      "cap": 38077,
+      "provincia": "TN"
+    },
+    {
+      "nome": "LEDRO",
+      "cap": 38067,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PREDAIA",
+      "cap": 38012,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SAN LORENZO DORSINO",
+      "cap": 38078,
+      "provincia": "TN"
+    },
+    {
+      "nome": "VALDAONE",
+      "cap": 38091,
+      "provincia": "TN"
+    },
+    {
+      "nome": "DIMARO FOLGARIDA",
+      "cap": 38025,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PIEVE DI BONO-PREZZO",
+      "cap": 38085,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ALTAVALLE",
+      "cap": 38092,
+      "provincia": "TN"
+    },
+    {
+      "nome": "ALTOPIANO DELLA VIGOLANA",
+      "cap": 38049,
+      "provincia": "TN"
+    },
+    {
+      "nome": "AMBLAR-DON",
+      "cap": 38011,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BORGO CHIESE",
+      "cap": 38083,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BORGO LARES",
+      "cap": 38079,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CASTEL IVANO",
+      "cap": 38059,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CEMBRA LISIGNAGO",
+      "cap": 38034,
+      "provincia": "TN"
+    },
+    {
+      "nome": "CONTÀ",
+      "cap": 38093,
+      "provincia": "TN"
+    },
+    {
+      "nome": "MADRUZZO",
+      "cap": 38076,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PORTE DI RENDENA",
+      "cap": 38094,
+      "provincia": "TN"
+    },
+    {
+      "nome": "PRIMIERO SAN MARTINO DI CASTROZZA",
+      "cap": 38054,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SELLA GIUDICARIE",
+      "cap": 38087,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TRE VILLE",
+      "cap": 38095,
+      "provincia": "TN"
+    },
+    {
+      "nome": "VALLELAGHI",
+      "cap": 38096,
+      "provincia": "TN"
+    },
+    {
+      "nome": "VILLE D'ANAUNIA",
+      "cap": 38019,
+      "provincia": "TN"
+    },
+    {
+      "nome": "SAN GIOVANNI DI FASSA-SÈN JAN",
+      "cap": 38036,
+      "provincia": "TN"
+    },
+    {
+      "nome": "TERRE D'ADIGE",
+      "cap": 38097,
+      "provincia": "TN"
+    },
+    {
+      "nome": "BORGO D'ANAUNIA",
+      "cap": 38013,
+      "provincia": "TN"
+    },
+    {
+      "nome": "NOVELLA",
+      "cap": 38028,
+      "provincia": "TN"
+    },
+    {
+      "nome": "VILLE DI FIEMME",
+      "cap": 38099,
+      "provincia": "TN"
+    },
+    {
+      "nome": "AFFI",
+      "cap": 37010,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ALBAREDO D'ADIGE",
+      "cap": 37041,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ANGIARI",
+      "cap": 37050,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ARCOLE",
+      "cap": 37040,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BADIA CALAVENA",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BARDOLINO",
+      "cap": 37011,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BELFIORE",
+      "cap": 37050,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BEVILACQUA",
+      "cap": 37040,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BONAVIGO",
+      "cap": 37040,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BOSCHI SANT'ANNA",
+      "cap": 37040,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BOSCO CHIESANUOVA",
+      "cap": 37021,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BOVOLONE",
+      "cap": 37051,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BRENTINO BELLUNO",
+      "cap": 37020,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BRENZONE SUL GARDA",
+      "cap": 37010,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BUSSOLENGO",
+      "cap": 37012,
+      "provincia": "VR"
+    },
+    {
+      "nome": "BUTTAPIETRA",
+      "cap": 37060,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CALDIERO",
+      "cap": 37042,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CAPRINO VERONESE",
+      "cap": 37013,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CASALEONE",
+      "cap": 37052,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CASTAGNARO",
+      "cap": 37043,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CASTEL D'AZZANO",
+      "cap": 37060,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CASTELNUOVO DEL GARDA",
+      "cap": 37014,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CAVAION VERONESE",
+      "cap": 37010,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CAZZANO DI TRAMIGNA",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CEREA",
+      "cap": 37053,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CERRO VERONESE",
+      "cap": 37020,
+      "provincia": "VR"
+    },
+    {
+      "nome": "COLOGNA VENETA",
+      "cap": 37044,
+      "provincia": "VR"
+    },
+    {
+      "nome": "COLOGNOLA AI COLLI",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "CONCAMARISE",
+      "cap": 37050,
+      "provincia": "VR"
+    },
+    {
+      "nome": "COSTERMANO SUL GARDA",
+      "cap": 37010,
+      "provincia": "VR"
+    },
+    {
+      "nome": "DOLCÈ",
+      "cap": 37020,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ERBÈ",
+      "cap": 37060,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ERBEZZO",
+      "cap": 37020,
+      "provincia": "VR"
+    },
+    {
+      "nome": "FERRARA DI MONTE BALDO",
+      "cap": 37020,
+      "provincia": "VR"
+    },
+    {
+      "nome": "FUMANE",
+      "cap": 37022,
+      "provincia": "VR"
+    },
+    {
+      "nome": "GARDA",
+      "cap": 37016,
+      "provincia": "VR"
+    },
+    {
+      "nome": "GAZZO VERONESE",
+      "cap": 37060,
+      "provincia": "VR"
+    },
+    {
+      "nome": "GREZZANA",
+      "cap": 37023,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ILLASI",
+      "cap": 37031,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ISOLA DELLA SCALA",
+      "cap": 37063,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ISOLA RIZZA",
+      "cap": 37050,
+      "provincia": "VR"
+    },
+    {
+      "nome": "LAVAGNO",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "LAZISE",
+      "cap": 37017,
+      "provincia": "VR"
+    },
+    {
+      "nome": "LEGNAGO",
+      "cap": 37045,
+      "provincia": "VR"
+    },
+    {
+      "nome": "MALCESINE",
+      "cap": 37018,
+      "provincia": "VR"
+    },
+    {
+      "nome": "MARANO DI VALPOLICELLA",
+      "cap": 37020,
+      "provincia": "VR"
+    },
+    {
+      "nome": "MEZZANE DI SOTTO",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "MINERBE",
+      "cap": 37046,
+      "provincia": "VR"
+    },
+    {
+      "nome": "MONTECCHIA DI CROSARA",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "MONTEFORTE D'ALPONE",
+      "cap": 37032,
+      "provincia": "VR"
+    },
+    {
+      "nome": "MOZZECANE",
+      "cap": 37060,
+      "provincia": "VR"
+    },
+    {
+      "nome": "NEGRAR DI VALPOLICELLA",
+      "cap": 37024,
+      "provincia": "VR"
+    },
+    {
+      "nome": "NOGARA",
+      "cap": 37054,
+      "provincia": "VR"
+    },
+    {
+      "nome": "NOGAROLE ROCCA",
+      "cap": 37060,
+      "provincia": "VR"
+    },
+    {
+      "nome": "OPPEANO",
+      "cap": 37050,
+      "provincia": "VR"
+    },
+    {
+      "nome": "PALÙ",
+      "cap": 37050,
+      "provincia": "VR"
+    },
+    {
+      "nome": "PASTRENGO",
+      "cap": 37010,
+      "provincia": "VR"
+    },
+    {
+      "nome": "PESCANTINA",
+      "cap": 37026,
+      "provincia": "VR"
+    },
+    {
+      "nome": "PESCHIERA DEL GARDA",
+      "cap": 37019,
+      "provincia": "VR"
+    },
+    {
+      "nome": "POVEGLIANO VERONESE",
+      "cap": 37064,
+      "provincia": "VR"
+    },
+    {
+      "nome": "PRESSANA",
+      "cap": 37040,
+      "provincia": "VR"
+    },
+    {
+      "nome": "RIVOLI VERONESE",
+      "cap": 37010,
+      "provincia": "VR"
+    },
+    {
+      "nome": "RONCÀ",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "RONCO ALL'ADIGE",
+      "cap": 37055,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ROVERCHIARA",
+      "cap": 37050,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ROVEREDO DI GUÀ",
+      "cap": 37040,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ROVERÈ VERONESE",
+      "cap": 37028,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SALIZZOLE",
+      "cap": 37056,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SAN BONIFACIO",
+      "cap": 37047,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SAN GIOVANNI ILARIONE",
+      "cap": 37035,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SAN GIOVANNI LUPATOTO",
+      "cap": 37057,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SANGUINETTO",
+      "cap": 37058,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SAN MARTINO BUON ALBERGO",
+      "cap": 37036,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SAN MAURO DI SALINE",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SAN PIETRO DI MORUBIO",
+      "cap": 37050,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SAN PIETRO IN CARIANO",
+      "cap": 37029,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SANT'AMBROGIO DI VALPOLICELLA",
+      "cap": 37015,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SANT'ANNA D'ALFAEDO",
+      "cap": 37020,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SAN ZENO DI MONTAGNA",
+      "cap": 37010,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SELVA DI PROGNO",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SOAVE",
+      "cap": 37038,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SOMMACAMPAGNA",
+      "cap": 37066,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SONA",
+      "cap": 37060,
+      "provincia": "VR"
+    },
+    {
+      "nome": "SORGÀ",
+      "cap": 37060,
+      "provincia": "VR"
+    },
+    {
+      "nome": "TERRAZZO",
+      "cap": 37040,
+      "provincia": "VR"
+    },
+    {
+      "nome": "TORRI DEL BENACO",
+      "cap": 37010,
+      "provincia": "VR"
+    },
+    {
+      "nome": "TREGNAGO",
+      "cap": 37039,
+      "provincia": "VR"
+    },
+    {
+      "nome": "TREVENZUOLO",
+      "cap": 37060,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VALEGGIO SUL MINCIO",
+      "cap": 37067,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VELO VERONESE",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37121,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37122,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37123,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37124,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37125,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37126,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37127,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37128,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37129,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37131,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37132,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37133,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37134,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37135,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37136,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37137,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37138,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37139,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37141,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONA",
+      "cap": 37142,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VERONELLA",
+      "cap": 37040,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VESTENANOVA",
+      "cap": 37030,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VIGASIO",
+      "cap": 37068,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VILLA BARTOLOMEA",
+      "cap": 37049,
+      "provincia": "VR"
+    },
+    {
+      "nome": "VILLAFRANCA DI VERONA",
+      "cap": 37069,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ZEVIO",
+      "cap": 37059,
+      "provincia": "VR"
+    },
+    {
+      "nome": "ZIMELLA",
+      "cap": 37040,
+      "provincia": "VR"
+    },
+    {
+      "nome": "AGUGLIARO",
+      "cap": 36020,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ALBETTONE",
+      "cap": 36020,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ALONTE",
+      "cap": 36045,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ALTAVILLA VICENTINA",
+      "cap": 36077,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ALTISSIMO",
+      "cap": 36070,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ARCUGNANO",
+      "cap": 36057,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ARSIERO",
+      "cap": 36011,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ARZIGNANO",
+      "cap": 36071,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ASIAGO",
+      "cap": 36012,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ASIGLIANO VENETO",
+      "cap": 36020,
+      "provincia": "VI"
+    },
+    {
+      "nome": "BASSANO DEL GRAPPA",
+      "cap": 36061,
+      "provincia": "VI"
+    },
+    {
+      "nome": "BOLZANO VICENTINO",
+      "cap": 36050,
+      "provincia": "VI"
+    },
+    {
+      "nome": "BREGANZE",
+      "cap": 36042,
+      "provincia": "VI"
+    },
+    {
+      "nome": "BRENDOLA",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "BRESSANVIDO",
+      "cap": 36050,
+      "provincia": "VI"
+    },
+    {
+      "nome": "BROGLIANO",
+      "cap": 36070,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CALDOGNO",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CALTRANO",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CALVENE",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CAMISANO VICENTINO",
+      "cap": 36043,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CAMPIGLIA DEI BERICI",
+      "cap": 36020,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CARRÈ",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CARTIGLIANO",
+      "cap": 36050,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CASSOLA",
+      "cap": 36022,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CASTEGNERO",
+      "cap": 36020,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CASTELGOMBERTO",
+      "cap": 36070,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CHIAMPO",
+      "cap": 36072,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CHIUPPANO",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "COGOLLO DEL CENGIO",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CORNEDO VICENTINO",
+      "cap": 36073,
+      "provincia": "VI"
+    },
+    {
+      "nome": "COSTABISSARA",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CREAZZO",
+      "cap": 36051,
+      "provincia": "VI"
+    },
+    {
+      "nome": "CRESPADORO",
+      "cap": 36070,
+      "provincia": "VI"
+    },
+    {
+      "nome": "DUEVILLE",
+      "cap": 36031,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ENEGO",
+      "cap": 36052,
+      "provincia": "VI"
+    },
+    {
+      "nome": "FARA VICENTINO",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "FOZA",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "GALLIO",
+      "cap": 36032,
+      "provincia": "VI"
+    },
+    {
+      "nome": "GAMBELLARA",
+      "cap": 36053,
+      "provincia": "VI"
+    },
+    {
+      "nome": "GRISIGNANO DI ZOCCO",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "GRUMOLO DELLE ABBADESSE",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ISOLA VICENTINA",
+      "cap": 36033,
+      "provincia": "VI"
+    },
+    {
+      "nome": "LAGHI",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "LASTEBASSE",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "LONGARE",
+      "cap": 36023,
+      "provincia": "VI"
+    },
+    {
+      "nome": "LONIGO",
+      "cap": 36045,
+      "provincia": "VI"
+    },
+    {
+      "nome": "LUGO DI VICENZA",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MALO",
+      "cap": 36034,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MARANO VICENTINO",
+      "cap": 36035,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MAROSTICA",
+      "cap": 36063,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MONTEBELLO VICENTINO",
+      "cap": 36054,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MONTECCHIO MAGGIORE",
+      "cap": 36075,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MONTECCHIO PRECALCINO",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MONTE DI MALO",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MONTEGALDA",
+      "cap": 36047,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MONTEGALDELLA",
+      "cap": 36047,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MONTEVIALE",
+      "cap": 36050,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MONTICELLO CONTE OTTO",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MONTORSO VICENTINO",
+      "cap": 36050,
+      "provincia": "VI"
+    },
+    {
+      "nome": "MUSSOLENTE",
+      "cap": 36065,
+      "provincia": "VI"
+    },
+    {
+      "nome": "NANTO",
+      "cap": 36024,
+      "provincia": "VI"
+    },
+    {
+      "nome": "NOGAROLE VICENTINO",
+      "cap": 36070,
+      "provincia": "VI"
+    },
+    {
+      "nome": "NOVE",
+      "cap": 36055,
+      "provincia": "VI"
+    },
+    {
+      "nome": "NOVENTA VICENTINA",
+      "cap": 36025,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ORGIANO",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "PEDEMONTE",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "PIANEZZE",
+      "cap": 36060,
+      "provincia": "VI"
+    },
+    {
+      "nome": "PIOVENE ROCCHETTE",
+      "cap": 36013,
+      "provincia": "VI"
+    },
+    {
+      "nome": "POJANA MAGGIORE",
+      "cap": 36026,
+      "provincia": "VI"
+    },
+    {
+      "nome": "POSINA",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "POVE DEL GRAPPA",
+      "cap": 36020,
+      "provincia": "VI"
+    },
+    {
+      "nome": "POZZOLEONE",
+      "cap": 36050,
+      "provincia": "VI"
+    },
+    {
+      "nome": "QUINTO VICENTINO",
+      "cap": 36050,
+      "provincia": "VI"
+    },
+    {
+      "nome": "RECOARO TERME",
+      "cap": 36076,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ROANA",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ROMANO D'EZZELINO",
+      "cap": 36060,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ROSÀ",
+      "cap": 36027,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ROSSANO VENETO",
+      "cap": 36028,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ROTZO",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SALCEDO",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SANDRIGO",
+      "cap": 36066,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SAN PIETRO MUSSOLINO",
+      "cap": 36070,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SANTORSO",
+      "cap": 36014,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SAN VITO DI LEGUZZANO",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SARCEDO",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SAREGO",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SCHIAVON",
+      "cap": 36060,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SCHIO",
+      "cap": 36015,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SOLAGNA",
+      "cap": 36020,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SOSSANO",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "TEZZE SUL BRENTA",
+      "cap": 36056,
+      "provincia": "VI"
+    },
+    {
+      "nome": "THIENE",
+      "cap": 36016,
+      "provincia": "VI"
+    },
+    {
+      "nome": "TONEZZA DEL CIMONE",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "TORREBELVICINO",
+      "cap": 36036,
+      "provincia": "VI"
+    },
+    {
+      "nome": "TORRI DI QUARTESOLO",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "TRISSINO",
+      "cap": 36070,
+      "provincia": "VI"
+    },
+    {
+      "nome": "VALDAGNO",
+      "cap": 36078,
+      "provincia": "VI"
+    },
+    {
+      "nome": "VALDASTICO",
+      "cap": 36040,
+      "provincia": "VI"
+    },
+    {
+      "nome": "VALLI DEL PASUBIO",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "VELO D'ASTICO",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "VICENZA",
+      "cap": 36100,
+      "provincia": "VI"
+    },
+    {
+      "nome": "VILLAGA",
+      "cap": 36021,
+      "provincia": "VI"
+    },
+    {
+      "nome": "VILLAVERLA",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ZANÈ",
+      "cap": 36010,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ZERMEGHEDO",
+      "cap": 36050,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ZOVENCEDO",
+      "cap": 36020,
+      "provincia": "VI"
+    },
+    {
+      "nome": "ZUGLIANO",
+      "cap": 36030,
+      "provincia": "VI"
+    },
+    {
+      "nome": "VAL LIONA",
+      "cap": 36044,
+      "provincia": "VI"
+    },
+    {
+      "nome": "BARBARANO MOSSANO",
+      "cap": 36048,
+      "provincia": "VI"
+    },
+    {
+      "nome": "VALBRENTA",
+      "cap": 36029,
+      "provincia": "VI"
+    },
+    {
+      "nome": "COLCERESA",
+      "cap": 36064,
+      "provincia": "VI"
+    },
+    {
+      "nome": "LUSIANA CONCO",
+      "cap": 36046,
+      "provincia": "VI"
+    },
+    {
+      "nome": "SOVIZZO",
+      "cap": 36049,
+      "provincia": "VI"
+    },
+    {
+      "nome": "AGORDO",
+      "cap": 32021,
+      "provincia": "BL"
+    },
+    {
+      "nome": "ALLEGHE",
+      "cap": 32022,
+      "provincia": "BL"
+    },
+    {
+      "nome": "ARSIÈ",
+      "cap": 32030,
+      "provincia": "BL"
+    },
+    {
+      "nome": "AURONZO DI CADORE",
+      "cap": 32041,
+      "provincia": "BL"
+    },
+    {
+      "nome": "BELLUNO",
+      "cap": 32100,
+      "provincia": "BL"
+    },
+    {
+      "nome": "BORCA DI CADORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "CALALZO DI CADORE",
+      "cap": 32042,
+      "provincia": "BL"
+    },
+    {
+      "nome": "CENCENIGHE AGORDINO",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "CESIOMAGGIORE",
+      "cap": 32030,
+      "provincia": "BL"
+    },
+    {
+      "nome": "CHIES D'ALPAGO",
+      "cap": 32010,
+      "provincia": "BL"
+    },
+    {
+      "nome": "CIBIANA DI CADORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "COLLE SANTA LUCIA",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "COMELICO SUPERIORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "CORTINA D'AMPEZZO",
+      "cap": 32043,
+      "provincia": "BL"
+    },
+    {
+      "nome": "DANTA DI CADORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "DOMEGGE DI CADORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "FALCADE",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "FELTRE",
+      "cap": 32032,
+      "provincia": "BL"
+    },
+    {
+      "nome": "FONZASO",
+      "cap": 32030,
+      "provincia": "BL"
+    },
+    {
+      "nome": "CANALE D'AGORDO",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "GOSALDO",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "LAMON",
+      "cap": 32033,
+      "provincia": "BL"
+    },
+    {
+      "nome": "LA VALLE AGORDINA",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "LIMANA",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "LIVINALLONGO DEL COL DI LANA",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "LORENZAGO DI CADORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "LOZZO DI CADORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "OSPITALE DI CADORE",
+      "cap": 32010,
+      "provincia": "BL"
+    },
+    {
+      "nome": "PEDAVENA",
+      "cap": 32034,
+      "provincia": "BL"
+    },
+    {
+      "nome": "PERAROLO DI CADORE",
+      "cap": 32010,
+      "provincia": "BL"
+    },
+    {
+      "nome": "PIEVE DI CADORE",
+      "cap": 32044,
+      "provincia": "BL"
+    },
+    {
+      "nome": "PONTE NELLE ALPI",
+      "cap": 32014,
+      "provincia": "BL"
+    },
+    {
+      "nome": "RIVAMONTE AGORDINO",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "ROCCA PIETORE",
+      "cap": 32023,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SAN GREGORIO NELLE ALPI",
+      "cap": 32030,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SAN NICOLÒ DI COMELICO",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SAN PIETRO DI CADORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SANTA GIUSTINA",
+      "cap": 32035,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SAN TOMASO AGORDINO",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SANTO STEFANO DI CADORE",
+      "cap": 32045,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SAN VITO DI CADORE",
+      "cap": 32046,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SEDICO",
+      "cap": 32036,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SELVA DI CADORE",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SEREN DEL GRAPPA",
+      "cap": 32030,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SOSPIROLO",
+      "cap": 32037,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SOVERZENE",
+      "cap": 32010,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SOVRAMONTE",
+      "cap": 32030,
+      "provincia": "BL"
+    },
+    {
+      "nome": "TAIBON AGORDINO",
+      "cap": 32027,
+      "provincia": "BL"
+    },
+    {
+      "nome": "TAMBRE",
+      "cap": 32010,
+      "provincia": "BL"
+    },
+    {
+      "nome": "VALLADA AGORDINA",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "VALLE DI CADORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "VIGO DI CADORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "VODO CADORE",
+      "cap": 32040,
+      "provincia": "BL"
+    },
+    {
+      "nome": "VOLTAGO AGORDINO",
+      "cap": 32020,
+      "provincia": "BL"
+    },
+    {
+      "nome": "ZOPPÈ DI CADORE",
+      "cap": 32010,
+      "provincia": "BL"
+    },
+    {
+      "nome": "LONGARONE",
+      "cap": 32013,
+      "provincia": "BL"
+    },
+    {
+      "nome": "ALPAGO",
+      "cap": 32016,
+      "provincia": "BL"
+    },
+    {
+      "nome": "VAL DI ZOLDO",
+      "cap": 32012,
+      "provincia": "BL"
+    },
+    {
+      "nome": "BORGO VALBELLUNA",
+      "cap": 32026,
+      "provincia": "BL"
+    },
+    {
+      "nome": "SETTEVILLE",
+      "cap": 32038,
+      "provincia": "BL"
+    },
+    {
+      "nome": "ALTIVOLE",
+      "cap": 31030,
+      "provincia": "TV"
+    },
+    {
+      "nome": "ARCADE",
+      "cap": 31030,
+      "provincia": "TV"
+    },
+    {
+      "nome": "ASOLO",
+      "cap": 31011,
+      "provincia": "TV"
+    },
+    {
+      "nome": "BORSO DEL GRAPPA",
+      "cap": 31030,
+      "provincia": "TV"
+    },
+    {
+      "nome": "BREDA DI PIAVE",
+      "cap": 31030,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CAERANO DI SAN MARCO",
+      "cap": 31031,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CAPPELLA MAGGIORE",
+      "cap": 31012,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CARBONERA",
+      "cap": 31030,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CASALE SUL SILE",
+      "cap": 31032,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CASIER",
+      "cap": 31030,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CASTELCUCCO",
+      "cap": 31030,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CASTELFRANCO VENETO",
+      "cap": 31033,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CASTELLO DI GODEGO",
+      "cap": 31030,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CAVASO DEL TOMBA",
+      "cap": 31034,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CESSALTO",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CHIARANO",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CIMADOLMO",
+      "cap": 31010,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CISON DI VALMARINO",
+      "cap": 31030,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CODOGNÈ",
+      "cap": 31013,
+      "provincia": "TV"
+    },
+    {
+      "nome": "COLLE UMBERTO",
+      "cap": 31014,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CONEGLIANO",
+      "cap": 31015,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CORDIGNANO",
+      "cap": 31016,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CORNUDA",
+      "cap": 31041,
+      "provincia": "TV"
+    },
+    {
+      "nome": "CROCETTA DEL MONTELLO",
+      "cap": 31035,
+      "provincia": "TV"
+    },
+    {
+      "nome": "FARRA DI SOLIGO",
+      "cap": 31010,
+      "provincia": "TV"
+    },
+    {
+      "nome": "FOLLINA",
+      "cap": 31051,
+      "provincia": "TV"
+    },
+    {
+      "nome": "FONTANELLE",
+      "cap": 31043,
+      "provincia": "TV"
+    },
+    {
+      "nome": "FONTE",
+      "cap": 31010,
+      "provincia": "TV"
+    },
+    {
+      "nome": "FREGONA",
+      "cap": 31010,
+      "provincia": "TV"
+    },
+    {
+      "nome": "GAIARINE",
+      "cap": 31018,
+      "provincia": "TV"
+    },
+    {
+      "nome": "GIAVERA DEL MONTELLO",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "GODEGA DI SANT'URBANO",
+      "cap": 31010,
+      "provincia": "TV"
+    },
+    {
+      "nome": "GORGO AL MONTICANO",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "ISTRANA",
+      "cap": 31036,
+      "provincia": "TV"
+    },
+    {
+      "nome": "LORIA",
+      "cap": 31037,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MANSUÈ",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MARENO DI PIAVE",
+      "cap": 31010,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MASER",
+      "cap": 31010,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MASERADA SUL PIAVE",
+      "cap": 31052,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MEDUNA DI LIVENZA",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MIANE",
+      "cap": 31050,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MOGLIANO VENETO",
+      "cap": 31021,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MONASTIER DI TREVISO",
+      "cap": 31050,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MONFUMO",
+      "cap": 31010,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MONTEBELLUNA",
+      "cap": 31044,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MORGANO",
+      "cap": 31050,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MORIAGO DELLA BATTAGLIA",
+      "cap": 31010,
+      "provincia": "TV"
+    },
+    {
+      "nome": "MOTTA DI LIVENZA",
+      "cap": 31045,
+      "provincia": "TV"
+    },
+    {
+      "nome": "NERVESA DELLA BATTAGLIA",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "ODERZO",
+      "cap": 31046,
+      "provincia": "TV"
+    },
+    {
+      "nome": "ORMELLE",
+      "cap": 31024,
+      "provincia": "TV"
+    },
+    {
+      "nome": "ORSAGO",
+      "cap": 31010,
+      "provincia": "TV"
+    },
+    {
+      "nome": "PAESE",
+      "cap": 31038,
+      "provincia": "TV"
+    },
+    {
+      "nome": "PEDEROBBA",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "PIEVE DI SOLIGO",
+      "cap": 31053,
+      "provincia": "TV"
+    },
+    {
+      "nome": "PONTE DI PIAVE",
+      "cap": 31047,
+      "provincia": "TV"
+    },
+    {
+      "nome": "PONZANO VENETO",
+      "cap": 31050,
+      "provincia": "TV"
+    },
+    {
+      "nome": "PORTOBUFFOLÈ",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "POSSAGNO",
+      "cap": 31054,
+      "provincia": "TV"
+    },
+    {
+      "nome": "POVEGLIANO",
+      "cap": 31050,
+      "provincia": "TV"
+    },
+    {
+      "nome": "PREGANZIOL",
+      "cap": 31022,
+      "provincia": "TV"
+    },
+    {
+      "nome": "QUINTO DI TREVISO",
+      "cap": 31055,
+      "provincia": "TV"
+    },
+    {
+      "nome": "REFRONTOLO",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "RESANA",
+      "cap": 31023,
+      "provincia": "TV"
+    },
+    {
+      "nome": "REVINE LAGO",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "RIESE PIO X",
+      "cap": 31039,
+      "provincia": "TV"
+    },
+    {
+      "nome": "RONCADE",
+      "cap": 31056,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SALGAREDA",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SAN BIAGIO DI CALLALTA",
+      "cap": 31048,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SAN FIOR",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SAN PIETRO DI FELETTO",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SAN POLO DI PIAVE",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SANTA LUCIA DI PIAVE",
+      "cap": 31025,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SAN VENDEMIANO",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SAN ZENONE DEGLI EZZELINI",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SARMEDE",
+      "cap": 31026,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SEGUSINO",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SERNAGLIA DELLA BATTAGLIA",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SILEA",
+      "cap": 31057,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SPRESIANO",
+      "cap": 31027,
+      "provincia": "TV"
+    },
+    {
+      "nome": "SUSEGANA",
+      "cap": 31058,
+      "provincia": "TV"
+    },
+    {
+      "nome": "TARZO",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "TREVIGNANO",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "TREVISO",
+      "cap": 31100,
+      "provincia": "TV"
+    },
+    {
+      "nome": "VALDOBBIADENE",
+      "cap": 31049,
+      "provincia": "TV"
+    },
+    {
+      "nome": "VAZZOLA",
+      "cap": 31028,
+      "provincia": "TV"
+    },
+    {
+      "nome": "VEDELAGO",
+      "cap": 31050,
+      "provincia": "TV"
+    },
+    {
+      "nome": "VIDOR",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "VILLORBA",
+      "cap": 31020,
+      "provincia": "TV"
+    },
+    {
+      "nome": "VITTORIO VENETO",
+      "cap": 31029,
+      "provincia": "TV"
+    },
+    {
+      "nome": "VOLPAGO DEL MONTELLO",
+      "cap": 31040,
+      "provincia": "TV"
+    },
+    {
+      "nome": "ZENSON DI PIAVE",
+      "cap": 31050,
+      "provincia": "TV"
+    },
+    {
+      "nome": "ZERO BRANCO",
+      "cap": 31059,
+      "provincia": "TV"
+    },
+    {
+      "nome": "PIEVE DEL GRAPPA",
+      "cap": 31017,
+      "provincia": "TV"
+    },
+    {
+      "nome": "ANNONE VENETO",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CAMPAGNA LUPIA",
+      "cap": 30010,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CAMPOLONGO MAGGIORE",
+      "cap": 30010,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CAMPONOGARA",
+      "cap": 30010,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CAORLE",
+      "cap": 30021,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CAVARZERE",
+      "cap": 30014,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CEGGIA",
+      "cap": 30022,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CHIOGGIA",
+      "cap": 30015,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CINTO CAOMAGGIORE",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CONA",
+      "cap": 30010,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CONCORDIA SAGITTARIA",
+      "cap": 30023,
+      "provincia": "VE"
+    },
+    {
+      "nome": "DOLO",
+      "cap": 30031,
+      "provincia": "VE"
+    },
+    {
+      "nome": "ERACLEA",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "FIESSO D'ARTICO",
+      "cap": 30032,
+      "provincia": "VE"
+    },
+    {
+      "nome": "FOSSALTA DI PIAVE",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "FOSSALTA DI PORTOGRUARO",
+      "cap": 30025,
+      "provincia": "VE"
+    },
+    {
+      "nome": "FOSSÒ",
+      "cap": 30030,
+      "provincia": "VE"
+    },
+    {
+      "nome": "GRUARO",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "JESOLO",
+      "cap": 30016,
+      "provincia": "VE"
+    },
+    {
+      "nome": "MARCON",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "MARTELLAGO",
+      "cap": 30030,
+      "provincia": "VE"
+    },
+    {
+      "nome": "MEOLO",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "MIRA",
+      "cap": 30034,
+      "provincia": "VE"
+    },
+    {
+      "nome": "MIRANO",
+      "cap": 30035,
+      "provincia": "VE"
+    },
+    {
+      "nome": "MUSILE DI PIAVE",
+      "cap": 30024,
+      "provincia": "VE"
+    },
+    {
+      "nome": "NOALE",
+      "cap": 30033,
+      "provincia": "VE"
+    },
+    {
+      "nome": "NOVENTA DI PIAVE",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "PIANIGA",
+      "cap": 30030,
+      "provincia": "VE"
+    },
+    {
+      "nome": "PORTOGRUARO",
+      "cap": 30026,
+      "provincia": "VE"
+    },
+    {
+      "nome": "PRAMAGGIORE",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "QUARTO D'ALTINO",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "SALZANO",
+      "cap": 30030,
+      "provincia": "VE"
+    },
+    {
+      "nome": "SAN DONÀ DI PIAVE",
+      "cap": 30027,
+      "provincia": "VE"
+    },
+    {
+      "nome": "SAN MICHELE AL TAGLIAMENTO",
+      "cap": 30028,
+      "provincia": "VE"
+    },
+    {
+      "nome": "SANTA MARIA DI SALA",
+      "cap": 30036,
+      "provincia": "VE"
+    },
+    {
+      "nome": "SAN STINO DI LIVENZA",
+      "cap": 30029,
+      "provincia": "VE"
+    },
+    {
+      "nome": "SCORZÈ",
+      "cap": 30037,
+      "provincia": "VE"
+    },
+    {
+      "nome": "SPINEA",
+      "cap": 30038,
+      "provincia": "VE"
+    },
+    {
+      "nome": "STRA",
+      "cap": 30039,
+      "provincia": "VE"
+    },
+    {
+      "nome": "TEGLIO VENETO",
+      "cap": 30025,
+      "provincia": "VE"
+    },
+    {
+      "nome": "TORRE DI MOSTO",
+      "cap": 30020,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30121,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30122,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30123,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30124,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30125,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30126,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30132,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30133,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30135,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30141,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30142,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30171,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30172,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30173,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30174,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30175,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VENEZIA",
+      "cap": 30176,
+      "provincia": "VE"
+    },
+    {
+      "nome": "VIGONOVO",
+      "cap": 30030,
+      "provincia": "VE"
+    },
+    {
+      "nome": "CAVALLINO-TREPORTI",
+      "cap": 30013,
+      "provincia": "VE"
+    },
+    {
+      "nome": "ABANO TERME",
+      "cap": 35031,
+      "provincia": "PD"
+    },
+    {
+      "nome": "AGNA",
+      "cap": 35021,
+      "provincia": "PD"
+    },
+    {
+      "nome": "ALBIGNASEGO",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "ANGUILLARA VENETA",
+      "cap": 35022,
+      "provincia": "PD"
+    },
+    {
+      "nome": "ARQUÀ PETRARCA",
+      "cap": 35032,
+      "provincia": "PD"
+    },
+    {
+      "nome": "ARRE",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "ARZERGRANDE",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "BAGNOLI DI SOPRA",
+      "cap": 35023,
+      "provincia": "PD"
+    },
+    {
+      "nome": "BAONE",
+      "cap": 35030,
+      "provincia": "PD"
+    },
+    {
+      "nome": "BARBONA",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "BATTAGLIA TERME",
+      "cap": 35041,
+      "provincia": "PD"
+    },
+    {
+      "nome": "BOARA PISANI",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "BORGORICCO",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "BOVOLENTA",
+      "cap": 35024,
+      "provincia": "PD"
+    },
+    {
+      "nome": "BRUGINE",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CADONEGHE",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CAMPODARSEGO",
+      "cap": 35011,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CAMPODORO",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CAMPOSAMPIERO",
+      "cap": 35012,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CAMPO SAN MARTINO",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CANDIANA",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CARMIGNANO DI BRENTA",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CARTURA",
+      "cap": 35025,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CASALE DI SCODOSIA",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CASALSERUGO",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CASTELBALDO",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CERVARESE SANTA CROCE",
+      "cap": 35030,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CINTO EUGANEO",
+      "cap": 35030,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CITTADELLA",
+      "cap": 35013,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CODEVIGO",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CONSELVE",
+      "cap": 35026,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CORREZZOLA",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "CURTAROLO",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "ESTE",
+      "cap": 35042,
+      "provincia": "PD"
+    },
+    {
+      "nome": "FONTANIVA",
+      "cap": 35014,
+      "provincia": "PD"
+    },
+    {
+      "nome": "GALLIERA VENETA",
+      "cap": 35015,
+      "provincia": "PD"
+    },
+    {
+      "nome": "GALZIGNANO TERME",
+      "cap": 35030,
+      "provincia": "PD"
+    },
+    {
+      "nome": "GAZZO",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "GRANTORTO",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "GRANZE",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "LEGNARO",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "LIMENA",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "LOREGGIA",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "LOZZO ATESTINO",
+      "cap": 35034,
+      "provincia": "PD"
+    },
+    {
+      "nome": "MASERÀ DI PADOVA",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "MASI",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "MASSANZAGO",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "MEGLIADINO SAN VITALE",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "MERLARA",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "MESTRINO",
+      "cap": 35035,
+      "provincia": "PD"
+    },
+    {
+      "nome": "MONSELICE",
+      "cap": 35043,
+      "provincia": "PD"
+    },
+    {
+      "nome": "MONTAGNANA",
+      "cap": 35044,
+      "provincia": "PD"
+    },
+    {
+      "nome": "MONTEGROTTO TERME",
+      "cap": 35036,
+      "provincia": "PD"
+    },
+    {
+      "nome": "NOVENTA PADOVANA",
+      "cap": 35027,
+      "provincia": "PD"
+    },
+    {
+      "nome": "OSPEDALETTO EUGANEO",
+      "cap": 35045,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35121,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35122,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35123,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35124,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35125,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35126,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35127,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35128,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35129,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35131,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35132,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35133,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35134,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35135,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35136,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35137,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35138,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35139,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35141,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35142,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PADOVA",
+      "cap": 35143,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PERNUMIA",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PIACENZA D'ADIGE",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PIAZZOLA SUL BRENTA",
+      "cap": 35016,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PIOMBINO DESE",
+      "cap": 35017,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PIOVE DI SACCO",
+      "cap": 35028,
+      "provincia": "PD"
+    },
+    {
+      "nome": "POLVERARA",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PONSO",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PONTELONGO",
+      "cap": 35029,
+      "provincia": "PD"
+    },
+    {
+      "nome": "PONTE SAN NICOLÒ",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "POZZONOVO",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "ROVOLON",
+      "cap": 35030,
+      "provincia": "PD"
+    },
+    {
+      "nome": "RUBANO",
+      "cap": 35030,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SACCOLONGO",
+      "cap": 35030,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SAN GIORGIO DELLE PERTICHE",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SAN GIORGIO IN BOSCO",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SAN MARTINO DI LUPARI",
+      "cap": 35018,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SAN PIETRO IN GU",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SAN PIETRO VIMINARIO",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SANTA GIUSTINA IN COLLE",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SANT'ANGELO DI PIOVE DI SACCO",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SANT'ELENA",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SANT'URBANO",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SAONARA",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SELVAZZANO DENTRO",
+      "cap": 35030,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SOLESINO",
+      "cap": 35047,
+      "provincia": "PD"
+    },
+    {
+      "nome": "STANGHELLA",
+      "cap": 35048,
+      "provincia": "PD"
+    },
+    {
+      "nome": "TEOLO",
+      "cap": 35037,
+      "provincia": "PD"
+    },
+    {
+      "nome": "TERRASSA PADOVANA",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "TOMBOLO",
+      "cap": 35019,
+      "provincia": "PD"
+    },
+    {
+      "nome": "TORREGLIA",
+      "cap": 35038,
+      "provincia": "PD"
+    },
+    {
+      "nome": "TREBASELEGHE",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "TRIBANO",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "URBANA",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "VEGGIANO",
+      "cap": 35030,
+      "provincia": "PD"
+    },
+    {
+      "nome": "VESCOVANA",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "VIGODARZERE",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "VIGONZA",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "VILLA DEL CONTE",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "VILLA ESTENSE",
+      "cap": 35040,
+      "provincia": "PD"
+    },
+    {
+      "nome": "VILLAFRANCA PADOVANA",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "VILLANOVA DI CAMPOSAMPIERO",
+      "cap": 35010,
+      "provincia": "PD"
+    },
+    {
+      "nome": "VO'",
+      "cap": 35030,
+      "provincia": "PD"
+    },
+    {
+      "nome": "DUE CARRARE",
+      "cap": 35020,
+      "provincia": "PD"
+    },
+    {
+      "nome": "BORGO VENETO",
+      "cap": 35046,
+      "provincia": "PD"
+    },
+    {
+      "nome": "SANTA CATERINA D'ESTE",
+      "cap": 35049,
+      "provincia": "PD"
+    },
+    {
+      "nome": "ADRIA",
+      "cap": 45011,
+      "provincia": "RO"
+    },
+    {
+      "nome": "ARIANO NEL POLESINE",
+      "cap": 45012,
+      "provincia": "RO"
+    },
+    {
+      "nome": "ARQUÀ POLESINE",
+      "cap": 45031,
+      "provincia": "RO"
+    },
+    {
+      "nome": "BADIA POLESINE",
+      "cap": 45021,
+      "provincia": "RO"
+    },
+    {
+      "nome": "BAGNOLO DI PO",
+      "cap": 45022,
+      "provincia": "RO"
+    },
+    {
+      "nome": "BERGANTINO",
+      "cap": 45032,
+      "provincia": "RO"
+    },
+    {
+      "nome": "BOSARO",
+      "cap": 45033,
+      "provincia": "RO"
+    },
+    {
+      "nome": "CALTO",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "CANARO",
+      "cap": 45034,
+      "provincia": "RO"
+    },
+    {
+      "nome": "CANDA",
+      "cap": 45020,
+      "provincia": "RO"
+    },
+    {
+      "nome": "CASTELGUGLIELMO",
+      "cap": 45020,
+      "provincia": "RO"
+    },
+    {
+      "nome": "CASTELMASSA",
+      "cap": 45035,
+      "provincia": "RO"
+    },
+    {
+      "nome": "CASTELNOVO BARIANO",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "CENESELLI",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "CEREGNANO",
+      "cap": 45010,
+      "provincia": "RO"
+    },
+    {
+      "nome": "CORBOLA",
+      "cap": 45015,
+      "provincia": "RO"
+    },
+    {
+      "nome": "COSTA DI ROVIGO",
+      "cap": 45023,
+      "provincia": "RO"
+    },
+    {
+      "nome": "CRESPINO",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "FICAROLO",
+      "cap": 45036,
+      "provincia": "RO"
+    },
+    {
+      "nome": "FIESSO UMBERTIANO",
+      "cap": 45024,
+      "provincia": "RO"
+    },
+    {
+      "nome": "FRASSINELLE POLESINE",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "FRATTA POLESINE",
+      "cap": 45025,
+      "provincia": "RO"
+    },
+    {
+      "nome": "GAIBA",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "GAVELLO",
+      "cap": 45010,
+      "provincia": "RO"
+    },
+    {
+      "nome": "GIACCIANO CON BARUCHELLA",
+      "cap": 45020,
+      "provincia": "RO"
+    },
+    {
+      "nome": "GUARDA VENETA",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "LENDINARA",
+      "cap": 45026,
+      "provincia": "RO"
+    },
+    {
+      "nome": "LOREO",
+      "cap": 45017,
+      "provincia": "RO"
+    },
+    {
+      "nome": "LUSIA",
+      "cap": 45020,
+      "provincia": "RO"
+    },
+    {
+      "nome": "MELARA",
+      "cap": 45037,
+      "provincia": "RO"
+    },
+    {
+      "nome": "OCCHIOBELLO",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "PAPOZZE",
+      "cap": 45010,
+      "provincia": "RO"
+    },
+    {
+      "nome": "PETTORAZZA GRIMANI",
+      "cap": 45010,
+      "provincia": "RO"
+    },
+    {
+      "nome": "PINCARA",
+      "cap": 45020,
+      "provincia": "RO"
+    },
+    {
+      "nome": "POLESELLA",
+      "cap": 45038,
+      "provincia": "RO"
+    },
+    {
+      "nome": "PONTECCHIO POLESINE",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "PORTO TOLLE",
+      "cap": 45018,
+      "provincia": "RO"
+    },
+    {
+      "nome": "ROSOLINA",
+      "cap": 45010,
+      "provincia": "RO"
+    },
+    {
+      "nome": "ROVIGO",
+      "cap": 45100,
+      "provincia": "RO"
+    },
+    {
+      "nome": "SALARA",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "SAN BELLINO",
+      "cap": 45020,
+      "provincia": "RO"
+    },
+    {
+      "nome": "SAN MARTINO DI VENEZZE",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "STIENTA",
+      "cap": 45039,
+      "provincia": "RO"
+    },
+    {
+      "nome": "TAGLIO DI PO",
+      "cap": 45019,
+      "provincia": "RO"
+    },
+    {
+      "nome": "TRECENTA",
+      "cap": 45027,
+      "provincia": "RO"
+    },
+    {
+      "nome": "VILLADOSE",
+      "cap": 45010,
+      "provincia": "RO"
+    },
+    {
+      "nome": "VILLAMARZANA",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "VILLANOVA DEL GHEBBO",
+      "cap": 45020,
+      "provincia": "RO"
+    },
+    {
+      "nome": "VILLANOVA MARCHESANA",
+      "cap": 45030,
+      "provincia": "RO"
+    },
+    {
+      "nome": "PORTO VIRO",
+      "cap": 45014,
+      "provincia": "RO"
+    },
+    {
+      "nome": "AIELLO DEL FRIULI",
+      "cap": 33041,
+      "provincia": "UD"
+    },
+    {
+      "nome": "AMARO",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "AMPEZZO",
+      "cap": 33021,
+      "provincia": "UD"
+    },
+    {
+      "nome": "AQUILEIA",
+      "cap": 33051,
+      "provincia": "UD"
+    },
+    {
+      "nome": "ARTA TERME",
+      "cap": 33022,
+      "provincia": "UD"
+    },
+    {
+      "nome": "ARTEGNA",
+      "cap": 33011,
+      "provincia": "UD"
+    },
+    {
+      "nome": "ATTIMIS",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "BAGNARIA ARSA",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "BASILIANO",
+      "cap": 33031,
+      "provincia": "UD"
+    },
+    {
+      "nome": "BERTIOLO",
+      "cap": 33032,
+      "provincia": "UD"
+    },
+    {
+      "nome": "BICINICCO",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "BORDANO",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "BUJA",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "BUTTRIO",
+      "cap": 33042,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CAMINO AL TAGLIAMENTO",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CAMPOFORMIDO",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CARLINO",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CASSACCO",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CASTIONS DI STRADA",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CAVAZZO CARNICO",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CERCIVENTO",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CERVIGNANO DEL FRIULI",
+      "cap": 33052,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CHIOPRIS-VISCONE",
+      "cap": 33048,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CHIUSAFORTE",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CIVIDALE DEL FRIULI",
+      "cap": 33043,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CODROIPO",
+      "cap": 33033,
+      "provincia": "UD"
+    },
+    {
+      "nome": "COLLOREDO DI MONTE ALBANO",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "COMEGLIANS",
+      "cap": 33023,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CORNO DI ROSAZZO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "COSEANO",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "DIGNANO",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "DOGNA",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "DRENCHIA",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "ENEMONZO",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "FAEDIS",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "FAGAGNA",
+      "cap": 33034,
+      "provincia": "UD"
+    },
+    {
+      "nome": "FLAIBANO",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "FORNI AVOLTRI",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "FORNI DI SOPRA",
+      "cap": 33024,
+      "provincia": "UD"
+    },
+    {
+      "nome": "FORNI DI SOTTO",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "GEMONA DEL FRIULI",
+      "cap": 33013,
+      "provincia": "UD"
+    },
+    {
+      "nome": "GONARS",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "GRIMACCO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "LATISANA",
+      "cap": 33053,
+      "provincia": "UD"
+    },
+    {
+      "nome": "LAUCO",
+      "cap": 33029,
+      "provincia": "UD"
+    },
+    {
+      "nome": "LESTIZZA",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "LIGNANO SABBIADORO",
+      "cap": 33054,
+      "provincia": "UD"
+    },
+    {
+      "nome": "LUSEVERA",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MAGNANO IN RIVIERA",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MAJANO",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MALBORGHETTO VALBRUNA",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MANZANO",
+      "cap": 33044,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MARANO LAGUNARE",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MARTIGNACCO",
+      "cap": 33035,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MERETO DI TOMBA",
+      "cap": 33036,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MOGGIO UDINESE",
+      "cap": 33015,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MOIMACCO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MONTENARS",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MORTEGLIANO",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MORUZZO",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "MUZZANA DEL TURGNANO",
+      "cap": 33055,
+      "provincia": "UD"
+    },
+    {
+      "nome": "NIMIS",
+      "cap": 33045,
+      "provincia": "UD"
+    },
+    {
+      "nome": "OSOPPO",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "OVARO",
+      "cap": 33025,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PAGNACCO",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PALAZZOLO DELLO STELLA",
+      "cap": 33056,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PALMANOVA",
+      "cap": 33057,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PALUZZA",
+      "cap": 33026,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PASIAN DI PRATO",
+      "cap": 33037,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PAULARO",
+      "cap": 33027,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PAVIA DI UDINE",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "POCENIA",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PONTEBBA",
+      "cap": 33016,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PORPETTO",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "POVOLETTO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "POZZUOLO DEL FRIULI",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PRADAMANO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PRATO CARNICO",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PRECENICCO",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PREMARIACCO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PREONE",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PREPOTTO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "PULFERO",
+      "cap": 33046,
+      "provincia": "UD"
+    },
+    {
+      "nome": "RAGOGNA",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "RAVASCLETTO",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "RAVEO",
+      "cap": 33029,
+      "provincia": "UD"
+    },
+    {
+      "nome": "REANA DEL ROJALE",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "REMANZACCO",
+      "cap": 33047,
+      "provincia": "UD"
+    },
+    {
+      "nome": "RESIA",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "RESIUTTA",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "RIGOLATO",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "RIVE D'ARCANO",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "RONCHIS",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "RUDA",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SAN DANIELE DEL FRIULI",
+      "cap": 33038,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SAN GIORGIO DI NOGARO",
+      "cap": 33058,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SAN GIOVANNI AL NATISONE",
+      "cap": 33048,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SAN LEONARDO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SAN PIETRO AL NATISONE",
+      "cap": 33049,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SANTA MARIA LA LONGA",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SAN VITO AL TORRE",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SAN VITO DI FAGAGNA",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SAURIS",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SAVOGNA",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SEDEGLIANO",
+      "cap": 33039,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SOCCHIEVE",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "STREGNA",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SUTRIO",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TAIPANA",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TALMASSONS",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TARCENTO",
+      "cap": 33017,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TARVISIO",
+      "cap": 33018,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TAVAGNACCO",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TERZO D'AQUILEIA",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TOLMEZZO",
+      "cap": 33028,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TORREANO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TORVISCOSA",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TRASAGHIS",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TREPPO GRANDE",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TRICESIMO",
+      "cap": 33019,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TRIVIGNANO UDINESE",
+      "cap": 33050,
+      "provincia": "UD"
+    },
+    {
+      "nome": "UDINE",
+      "cap": 33100,
+      "provincia": "UD"
+    },
+    {
+      "nome": "VARMO",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "VENZONE",
+      "cap": 33010,
+      "provincia": "UD"
+    },
+    {
+      "nome": "VERZEGNIS",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "VILLA SANTINA",
+      "cap": 33029,
+      "provincia": "UD"
+    },
+    {
+      "nome": "VISCO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "ZUGLIO",
+      "cap": 33020,
+      "provincia": "UD"
+    },
+    {
+      "nome": "FORGARIA NEL FRIULI",
+      "cap": 33030,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CAMPOLONGO TAPOGLIANO",
+      "cap": 33040,
+      "provincia": "UD"
+    },
+    {
+      "nome": "RIVIGNANO TEOR",
+      "cap": 33061,
+      "provincia": "UD"
+    },
+    {
+      "nome": "SAPPADA",
+      "cap": 33012,
+      "provincia": "UD"
+    },
+    {
+      "nome": "FIUMICELLO VILLA VICENTINA",
+      "cap": 33059,
+      "provincia": "UD"
+    },
+    {
+      "nome": "TREPPO LIGOSULLO",
+      "cap": 33014,
+      "provincia": "UD"
+    },
+    {
+      "nome": "CAPRIVA DEL FRIULI",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "CORMONS",
+      "cap": 34071,
+      "provincia": "GO"
+    },
+    {
+      "nome": "DOBERDÒ DEL LAGO-DOBERDOB",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "DOLEGNA DEL COLLIO",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "FARRA D'ISONZO",
+      "cap": 34072,
+      "provincia": "GO"
+    },
+    {
+      "nome": "FOGLIANO REDIPUGLIA",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "GORIZIA",
+      "cap": 34170,
+      "provincia": "GO"
+    },
+    {
+      "nome": "GRADISCA D'ISONZO",
+      "cap": 34072,
+      "provincia": "GO"
+    },
+    {
+      "nome": "GRADO",
+      "cap": 34073,
+      "provincia": "GO"
+    },
+    {
+      "nome": "MARIANO DEL FRIULI",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "MEDEA",
+      "cap": 34076,
+      "provincia": "GO"
+    },
+    {
+      "nome": "MONFALCONE",
+      "cap": 34074,
+      "provincia": "GO"
+    },
+    {
+      "nome": "MORARO",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "MOSSA",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "ROMANS D'ISONZO",
+      "cap": 34076,
+      "provincia": "GO"
+    },
+    {
+      "nome": "RONCHI DEI LEGIONARI",
+      "cap": 34077,
+      "provincia": "GO"
+    },
+    {
+      "nome": "SAGRADO",
+      "cap": 34078,
+      "provincia": "GO"
+    },
+    {
+      "nome": "SAN CANZIAN D'ISONZO",
+      "cap": 34075,
+      "provincia": "GO"
+    },
+    {
+      "nome": "SAN FLORIANO DEL COLLIO-ŠTEVERJAN",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "SAN LORENZO ISONTINO",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "SAN PIER D'ISONZO",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "SAVOGNA D'ISONZO-SOVODNJE OB SOČI",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "STARANZANO",
+      "cap": 34079,
+      "provincia": "GO"
+    },
+    {
+      "nome": "TURRIACO",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "VILLESSE",
+      "cap": 34070,
+      "provincia": "GO"
+    },
+    {
+      "nome": "DUINO AURISINA-DEVIN NABREŽINA",
+      "cap": 34011,
+      "provincia": "TS"
+    },
+    {
+      "nome": "MONRUPINO-REPENTABOR",
+      "cap": 34016,
+      "provincia": "TS"
+    },
+    {
+      "nome": "MUGGIA",
+      "cap": 34015,
+      "provincia": "TS"
+    },
+    {
+      "nome": "SAN DORLIGO DELLA VALLE-DOLINA",
+      "cap": 34018,
+      "provincia": "TS"
+    },
+    {
+      "nome": "SGONICO-ZGONIK",
+      "cap": 34010,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34121,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34122,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34123,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34124,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34125,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34126,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34127,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34128,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34129,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34131,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34132,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34133,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34134,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34135,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34136,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34137,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34138,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34139,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34141,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34142,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34143,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34144,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34145,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34146,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34147,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34148,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34149,
+      "provincia": "TS"
+    },
+    {
+      "nome": "TRIESTE",
+      "cap": 34151,
+      "provincia": "TS"
+    },
+    {
+      "nome": "ANDREIS",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "ARBA",
+      "cap": 33090,
+      "provincia": "PN"
+    },
+    {
+      "nome": "AVIANO",
+      "cap": 33081,
+      "provincia": "PN"
+    },
+    {
+      "nome": "AZZANO DECIMO",
+      "cap": 33082,
+      "provincia": "PN"
+    },
+    {
+      "nome": "BARCIS",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "BRUGNERA",
+      "cap": 33070,
+      "provincia": "PN"
+    },
+    {
+      "nome": "BUDOIA",
+      "cap": 33070,
+      "provincia": "PN"
+    },
+    {
+      "nome": "CANEVA",
+      "cap": 33070,
+      "provincia": "PN"
+    },
+    {
+      "nome": "CASARSA DELLA DELIZIA",
+      "cap": 33072,
+      "provincia": "PN"
+    },
+    {
+      "nome": "CASTELNOVO DEL FRIULI",
+      "cap": 33090,
+      "provincia": "PN"
+    },
+    {
+      "nome": "CAVASSO NUOVO",
+      "cap": 33092,
+      "provincia": "PN"
+    },
+    {
+      "nome": "CHIONS",
+      "cap": 33083,
+      "provincia": "PN"
+    },
+    {
+      "nome": "CIMOLAIS",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "CLAUT",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "CLAUZETTO",
+      "cap": 33090,
+      "provincia": "PN"
+    },
+    {
+      "nome": "CORDENONS",
+      "cap": 33084,
+      "provincia": "PN"
+    },
+    {
+      "nome": "CORDOVADO",
+      "cap": 33075,
+      "provincia": "PN"
+    },
+    {
+      "nome": "ERTO E CASSO",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "FANNA",
+      "cap": 33092,
+      "provincia": "PN"
+    },
+    {
+      "nome": "FIUME VENETO",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "FONTANAFREDDA",
+      "cap": 33074,
+      "provincia": "PN"
+    },
+    {
+      "nome": "FRISANCO",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "MANIAGO",
+      "cap": 33085,
+      "provincia": "PN"
+    },
+    {
+      "nome": "MEDUNO",
+      "cap": 33092,
+      "provincia": "PN"
+    },
+    {
+      "nome": "MONTEREALE VALCELLINA",
+      "cap": 33086,
+      "provincia": "PN"
+    },
+    {
+      "nome": "MORSANO AL TAGLIAMENTO",
+      "cap": 33075,
+      "provincia": "PN"
+    },
+    {
+      "nome": "PASIANO DI PORDENONE",
+      "cap": 33087,
+      "provincia": "PN"
+    },
+    {
+      "nome": "PINZANO AL TAGLIAMENTO",
+      "cap": 33094,
+      "provincia": "PN"
+    },
+    {
+      "nome": "POLCENIGO",
+      "cap": 33070,
+      "provincia": "PN"
+    },
+    {
+      "nome": "PORCIA",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "PORDENONE",
+      "cap": 33170,
+      "provincia": "PN"
+    },
+    {
+      "nome": "PRATA DI PORDENONE",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "PRAVISDOMINI",
+      "cap": 33076,
+      "provincia": "PN"
+    },
+    {
+      "nome": "ROVEREDO IN PIANO",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "SACILE",
+      "cap": 33077,
+      "provincia": "PN"
+    },
+    {
+      "nome": "SAN GIORGIO DELLA RICHINVELDA",
+      "cap": 33095,
+      "provincia": "PN"
+    },
+    {
+      "nome": "SAN MARTINO AL TAGLIAMENTO",
+      "cap": 33098,
+      "provincia": "PN"
+    },
+    {
+      "nome": "SAN QUIRINO",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "SAN VITO AL TAGLIAMENTO",
+      "cap": 33078,
+      "provincia": "PN"
+    },
+    {
+      "nome": "SEQUALS",
+      "cap": 33090,
+      "provincia": "PN"
+    },
+    {
+      "nome": "SESTO AL REGHENA",
+      "cap": 33079,
+      "provincia": "PN"
+    },
+    {
+      "nome": "SPILIMBERGO",
+      "cap": 33097,
+      "provincia": "PN"
+    },
+    {
+      "nome": "TRAMONTI DI SOPRA",
+      "cap": 33090,
+      "provincia": "PN"
+    },
+    {
+      "nome": "TRAMONTI DI SOTTO",
+      "cap": 33090,
+      "provincia": "PN"
+    },
+    {
+      "nome": "TRAVESIO",
+      "cap": 33090,
+      "provincia": "PN"
+    },
+    {
+      "nome": "VITO D'ASIO",
+      "cap": 33090,
+      "provincia": "PN"
+    },
+    {
+      "nome": "VIVARO",
+      "cap": 33099,
+      "provincia": "PN"
+    },
+    {
+      "nome": "ZOPPOLA",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "VAJONT",
+      "cap": 33080,
+      "provincia": "PN"
+    },
+    {
+      "nome": "VALVASONE ARZENE",
+      "cap": 33098,
+      "provincia": "PN"
+    }
+  ]
+}

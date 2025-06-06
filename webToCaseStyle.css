@@ -105,7 +105,7 @@ input[type="submit"] {
   margin-top: 20px;
   width: 100%;
   font-weight: bold;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 input[type="submit"]:hover {
@@ -161,7 +161,7 @@ legend {
   font-size: 1rem;
   font-weight: 700;
   color: #007B87;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   letter-spacing: 0.5px;
   padding: 0 0.5rem;
   margin-left: 0.5rem;
@@ -192,6 +192,9 @@ legend {
     font-size: 0.95rem;
   }
 
+  [data-tippy-content] {
+    text-transform: none !important;
+  }
   .tooltip-icon {
     width: 26px;
     height: 26px;
@@ -204,8 +207,10 @@ legend {
     font-weight: bold;
     margin-left: 0.5em;
     cursor: pointer;
+    text-transform: none!important;
   }
   .tippy-box[data-theme~='light-border'] {
+    text-transform: none;
     word-break: break-word;
     font-size: 0.9rem;
     padding: 0.7em;
