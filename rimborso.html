@@ -99,48 +99,50 @@
         const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
         const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
         const fermateUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
-        const prefissiUrl = "https://form-tpl-final.glitch.me/prefissi.json"
+        const prefissiUrl = "prefissi.json"
 
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
         caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
         caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t);
 
-   
 
-       
+
+
         document.getElementById("00NbU0000003FDp")?.addEventListener("blur", () => {
           validaCampoCodiceFiscale("00NbU0000003FDp", t);
         });
         document.getElementById("00NbU0000003FLt")?.addEventListener("blur", () => {
           validaCampoCodiceFiscale("00NbU0000003FLt", t);
         });
-       
+
 
         document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
           toggleIndirizzo("00NbU0000001klm", "indirizzoItaliaWrapper", lang);
           toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
+          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper2", lang, true);
         });
 
-         
+
         document.getElementById("00NbU0000001oij")?.addEventListener("change", () => {
           toggleIndirizzo("00NbU0000001oij", "indirizzoInteressatoItaliaWrapper", lang);
           toggleIndirizzo("00NbU0000001oij", "indirizzoInteressatoEsteroWrapper", lang, true);
+          toggleIndirizzo("00NbU0000001oij", "indirizzoInteressatoEsteroWrapper2", lang, true);
         });
-        
+
 
         document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
           toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper", ["persona fisica", "individual"]);
         });
 
-       
+
         //nazione
-        enforceDatalistConstraint(document.getElementById("00NbU0000001klm"),t);
+        enforceDatalistConstraint(document.getElementById("00NbU0000001klm"), t);
         //comune
-        enforceDatalistConstraint(document.getElementById("00NbU0000001klg"),t);
+        enforceDatalistConstraint(document.getElementById("00NbU0000001klg"), t);
         //nazione interessato
-        enforceDatalistConstraint(document.getElementById("00NbU0000001oij"),t);
+        enforceDatalistConstraint(document.getElementById("00NbU0000001oij"), t);
         //comune <interessato></interessato>
-        enforceDatalistConstraint(document.getElementById("00NbU0000003jLZ"),t);
+        enforceDatalistConstraint(document.getElementById("00NbU0000003jLZ"), t);
 
         caricaTipoSoggetto();
 
@@ -169,8 +171,8 @@
             e.preventDefault();
           }
           formattaDataEvento("datanascitadichiarante_visible", "00NbU0000001oaf");
-          formattaDataEvento("datanascitaintestatario_visible","00NbU0000001olx");
-          formattaDataEvento("dataemissione_visible","00NbU0000003Vbx");
+          formattaDataEvento("datanascitaintestatario_visible", "00NbU0000001olx");
+          formattaDataEvento("dataemissione_visible", "00NbU0000003Vbx");
 
 
           const validCampi = validazioneCampiObbligatori("formReclamo", t);
@@ -214,6 +216,9 @@
         <legend><span id="label_legendanagrafica"></span></legend>
 
         <label for="00NbU0000001klb" id="label_tipoSoggetto"></label>
+        <em>
+          <span id='label_introtiposoggetto'></span>
+        </em>
         <select id="00NbU0000001klb" name="00NbU0000001klb">
         </select>
 
@@ -237,7 +242,8 @@
 
         <label for="datanascitadichiarante_visible" id="label_datanascitadichiarante"></label>
         <input id="datanascitadichiarante_visible" type="date" />
-          <input  id="00NbU0000001oaf" name="00NbU0000001oaf"   type="text" size="20" style="display:none;" /> 
+        <input id="00NbU0000001oaf" name="00NbU0000001oaf" type="text" size="20" style="display:none;" />
+
 
         <label for="00NbU0000001klm" id="label_nazione"></label>
         <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
@@ -248,6 +254,9 @@
         <label for="00NbU0000001kli" id="label_indirizzo"></label>
         <input id="00NbU0000001kli" name="00NbU0000001kli" type="text" />
 
+        <label for="00NbU0000003s77" id="label_ncivico"></label>
+        <input id="00NbU0000003s77" maxlength="5" name="00NbU0000003s77" size="20" type="text" />
+
 
         <div id="indirizzoItaliaWrapper">
 
@@ -255,6 +264,8 @@
           <label for="00NbU0000001klg" id="label_comune">Comune:</label>
           <input id="00NbU0000001klg" name="00NbU0000001klg" list="comuniList" />
           <datalist id="comuniList"></datalist>
+
+
 
 
         </div>
@@ -267,8 +278,14 @@
           <input id="00NbU0000003Id7" maxlength="255" name="00NbU0000003Id7" size="20" type="text" />
 
 
-          <label for="00NbU0000003Iej" id="label_localita"></label>
-          <input id="00NbU0000003Iej" maxlength="255" name="00NbU0000003Iej" size="20" type="text" />
+
+        </div>
+
+        <label for="00NbU0000003Iej" id="label_localita"></label>
+        <input id="00NbU0000003Iej" maxlength="255" name="00NbU0000003Iej" size="20" type="text" />
+
+
+        <div id="indirizzoEsteroWrapper2" style="display:none">
 
 
           <label for="00NbU0000001kld" id="label_cap"></label>
@@ -304,6 +321,11 @@
       </fieldset>
       <fieldset>
         <legend><span id="label_datiintestatario"> </span></legend>
+
+        <em>
+          <span id='label_introdatiintestatario'></span>
+        </em>
+        
         <label for="00NbU0000001odt" id="label_nomeintestatario">Nome </label>
         <input id="00NbU0000001odt" maxlength="100" name="00NbU0000001odt" size="20" type="text" />
 
@@ -320,25 +342,7 @@
         <label for="00NbU0000001oij" id="label_nazioneintestatario"></label>
         <input id="00NbU0000001oij" name="00NbU0000001oij" list="nazioniList" />
 
-        <label for="00NbU0000003VaL" id="label_indirizzointestatario"></label>
-        <input id="00NbU0000003VaL" maxlength="255" name="00NbU0000003VaL" size="20" type="text" />
-        <div id="indirizzoInteressatoItaliaWrapper">
-              <label for="00NbU0000003jLZ" id="label_comuneintestatario"></label>
-              <input id="00NbU0000003jLZ" maxlength="255" name="00NbU0000003jLZ" size="20" list="comuniList" />
-          </div>
-        <div  id="indirizzoInteressatoEsteroWrapper" style="display:none;">
-                  <label for="00NbU0000003ivl" id="label_cittaintestatario"></label>
-                  <input id="00NbU0000003ivl" maxlength="255" name="00NbU0000003ivl" size="20" type="text" />
-          
-                  <label for="00NbU0000003j0b" id="label_capintestatario"></label>
-                  <input id="00NbU0000003j0b" maxlength="100" name="00NbU0000003j0b" size="20" type="text" /><br>
-          
-                  <label for="00NbU0000003ixN" id="label_localitaintestatario"></label>
-                  <input id="00NbU0000003ixN" maxlength="255" name="00NbU0000003ixN" size="20" type="text" />
-          
-                  <label for="00NbU0000003iyz" id="label_provinciaintestatario"></label>
-                  <input id="00NbU0000003iyz" maxlength="255" name="00NbU0000003iyz" size="20" type="text" />
-          </div>
+      
 
 
       </fieldset>
@@ -361,26 +365,26 @@
         <label for="00NbU0000001oSb" id="label_numerotesserinoidentificativo"></label>
         <input id="00NbU0000001oSb" name="00NbU0000001oSb" type="text" />
 
-      <label for="dataemissione_visible" id="label_dataemissione"> </label>
-      <input id="dataemissione_visible" type="date" />"  
-      <input  id="00NbU0000003Vbx" name="00NbU0000003Vbx"   type="text" size="20" style="display:none" />
+        <label for="dataemissione_visible" id="label_dataemissione"> </label>
+        <input id="dataemissione_visible" type="date" />
+        <input id="00NbU0000003Vbx" name="00NbU0000003Vbx" type="text" size="20" style="display:none" />
 
         <label for="00NbU0000003VdZ" id="label_numeroserialeabbonamento"></label>
         <input id="00NbU0000003VdZ" maxlength="100" name="00NbU0000003VdZ" size="20" type="text" /><br>
 
 
         <label for="00NbU0000003VfB" id="label_importopagato"></label>
-        <input id="00NbU0000003VfB" name="00NbU0000003VfB" size="20" type="text" /> 
+        <input id="00NbU0000003VfB" name="00NbU0000003VfB" size="20" type="text" />
 
 
         <label for="00NbU0000003Vgn" id="label_ibanrimborso"></label>
-        <input id="00NbU0000003Vgn" maxlength="50" name="00NbU0000003Vgn" size="20" type="text" /> 
+        <input id="00NbU0000003Vgn" maxlength="50" name="00NbU0000003Vgn" size="20" type="text" />
 
         <label for="00NbU0000003ViP" id="label_nomecognomeintestatarioiban"></label>
-        <input id="00NbU0000003ViP" maxlength="255" name="00NbU0000003ViP" size="20" type="text" /> 
+        <input id="00NbU0000003ViP" maxlength="255" name="00NbU0000003ViP" size="20" type="text" />
 
         <label for="00NbU0000003Vk1" id="label_comuneiban"></label>
-        <input id="00NbU0000003Vk1" maxlength="255" name="00NbU0000003Vk1" size="20" type="text" /> 
+        <input id="00NbU0000003Vk1" maxlength="255" name="00NbU0000003Vk1" size="20" type="text" />
 
 
 

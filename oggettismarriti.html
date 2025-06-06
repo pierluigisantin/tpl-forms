@@ -80,7 +80,7 @@
         const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
         const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
         const fermateUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
-        const prefissiUrl = "https://form-tpl-final.glitch.me/prefissi.json"
+        const prefissiUrl ="prefissi.json";
 
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
         caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
@@ -114,6 +114,7 @@
         document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
           toggleIndirizzo("00NbU0000001klm", "indirizzoItaliaWrapper", lang);
           toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
+          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper2", lang, true);
         });
 
        
@@ -194,22 +195,29 @@
         <input id="00NbU0000001klf" name="00NbU0000001klf" type="text" />
 
 
-        <label for="00NbU0000001klm" id="label_nazione"></label>
-        <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
-        <datalist id="nazioniList"></datalist>
+       
+
+            <label for="00NbU0000001klm" id="label_nazione" ></label>
+            <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
+            <datalist id="nazioniList"></datalist>
 
 
 
-        <label for="00NbU0000001kli" id="label_indirizzo"></label>
-        <input id="00NbU0000001kli" name="00NbU0000001kli" type="text" />
+              <label for="00NbU0000001kli" id="label_indirizzo" ></label>
+                <input id="00NbU0000001kli" name="00NbU0000001kli" type="text" /> 
+
+        <label for="00NbU0000003s77" id="label_ncivico"></label>
+        <input  id="00NbU0000003s77" maxlength="5" name="00NbU0000003s77" size="20"         type="text" /> 
 
 
         <div id="indirizzoItaliaWrapper">
 
 
-          <label for="00NbU0000001klg" id="label_comune">Comune:</label>
-          <input id="00NbU0000001klg" name="00NbU0000001klg" list="comuniList" />
-          <datalist id="comuniList"></datalist>
+                <label for="00NbU0000001klg" id="label_comune" >Comune:</label>
+                <input id="00NbU0000001klg" name="00NbU0000001klg" list="comuniList" />
+                <datalist id="comuniList"></datalist>
+
+
 
 
         </div>
@@ -218,24 +226,29 @@
 
 
 
-          <label for="00NbU0000003Id7" id="label_citta"></label>
-          <input id="00NbU0000003Id7" maxlength="255" name="00NbU0000003Id7" size="20" type="text" />
+            <label for="00NbU0000003Id7" id="label_citta"></label>
+            <input  id="00NbU0000003Id7" maxlength="255" name="00NbU0000003Id7" size="20" type="text" />
 
-
-          <label for="00NbU0000003Iej" id="label_localita"></label>
-          <input id="00NbU0000003Iej" maxlength="255" name="00NbU0000003Iej" size="20" type="text" />
-
-
-          <label for="00NbU0000001kld" id="label_cap"></label>
-          <input id="00NbU0000001kld" maxlength="20" name="00NbU0000001kld" size="20" type="text" />
-
-
-          <label for="00NbU0000001klp" id="label_provincia"></label>
-          <input id="00NbU0000001klp" maxlength="100" name="00NbU0000001klp" size="20" type="text" />
 
 
         </div>
 
+        <label for="00NbU0000003Iej" id="label_localita"></label>
+        <input  id="00NbU0000003Iej" maxlength="255" name="00NbU0000003Iej" size="20" type="text" />
+
+
+        <div id="indirizzoEsteroWrapper2" style="display:none">
+
+
+            <label for="00NbU0000001kld" id="label_cap"></label>
+            <input  id="00NbU0000001kld" maxlength="20" name="00NbU0000001kld" size="20" type="text" />
+
+
+            <label for="00NbU0000001klp" id="label_provincia"></label>
+            <input  id="00NbU0000001klp" maxlength="100" name="00NbU0000001klp" size="20" type="text" />
+
+
+        </div>
 
 
 

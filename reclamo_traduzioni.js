@@ -13,6 +13,7 @@ const resources = {
         nome: "Nome",
         cognome: "Cognome",
         nazione: "Nazione di residenza",
+        ncivico:"Street N°",
         indirizzo: "Indirizzo di residenza o domicilio",
 
         comune: "Comune",
@@ -99,6 +100,7 @@ const resources = {
         nome: "First Name",
         cognome: "Last Name",
         nazione: "Country",
+        ncivico:"Street N°",
         indirizzo: "Residential or mailing address",
 
         comune: "Municipality",

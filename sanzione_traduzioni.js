@@ -19,6 +19,7 @@
         nazione:"Nazionalità",
         comune:"Comune",
         indirizzo:"Indirizzo di residenza per l’eventuale invio di documentazione cartacea",
+        ncivico:"Numero civico",
         nomecassettalettere:"Nome indicato sulla cassetta delle lettere",
         citta:"Città",
         localita:"Località",
@@ -30,6 +31,7 @@
 
 
         legendadatisazionato:"DATI ANAGRAFICI DELLA PERSONA SANZIONATA ",
+        introdatisanzionato:"bla bla persona sanz",
         nomesulverbale:"Nome",
         cognomesulverbale:"Cognome",
         datanascitasulverbale:"Data di nascita",
@@ -80,6 +82,7 @@
         nazione:"Country",
         comune:"Municipality",
         indirizzo:"Residential address for possible postal correspondence",
+        ncivico:"Street n°",
         nomecassettalettere:"Name as it appears on the mailbox",
         citta:"City ",
         localita:"Locality",
@@ -91,6 +94,7 @@
 
 
         legendadatisazionato:"PERSONAL DETAILS OF THE FINED PERSON",
+        introdatisanzionato:"bla bla persona sanz",
         nomesulverbale:"First name",
         cognomesulverbale:"Last name",
         datanascitasulverbale:"Date of birth",
