@@ -55,6 +55,7 @@
         ultimo:""
       },
       tooltips: {
+        nome:"",
         indirizzo:"Indicare l’indirizzo completo, comprensivo del numero civico",
         dataoraevento:"Indicare la data e l’ora di emissione del verbale",
         linea:"Questo campo si attiva dopo aver selezionato l’azienda che ha emesso la sanzione, da cui dipendono le linee proposte. La linea è generalmente rilevabile anche dal verbale",

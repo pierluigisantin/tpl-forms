@@ -342,7 +342,7 @@ function initTooltips(t = null) {
           placement: "top",
           animation: "scale",
           theme: "light-border",
-          maxWidth: 450,
+          maxWidth: 600,
         });
       }
     }

@@ -60,7 +60,11 @@ const resources = {
         tipoSoggetto:"Indica se stai richiedendo il rimborso a titolo personale o se lo fai a nome di un’associazione o di un ente",
         cfintestatario:"Indica il codice fiscale riportato sull’abbonamento: se l’abbonamento è stato acquistato da una emettitrice automatica e non riporta i dati dell’abbonato, non se ne può in nessun caso richiedere il rimborso",
         indirizzointestatario:"Nel caso in cui l’intestatario dell’abbonamento non sia residente in regione, indicare il luogo dove la persona risiede o ha risieduto durante la permanenza in Friuli Venezia Giulia",
-        accountTpl:"Indica l’azienda emittente riportata sull’abbonamento",
+        
+        accountTpl:`<div>
+            Indica l'azienda emittente riportata sull abbonamento<br/>
+            <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
+          </div>`,
           dataemissione:"Indica la data riportata sull’abbonamento",
         numerotesserinoidentificativo:"È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati utilizzando quel tesserino",
         numeroserialeabbonamento:"Indica il numero seriale riportato sull’abbonamento",
