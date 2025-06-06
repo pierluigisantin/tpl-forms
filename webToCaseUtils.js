@@ -331,6 +331,8 @@ function initTooltips(t = null) {
     interactive: true,
     trigger: isMobile ? "click" : "mouseenter focus",
     hideOnClick: true,
+    zIndex: 9999,
+    duration: [200, 100] // animazione più veloce
   };
 
   // Se non abbiamo i18next, fallback a tooltip statici
@@ -353,6 +355,19 @@ function initTooltips(t = null) {
       }
     }
   }
+
+    // 👇 Questo è il blocco che chiude i tooltip su tap fuori (solo mobile)
+    if (isMobile) {
+      document.addEventListener("click", (e) => {
+        document.querySelectorAll(".tooltip-icon").forEach((el) => {
+          if (el._tippy && el !== e.target && !el.contains(e.target)) {
+            el._tippy.hide();
+          }
+        });
+      });
+    }
+  
+  
 }
 
 

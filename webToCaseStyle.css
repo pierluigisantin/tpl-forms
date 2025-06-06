@@ -193,14 +193,22 @@ legend {
   }
 
   .tooltip-icon {
-    cursor: pointer;
-    padding: 0.2em 0.4em;
-    margin-left: 0.4em;
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    background-color: #007B87;
+    color: white;
     border-radius: 50%;
-    background: #eee;
     font-weight: bold;
-    font-size: 0.85em;
-    display: inline-block;
+    margin-left: 0.5em;
+    cursor: pointer;
+  }
+  .tippy-box[data-theme~='light-border'] {
+    word-break: break-word;
+    font-size: 0.9rem;
+    padding: 0.7em;
   }
 
   fieldset {
