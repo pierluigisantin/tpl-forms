@@ -319,13 +319,23 @@ function initTooltips(t = null) {
     if (el._tippy) el._tippy.destroy();
   });
 
+  const isMobile = window.matchMedia("(pointer: coarse)").matches;
+
+  // Opzioni base per Tippy
+  const commonOptions = {
+    placement: "top",
+    animation: "scale",
+    theme: "light-border",
+    allowHTML: true,
+    maxWidth: 600,
+    interactive: true,
+    trigger: isMobile ? "click" : "mouseenter focus",
+    hideOnClick: true,
+  };
+
   // Se non abbiamo i18next, fallback a tooltip statici
   if (!t) {
-    tippy(".tooltip-icon", {
-      placement: "top",
-      animation: "scale",
-      theme: "light-border",
-    });
+    tippy(".tooltip-icon", commonOptions);
     return;
   }
 
@@ -337,17 +347,14 @@ function initTooltips(t = null) {
       const icon = document.querySelector(`#label_${campo} .tooltip-icon`);
       if (icon) {
         tippy(icon, {
+          ...commonOptions,
           content: contenuto,
-          allowHTML: true,
-          placement: "top",
-          animation: "scale",
-          theme: "light-border",
-          maxWidth: 600,
         });
       }
     }
   }
 }
+
 
 // Validazione campi obbligatori
 function validazioneCampiObbligatori(formId, t) {
