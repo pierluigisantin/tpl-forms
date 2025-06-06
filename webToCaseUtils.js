@@ -357,15 +357,17 @@ function initTooltips(t = null) {
   }
 
     // 👇 Questo è il blocco che chiude i tooltip su tap fuori (solo mobile)
-    if (isMobile) {
-      document.addEventListener("click", (e) => {
+  if (isMobile) {
+    document.addEventListener("click", (e) => {
+      setTimeout(() => {
         document.querySelectorAll(".tooltip-icon").forEach((el) => {
           if (el._tippy && el !== e.target && !el.contains(e.target)) {
             el._tippy.hide();
           }
         });
-      });
-    }
+      }, 5000); // aspetta 200ms prima di chiudere
+    });
+  }
   
   
 }
