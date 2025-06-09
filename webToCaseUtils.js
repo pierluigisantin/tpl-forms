@@ -547,6 +547,25 @@ function validaCampoCodiceFiscale(idCampo, t) {
 
   return true;
 }
+
+   function caricaOptionsTradotte(selectid,t,labelsOptions) {
+        const selectTipoLuogo = document.getElementById(selectid);
+        selectTipoLuogo.innerHTML = "";
+        const options = t(labelsOptions, { returnObjects: true });
+
+        options.forEach((opt, index) => {
+          const optionEl = document.createElement("option");
+          optionEl.textContent = opt;
+          optionEl.value = opt;
+
+
+
+          selectTipoLuogo.appendChild(optionEl);
+        });
+
+}
+
+
 function enforceDatalistConstraint(inputEl, t) {
   if (!inputEl || !inputEl.list) {
     console.warn("Campo input non valido o senza datalist associata.");
@@ -573,4 +592,88 @@ function enforceDatalistConstraint(inputEl, t) {
       if (errorDiv) errorDiv.textContent = "";
     }
   });
+}
+
+function aggiungiConfermaEmail() {
+  const emailField = document.querySelector("#email");
+  if (!emailField) return;
+
+  // Crea nuovo campo conferma email
+  const confirmField = emailField.cloneNode(true);
+  confirmField.id = "EmailConfirm";
+  confirmField.name = "EmailConfirm";
+  confirmField.value = "";
+  confirmField.required = true;
+
+  // Crea etichetta localizzata
+  const newLabel = document.createElement("label");
+  newLabel.htmlFor = "EmailConfirm";
+  newLabel.textContent = i18next.t('labels.email_confirm_label') || "Conferma email";
+
+  // Messaggio di errore localizzato per mismatch
+  const mismatchError = document.createElement("div");
+  mismatchError.id = "emailMismatchError";
+  mismatchError.style.color = "red";
+  mismatchError.style.display = "none";
+  mismatchError.textContent = i18next.t('labels.email_mismatch') || "Le email non coincidono.";
+
+  // Messaggio di errore per email non valida
+  const invalidError = document.createElement("div");
+  invalidError.id = "emailInvalidError";
+  invalidError.style.color = "red";
+  invalidError.style.display = "none";
+  invalidError.textContent = i18next.t('labels.email_invalid') || "Formato email non valido.";
+
+  // Inserisci nel DOM
+  emailField.parentNode.insertBefore(newLabel, emailField.nextSibling);
+  emailField.parentNode.insertBefore(confirmField, newLabel.nextSibling);
+  emailField.parentNode.insertBefore(mismatchError, confirmField.nextSibling);
+  emailField.parentNode.insertBefore(invalidError, mismatchError.nextSibling);
+
+  // Regex email semplice
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function validateEmails() {
+    const email = emailField.value.trim();
+    const confirm = confirmField.value.trim();
+    const emailValid = emailRegex.test(email);
+    const confirmValid = emailRegex.test(confirm);
+    const match = email === confirm;
+
+    // Mostra errore se uno dei due formati è errato
+    const valid = emailValid && confirmValid;
+    invalidError.style.display = valid ? "none" : "block";
+
+    // Mostra errore se non coincidono (solo se sono entrambi validi)
+    mismatchError.style.display = (valid && !match) ? "block" : "none";
+
+    let validityMessage = "";
+    if (!valid) {
+      validityMessage = i18next.t('labels.email_invalid') || "Formato email non valido.";
+    } else if (!match) {
+      validityMessage = i18next.t('labels.email_mismatch') || "Le email non coincidono.";
+    }
+    confirmField.setCustomValidity(validityMessage);
+  }
+
+  emailField.addEventListener("input", validateEmails);
+  confirmField.addEventListener("input", validateEmails);
+
+  // Rimozione campo prima del submit
+  const form = emailField.closest("form");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      validateEmails();
+      if (!form.checkValidity()) {
+        e.preventDefault(); // blocca invio se form non valido
+        return;
+      }
+
+      // Se tutto è valido, rimuovi i campi aggiuntivi
+      confirmField.remove();
+      newLabel.remove();
+      mismatchError.remove();
+      invalidError.remove();
+    });
+  }
 }

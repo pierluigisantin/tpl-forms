@@ -62,26 +62,7 @@
 
 
 
-    //carica tipo soggetto     
-    function caricaTipoSoggetto() {
-      const selectTipoSoggetto = document.getElementById("00NbU0000001klb");
-      selectTipoSoggetto.innerHTML = "";
-      const options = t("labels.tipoSoggettoOptions", {returnObjects: true});
-
-      options.forEach((opt, index) => {
-        const optionEl = document.createElement("option");
-        optionEl.textContent = opt;
-        optionEl.value = opt;
-
-        // Imposta la prima opzione come selezionata di default
-        if (index === 1) {
-          optionEl.selected = true;
-        }
-
-        selectTipoSoggetto.appendChild(optionEl);
-      });
-      toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper");
-    }
+   
 
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -144,9 +125,12 @@
         //comune <interessato></interessato>
         enforceDatalistConstraint(document.getElementById("00NbU0000003jLZ"), t);
 
-        caricaTipoSoggetto();
+       
+        caricaOptionsTradotte("00NbU0000001klb",t,"labels.tipoSoggettoOptions");
+        caricaOptionsTradotte("00NbU0000003tpZ",  t, "labels.tipoabbonamentoOptions");
+        caricaOptionsTradotte("00NbU0000003trB",  t, "labels.canalediacquistoOptions");
 
-
+        aggiungiConfermaEmail();
 
 
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
@@ -158,7 +142,9 @@
             caricaDatalistComuniENazioni(comuniNazioniUrl, newLang, comuneListId, nazioniListId, campoNazioneId);
             const aziendaId = document.getElementById("00NbU0000002bl3").value;
             caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
-            caricaTipoSoggetto();
+            caricaOptionsTradotte("00NbU0000001klb",t,"labels.tipoSoggettoOptions");
+            caricaOptionsTradotte("00NbU0000003tpZ",  t, "labels.tipoabbonamentoOptions");
+            caricaOptionsTradotte("00NbU0000003trB",  t, "labels.canalediacquistoOptions");
 
           });
         });
@@ -373,6 +359,16 @@
         <input id="00NbU0000003VdZ" maxlength="100" name="00NbU0000003VdZ" size="20" type="text" /><br>
 
 
+        <label for="00NbU0000003tpZ" id="label_tipoabbonamento">  </label>
+        <select  id="00NbU0000003tpZ"  name="00NbU0000003tpZ"  >
+        </select>  
+
+        <label for="00NbU0000003trB" id="label_canalediacquisto"></label>
+        <select  id="00NbU0000003trB"  name="00NbU0000003trB"  >
+            </select>
+        
+
+        
         <label for="00NbU0000003VfB" id="label_importopagato"></label>
         <input id="00NbU0000003VfB" name="00NbU0000003VfB" size="20" type="text" />
 
