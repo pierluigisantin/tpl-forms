@@ -326,6 +326,7 @@ function initTooltips(t = null) {
     hideOnClick: true,
     zIndex: 9999,
     duration: [200, 100] // animazione più veloce
+ 
   };
 
   // Se non abbiamo i18next, fallback a tooltip statici
