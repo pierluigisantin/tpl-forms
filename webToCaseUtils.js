@@ -549,10 +549,10 @@ function validaCampoCodiceFiscale(idCampo, t) {
   return true;
 }
 
-   function caricaOptionsTradotte(selectid,t,labelsOptions) {
+   function caricaOptionsTradotte(selectid,t, Options) {
         const selectTipoLuogo = document.getElementById(selectid);
         selectTipoLuogo.innerHTML = "";
-        const options = t(labelsOptions, { returnObjects: true });
+        const options = t("labels."+Options, { returnObjects: true });
 
         options.forEach((opt, index) => {
           const optionEl = document.createElement("option");
@@ -677,4 +677,149 @@ function aggiungiConfermaEmail() {
       invalidError.remove();
     });
   }
+}
+
+function caricaSottoOptions(appValue, t, reslabel, target) {
+  const optionsMap = t("labels."+reslabel, { returnObjects: true });
+  const select = document.getElementById(target);
+
+  if (!select) return;
+
+  // Svuota le opzioni
+  select.innerHTML = `<option value="">${t("labels.seleziona")}</option>`;
+
+  const sottoOpzioni = optionsMap[appValue] || [];
+
+  sottoOpzioni.forEach((val) => {
+    const opt = document.createElement("option");
+    opt.value = val;
+    opt.textContent = val;
+    select.appendChild(opt);
+  });
+}
+
+function getCanonicalValueFromTranslation({
+  translatedValue,
+  translationPath, // es: "tipoSoggettoOptions"
+  i18nextInstance,
+  sourceLang = "it"
+}) {
+  if (!translatedValue || !translationPath || !i18nextInstance) return null;
+
+  const pathParts = translationPath.split(".");
+  let canonicalValues = i18nextInstance.getResource(sourceLang, "translation", pathParts[0]);
+
+  // Naviga nella struttura se nested (es: labels.tipoSoggettoOptions)
+  for (let i = 1; i < pathParts.length; i++) {
+    if (!canonicalValues) return null;
+    canonicalValues = canonicalValues[pathParts[i]];
+  }
+
+  if (!Array.isArray(canonicalValues)) return null;
+
+  const currentLang = i18nextInstance.language;
+
+  for (let i = 0; i < canonicalValues.length; i++) {
+    const canonical = canonicalValues[i];
+    const translated = i18nextInstance.t(`${translationPath}.${i}`, { lng: currentLang });
+
+    if (translated.toLowerCase().trim() === translatedValue.toLowerCase().trim()) {
+      return canonical;
+    }
+  }
+
+  return null;
+}
+
+function toggleWrapperBySelectValue({
+  selectId,
+  valoriTrigger,
+  logicalName,
+  translationPath,
+  i18nextInstance
+}) {
+  const selectElem = document.getElementById(selectId);
+  if (!selectElem || !i18nextInstance) return;
+
+  const selectedValue = selectElem.value?.toLowerCase().trim();
+  if (!selectedValue) return;
+
+  let tradotti = i18nextInstance.t(`labels.${translationPath}`, {
+    returnObjects: true
+  });
+
+  // 🛡️ Verifica che sia un array
+  if (!Array.isArray(tradotti)) {
+    tradotti = [];
+  }
+
+  const tradottiNormalizzati = tradotti.map((v) => v.toLowerCase().trim());
+  const valoriNormalizzati = valoriTrigger.map((v) => v.toLowerCase().trim());
+
+  const matchIndex = tradottiNormalizzati.findIndex((val) => val === selectedValue);
+  const valoreCanonico = matchIndex >= 0 ? tradotti[matchIndex] : selectedValue;
+
+  const isTriggerMatch = valoriNormalizzati.includes(valoreCanonico.toLowerCase());
+
+  const wrapperId = `${logicalName}Wrapper`;
+  const labelId = `label_${logicalName}`;
+
+  const wrapper = document.getElementById(wrapperId);
+  if (wrapper) wrapper.style.display = isTriggerMatch ? "block" : "none";
+
+  const label = document.getElementById(labelId);
+  if (label) {
+    label.classList.toggle("required", isTriggerMatch);
+  }
+}
+function toggleCampi({
+  selectId,
+  i18nextInstance,
+  configShowHide
+}) {
+  const selectElem = document.getElementById(selectId);
+  if (!selectElem || !i18nextInstance) return;
+
+  const selectedTranslated = selectElem.value?.trim();
+  if (!selectedTranslated) return;
+
+  const config = i18nextInstance.t('labels.'+configShowHide, {
+    returnObjects: true
+  });
+
+  if (!config || typeof config !== 'object') return;
+
+  const chiaviPossibili = Object.keys(config);
+  const traduzioniNormalizzate = chiaviPossibili.map(v => v.toLowerCase().trim());
+  const indice = traduzioniNormalizzate.indexOf(selectedTranslated.toLowerCase());
+
+  if (indice === -1) return;
+
+  const voceLogica = chiaviPossibili[indice];
+  const { show = [], hide = [] } = config[voceLogica];
+
+  // Mostra e imposta required
+  show.forEach(logicalName => {
+    const wrapper = document.getElementById(`${logicalName}Wrapper`);
+    const label = document.getElementById(`label_${logicalName}`);
+    if (wrapper) wrapper.style.display = "block";
+    if (label) label.classList.add("required");
+  });
+
+  // Nascondi, rimuovi required e svuota i valori
+  hide.forEach(logicalName => {
+    const wrapper = document.getElementById(`${logicalName}Wrapper`);
+    const label = document.getElementById(`label_${logicalName}`);
+    const field = document.querySelector(`#${logicalName}Wrapper input, #${logicalName}Wrapper select, #${logicalName}Wrapper textarea`);
+
+    if (wrapper) wrapper.style.display = "none";
+    if (label) label.classList.remove("required");
+    if (field) {
+      if (field.tagName === "SELECT") {
+        field.selectedIndex = 0; // seleziona "--Seleziona--"
+      } else {
+        field.value = "";
+      }
+    }
+  });
 }

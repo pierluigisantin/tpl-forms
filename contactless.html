@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,17 +12,17 @@
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <!-- POI Tippy.js -->
   <script src="https://unpkg.com/tippy.js@6"></script>
-<script src="https://www.google.com/recaptcha/api.js"></script>
-<script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
 
- function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
-</script>
+    function timestamp() {var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);} } setInterval(timestamp, 500); 
+  </script>
   <script src="webToCaseUtils.js"></script>
   <script src="contactless_traduzioni.js"></script>
-<script>
-     var lang;
-      let t;
-  var aziendaId;
+  <script>
+    var lang;
+    let t;
+    var aziendaId;
 
     const requiredFields = [
       "tipoSoggetto",
@@ -32,89 +33,54 @@
       "accountTpl",
       "descrizione",
       "privacy"
-];
-  
+    ];
+
     const comuneListId = "comuniList";
     const nazioniListId = "nazioniList";
     const campoNazioneId = "00NbU0000001klm";
 
-  var fields = [];
-  function attivaDebugSubmit() {
-  const campiDebug = [
-    "00NbU0000001kln", // nome
-    "00NbU0000001klf", // cognome
-    "email",           // email
-    "description",     // descrizione
-    "orgid", "retURL", "debug", "debugEmail"
-  ];
+    var fields = [];
+    function attivaDebugSubmit() {
+      const campiDebug = [
+        "00NbU0000001kln", // nome
+        "00NbU0000001klf", // cognome
+        "email",           // email
+        "description",     // descrizione
+        "orgid", "retURL", "debug", "debugEmail"
+      ];
 
-  const form = document.getElementById("formReclamo");
-  Array.from(form.elements).forEach(el => {
-    if (!campiDebug.includes(el.name)) {
-      el.removeAttribute("name");
-    }
-  });
-}
-
-
-    function caricaTipoLuogo() {
-        const selectTipoLuogo = document.getElementById("00NbU0000002yGD");
-        selectTipoLuogo.innerHTML = "";
-        const options = t("labels.tipoluogoOptions", { returnObjects: true });
-
-        options.forEach((opt, index) => {
-          const optionEl = document.createElement("option");
-          optionEl.textContent = opt;
-          optionEl.value = opt;
-
-
-
-          selectTipoLuogo.appendChild(optionEl);
-        });
-
-}
-
-
-
-   //carica tipo soggetto     
-  function caricaTipoSoggetto() {
-  const selectTipoSoggetto = document.getElementById("00NbU0000001klb");
-  selectTipoSoggetto.innerHTML = "";
-  const options = t("labels.tipoSoggettoOptions", { returnObjects: true });
-
-  options.forEach((opt, index) => {
-    const optionEl = document.createElement("option");
-    optionEl.textContent = opt;
-    optionEl.value = opt;
-
-    // Imposta la prima opzione come selezionata di default
-    if (index === 1) {
-      optionEl.selected = true;
+      const form = document.getElementById("formReclamo");
+      Array.from(form.elements).forEach(el => {
+        if (!campiDebug.includes(el.name)) {
+          el.removeAttribute("name");
+        }
+      });
     }
 
-    selectTipoSoggetto.appendChild(optionEl);
-  });
-    toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper");
-}
+
+
+
+
+
 
 
     document.addEventListener("DOMContentLoaded", () => {
 
       fields = estraiCampiDaLabel();
 
-       lang = new URLSearchParams(location.search).get("lang") || "it";
+      lang = new URLSearchParams(location.search).get("lang") || "it";
 
-      i18next.init({ lng: lang, resources }, (_, tInstance) => {
-          t = tInstance; // 👈 assegna t a una variabile globale
-          aggiornaEtichette(t, fields);
+      i18next.init({lng: lang, resources}, (_, tInstance) => {
+        t = tInstance; // 👈 assegna t a una variabile globale
+        aggiornaEtichette(t, fields);
 
         const comuniNazioniUrl = "valori_comuni_nazioni.json";
         const comuniServizioUrl = "comuni_servizio.json";
         const aziendeTplUrl = "aziendeTPL.json";
-         const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
-         const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
-         const fermateUrl= "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
-         const prefissiUrl ="prefissi.json";
+        const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
+        const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
+        const fermateUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
+        const prefissiUrl = "prefissi.json";
 
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
         caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
@@ -122,15 +88,15 @@
         caricaDatalistComuni(comuniServizioUrl, t, "comuniServizioList");
 
         document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
-          aziendaId=e.target.value;
-          const servizioId='';
+          aziendaId = e.target.value;
+          const servizioId = '';
           caricaServizi("00NbU0000002hld", serviziUrl, e.target.value, lang, t);
-          caricaLinee("00NbU0000001klj", lineeUrl, servizioId,aziendaId, t);
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t);
         });
 
         document.getElementById("00NbU0000002hld")?.addEventListener("change", e => {
           const servizioId = e.target.value;
-          caricaLinee("00NbU0000001klj", lineeUrl, servizioId,aziendaId, t);
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t);
         });
 
         document.getElementById("00NbU0000001klj")?.addEventListener("change", e => {
@@ -144,20 +110,57 @@
         });
 
         document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
-          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper",["privato cittadino", "individual"]);
+          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper", ["privato cittadino", "individual"]);
+        });
+
+        document.getElementById("00NbU0000003uaL").addEventListener("change", (e) => {
+          caricaSottoOptions(e.target.value, i18next.t.bind(i18next), "tipoproblemacontactlessOptions", "00NbU0000003ubx");
+        });
+
+        document.getElementById("00NbU0000003uwv").addEventListener("change", function () {
+          toggleWrapperBySelectValue({
+            selectId: "00NbU0000003uwv",
+            valoriTrigger: ["Altro"],
+            logicalName: "altrocircuito",
+            translationPath: "circuitoCartaOptions",
+            i18nextInstance: i18next
+          });
+        });
+
+
+        document.getElementById("00NbU0000003vWP").addEventListener("change", function () {
+          toggleWrapperBySelectValue({
+            selectId: "00NbU0000003vWP",
+            valoriTrigger: ["Altro"],
+            logicalName: "altrowallet",
+            translationPath: "walletOptions",
+            i18nextInstance: i18next
+          });
+        });
+
+        document.getElementById("00NbU0000003uaL").addEventListener("change", function () {
+          toggleCampi({
+            selectId: "00NbU0000003uaL",
+            i18nextInstance: i18next,
+            configShowHide: "appcontactlessOptionsShowHide"
+          });
         });
 
         //nazione
-        enforceDatalistConstraint(document.getElementById("00NbU0000001klm"),t);
+        enforceDatalistConstraint(document.getElementById("00NbU0000001klm"), t);
         //comune
-        enforceDatalistConstraint(document.getElementById("00NbU0000001klg"),t);
+        enforceDatalistConstraint(document.getElementById("00NbU0000001klg"), t);
         //comune-evento
-        enforceDatalistConstraint(document.getElementById("00NbU0000002yHp"),t);
+        enforceDatalistConstraint(document.getElementById("00NbU0000002yHp"), t);
 
         aggiungiConfermaEmail();
-        
-       caricaTipoSoggetto();
-        caricaTipoLuogo();
+        caricaOptionsTradotte("00NbU0000001klb", t, "tipoSoggettoOptions");
+        caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
+        caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
+        caricaOptionsTradotte("00NbU0000003uwv", t, "circuitocartaOptions");
+        caricaOptionsTradotte("00NbU0000003vWP", t, "walletOptions");
+        caricaOptionsTradotte("00NbU0000003vg5", t, "tipoluogoproblemacontactlessOptions");
+
 
 
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
@@ -170,8 +173,12 @@
             caricaDatalistComuni(comuniServizioUrl, t, "comuniServizioList");
             const aziendaId = document.getElementById("00NbU0000002bl3").value;
             caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
-            caricaTipoSoggetto();
-            caricaTipoLuogo();
+            caricaOptionsTradotte("00NbU0000001klb", t, "tipoSoggettoOptions");
+            caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
+            caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
+            caricaOptionsTradotte("00NbU0000003uwv", t, "circuitocartaOptions");
+            caricaOptionsTradotte("00NbU0000003vg5", t, "tipoluogoproblemacontactlessOptions");
+
           });
         });
 
@@ -200,258 +207,293 @@
     });
   </script>
 </head>
+
 <body>
   <div class="form-container">
-      <select id="languageSwitcher">
-        <option value="it">🇮🇹 Italiano</option>
-        <option value="en">🇬🇧 English</option>
-      </select>
+    <select id="languageSwitcher">
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
     <br>
-      <form id="formReclamo"   method="POST" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D06000001Tz0T" novalidate>
+    <form id="formReclamo" method="POST"
+      action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D06000001Tz0T" novalidate>
 
-        <input type="hidden" name="orgid" value="00D06000001Tz0T" />
-        <input
-          type="hidden"
-          name="retURL"
-          value=""
-        />
+      <input type="hidden" name="orgid" value="00D06000001Tz0T" />
+      <input type="hidden" name="retURL" value="" />
 
 
-        <input type="hidden" name="captcha_settings" value='{"keyname":"captchatplv2","fallback":"true","orgId":"00D06000001Tz0T","ts":""}'>
+      <input type="hidden" name="captcha_settings"
+        value='{"keyname":"captchatplv2","fallback":"true","orgId":"00D06000001Tz0T","ts":""}'>
 
 
-       <input type="hidden" name="debug" value="1">
-        <input type="hidden" name="debugEmail" value="p.santin@e-deimos.it">
+      <input type="hidden" name="debug" value="1">
+      <input type="hidden" name="debugEmail" value="p.santin@e-deimos.it">
 
-        <fieldset>
-             <legend><span id="label_legendanagrafica">Dati anagrafici della persona che presenta il reclamo</span></legend>
+      <fieldset>
+        <legend><span id="label_legendanagrafica">Dati anagrafici della persona che presenta il reclamo</span></legend>
 
-          <label for="00NbU0000001klb" id="label_tipoSoggetto" ></label> 
-              <select id="00NbU0000001klb" name="00NbU0000001klb">
-              </select>
+        <label for="00NbU0000001klb" id="label_tipoSoggetto"></label>
+        <select id="00NbU0000001klb" name="00NbU0000001klb">
+        </select>
 
 
-              <div id="ragioneSocialeWrapper" style="display:none;">
-                <label for="00NbU0000001klq" id="label_ragioneSociale" ></label>
-                <input id="00NbU0000001klq" name="00NbU0000001klq" type="text" />
-                <div class="error-message" id="error_ragioneSociale"></div>
-              </div>
+        <div id="ragioneSocialeWrapper" style="display:none;">
+          <label for="00NbU0000001klq" id="label_ragioneSociale"></label>
+          <input id="00NbU0000001klq" name="00NbU0000001klq" type="text" />
+          <div class="error-message" id="error_ragioneSociale"></div>
+        </div>
 
 
-              <label for="00NbU0000001kln" id="label_nome" ></label>
-              <input id="00NbU0000001kln" name="00NbU0000001kln" type="text" />
+        <label for="00NbU0000001kln" id="label_nome"></label>
+        <input id="00NbU0000001kln" name="00NbU0000001kln" type="text" />
 
 
-              <label for="00NbU0000001klf" id="label_cognome" ></label>
-              <input id="00NbU0000001klf" name="00NbU0000001klf" type="text" />
+        <label for="00NbU0000001klf" id="label_cognome"></label>
+        <input id="00NbU0000001klf" name="00NbU0000001klf" type="text" />
 
 
 
-              <label for="00NbU0000001klm" id="label_nazione" ></label>
-              <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
-              <datalist id="nazioniList"></datalist>
+        <label for="00NbU0000001klm" id="label_nazione"></label>
+        <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
+        <datalist id="nazioniList"></datalist>
 
 
 
-                <label for="00NbU0000001kli" id="label_indirizzo" ></label>
-                  <input id="00NbU0000001kli" name="00NbU0000001kli" type="text" /> 
+        <label for="00NbU0000001kli" id="label_indirizzo"></label>
+        <input id="00NbU0000001kli" name="00NbU0000001kli" type="text" />
 
-          <label for="00NbU0000003s77" id="label_ncivico"></label>
-          <input  id="00NbU0000003s77" maxlength="5" name="00NbU0000003s77" size="20"         type="text" /> 
+        <label for="00NbU0000003s77" id="label_ncivico"></label>
+        <input id="00NbU0000003s77" maxlength="5" name="00NbU0000003s77" size="20" type="text" />
 
 
-          <div id="indirizzoItaliaWrapper">
+        <div id="indirizzoItaliaWrapper">
 
 
-                  <label for="00NbU0000001klg" id="label_comune" >Comune:</label>
-                  <input id="00NbU0000001klg" name="00NbU0000001klg" list="comuniList" />
-                  <datalist id="comuniList"></datalist>
+          <label for="00NbU0000001klg" id="label_comune">Comune:</label>
+          <input id="00NbU0000001klg" name="00NbU0000001klg" list="comuniList" />
+          <datalist id="comuniList"></datalist>
 
 
 
 
-          </div>
+        </div>
 
-          <div id="indirizzoEsteroWrapper" style="display:none">
+        <div id="indirizzoEsteroWrapper" style="display:none">
 
 
 
-              <label for="00NbU0000003Id7" id="label_citta"></label>
-              <input  id="00NbU0000003Id7" maxlength="255" name="00NbU0000003Id7" size="20" type="text" />
+          <label for="00NbU0000003Id7" id="label_citta"></label>
+          <input id="00NbU0000003Id7" maxlength="255" name="00NbU0000003Id7" size="20" type="text" />
 
 
 
-          </div>
+        </div>
 
-          <label for="00NbU0000003Iej" id="label_localita"></label>
-          <input  id="00NbU0000003Iej" maxlength="255" name="00NbU0000003Iej" size="20" type="text" />
+        <label for="00NbU0000003Iej" id="label_localita"></label>
+        <input id="00NbU0000003Iej" maxlength="255" name="00NbU0000003Iej" size="20" type="text" />
 
 
-          <div id="indirizzoEsteroWrapper2" style="display:none">
+        <div id="indirizzoEsteroWrapper2" style="display:none">
 
 
-              <label for="00NbU0000001kld" id="label_cap"></label>
-              <input  id="00NbU0000001kld" maxlength="20" name="00NbU0000001kld" size="20" type="text" />
+          <label for="00NbU0000001kld" id="label_cap"></label>
+          <input id="00NbU0000001kld" maxlength="20" name="00NbU0000001kld" size="20" type="text" />
 
 
-              <label for="00NbU0000001klp" id="label_provincia"></label>
-              <input  id="00NbU0000001klp" maxlength="100" name="00NbU0000001klp" size="20" type="text" />
+          <label for="00NbU0000001klp" id="label_provincia"></label>
+          <input id="00NbU0000001klp" maxlength="100" name="00NbU0000001klp" size="20" type="text" />
 
 
-          </div>
+        </div>
 
 
 
-               <label for="email" id="label_mail" >Email:</label> 
-              <input  id="email" maxlength="80" name="email" size="20"  />
+        <label for="email" id="label_mail">Email:</label>
+        <input id="email" maxlength="80" name="email" size="20" />
 
 
-                      <label for="00NbU0000002837" id="label_prefissotelefonico" ></label>
-                      <select  id="00NbU0000002837"  name="00NbU0000002837"  >
-                      </select>
+        <label for="00NbU0000002837" id="label_prefissotelefonico"></label>
+        <select id="00NbU0000002837" name="00NbU0000002837">
+        </select>
 
-              <label for="00NbU0000001klo" id="label_numerotelefonico" ></label>
-              <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
+        <label for="00NbU0000001klo" id="label_numerotelefonico"></label>
+        <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
 
-          <label for="00NbU0000002yEb" id="label_abbonatosino">Reclamo Abbonato si/no:</label>
-          <select  id="00NbU0000002yEb" name="00NbU0000002yEb" title="Reclamo Abbonato si/no"><option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
-          <option value="No">No</option>
-          </select><br>
 
-              <label for="00NbU0000001kls" id="label_numerotesserinoidentificativo"></label>
-              <input id="00NbU0000001kls" name="00NbU0000001kls" type="text" />
 
 
 
 
-        </fieldset>
-        <fieldset>
-           <legend><span id="label_legendainfoevento"> </span></legend>
+      </fieldset>
+      <fieldset>
+        <legend><span id="label_legendainfoevento"> </span></legend>
 
 
+        <label for="00NbU0000003uaL" id="label_appcontactless"></label>
+        <select id="00NbU0000003uaL" name="00NbU0000003uaL"></select>
 
-               <label for="00NbU0000002bl3" id="label_accountTpl" >
-              </label>
-              <select id="00NbU0000002bl3" name="00NbU0000002bl3">
+        <label for="00NbU0000002bl3" id="label_accountTpl">
+        </label>
+        <select id="00NbU0000002bl3" name="00NbU0000002bl3">
 
-              </select>
+        </select>
 
+        <div id="tipoproblemacontactlessWrapper" style="display: none;">
+          <label for="00NbU0000003ubx" id="label_tipoproblemacontactless"></label>
+          <select id="00NbU0000003ubx" name="00NbU0000003ubx"></select>
+        </div>
 
+        <div id="tipoluogoproblemacontactlessWrapper" style="display: none;">
+          <label for="00NbU0000003vg5" id="label_tipoluogoproblemacontactless"></label>
+          <select id="00NbU0000003vg5" name="00NbU0000003vg5"></select>
+        </div>
 
+        <div id="circuitocartaWrapper" style="display: none;">
+          <label for="00NbU0000003uwv" id="label_circuitocarta"></label>
+          <select id="00NbU0000003uwv" name="00NbU0000003uwv"></select>
+        </div>
 
-                 <label for="00NbU0000002hld" id="label_servizio" class="required">
-              </label>
-              <select id="00NbU0000002hld" name="00NbU0000002hld">
 
-              </select>
+        <div id="altrocircuitoWrapper" style="display: none;">
+          <label for="00NbU0000003vHt" id="label_altrocircuito"></label>
+          <input id="00NbU0000003vHt" maxlength="255" name="00NbU0000003vHt" size="20" type="text" />
+        </div>
 
+        <div id="panintroWrapper" style="display: none;">
+          <label id="label_panintro"></label>
+        </div>
 
 
+        <div id="panprimeWrapper" style="display: none;">
+          <label for="00NbU0000003vRZ" id="label_panprime"></label>
+          <input id="00NbU0000003vRZ" maxlength="4" name="00NbU0000003vRZ" size="20" type="text" />
+        </div>
 
+        <div id="panultimeWrapper" style="display: none;">
+          <label for="00NbU0000003vTB" id="label_panultime"></label>
+          <input id="00NbU0000003vTB" maxlength="4" name="00NbU0000003vTB" size="20" type="text" />
+        </div>
 
 
+        <div id="panvirtualeintroWrapper" style="display: none;">
+          <label id="label_panvirtualeintro"></label>
+        </div>
 
+        <div id="panvirtualeWrapper" style="display: none;">
+          <label for="00NbU0000003vUn" id="label_panvirtuale"></label>
+          <input id="00NbU0000003vUn" maxlength="4" name="00NbU0000003vUn" size="20" type="text" />
+        </div>
 
+        <div id="walletWrapper" style="display: none;">
+          <label for="00NbU0000003vWP" id="label_wallet"></label>
+          <select id="00NbU0000003vWP" name="00NbU0000003vWP"></select>
+        </div>
 
 
+        <div id="altrowalletWrapper" style="display: none;">
+          <label for="00NbU0000003vY1" id="label_altrowallet"> </label>
+          <input id="00NbU0000003vY1" maxlength="255" name="00NbU0000003vY1" size="20" type="text" />
+        </div>
 
-                <label for="data_evento_visible" id="label_dataoraevento"></label>
-                <input id="data_evento_visible" type="datetime-local" />
-                <input id="00NbU0000001klh" name="00NbU0000001klh" size="20" type="text" style="display:none;" />
 
-                <label for="00NbU0000002yGD" id="label_tipoluogo"></label>
-                <select  id="00NbU0000002yGD"  name="00NbU0000002yGD"  >
-              </select>
+        <label for="data_evento_visible" id="label_dataoraevento"></label>
+        <input id="data_evento_visible" type="datetime-local" />
+        <input id="00NbU0000001klh" name="00NbU0000001klh" size="20" type="text" style="display:none;" />
 
-                <label for="00NbU0000002yHp" id="label_comuneevento"> </label>
-                <input  id="00NbU0000002yHp" maxlength="255" name="00NbU0000002yHp" list="comuniServizioList"/>
-          <datalist id="comuniServizioList"></datalist>
 
 
 
 
 
 
+        <div id="lineaWrapper" style="display: none;">
+          <label for="00NbU0000001klj" id="label_linea">
+          </label>
+          <select id="00NbU0000001klj" name="00NbU0000001klj">
+          </select>
+        </div>
 
-                <label  for="00NbU0000002yJR" id="label_frazioneevento"></label>
-                <input  id="00NbU0000002yJR" maxlength="255" name="00NbU0000002yJR" size="20" type="text" />
 
-              <label for="00NbU0000001klj" id="label_linea"  >
-              </label>
-              <select id="00NbU0000001klj" name="00NbU0000001klj">
-              </select>
 
 
 
-              <label for="00NbU0000001klk" id="label_fermata"  >
-              </label>
-              <select id="00NbU0000001klk" name="00NbU0000001klk">
-              </select>
 
 
-                <label for="00NbU0000002hnF" id="label_direzione"></label>
-                <input  id="00NbU0000002hnF" maxlength="255" name="00NbU0000002hnF" size="20" type="text" /><br>
 
+        <div id="nvetturaWrapper" style="display: none;">
+          <label for="00NJ6000002ydRf" id="label_nvettura"></label>
+          <input id="00NJ6000002ydRf" name="00NJ6000002ydRf" type="text" />
+        </div>
 
+        <div id="indirizzomailappWrapper" style="display: none;">
+          <label for="00NbU0000003vhh" id="label_indirizzomailapp"></label>
+          <input id="00NbU0000003vhh" maxlength="255" name="00NbU0000003vhh" size="20" type="text" />
+        </div>
 
-                <label for="00NJ6000002ydRf" id="label_nvettura"></label>
-                <input id="00NJ6000002ydRf" name="00NJ6000002ydRf" type="text" />
+        <div id="numerotelefonicoappWrapper" style="display: none;">
+          <label for="00NbU0000003vjJ" id="label_numerotelefonicoapp"></label>
+          <input id="00NbU0000003vjJ" maxlength="255" name="00NbU0000003vjJ" size="20" type="text" />
+        </div>
 
+        <label for="description" id="label_descrizione"></label>
+        <em>
+          <span id='label_introdescrizione'></span>
+        </em>
+        <textarea id="description" name="description" rows="10" maxlength="30000"></textarea>
 
-
-
-                <label for="description" id="label_descrizione"></label>
-                <em>
-                    <span id='label_introdescrizione'></span>
-                </em>
-                  <textarea id="description" name="description" rows="10" maxlength="30000"></textarea>
-
-         </fieldset>
+      </fieldset>
 
 
       <fieldset>
         <legend><span id="label_consensoobbligatorio"> </span></legend>
 
 
-        <label for="00NbU0000000KEr"   id="label_privacy" ></label>
-        <select  id="00NbU0000000KEr" name="00NbU0000000KEr"  >
-          <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
-        <option value="No">No</option>
+        <label for="00NbU0000000KEr" id="label_privacy"></label>
+        <select id="00NbU0000000KEr" name="00NbU0000000KEr">
+          <option value="">--None--</option>
+          <option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
         </select><br>
-    </fieldset>
-    <fieldset>
+      </fieldset>
+      <fieldset>
 
-         <legend><span id="label_consensofacoltativo"> </span></legend>   
+        <legend><span id="label_consensofacoltativo"> </span></legend>
 
         <label for="00NbU0000002hs5" id="label_indaginidemoscopiche"></label>
-        <select  id="00NbU0000002hs5" name="00NbU0000002hs5"  >
-          <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
-        <option value="No">No</option>       
+        <select id="00NbU0000002hs5" name="00NbU0000002hs5">
+          <option value="">--None--</option>
+          <option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
 
         </select><br>
 
-      <label for="00NbU0000002hth" id="label_attivitacommerciali"></label>
-        <select  id="00NbU0000002hth" name="00NbU0000002hth"  >
-          <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
-        <option value="No">No</option>
+        <label for="00NbU0000002hth" id="label_attivitacommerciali"></label>
+        <select id="00NbU0000002hth" name="00NbU0000002hth">
+          <option value="">--None--</option>
+          <option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
         </select><br>
 
-       <label for="00NbU0000002hvJ" id="label_analisipreferenze"></label>
-        <select  id="00NbU0000002hvJ" name="00NbU0000002hvJ"  >
-          <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
-        <option value="No">No</option>
+        <label for="00NbU0000002hvJ" id="label_analisipreferenze"></label>
+        <select id="00NbU0000002hvJ" name="00NbU0000002hvJ">
+          <option value="">--None--</option>
+          <option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
         </select><br>
 
 
-      <label for="00NbU0000002hwv"  id="label_comunicazionepartner"></label>
-        <select  id="00NbU0000002hwv" name="00NbU0000002hwv"  >
-          <option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
-        <option value="No">No</option>
+        <label for="00NbU0000002hwv" id="label_comunicazionepartner"></label>
+        <select id="00NbU0000002hwv" name="00NbU0000002hwv">
+          <option value="">--None--</option>
+          <option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
         </select><br>
 
         <label for="00NbU0000002yOH" id="label_cessioneterzi"></label>
-        <select  id="00NbU0000002yOH" name="00NbU0000002yOH" title="Acconsente cessione terzi"><option value="">--None--</option><option value="Si/Yes">Si/Yes</option>
-        <option value="No">No</option>
+        <select id="00NbU0000002yOH" name="00NbU0000002yOH" title="Acconsente cessione terzi">
+          <option value="">--None--</option>
+          <option value="Si/Yes">Si/Yes</option>
+          <option value="No">No</option>
         </select><br>
 
 
@@ -460,27 +502,23 @@
 
 
 
-       </fieldset>  
+      </fieldset>
 
 
 
 
 
-        <!--flag reclamo-->
-        <input
-          id="00NJ6000006biAk"
-          name="00NJ6000006biAk"
-          type="hidden"
-          value="1"
-        />
+      <!--flag reclamo contactless-->
+      <input id="00NbU0000003vd2" name="00NbU0000003vd2" type="hidden" value="1" />
 
-        <input type="hidden"  id="external" name="external" value="1" /><br>
-        <br>
-        <div class="g-recaptcha" data-sitekey="6LcKTugqAAAAAB9mkWg5p3floGYNeNVAXY6Z6c8P"></div><br>
-        <div id="captchaError" class="error-message" style="display: none;"></div>
+      <input type="hidden" id="external" name="external" value="1" /><br>
+      <br>
+      <div class="g-recaptcha" data-sitekey="6LcKTugqAAAAAB9mkWg5p3floGYNeNVAXY6Z6c8P"></div><br>
+      <div id="captchaError" class="error-message" style="display: none;"></div>
 
-        <input type="submit" id="submitBtn" value="Invia Reclamo" />
-      </form>
-    </div>
+      <input type="submit" id="submitBtn" value="Invia Reclamo" />
+    </form>
+  </div>
 </body>
+
 </html>
