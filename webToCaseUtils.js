@@ -595,8 +595,14 @@ function enforceDatalistConstraint(inputEl, t) {
   });
 }
 
-function aggiungiConfermaEmail() {
-  const emailField = document.querySelector("#email");
+function aggiungiConfermaEmail(idmail) {
+  if (!idmail) {
+    idmail = "#email";
+  } else if (!idmail.startsWith("#")) {
+    idmail = "#" + idmail;
+  }
+  const idClean = idmail?.startsWith('#') ? idmail.slice(1) : idmail;
+  const emailField = document.getElementById(idClean);
   if (!emailField) return;
 
   // Crea nuovo campo conferma email
