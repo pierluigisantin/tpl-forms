@@ -109,9 +109,7 @@
           toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper2", lang, true);
         });
 
-        document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
-          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper", ["privato cittadino", "individual"]);
-        });
+ 
 
         document.getElementById("00NbU0000003uaL").addEventListener("change", (e) => {
           caricaSottoOptions(e.target.value, i18next.t.bind(i18next), "tipoproblemacontactlessOptions", "00NbU0000003ubx");
@@ -154,7 +152,7 @@
         enforceDatalistConstraint(document.getElementById("00NbU0000002yHp"), t);
 
         aggiungiConfermaEmail();
-        caricaOptionsTradotte("00NbU0000001klb", t, "tipoSoggettoOptions");
+ 
         caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
         caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
         caricaOptionsTradotte("00NbU0000003uwv", t, "circuitocartaOptions");
@@ -173,7 +171,7 @@
             caricaDatalistComuni(comuniServizioUrl, t, "comuniServizioList");
             const aziendaId = document.getElementById("00NbU0000002bl3").value;
             caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
-            caricaOptionsTradotte("00NbU0000001klb", t, "tipoSoggettoOptions");
+         
             caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
             caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
             caricaOptionsTradotte("00NbU0000003uwv", t, "circuitocartaOptions");
@@ -230,12 +228,9 @@
       <input type="hidden" name="debugEmail" value="p.santin@e-deimos.it">
 
       <fieldset>
-        <legend><span id="label_legendanagrafica">Dati anagrafici della persona che presenta il reclamo</span></legend>
+        <legend><span id="label_legendanagrafica"> </span></legend>
 
-        <label for="00NbU0000001klb" id="label_tipoSoggetto"></label>
-        <select id="00NbU0000001klb" name="00NbU0000001klb">
-        </select>
-
+      
 
         <div id="ragioneSocialeWrapper" style="display:none;">
           <label for="00NbU0000001klq" id="label_ragioneSociale"></label>

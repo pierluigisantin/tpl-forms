@@ -120,6 +120,11 @@
             configShowHide: "tipointensificazioneOptionsShowHide"
           });
         });
+        document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
+          toggleIndirizzo("00NbU0000001klm", "indirizzoItaliaWrapper", lang);
+          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
+          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper2", lang, true);
+        });
 
 
 
@@ -288,7 +293,7 @@
         <label for="00NbU0000003vo9" id="label_prefissoorganizzazione"></label>
         <input id="00NbU0000003vo9" maxlength="5" name="00NbU0000003vo9" size="20" type="text" />
 
-        <label for="00NbU0000003vpl" id="label_numerotelefonicoorganizzazione">
+        <label for="00NbU0000003vpl" id="label_numerotelefonicoorganizzazione"></label>
           <input id="00NbU0000003vpl" maxlength="100" name="00NbU0000003vpl" size="20" type="text" />
 
 
@@ -353,7 +358,10 @@
           </select>
         </div>
 
-
+        <div id="npartecipantiWrapper" style="display: none;">
+          <label for="00NbU0000003vxp" id="label_npartecipanti"> </label>
+          <input id="00NbU0000003vxp" name="00NbU0000003vxp" size="20" type="text" />
+            </div>
 
 
         <div id="linea_andataWrapper" style="display: none;">
@@ -365,10 +373,7 @@
           </div>
 
 
-        <div id="npartecipantiWrapper" style="display: none;">
-        <label for="00NbU0000003vxp" id="label_npartecipanti"> </label>
-        <input id="00NbU0000003vxp" name="00NbU0000003vxp" size="20" type="text" />
-          </div>
+        
 
         <div id="andata_partenza_dataoraWrapper" style="display: none;">
         <label id="label_andata_partenza_dataora" for="andata_partenza_dataora_visibile"></label>
@@ -530,9 +535,7 @@
 
       <input type="hidden" id="external" name="external" value="1" />
 
-      <em>
-        <span id='label_avvertenzaprimadiinvio'></span>
-      </em>
+     
 
 
 
