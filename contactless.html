@@ -218,7 +218,7 @@
       action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D06000001Tz0T" novalidate>
 
       <input type="hidden" name="orgid" value="00D06000001Tz0T" />
-      <input type="hidden" name="retURL" value="/grazie.html" />
+      <input type="hidden" name="retURL" value="" />
 
 
       <input type="hidden" name="captcha_settings"
@@ -515,6 +515,16 @@
       <input type="submit" id="submitBtn" value="Invia Reclamo" />
     </form>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const retUrlInput = document.querySelector('input[name="retURL"]');
+      if (retUrlInput) {
+        const currentUrl = window.location.href;
+        const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf("/") + 1);
+        retUrlInput.value = baseUrl + "grazie.html";
+      }
+    });
+  </script>
 </body>
 
 </html>
