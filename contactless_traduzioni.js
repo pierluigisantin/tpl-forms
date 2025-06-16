@@ -36,6 +36,13 @@ const resources = {
           "L’app Tpl Fvg",
           "L’app Glimble"
         ],
+        appcontactlessOptionsRequired: {
+          "L’acquisto di biglietti tramite dispositivi contactless con carta di credito o carta di debito (bancomat)": ["circuitocarta", "accountTpl", "panintro", "panprime", "panultime",   "dataoraevento", "linea", "nvettura", "descrizione", "tipoproblemacontactless"],
+          
+          "La convalida di biglietti cartacei con QR code tramite lettura ottica a bordo degli autobus":["accountTpl", , "dataoraevento", "linea", "nvettura", "descrizione", "tipoproblemacontactless"] ,
+          "L’app Tpl Fvg": ["accountTpl", , "dataoraevento", "linea", "nvettura", "descrizione", "numerotelefonicoapp", "indirizzomailapp", "tipoproblemacontactless"],
+          "L’app Glimble": ["accountTpl", , "dataoraevento", "descrizione", "numerotelefonicoapp", "indirizzomailapp"]
+        },
         appcontactlessOptionsShowHide: {
           "L’acquisto di biglietti tramite dispositivi contactless con carta di credito o carta di debito (bancomat)": {
             show: ["circuitocarta", "accountTpl", "panintro", "panprime", "panultime", "panvirtualeintro", "panvirtuale", "wallet", "altrowallet", "dataoraevento", "linea", "nvettura", "descrizione", "tipoproblemacontactless"],
@@ -181,6 +188,13 @@ const resources = {
             "Other"
           ],
           "Glimble mobile app": []
+        },
+        appcontactlessOptionsRequired: {
+          "Purchasing tickets via contactless payment (credit/debit card)": ["circuitocarta", "accountTpl", "panintro", "panprime", "panultime",   "dataoraevento", "linea", "nvettura", "descrizione", "tipoproblemacontactless"],
+
+          "Validating paper tickets with QR code on buses":["accountTpl", , "dataoraevento", "linea", "nvettura", "descrizione", "tipoproblemacontactless"] ,
+          "Tpl Fvg mobile app": ["accountTpl", , "dataoraevento", "linea", "nvettura", "descrizione", "numerotelefonicoapp", "indirizzomailapp", "tipoproblemacontactless"],
+          "Glimble mobile app": ["accountTpl", , "dataoraevento", "descrizione", "numerotelefonicoapp", "indirizzomailapp"]
         },
         appcontactlessOptionsShowHide: {
           "Purchasing tickets via contactless payment (credit/debit card)": {

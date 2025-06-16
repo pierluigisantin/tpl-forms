@@ -781,7 +781,8 @@ function toggleWrapperBySelectValue({
 function toggleCampi({
   selectId,
   i18nextInstance,
-  configShowHide
+  configShowHide,
+  configRequired
 }) {
   const selectElem = document.getElementById(selectId);
   if (!selectElem || !i18nextInstance) return;
@@ -789,7 +790,10 @@ function toggleCampi({
   const selectedTranslated = selectElem.value?.trim();
   if (!selectedTranslated) return;
 
-  const config = i18nextInstance.t('labels.'+configShowHide, {
+  const config = i18nextInstance.t('labels.' + configShowHide, {
+    returnObjects: true
+  });
+  const configReq = i18nextInstance.t('labels.' + configRequired, {
     returnObjects: true
   });
 
@@ -803,16 +807,24 @@ function toggleCampi({
 
   const voceLogica = chiaviPossibili[indice];
   const { show = [], hide = [] } = config[voceLogica];
+  const requiredFields = (configReq && typeof configReq === 'object' && configReq[voceLogica]) ? configReq[voceLogica] : [];
 
-  // Mostra e imposta required
+  // Mostra i campi e gestisci la classe required
   show.forEach(logicalName => {
     const wrapper = document.getElementById(`${logicalName}Wrapper`);
     const label = document.getElementById(`label_${logicalName}`);
+
     if (wrapper) wrapper.style.display = "block";
-    if (label) label.classList.add("required");
+    if (label) {
+      if (requiredFields.includes(logicalName)) {
+        label.classList.add("required");
+      } else {
+        label.classList.remove("required");
+      }
+    }
   });
 
-  // Nascondi, rimuovi required e svuota i valori
+  // Nascondi i campi, rimuovi required e svuota i valori
   hide.forEach(logicalName => {
     const wrapper = document.getElementById(`${logicalName}Wrapper`);
     const label = document.getElementById(`label_${logicalName}`);
@@ -822,7 +834,7 @@ function toggleCampi({
     if (label) label.classList.remove("required");
     if (field) {
       if (field.tagName === "SELECT") {
-        field.selectedIndex = 0; // seleziona "--Seleziona--"
+        field.selectedIndex = 0;
       } else {
         field.value = "";
       }
