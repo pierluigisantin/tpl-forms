@@ -88,12 +88,14 @@ function caricaServizi(selectId, url, idAzienda, lang, t) {
 }
 
 // Caricamento linee da servizio
-function caricaLinee(selectId, url, servizioId, aziendaId, t) {
+function caricaLinee(selectId, url, servizioId, aziendaId, t, soloUrb = false) {
   const select = document.getElementById(selectId);
   select.innerHTML = `<option value="">${t("labels.seleziona")}</option>`;
 
-  var qsServizio = servizioId;
-  if (aziendaId == "001bU000007Q8fWQAS" /*TPL FVG*/) qsServizio = "";
+  let qsServizio = servizioId;
+  if (aziendaId === "001bU000007Q8fWQAS") { // TPL FVG
+    qsServizio = "";
+  }
 
   fetch(url + qsServizio)
     .then((response) => response.arrayBuffer())
@@ -104,7 +106,11 @@ function caricaLinee(selectId, url, servizioId, aziendaId, t) {
     })
     .then((data) => {
       data.forEach((linea) => {
-        if (aziendaId && aziendaId !== "001bU000007Q8fWQAS" /*TPL FVG*/) {
+        // Se soloUrb è true, salta le linee non urbane
+        if (soloUrb && linea.Servizio_urbano__c !== true) return;
+
+        // Se specificata azienda diversa da TPL FVG, filtrare per azienda
+        if (aziendaId && aziendaId !== "001bU000007Q8fWQAS") {
           if (linea.Azienda_TPL__c && aziendaId === linea.Azienda_TPL__c) {
             const opt = document.createElement("option");
             opt.value = linea.Id;
@@ -121,6 +127,7 @@ function caricaLinee(selectId, url, servizioId, aziendaId, t) {
     })
     .catch((error) => console.error("Errore nel caricamento linee:", error));
 }
+
 
 // Caricamento fermate da linea
 function caricaFermate(selectId, url, lineaId, t) {

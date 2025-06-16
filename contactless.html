@@ -91,7 +91,7 @@
           aziendaId = e.target.value;
           const servizioId = '';
           caricaServizi("00NbU0000002hld", serviziUrl, e.target.value, lang, t);
-          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t);
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t,true);
         });
 
         document.getElementById("00NbU0000002hld")?.addEventListener("change", e => {
