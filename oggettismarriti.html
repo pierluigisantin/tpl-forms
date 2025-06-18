@@ -416,6 +416,16 @@
       <input type="submit" id="submitBtn" value="Invia Reclamo" />
     </form>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const retUrlInput = document.querySelector('input[name="retURL"]');
+      if (retUrlInput) {
+        const currentUrl = window.location.href;
+        const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf("/") + 1);
+        retUrlInput.value = baseUrl + "grazie.html";
+      }
+    });
+  </script>
 </body>
 
 </html>

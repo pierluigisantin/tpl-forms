@@ -249,3 +249,10 @@ label .tooltip-icon {
 .tippy-box {
   text-transform: none !important;
 }
+
+input[type="submit"] {
+  line-height: 1.2;
+  height: 48px; /* oppure lo stesso valore del padding top + bottom */
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
