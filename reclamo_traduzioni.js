@@ -4,7 +4,7 @@ const resources = {
       labels: {
         legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE PRESENTA IL RECLAMO",
         valoreNonValidoDatalist:"Seleziona un'opzione dall’elenco.",
-        erroreCampoObbligatorio: "Devi compilare questo campo",
+        erroreCampoObbligatorio: "",
         seleziona: "--Seleziona--",
 
         tipoSoggetto: "Chi è il soggetto che presenta il reclamo",
@@ -24,6 +24,8 @@ const resources = {
         numerotelefonico:"Numero di cellulare",
         mail: "E-mail",
         email_confirm_label:"ripeti e-mail",
+        email_invalid:"Verifica l’indirizzo e-mail.",
+          email_mismatch: "Verifica l’indirizzo e-mail.",
         abbonatosino:"Abbonato",
         numerotesserinoidentificativo: `Numero di tesserino identificativo Tpl Fvg (se il reclamante ne è titolare)`,
 
@@ -59,7 +61,7 @@ const resources = {
         cessioneterzi:"Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing.",
         
 
-       invia:"Invia reclamo"
+       invia:"Invia"
 
 
 
@@ -96,8 +98,8 @@ const resources = {
     translation: {
       labels: {
         legendanagrafica:"PERSONAL DETAILS OF THE PERSON SUBMITTING THE COMPLAINT",
-        valoreNonValidoDatalist:"You must select a value from list",
-        erroreCampoObbligatorio: "You must fill in this field",
+        valoreNonValidoDatalist:"Select an option from the list.",
+        erroreCampoObbligatorio: "",
         seleziona: "--Select--",
 
         tipoSoggetto: "Who is submitting the complaint",
@@ -117,6 +119,9 @@ const resources = {
         numerotelefonico:"Mobile Phone Number",
         mail: "E-mail",
         email_confirm_label:"Confirm e-mail",
+        email_invalid: "Please check the email address.",
+        email_mismatch: "Please check the email address.",
+
         abbonatosino:"Pass holder",
         numerotesserinoidentificativo:"Tpl Fvg Identification card number (if the complainant holds one)",
 
@@ -152,7 +157,7 @@ const resources = {
         cessioneterzi: "I agree to the sharing of my personal data with third parties for commercial and marketing purposes.",
 
 
-       invia:"Submit complain"
+        invia:"Submit the form",
 
 
 

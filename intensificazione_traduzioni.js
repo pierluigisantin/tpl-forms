@@ -4,7 +4,7 @@ const resources = {
     translation: {
       labels: {
 
-        erroreCampoObbligatorio: "Devi compilare questo campo",
+        erroreCampoObbligatorio: "",
         seleziona: "--Seleziona--",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
         legendaorganizzazione:"DATI DELL’ORGANIZZAZIONE CHE RICHIEDE L’INTENSIFICAZIONE DEL SERVIZIO ",
@@ -26,7 +26,8 @@ const resources = {
         provincia:"Provincia",
         mailorganizzazione:"E-mail dell’organizzazione",
         email_confirm_label:"Conferma la mail",
-        
+        email_invalid:"Verifica l’indirizzo e-mail.",
+          email_mismatch: "Verifica l’indirizzo e-mail.",
         numerotelefonicoorganizzazione:"Numero di telefono dell’organizzazione",
         prefissoorganizzazione:"Prefisso telefonico internazionale organizzazione",
         
@@ -75,6 +76,7 @@ const resources = {
           comunicazionepartner:"Acconsento a ricevere comunicazioni pubblicitarie e informazioni commerciali relative a prodotti o servizi di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate.",
           cessioneterzi:"Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing.",
 
+        invia:"Invia",
 
         ultimo: ""
       },
@@ -90,10 +92,10 @@ const resources = {
   en: {
     translation: {
       labels: {
-        erroreCampoObbligatorio: "You must fill this field",
+        erroreCampoObbligatorio: "",
         seleziona: "--Select--",
-        codiceFiscaleNonValido: "The fiscal/tax code entered is not valid",
-        valoreNonValidoDatalist: "You must select a value from list",
+        codiceFiscaleNonValido: "The entered Italian tax code is not valid.",
+        valoreNonValidoDatalist: "Select an option from the list.",
 
 
 
@@ -124,6 +126,8 @@ const resources = {
           nome:"",
           cognome:"",
           mail:"",
+          email_invalid: "Please check the email address.",
+          email_mismatch: "Please check the email address.",
           prefissotelefonico:"",
           numerotelefonico:"",
           legendaserviziorichiesto:"",
@@ -169,7 +173,7 @@ const resources = {
           cessioneterzi: "I agree to the sharing of my personal data with third parties for commercial and marketing purposes.",
 
 
-        
+        invia:"Submit the form",
 
         ultimo: ""
 

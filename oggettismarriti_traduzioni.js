@@ -3,7 +3,7 @@ const resources = {
   it: {
     translation: {
       labels: {
-        erroreCampoObbligatorio: "Devi compilare questo campo",
+        erroreCampoObbligatorio: "",
         seleziona: "--Seleziona--",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
         legendanagrafica: "DATI ANAGRAFICI",
@@ -18,6 +18,9 @@ const resources = {
         cap: "CAP",
         provincia: "Provincia",
         mail: "E-mail",
+        email_confirm_label:"Conferma la mail",
+        email_invalid:"Verifica l’indirizzo e-mail.",
+        email_mismatch: "Verifica l’indirizzo e-mail.",
         prefissotelefonico: "Prefisso telefonico internazionale",
         numerotelefonico: "Numero di cellulare",
         legendainfoevento: "DOVE PRESUMI CHE SIA AVVENUTO LO SMARRIMENTO",
@@ -38,7 +41,7 @@ const resources = {
           comunicazionepartner:"Acconsento a ricevere comunicazioni pubblicitarie e informazioni commerciali relative a prodotti o servizi di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate.",
           cessioneterzi:"Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing.",
 
-        invia: "Invia segnalazione",
+        invia: "Invia",
         ultimo: ""
       },
       tooltips: {
@@ -53,9 +56,9 @@ const resources = {
   en: {
     translation: {
       labels: {
-        erroreCampoObbligatorio: "You must fill this field",
+        erroreCampoObbligatorio: "",
         seleziona: "--Select--",
-        valoreNonValidoDatalist: "You must select a value from list",
+        valoreNonValidoDatalist: "Select an option from the list.",
         legendanagrafica: "PERSONAL DETAILS",
         nome: "First name",
         cognome: "Last name",
@@ -68,6 +71,9 @@ const resources = {
         cap: "ZIP Code",
         provincia: "Province",
         mail: "E-mail",
+         email_confirm_label:"Confirm  mail",
+        email_invalid: "Please check the email address.",
+        email_mismatch: "Please check the email address.",
         prefissotelefonico: "International phone prefix ",
         numerotelefonico: "Phone number",
         legendainfoevento: "WHERE DO YOU BELIEVE THE ITEM WAS LOST?",
@@ -89,7 +95,7 @@ const resources = {
           comunicazionepartner: "I agree to receive advertising and commercial information about products or services from third parties, partners of Tpl Fvg or of the consortium companies.",
           cessioneterzi: "I agree to the sharing of my personal data with third parties for commercial and marketing purposes.",
 
-        invia: "Report lost item",
+        invia: "Submit the form",
 
         ultimo: ""
 

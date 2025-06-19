@@ -4,11 +4,11 @@ const resources = {
     translation: {
       labels: {
         legendanagrafica: "DATI ANAGRAFICI DELLA PERSONA CHE RICHIEDE IL RIMBORSO",
-        introtiposoggetto: "bbbb",
-        erroreCampoObbligatorio: "Devi compilare questo campo",
+        introtiposoggetto: "Inserisci i dati della persona che richiede il rimborso (il titolare dell’abbonamento se maggiorenne oppure un genitore, un tutore o un’associazione se l’abbonamento è intestato a un minorenne o se è stato acquistato da un’organizzazione.",
+        erroreCampoObbligatorio: "",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
         seleziona: "--Seleziona--",
-        tipoSoggetto: "Chi è il soggetto che richiede il rimborso",
+        tipoSoggetto: "Chi è il soggetto richiedente",
         tipoSoggettoOptions: ["--Seleziona--", "Persona fisica", "Associazione o ente"
         ],
         ragionesociale: "Associazione o ente",
@@ -16,26 +16,27 @@ const resources = {
         cognome: "Cognome",
         datanascitadichiarante: "Data di nascita",
         cfdichiarante: "Codice fiscale del richiedente (obbligatorio per chi ne sia in possesso)",
-        nazione: "Nazionalità",
-        indirizzo: "Indirizzo di residenza (via, piazza, corso )",
-        ncivico: "N° civico",
-        comune: "Comune",
-        citta: "Città",
-        localita: "Località",
-        cap: "CAP",
-        provincia: "Provincia",
-        mail: "E-mail",
-        email_confirm_label:"Conferma E-mail",
-        email_mismatch:"le mail con coincidono",
-        prefissotelefonico: "Prefisso telefonico internazionale",
-        numerotelefonico: "Numero di cellulare",
+        nazione: "Nazione di residenza",
+        indirizzo: "Indirizzo di residenza o domicilio",
+          ncivico:"Numero civico",
+          comune: "Comune",
+          citta:"città",
+          localita:"Località o frazione",
+          cap:"cap",
+          provincia:"Provincia / Regione / Stato",
+            prefissotelefonico:"Prefisso telefonico internazionale",
+          numerotelefonico:"Numero di cellulare",
+          mail: "E-mail",
+          email_confirm_label:"ripeti e-mail",
+        email_invalid:"Verifica l’indirizzo e-mail.",
+          email_mismatch: "Verifica l’indirizzo e-mail.",
         datiintestatario: "DATI DELL’INTESTATARIO DELL’ABBONAMENTO",
-        introdatiintestatario: "bla bla intestatario bla",
+        introdatiintestatario: "Compila questa sezione solo se l’intestatario dell’abbonamento è minorenne oppure è una persona diversa da chi richiede il rimborso. Se coincide con il richiedente, puoi lasciarla in bianco.",
         nomeintestatario: "Nome",
         cognomeintestatario: "Cognome",
         datanascitaintestatario: "Data di nascita",
         cfintestatario: "Codice fiscale",
-        nazioneintestatario: "Nazionalità",
+        nazioneintestatario: "Nazione di residenza",
         indirizzointestatario: "Indirizzo di residenza (via, piazza, corso, n° civico)",
         comuneintestatario: "Comune",
         cittaintestatario: "Città",
@@ -49,9 +50,9 @@ const resources = {
         numeroserialeabbonamento: "Numero seriale dell’abbonamento",
 
         tipoabbonamento: "Tipo di abbonamento",
-        tipoabbonamentoOptions: ["--Seleziona--", "Quindicinale", "Mensile", "Semestrale", "Scolastico agevolato per studenti residenti in FVG", "Scolastico ordinario (10 mesi)", "Annuale (12 mesi)", "Agevolato per persone con disabilità o invalidità"],
+        tipoabbonamentoOptions: ["--Seleziona--", "Quindicinale", "Mensile", "Semestrale", "Scolastico agevolato per studenti residenti in FVG", "Scolastico ordinario (10 mesi)", "Annuale (12 mesi)", "Agevolato per persone con disabilità"],
         canalediacquisto: "Canale di acquisto",
-        canalediacquistoOptions: ["--Seleziona--", "Biglietteria aziendale", "Rivendita esterna", "Online (sito web Tpl Fvg)"],
+        canalediacquistoOptions: ["--Seleziona--", "Biglietteria aziendale", "Rivendita esterna", "Online (sito web Tpl Fvg)", "Dropticket", "Altro"],
 
 
         dataemissione: "Data di emissione dell’abbonamento",
@@ -60,7 +61,7 @@ const resources = {
         nomecognomeintestatarioiban: "Nome e cognome dell’intestatario del conto corrente dove effettuare il rimborso",
         comuneiban: "Comune o Stato estero di residenza dell’intestatario del conto corrente dove effettuare il rimborso",
         descrizione: "Motivare la richiesta di rimborso",
-        introdescrizione: "Descrivi in modo sintetico il motivo per cui richiedi il rimborso dell’abbonamento. Al termine della compilazione di questo form, riceverai una notifica via e-mail di apertura del caso. Per completare la richiesta, ti chiediamo di rispondere all’e-mail allegando una copia dell’abbonamento acquistato, la copia fronte e retro di un documento d’identità valido di chi richiede il rimborso e altri eventuali documenti a supporto della richiesta. L’invio della copia dell’abbonamento e di un documento d’identità è obbligatorio per procedere con la valutazione del rimborso",
+        introdescrizione: "Descrivi brevemente il motivo per cui richiedi il rimborso. Al termine della compilazione riceverai una notifica via e-mail. Per completare la richiesta, rispondi all'e-mail allegando: la copia dell’abbonamento acquistato, la copia fronte e retro di un documento d’identità del richiedente e, se lo ritieni utile, eventuali altri documenti. La copia dell’abbonamento e del documento d’identità sono obbligatorie per la valutazione del rimborso.",
         consensoobbligatorio:"CONSENSO OBBLIGATORIO",
           privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto.",
           consensofacoltativo:"CONSENSI FACOLTATIVI",
@@ -70,7 +71,7 @@ const resources = {
           comunicazionepartner:"Acconsento a ricevere comunicazioni pubblicitarie e informazioni commerciali relative a prodotti o servizi di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate.",
           cessioneterzi:"Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing.",
 
-        invia: "Invia richiesta di rimborso",
+        invia: "Invia",
         ultimo: ""
 
       },
@@ -110,8 +111,8 @@ const resources = {
   en: {
     translation: {
       labels: {
-        erroreCampoObbligatorio: "You must fill this field",
-        valoreNonValidoDatalist: "You must select a value from list",
+        erroreCampoObbligatorio: "",
+        valoreNonValidoDatalist: "Select an option from the list.",
         seleziona: "--Select--",
         tipoSoggetto: "Who is requesting the refund?",
         introtiposoggetto: "bla bla bla bla",
@@ -132,6 +133,8 @@ const resources = {
         cap: "CAP",
         provincia: "Provincia",
         mail: "E-mail",
+        email_invalid: "Please check the email address.",
+        email_mismatch: "Please check the email address.",    
         prefissotelefonico: "Prefisso telefonico internazionale",
         numerotelefonico: "Numero di cellulare",
         datiintestatario: "DATI DELL’INTESTATARIO DELL’ABBONAMENTO",
@@ -174,7 +177,7 @@ const resources = {
           comunicazionepartner: "I agree to receive advertising and commercial information about products or services from third parties, partners of Tpl Fvg or of the consortium companies.",
           cessioneterzi: "I agree to the sharing of my personal data with third parties for commercial and marketing purposes.",
 
-        invia: "Invia richiesta di rimborso",
+        invia: "Submit the form",
 
         ultimo: ""
 

@@ -4,9 +4,9 @@
     translation: {
       labels: {
 
-        erroreCampoObbligatorio: "Devi compilare questo campo",
+        erroreCampoObbligatorio: "",
         seleziona: "--Seleziona--",
-        codiceFiscaleNonValido:"Il codice fiscale inserito non è valido",
+        codiceFiscaleNonValido:"Il codice fiscale inserito non è valido.",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
         legendanagrafica:"DATI DELLA PERSONA CHE PRESENTA IL RICORSO (PERSONA SANZIONATA SE MAGGIORENNE, OPPURE GENITORE O TUTORE SE MINORENNE)",
         nome:"Nome",
@@ -27,6 +27,8 @@
         provincia:"Provincia / Regione / Stato",
         mail:"E-mail",
         email_confirm_label:"ripeti e-mail",
+        email_invalid:"Verifica l’indirizzo e-mail.",
+          email_mismatch: "Verifica l’indirizzo e-mail.",
         prefissotelefonico:"Prefisso telefonico internazionale",
         numerotelefonico:"Numero di cellulare",
 
@@ -60,7 +62,7 @@
           comunicazionepartner:"Acconsento a ricevere comunicazioni pubblicitarie e informazioni commerciali relative a prodotti o servizi di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate.",
           cessioneterzi:"Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing.",
 
-        invia:"Invia ricorso",
+        invia:"Invia",
 
         ultimo:""
       },
@@ -99,10 +101,10 @@
   en: {
     translation: {
       labels: {
-        erroreCampoObbligatorio: "You must fill this field",
+        erroreCampoObbligatorio: "",
         seleziona: "--Select--",
-        codiceFiscaleNonValido:"The fiscal/tax code entered is not valid",
-        valoreNonValidoDatalist: "You must select a value from list",
+        codiceFiscaleNonValido:"The entered Italian tax code is not valid.",
+        valoreNonValidoDatalist: "Select an option from the list.",
         legendanagrafica: "DETAILS OF THE PERSON SUBMITTING THE APPEAL (FINED PERSON IF OF AGE, OR PARENT/GUARDIAN IF MINOR)",
         nome: "First name",
         cognome: "Last name",
@@ -127,6 +129,8 @@
         provincia: "Province / Region / State",
         mail: "E-mail",
         email_confirm_label: "Repeat email",
+        email_invalid: "Please check the email address.",
+        email_mismatch: "Please check the email address.",
         prefissotelefonico: "International dialing code",
         numerotelefonico: "Mobile phone number",
 
@@ -165,7 +169,7 @@
           comunicazionepartner: "I agree to receive advertising and commercial information about products or services from third parties, partners of Tpl Fvg or of the consortium companies.",
           cessioneterzi: "I agree to the sharing of my personal data with third parties for commercial and marketing purposes.",
 
-        invia:"Contest a fine",
+        invia:"Submit the form",
 
         ultimo:""
 

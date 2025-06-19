@@ -4,8 +4,8 @@ const resources = {
     translation: {
       labels: {
         legendanagrafica: "DATI ANAGRAFICI DELLA PERSONA CHE SEGNALA IL PROBLEMA",
-        erroreCampoObbligatorio: "Devi compilare questo campo",
-        valoreNonValidoDatalist: "Devi selezionare un valore dalla lista",
+        erroreCampoObbligatorio: "",
+        valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
         seleziona: "--Seleziona--",
         nome: "Nome",
           cognome: "Cognome",
@@ -23,7 +23,8 @@ const resources = {
           email_confirm_label:"ripeti e-mail",
           abbonatosino:"Abbonato",
           numerotesserinoidentificativo: `Numero di tesserino identificativo Tpl Fvg (se il reclamante ne è titolare)`,
-
+        email_invalid:"Verifica l’indirizzo e-mail.",
+          email_mismatch: "Verifica l’indirizzo e-mail.",
         legendadaticontatto: "INFORMAZIONI SUL CONTATTO",
         prefissotelefonico: "Prefisso telefonico internazionale del numero da cui si è contattato il call center",
         numerotelefonico: "Numero di telefono da cui si è contattato il call center",
@@ -41,7 +42,7 @@ const resources = {
         ],
         descrizione: "Descrizione dell'evento",
         introdescrizione: "Descrivi il problema in modo sintetico ma completo, fornendo tutte le informazioni utili per ricostruire la telefonata.",
-        invia: "Invia segnalazione",
+        invia: "Invia",
         consensoobbligatorio:"CONSENSO OBBLIGATORIO",
           privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto.",
           consensofacoltativo:"CONSENSI FACOLTATIVI",
@@ -73,8 +74,8 @@ const resources = {
     translation: {
       labels: {
         legendanagrafica: "PERSONAL DETAILS OF THE PERSON REPORTING THE ISSUE",
-        valoreNonValidoDatalist: "You must selecta a value from list",
-        erroreCampoObbligatorio: "You must fill this field",
+        valoreNonValidoDatalist: "Select an option from the list.",
+        erroreCampoObbligatorio: "",
         seleziona: "--Select--",
         nome: "First Name",
           cognome: "Last Name",
@@ -89,6 +90,9 @@ const resources = {
 
         mail: "E-mail",
         email_confirm_label:"Confirm e-mail",
+        email_invalid: "Please check the email address.",
+        email_mismatch: "Please check the email address.",
+
         abbonatosino: "Pass holder",
         numerotesserinoidentificativo:"Tpl Fvg Identification card number (if the complainant holds one)",
         legendadaticontatto: "CONTACT INFORMATION",
@@ -120,7 +124,7 @@ const resources = {
           cessioneterzi: "I agree to the sharing of my personal data with third parties for commercial and marketing purposes.",
 
 
-        invia: "Report issue",
+        invia:"Submit the form",
 
         ultimo: ""
 

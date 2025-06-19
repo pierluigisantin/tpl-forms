@@ -8,7 +8,7 @@ const resources = {
 
         legendanagrafica: "DATI ANAGRAFICI DELLA PERSONA CHE HA RILEVATO IL PROBLEMA",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
-        erroreCampoObbligatorio: "Devi compilare questo campo",
+        erroreCampoObbligatorio: "",
         seleziona: "--Seleziona--",
 
         nome: "Nome",
@@ -25,8 +25,8 @@ const resources = {
           numerotelefonico:"Numero di cellulare",
           mail: "E-mail",
           email_confirm_label:"ripeti e-mail",
-
-        email_mismatch: "le mail non corrispondono",
+        email_invalid:"Verifica l’indirizzo e-mail.",
+        email_mismatch: "Verifica l’indirizzo e-mail.",
         legendainfoevento: "Problema rilevato",
         appcontactless: "A cosa si riferisce il problema che hai rilevato?",
         appcontactlessOptions: ["--Seleziona--", "Acquisto di biglietti con carta contactless",
@@ -35,10 +35,10 @@ const resources = {
           "App Glimble"
         ],
         appcontactlessOptionsRequired: {
-          "Acquisto di biglietti con carta contactless": ["circuitocarta", "accountTpl", "panintro", "panprime", "panultime",   "dataoraevento", "linea", "nvettura", "descrizione", "tipoproblemacontactless"],
+          "Acquisto di biglietti con carta contactless": ["circuitocarta", "accountTpl", "panintro", "panprime", "panultime",   "dataoraevento",  "descrizione", "tipoproblemacontactless"],
           
-          "Convalida di biglietti cartacei con QR code":["accountTpl", , "dataoraevento", "linea", "nvettura", "descrizione", "tipoproblemacontactless"] ,
-          "App Tpl Fvg": ["accountTpl", , "dataoraevento", "linea", "nvettura", "descrizione", "numerotelefonicoapp", "indirizzomailapp", "tipoproblemacontactless"],
+          "Convalida di biglietti cartacei con QR code":["accountTpl", , "dataoraevento",  "descrizione", "tipoproblemacontactless"] ,
+          "App Tpl Fvg": ["accountTpl", , "dataoraevento",  "descrizione", "numerotelefonicoapp", "indirizzomailapp", "tipoproblemacontactless"],
           "App Glimble": ["accountTpl", , "dataoraevento", "descrizione", "numerotelefonicoapp", "indirizzomailapp"]
         },
         appcontactlessOptionsShowHide: {
@@ -108,6 +108,7 @@ const resources = {
         comunicazionepartner: "Acconsento a ricevere comunicazioni pubblicitarie, promozioni e informazioni commerciali relative a prodotti, servizi e attività di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate",
         cessioneterzi: "Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing",
 
+        invia:"Invia",
 
         ultimo: ""
       },
@@ -131,8 +132,8 @@ const resources = {
     translation: {
       labels: {
         legendanagrafica: "PERSONAL DATA OF THE INDIVIDUAL WHO REPORTED THE ISSUE",
-        valoreNonValidoDatalist: "Please select a valid value from the list",
-        erroreCampoObbligatorio: "This field is required",
+        valoreNonValidoDatalist: "Select an option from the list.",
+        erroreCampoObbligatorio: "",
         seleziona: "--Select--",
 
         nome: "First name",
@@ -149,8 +150,9 @@ const resources = {
         numerotelefonico: "Mobile phone number",
         mail: "Email",
         email_confirm_label: "Repeat email",
+        email_invalid: "Please check the email address.",
+        email_mismatch: "Please check the email address.",
 
-        email_mismatch: "Email addresses do not match",
         legendainfoevento: "Reported issue",
         appcontactless: "What does the issue you experienced refer to?",
         appcontactlessOptions: [
@@ -236,6 +238,7 @@ const resources = {
           comunicazionepartner: "I agree to receive advertising and commercial information about products or services from third parties, partners of Tpl Fvg or of the consortium companies.",
           cessioneterzi: "I agree to the sharing of my personal data with third parties for commercial and marketing purposes.",
 
+        invia:"Submit the form",
         ultimo: ""
 
       },
