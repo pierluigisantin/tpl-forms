@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   padding: 20px;
   color: #333;
 }
@@ -152,7 +152,7 @@ fieldset {
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   /* Sfondo leggero per separare visivamente le sezioni */
 }
 

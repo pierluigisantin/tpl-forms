@@ -3,7 +3,7 @@ const resources = {
     translation: {
       labels: {
         legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE PRESENTA IL RECLAMO",
-        valoreNonValidoDatalist:"Devi selezionare un valore valido dalla lista",
+        valoreNonValidoDatalist:"Seleziona un'opzione dall’elenco.",
         erroreCampoObbligatorio: "Devi compilare questo campo",
         seleziona: "--Seleziona--",
 
@@ -16,8 +16,11 @@ const resources = {
         indirizzo: "Indirizzo di residenza o domicilio",
         ncivico:"Numero civico",
         comune: "Comune",
+        citta:"città",
         localita:"Località o frazione",
-        prefissotelefonico:"Prefisso telefonico internazionale",
+        cap:"cap",
+        provincia:"Provincia / Regione / Stato",
+          prefissotelefonico:"Prefisso telefonico internazionale",
         numerotelefonico:"Numero di cellulare",
         mail: "E-mail",
         email_confirm_label:"ripeti e-mail",
@@ -69,10 +72,10 @@ const resources = {
         tipoSoggetto: "Indica se stai presentando un reclamo a titolo personale o se lo fai per conto di un’associazione, un’azienda o un ente pubblico.",
         nome: "Anche se il reclamo è presentato per conto di un ente, un'associazione o un'azienda, è necessario indicare i dati del referente che compila questo modulo.",
         cognome: "Anche se il reclamo è presentato per conto di un ente, un'associazione o un'azienda, è necessario indicare i dati del referente che compila questo modulo.",
-        nazione: "Scrivi il nome del tuo Paese di residenza: è sufficiente digitarne le prime lettere e poi selezionare il nome corretto dall’elenco proposto. Il campo è impostato di default su ITALIA.",
+        nazione: "Scrivi il nome del tuo Paese di residenza: è sufficiente digitare le prime lettere e poi selezionare il nome corretto dall’elenco proposto. Il campo è impostato di default su ITALIA.",
         indirizzo: "Inserisci un indirizzo presso cui desideri ricevere eventuali comunicazioni via posta ordinaria.",
         comune: "Seleziona un Comune e il relativo CAP tra quelli disponibili nel menù.",
-        prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù.",
+        prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39",
         numerotesserinoidentificativo:`<div>
               È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/><br/>
               <img src="immagine_tooltip_abbonamenti.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
@@ -110,10 +113,10 @@ const resources = {
         localita:"Local area",
         cap:"Postal code",
         provincia:"Province / State / Region",
-        prefissotelefonico:"International Phone Prefix",
+        prefissotelefonico: "International dialing code",
         numerotelefonico:"Mobile Phone Number",
         mail: "E-mail",
-        email_confirm_label:"Confirm email",
+        email_confirm_label:"Confirm e-mail",
         abbonatosino:"Pass holder",
         numerotesserinoidentificativo:"Tpl Fvg Identification card number (if the complainant holds one)",
 
@@ -165,7 +168,7 @@ const resources = {
         nazione: "Enter the name of your country of residence: just type the first few letters and then select the correct name from the suggested list. The default value is ITALY.",
         indirizzo: "Enter an address where you wish to receive any communications by regular mail.",
         comune: "Select a municipality and its corresponding postal code from the dropdown menu.",
-        prefissotelefonico: "Select the international dialing code from the dropdown menu.",
+        prefissotelefonico: "Select the international dialing code from the list. The default value is +39",
         numerotesserinoidentificativo: `<div>
           This is the seven-digit number that uniquely identifies the pass holder. It can be found both on the ID card and on the passes purchased using that card.<br/><br/>
           <img src="immagine_tooltip_abbonamenti.png" alt="Sample ID card" style="max-width: 100%; height: auto;"/>
