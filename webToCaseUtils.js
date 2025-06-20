@@ -608,15 +608,21 @@ function aggiungiConfermaEmail(idmail) {
   } else if (!idmail.startsWith("#")) {
     idmail = "#" + idmail;
   }
-  const idClean = idmail?.startsWith('#') ? idmail.slice(1) : idmail;
+  const idClean = idmail.startsWith('#') ? idmail.slice(1) : idmail;
   const emailField = document.getElementById(idClean);
   if (!emailField) return;
 
+  // Rimuovi eventuali istanze precedenti
+  document.getElementById("EmailConfirm")?.remove();
+  document.querySelector("label[for='EmailConfirm']")?.remove();
+  document.getElementById("emailMismatchError")?.remove();
+  document.getElementById("emailInvalidError")?.remove();
+
   // Crea nuovo campo conferma email
-  const confirmField = emailField.cloneNode(true);
+  const confirmField = document.createElement("input");
+  confirmField.type = "email";
   confirmField.id = "EmailConfirm";
   confirmField.name = "EmailConfirm";
-  confirmField.value = "";
   confirmField.required = true;
 
   // Crea etichetta localizzata
@@ -654,11 +660,8 @@ function aggiungiConfermaEmail(idmail) {
     const confirmValid = emailRegex.test(confirm);
     const match = email === confirm;
 
-    // Mostra errore se uno dei due formati è errato
     const valid = emailValid && confirmValid;
     invalidError.style.display = valid ? "none" : "block";
-
-    // Mostra errore se non coincidono (solo se sono entrambi validi)
     mismatchError.style.display = (valid && !match) ? "block" : "none";
 
     let validityMessage = "";
@@ -673,17 +676,16 @@ function aggiungiConfermaEmail(idmail) {
   emailField.addEventListener("input", validateEmails);
   confirmField.addEventListener("input", validateEmails);
 
-  // Rimozione campo prima del submit
   const form = emailField.closest("form");
   if (form) {
     form.addEventListener("submit", function (e) {
       validateEmails();
       if (!form.checkValidity()) {
-        e.preventDefault(); // blocca invio se form non valido
+        e.preventDefault();
         return;
       }
 
-      // Se tutto è valido, rimuovi i campi aggiuntivi
+      // Rimuovi dinamicamente gli elementi creati
       confirmField.remove();
       newLabel.remove();
       mismatchError.remove();
