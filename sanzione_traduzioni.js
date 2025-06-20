@@ -129,8 +129,8 @@
         provincia: "Province / Region / State",
         mail: "E-mail",
         email_confirm_label: "Repeat email",
-        email_invalid: "Please check the email address.",
-        email_mismatch: "Please check the email address.",
+        email_invalid: "Please check the e-mail address.",
+        email_mismatch: "Please check the e-mail address.",
         prefissotelefonico: "International dialing code",
         numerotelefonico: "Mobile phone number",
 

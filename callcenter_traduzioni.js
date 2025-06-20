@@ -90,8 +90,8 @@ const resources = {
 
         mail: "E-mail",
         email_confirm_label:"Confirm e-mail",
-        email_invalid: "Please check the email address.",
-        email_mismatch: "Please check the email address.",
+        email_invalid: "Please check the e-mail address.",
+        email_mismatch: "Please check the e-mail address.",
 
         abbonatosino: "Pass holder",
         numerotesserinoidentificativo:"Tpl Fvg Identification card number (if the complainant holds one)",

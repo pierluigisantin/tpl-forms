@@ -150,8 +150,8 @@ const resources = {
         numerotelefonico: "Mobile phone number",
         mail: "Email",
         email_confirm_label: "Repeat email",
-        email_invalid: "Please check the email address.",
-        email_mismatch: "Please check the email address.",
+        email_invalid: "Please check the e-mail address.",
+        email_mismatch: "Please check the e-mail address.",
 
         legendainfoevento: "Reported issue",
         appcontactless: "What does the issue you experienced refer to?",
