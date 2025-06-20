@@ -77,7 +77,11 @@
 
       fields = estraiCampiDaLabel();
 
-      lang = new URLSearchParams(location.search).get("lang") || "it";
+      const langParam = new URLSearchParams(location.search).get("lang");
+      lang = langParam || "it";
+      if (langParam) {
+        document.getElementById("languageSwitcher")?.style.setProperty("display", "none");
+      }
 
       i18next.init({lng: lang, resources}, (_, tInstance) => {
         t = tInstance; // 👈 assegna t a una variabile globale

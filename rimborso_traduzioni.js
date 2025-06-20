@@ -37,7 +37,7 @@ const resources = {
         datanascitaintestatario: "Data di nascita",
         cfintestatario: "Codice fiscale",
         nazioneintestatario: "Nazione di residenza",
-        indirizzointestatario: "Indirizzo di residenza (via, piazza, corso, n° civico)",
+        indirizzointestatario: "Indirizzo di residenza",
         comuneintestatario: "Comune",
         cittaintestatario: "Città",
         localitaintestatario: "Località",
@@ -81,7 +81,7 @@ const resources = {
         cognome: "Anche se la richiesta di rimborso è fatta a nome di un'associazione o di un ente, è necessario indicare i dati del referente che compila questo modulo.",
 
         cfintestatario: "Indica il codice fiscale riportato sull’abbonamento: se l’abbonamento è stato acquistato da una emettitrice automatica e non riporta i dati dell’abbonato, non se ne può in nessun caso richiedere il rimborso.",
-        indirizzointestatario: "Nel caso in cui l’intestatario dell’abbonamento non sia residente in regione, indicare il luogo dove la persona risiede o ha risieduto durante la permanenza in Friuli Venezia Giulia",
+        indirizzointestatario: "Indica l’indirizzo di residenza dell’intestatario dell’abbonamento, comprensivo di via, numero civico e località. Se la persona non è residente in Friuli Venezia Giulia, indica il luogo dove la persona risiede o ha risieduto durante la permanenza in Friuli Venezia Giulia.",
 
         accountTpl: `<div>
             Indica l'azienda che ha emesso l'abbonamento, come riportato sul documento stesso.<br/><br/>
@@ -147,7 +147,8 @@ const resources = {
         datanascitaintestatario: "Date of birth",
         cfintestatario: "Italian tax code",
         nazioneintestatario: "Country of residence",
-        indirizzointestatario: "Residential address (street, square, avenue, street number)",
+        indirizzointestatario: "Residential address",
+        indirizzointestatario: "Residential address",
         comuneintestatario: "Municipality",
         cittaintestatario: "City",
         localitaintestatario: "District",
@@ -205,7 +206,7 @@ const resources = {
     cognome: "Even if the reimbursement request is submitted on behalf of an association or organization, you must enter the details of the person filling out this form.",
 
     cfintestatario: "Enter the Italian tax code shown on the pass. If the pass was purchased from a self-service machine and does not include the holder’s personal data, reimbursement cannot be requested under any circumstances.",
-    indirizzointestatario: "If the pass holder is not a resident of the region, indicate the place where the person currently resides or resided during their stay in Friuli Venezia Giulia.",
+    indirizzointestatario: "Enter the residential address of the pass holder, including street name, street number, and locality. If the person is not a resident of Friuli Venezia Giulia, enter the place where they currently live or lived during their stay in Friuli Venezia Giulia.",
 
     accountTpl: `<div>
       Enter the name of the company that issued the pass, as shown on the document.<br/><br/>
