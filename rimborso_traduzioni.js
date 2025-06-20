@@ -11,7 +11,7 @@ const resources = {
         tipoSoggetto: "Chi è il soggetto richiedente",
         tipoSoggettoOptions: ["--Seleziona--", "Persona fisica", "Associazione o ente"
         ],
-        ragionesociale: "Associazione o ente",
+        ragionesociale: "Nome associazione o ente",
         nome: "Nome",
         cognome: "Cognome",
         datanascitadichiarante: "Data di nascita",
@@ -121,7 +121,7 @@ const resources = {
         seleziona: "--Select--",
         tipoSoggetto: "Who is requesting the refund",
         tipoSoggettoOptions: ["--Select--", "Individual", "Association or organization"],
-        ragionesociale: "Association or organization",
+        ragionesociale: "Name of the association or organization",
         nome: "First name",
         cognome: "Last name",
         datanascitadichiarante: "Date of birth",

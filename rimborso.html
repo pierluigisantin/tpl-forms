@@ -202,17 +202,19 @@
 -->
       <fieldset>
         <legend><span id="label_legendanagrafica"></span></legend>
-
-        <label for="00NbU0000001klb" id="label_tipoSoggetto"></label>
         <em>
           <span id='label_introtiposoggetto'></span>
         </em>
+        <br>
+        <br>
+        <label for="00NbU0000001klb" id="label_tipoSoggetto"></label>
+      
         <select id="00NbU0000001klb" name="00NbU0000001klb">
         </select>
 
 
         <div id="ragioneSocialeWrapper" style="display:none;">
-          <label for="00NbU0000001klq" id="label_ragioneSociale"></label>
+          <label for="00NbU0000001klq" id="label_ragionesociale"></label>
           <input id="00NbU0000001klq" name="00NbU0000001klq" type="text" />
 
         </div>
@@ -313,7 +315,8 @@
         <em>
           <span id='label_introdatiintestatario'></span>
         </em>
-        
+        <br>
+        <br>
         <label for="00NbU0000001odt" id="label_nomeintestatario">Nome </label>
         <input id="00NbU0000001odt" maxlength="100" name="00NbU0000001odt" size="20" type="text" />
 
@@ -327,9 +330,19 @@
         <label for="00NbU0000003FLt" id="label_cfintestatario"></label>
         <input id="00NbU0000003FLt" maxlength="50" name="00NbU0000003FLt" size="20" type="text" />
 
+        <label for="00NbU0000003VaL" id="label_indirizzointestatario"> </label>
+        <input  id="00NbU0000003VaL" maxlength="255" name="00NbU0000003VaL" size="20" type="text" />
+
+       
+        
+        <label for="00NbU0000003jLZ" id="label_comuneintestatario"></label>
+        <input  id="00NbU0000003jLZ"  name="00NbU0000003jLZ" list="comuniList" />
+
+        
+<!--
         <label for="00NbU0000001oij" id="label_nazioneintestatario"></label>
         <input id="00NbU0000001oij" name="00NbU0000001oij" list="nazioniList" />
-
+-->
       
 
 
@@ -397,6 +410,8 @@
         <em>
           <span id='label_introdescrizione'></span>
         </em>
+        <br>
+        <br>
         <textarea id="description" name="description" rows="10" maxlength="30000"></textarea>
 
       </fieldset>
