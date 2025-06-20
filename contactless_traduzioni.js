@@ -11,7 +11,7 @@ const resources = {
         erroreCampoObbligatorio: "",
         seleziona: "--Seleziona--",
 
-        nome: "Nome",
+        nome: "nomee",
           cognome: "Cognome",
           nazione: "Nazione di residenza",
           indirizzo: "Indirizzo di residenza o domicilio",
