@@ -91,7 +91,13 @@
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
 
    
+        document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
+          aziendaId = e.target.value;
 
+          const servizioId = "";
+          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t);
+           caricaLinee("00NbU0000003w13", lineeUrl, servizioId, aziendaId, t);
+        });
     
      
 
