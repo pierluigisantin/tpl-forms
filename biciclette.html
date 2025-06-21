@@ -100,8 +100,16 @@
         });
     
      
-
-       
+        //andata
+        document.getElementById("00NbU0000001klj")?.addEventListener("change", e => {
+          caricaFermate("00NbU0000003w4H", fermateUrl, e.target.value, t);
+          caricaFermate("00NbU0000003w5t", fermateUrl, e.target.value, t);
+        });
+        //ritorno
+        document.getElementById("00NbU0000003w13")?.addEventListener("change", e => {
+          caricaFermate("00NbU0000003wAj", fermateUrl, e.target.value, t);
+          caricaFermate("00NbU0000003wCL", fermateUrl, e.target.value, t);
+        });
 
  
 
@@ -281,12 +289,12 @@
 
          <div id="andata_luogo_partenzaWrapper" style="display: none;">
         <label for="00NbU0000003w4H" id="label_andata_luogo_partenza"> </label>
-        <input id="00NbU0000003w4H" maxlength="255" name="00NbU0000003w4H" size="20" type="text" />
+        <select id="00NbU0000003w4H"   name="00NbU0000003w4H"   ></select>
           </div>
 
         <div id="andata_luogo_destinazioneWrapper" style="display: none;">
         <label for="00NbU0000003w5t" id="label_andata_luogo_destinazione"> </label>
-        <input id="00NbU0000003w5t" maxlength="255" name="00NbU0000003w5t" size="20" type="text" />
+        <select id="00NbU0000003w5t"   name="00NbU0000003w5t" ></select>
         </div>
 
         <div id="linea_ritornoWrapper" style="display: none;">
@@ -304,12 +312,12 @@
 
         <div id="ritorno_luogo_partenzaWrapper"  style="display: none;">
         <label for="00NbU0000003wAj" id="label_ritorno_luogo_partenza"></label>
-        <input id="00NbU0000003wAj" maxlength="255" name="00NbU0000003wAj" size="20" type="text" />
+        <select id="00NbU0000003wAj"   name="00NbU0000003wAj"  ></select>
         </div>
 
         <div id="ritorno_luogo_destinazioneWrapper"  style="display: none;">
-        <label for="00NbU0000003wAj" id="label_ritorno_luogo_destinazione"></label>
-        <input id="00NbU0000003wCL" maxlength="255" name="00NbU0000003wCL" size="20" type="text" />
+        <label for="00NbU0000003wCL" id="label_ritorno_luogo_destinazione"></label>
+        <select id="00NbU0000003wCL"  name="00NbU0000003wCL"   ></select>
         </div>
 
         <label for="description" id="label_descrizione"></label>
