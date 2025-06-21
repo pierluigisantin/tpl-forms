@@ -4,21 +4,30 @@
   <meta charset="UTF-8">
   <title>Grazie</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       background-color: #ffffff;
       color: #1f1f1f;
     }
 
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
     .container {
       max-width: 800px;
-      margin: 3rem auto;
       padding: 2rem;
       background-color: #ffffff;
       border-radius: 0.5rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 1rem;
     }
 
     h1 {
@@ -50,13 +59,13 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" lang="it">
     <h1 id="thankYouTitleit">Grazie per averci contattato!</h1>
     <p id="thankYouMessageit">
       Abbiamo ricevuto la tua richiesta e ti risponderemo quanto prima. Se hai allegati da inviarci (immagini, titoli di viaggio o altri documenti), potrai farlo rispondendo all’e-mail di conferma che riceverai tra poco. Se hai presentato ricorso per una sanzione, ricordati di inviarci una copia fronte e retro del tuo documento di identità.
     </p>
   </div>
-  <div class="container">
+  <div class="container" lang="en">
     <h1 id="thankYouTitleen">Thank you for contacting us!</h1>
     <p id="thankYouMessageen">
       We have received your request and will reply as soon as possible. If you have any attachments to send us (such as images, travel passes, or other documents), you can do so by replying to the confirmation email you will receive shortly. If you have submitted an appeal against a fine, remember to send us a front and back copy of your ID document.
