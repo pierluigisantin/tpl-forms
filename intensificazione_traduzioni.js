@@ -21,22 +21,22 @@ const resources = {
         ncivico:"Numero civico",
         comune:"Comune",
         citta:"Città",
-        localita:"Località",
+        localita:"Località o frazione",
         cap:"CAP",
-        provincia:"Provincia",
+        provincia:"Provincia / Regione / Stato",
         mailorganizzazione:"E-mail dell’organizzazione",
-        email_confirm_label:"Conferma la mail",
+        email_confirm_label:"Ripeti e-mail",
         email_invalid:"Verifica l’indirizzo e-mail.",
           email_mismatch: "Verifica l’indirizzo e-mail.",
         numerotelefonicoorganizzazione:"Numero di telefono dell’organizzazione",
-        prefissoorganizzazione:"Prefisso telefonico internazionale organizzazione",
+        prefissoorganizzazione:"Prefisso telefonico internazionale",
         
         legendareferente:"DATI DEL REFERENTE DELL’ORGANIZZAZIONE",
         nome:"Nome",
         cognome:"Cognome",
-        mail:"Email",
+        mail:"E-mail",
         prefissotelefonico:"Prefisso telefonico internazionale",
-        numerotelefonico:"Numero di telefono",
+        numerotelefonico:"Numero di telefono del referente",
         legendaserviziorichiesto:"SERVIZIO RICHIESTO",
         tipointensificazione:"Tipo di servizio richiesto",
         tipointensificazioneOptions:["--Seleziona--","Uscita didattica o gita scolastica",
@@ -51,22 +51,22 @@ const resources = {
             hide: [ "linea_andata",,"andata_partenza_dataora","andata_luogo_partenza","andata_luogo_destinazione","linea_ritorno","ritorno_partenza_dataora","ritorno_luogo_partenza","ritorno_luogo_destinazione"]
           }
         },
-        accounttpl:"Territorio e azienda di riferimento",
+        accounttpl:"Territorio/azienda di riferimento",
         npartecipanti:"Numero di partecipanti previsto",
-        linea_andata:"Linea di andata",
-        andata_partenza_dataora:"Data e ora di partenza dell'andata",
-        andata_luogo_partenza:"Luogo di partenza dell'andata",
-        andata_luogo_destinazione:"Luogo di destinazione dell'andata",
-        linea_ritorno:"Linea di ritorno",
-        ritorno_partenza_dataora:"Data e ora di partenza del ritorno",
-        ritorno_luogo_partenza:"Luogo di partenza del ritorno",
-        ritorno_luogo_destinazione:"Luogo di destinazione del ritorno",
+        linea_andata:"Percorso di andata",
+        andata_partenza_dataora:"Data e ora di partenza (andata)",
+        andata_luogo_partenza:"Luogo di partenza (andata)",
+        andata_luogo_destinazione:"Destinazione (andata)",
+        linea_ritorno:"Percorso di ritorno",
+        ritorno_partenza_dataora:"Data e ora di partenza (ritorno)",
+        ritorno_luogo_partenza:"Luogo di partenza (ritorno)",
+        ritorno_luogo_destinazione:"Destinazione (ritorno)",
         nomeevento:"Nome dell'evento",
         sedeevento:"Sede dell'evento",
-        datainizioevento:"Data di inizio dell'evento",
-        datafineevento:"Data di fine dell'evento",
+        datainizioevento:"Data di inizio evento",
+        datafineevento:"Data di fine evento",
         descrizione:"Descrizione",
-        introdescrizione:"Inserisci eventuali ulteriori dettagli per verificare la disponibilità del servizio",
+        introdescrizione:"Inserisci eventuali ulteriori dettagli per verificare la disponibilità del servizio.",
         consensoobbligatorio:"CONSENSO OBBLIGATORIO",
           privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto.",
           consensofacoltativo:"CONSENSI FACOLTATIVI",
@@ -81,10 +81,22 @@ const resources = {
         ultimo: ""
       },
       tooltips: {
-        accounttpl:"Indica il territorio e l’azienda di competenza. Se non sai quale azienda indicare, scegli l’opzione TPL FVG",
-        npartecipanti:"Se ancora non conosci il numero esatto di partecipanti, indica una stima. Se presenti, indicare il numero di partecipanti con disabilità motoria in sedia a rotelle ",
-        linea_andata:"Questo campo si attiva dopo aver selezionato l’area geografica e l’azienda di riferimento, da cui dipendono le linee proposte. Se come azienda di riferimento hai selezionato TPL FVG, l’elenco includerà tutte le linee operate da Tpl Fvg. Se non conosci la linea che opera lungo la direttrice di tuo interesse, puoi lasciare questo campo in bianco",
-        linea_ritorno:"Questo campo si attiva dopo aver selezionato l’area geografica e l’azienda di riferimento, da cui dipendono le linee proposte. Se come azienda di riferimento hai selezionato TPL FVG, l’elenco includerà tutte le linee operate da Tpl Fvg. Se non conosci la linea che opera lungo la direttrice di tuo interesse, puoi lasciare questo campo in bianco",
+
+          comune: "Seleziona un Comune e il relativo CAP tra quelli disponibili nel menù.",
+            prefissoorganizzazione:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39",
+        prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39",
+        accounttpl:"Indica l’azienda di competenza per il servizio richiesto. Se non sai quale azienda indicare, scegli l’opzione TPL FVG.",
+        npartecipanti:"Se non conosci ancora il numero esatto di partecipanti, indica una stima verosimile. Specifica anche, se già noto, il numero di persone con disabilità motoria che utilizzano una sedia a rotelle. ",
+        linea_andata:"Questo campo si attiva dopo aver selezionato l’azienda di riferimento, da cui dipende l’elenco delle linee proposte. Se come azienda di riferimento hai selezionato TPL FVG, ti verranno mostrate tutte le linee gestite da Tpl Fvg. Se non conosci la linea che copre la direttrice di tuo interesse, puoi lasciare questo campo vuoto. Se la richiesta di intensificazione riguarda più linee, indica quella prevalente.",
+        linea_ritorno:"Questo campo si attiva dopo aver selezionato l’azienda di riferimento, da cui dipende l’elenco delle linee proposte. Se come azienda di riferimento hai selezionato TPL FVG, ti verranno mostrate tutte le linee gestite da Tpl Fvg. Se non conosci la linea che copre la direttrice di tuo interesse, puoi lasciare questo campo vuoto. Se la richiesta di intensificazione riguarda più linee, indica quella prevalente.",
+
+        andata_luogo_partenza:"Indica il luogo da dove intendi partire. Esempi: stazione ferroviaria di Pordenone / piazza Oberdan, Trieste / autostazione di Udine.",
+          andata_luogo_destinazione:"Indica la destinazione del viaggio. Esempi: Castello di Miramare, Trieste / Castello di Gorizia / Gallerie del Tiepolo, Udine.",
+          ritorno_luogo_partenza:"Indica il luogo di partenza del viaggio di ritorno.",
+          ritorno_luogo_destinazione:"Indica la destinazione del viaggio di ritorno.",
+
+
+        
         ultimo: ""
       }
     }
@@ -97,71 +109,66 @@ const resources = {
         codiceFiscaleNonValido: "The entered Italian tax code is not valid.",
         valoreNonValidoDatalist: "Select an option from the list.",
 
-
-
-          legendaorganizzazione:"",
-          tipoSoggetto: "",
-          tiposoggettoOptions: ["--Seleziona--",
-            "Scuola, università o istituto di formazione",
-            "Ente pubblico (non formativo)",
-            "Associazione",
-            "Azienda"
-          ],
-          ragioneSociale:"",
-          nazione:"",
-          indirizzo:"",
-          ncivico:"",
-          comune:"",
-          citta:"",
-          localita:"",
-          cap:"",
-          provincia:"",
-          mailorganizzazione:"",
-          email_confirm_label:"Confirm mail",
-
-          numerotelefonicoorganizzazione:"",
-          prefissoorganizzazione:"",
-
-          legendareferente:"",
-          nome:"",
-          cognome:"",
-          mail:"",
-          email_invalid: "Please check the e-mail address.",
-          email_mismatch: "Please check the e-mail address.",
-          prefissotelefonico:"",
-          numerotelefonico:"",
-          legendaserviziorichiesto:"",
-          tipointensificazione:"",
-        tipointensificazioneOptions: [
-          "--Select--",
-          "Educational outing or school trip",
-          "Increased service for local events"
+        
+        legendaorganizzazione: "DATA OF THE ORGANIZATION REQUESTING SERVICE INTENSIFICATION",
+        tipoSoggetto: "Who is requesting the service intensification",
+        tiposoggettoOptions: ["--Select--",
+          "School, university, or training institute",
+          "Public authority (not related to education)",
+          "Association",
+          "Company"
         ],
+        ragioneSociale: "Name of the organization",
+        nazione: "Country of the organization’s headquarters",
+        indirizzo: "Address of the organization",
+        ncivico: "Street number",
+        comune: "Municipality",
+        citta: "City",
+        localita: "Locality or hamlet",
+        cap: "Postal code",
+        provincia: "Province / Region / State",
+        mailorganizzazione: "Organization’s e-mail address",
+        email_confirm_label: "Repeat e-mail address",
+
+        numerotelefonicoorganizzazione: "Telephone number of the organization",
+        prefissoorganizzazione: "International dialling code",
+
+          legendareferente: "CONTACT PERSON DETAILS",
+          nome: "First name",
+          cognome: "Last name",
+          mail: "E-mail",
+          prefissotelefonico: "International dialling code",
+          numerotelefonico: "Contact person's telephone number",
+          legendaserviziorichiesto: "REQUESTED SERVICE",
+          tipointensificazione: "Type of requested service",
+          tipointensificazioneOptions: ["--Select--", "Educational outing or school trip", "Service intensification for local events"],
+      
           tipointensificazioneOptionsShowHide: {
               "Educational outing or school trip": {
               show: [ "linea_andata","npartecipanti","andata_partenza_dataora","andata_luogo_partenza","andata_luogo_destinazione","linea_ritorno","ritorno_partenza_dataora","ritorno_luogo_partenza","ritorno_luogo_destinazione"],
               hide: ["nomeevento","sedeevento","datainizioevento","datafineevento" ]
             },
-            "Increased service for local events": {
+            "Service intensification for local events": {
               show: ["npartecipanti", "nomeevento","sedeevento","datainizioevento","datafineevento"  ],
-              hide: [ "linea_andata",,"andata_partenza_dataora","andata_luogo_partenza","andata_luogo_destinazione","linea_ritorno","ritorno_partenza_dataora","ritorno_luogo_partenza","ritorno_luogo_destinazione"]
+              hide: [ "linea_andata","andata_partenza_dataora","andata_luogo_partenza","andata_luogo_destinazione","linea_ritorno","ritorno_partenza_dataora","ritorno_luogo_partenza","ritorno_luogo_destinazione"]
             }
           },
-          accounttpl:"",
-          npartecipanti:"",
-          linea_andata:"",
-          andata_partenza_dataora:"",
-          andata_luogo_partenza:"",
-          andata_luogo_destinazione:"",
-          linea_ritorno:"",
-          ritorno_partenza_dataora:"",
-          ritorno_luogo_partenza:"",
-          ritorno_luogo_destinazione:"",
-          nomeevento:"",
-          sedeevento:"",
-          datainizioevento:"",
-          datafineevento:"",
-          descrizione:"",
+        accounttpl: "Reference area/company",
+        npartecipanti: "Expected number of participants",
+        linea_andata: "Outbound route",
+        andata_partenza_dataora: "Departure date and time (outbound)",
+        andata_luogo_partenza: "Departure location (outbound)",
+        andata_luogo_destinazione: "Destination (outbound)",
+        linea_ritorno: "Return route",
+        ritorno_partenza_dataora: "Departure date and time (return)",
+        ritorno_luogo_partenza: "Departure location (return)",
+        ritorno_luogo_destinazione: "Destination (return)",
+        nomeevento: "Event name",
+        sedeevento: "Event venue",
+        datainizioevento: "Event start date",
+        datafineevento: "Event end date",
+        descrizione: "Description",
+        introdescrizione: "Enter any additional details to help us check service availability.",
 
         consensoobbligatorio: "MANDATORY CONSENT",
           privacy: "I declare that I have read and understood the Tpl Fvg privacy policy, available on the website www.tplfvg.it and accessible via the link below.",
@@ -178,7 +185,18 @@ const resources = {
         ultimo: ""
 
       },
-      tooltips: {
+          tooltips: {
+            comune: "Select a municipality and its corresponding postal code from the available options in the menu.",
+            prefissoorganizzazione: "Select the international dialling code from the menu. The default value is set to +39.",
+            prefissotelefonico: "Select the international dialling code from the menu. The default value is set to +39.",
+            accounttpl: "Specify the company responsible for the requested service. If you are unsure which company to select, choose the TPL FVG option.",
+            npartecipanti: "If you do not yet know the exact number of participants, provide a reasonable estimate. If already known, also specify the number of people with motor disabilities who use a wheelchair.",
+            linea_andata: "This field becomes active after selecting the reference company, which determines the list of available routes. If you select TPL FVG as the reference company, all routes operated by Tpl Fvg will be shown. If you do not know the route that serves your area of interest, you may leave this field blank. If the service intensification request involves multiple routes, indicate the main one.",
+            linea_ritorno: "This field becomes active after selecting the reference company, which determines the list of available routes. If you select TPL FVG as the reference company, all routes operated by Tpl Fvg will be shown. If you do not know the route that serves your area of interest, you may leave this field blank. If the service intensification request involves multiple routes, indicate the main one.",
+            andata_luogo_partenza: "Specify the departure location. Examples: Pordenone railway station / Piazza Oberdan, Trieste / Udine bus terminal.",
+            andata_luogo_destinazione: "Specify the destination of the outbound journey. Examples: Miramare Castle, Trieste / Gorizia Castle / Tiepolo Galleries, Udine.",
+            ritorno_luogo_partenza: "Specify the departure location for the return journey.",
+            ritorno_luogo_destinazione: "Specify the destination for the return journey.",
 
         ultimo: ""
 

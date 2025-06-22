@@ -80,6 +80,10 @@ const resources = {
         nome: "Anche se la richiesta di rimborso è fatta a nome di un'associazione o di un ente, è necessario indicare i dati del referente che compila questo modulo.",
         cognome: "Anche se la richiesta di rimborso è fatta a nome di un'associazione o di un ente, è necessario indicare i dati del referente che compila questo modulo.",
 
+        indirizzo: "Inserisci un indirizzo presso cui desideri ricevere eventuali comunicazioni via posta ordinaria.",
+          comune: "Seleziona un Comune e il relativo CAP tra quelli disponibili nel menù.",
+          prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39",
+        
         cfintestatario: "Indica il codice fiscale riportato sull’abbonamento: se l’abbonamento è stato acquistato da una emettitrice automatica e non riporta i dati dell’abbonato, non se ne può in nessun caso richiedere il rimborso.",
         indirizzointestatario: "Indica l’indirizzo di residenza dell’intestatario dell’abbonamento, comprensivo di via, numero civico e località. Se la persona non è residente in Friuli Venezia Giulia, indica il luogo dove la persona risiede o ha risieduto durante la permanenza in Friuli Venezia Giulia.",
 
@@ -205,6 +209,10 @@ const resources = {
     nome: "Even if the reimbursement request is submitted on behalf of an association or organization, you must enter the details of the person filling out this form.",
     cognome: "Even if the reimbursement request is submitted on behalf of an association or organization, you must enter the details of the person filling out this form.",
 
+    indirizzo: "Enter an address where you wish to receive any communications by regular mail.",
+      comune: "Select a municipality and its corresponding postal code from the dropdown menu.",
+      prefissotelefonico: "Select the international dialing code from the list. The default value is +39",
+    
     cfintestatario: "Enter the Italian tax code shown on the pass. If the pass was purchased from a self-service machine and does not include the holder’s personal data, reimbursement cannot be requested under any circumstances.",
     indirizzointestatario: "Enter the residential address of the pass holder, including street name, street number, and locality. If the person is not a resident of Friuli Venezia Giulia, enter the place where they currently live or lived during their stay in Friuli Venezia Giulia.",
 
