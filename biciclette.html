@@ -102,13 +102,13 @@
      
         //andata
         document.getElementById("00NbU0000001klj")?.addEventListener("change", e => {
-          caricaFermate("00NbU0000003w4H", fermateUrl, e.target.value, t);
-          caricaFermate("00NbU0000003w5t", fermateUrl, e.target.value, t);
+          caricaFermate("00NbU00000041f3", fermateUrl, e.target.value, t);
+          caricaFermate("00NbU00000041iH", fermateUrl, e.target.value, t);
         });
         //ritorno
         document.getElementById("00NbU0000003w13")?.addEventListener("change", e => {
-          caricaFermate("00NbU0000003wAj", fermateUrl, e.target.value, t);
-          caricaFermate("00NbU0000003wCL", fermateUrl, e.target.value, t);
+          caricaFermate("00NbU00000041gf", fermateUrl, e.target.value, t);
+          caricaFermate("00NbU00000041jt", fermateUrl, e.target.value, t);
         });
 
  
@@ -163,7 +163,8 @@
           if (!validazioneCampiObbligatori("formReclamo", t)) {
             e.preventDefault();
           }
-          formattaDataEvento("data_evento_visible", "00NbU0000001klh");
+          formattaDataEvento("andata_partenza_dataora_visibile", "00NbU0000003vzR");
+          formattaDataEvento("ritorno_partenza_dataora_visibile", "00NbU0000003w97");
 
 
           const validCampi = validazioneCampiObbligatori("formReclamo", t);
@@ -288,13 +289,13 @@
 
 
          <div id="andata_luogo_partenzaWrapper" style="display: none;">
-        <label for="00NbU0000003w4H" id="label_andata_luogo_partenza"> </label>
-        <select id="00NbU0000003w4H"   name="00NbU0000003w4H"   ></select>
+        <label for="00NbU00000041f3" id="label_andata_luogo_partenza"> </label>
+        <select id="00NbU00000041f3"   name="00NbU00000041f3"   ></select>
           </div>
 
         <div id="andata_luogo_destinazioneWrapper" style="display: none;">
-        <label for="00NbU0000003w5t" id="label_andata_luogo_destinazione"> </label>
-        <select id="00NbU0000003w5t"   name="00NbU0000003w5t" ></select>
+        <label for="00NbU00000041iH" id="label_andata_luogo_destinazione"> </label>
+        <select id="00NbU00000041iH"   name="00NbU00000041iH" ></select>
         </div>
 
         <div id="linea_ritornoWrapper" style="display: none;">
@@ -311,13 +312,13 @@
           </div>
 
         <div id="ritorno_luogo_partenzaWrapper"  style="display: none;">
-        <label for="00NbU0000003wAj" id="label_ritorno_luogo_partenza"></label>
-        <select id="00NbU0000003wAj"   name="00NbU0000003wAj"  ></select>
+        <label for="00NbU00000041gf" id="label_ritorno_luogo_partenza"></label>
+        <select id="00NbU00000041gf"   name="00NbU00000041gf"  ></select>
         </div>
 
         <div id="ritorno_luogo_destinazioneWrapper"  style="display: none;">
-        <label for="00NbU0000003wCL" id="label_ritorno_luogo_destinazione"></label>
-        <select id="00NbU0000003wCL"  name="00NbU0000003wCL"   ></select>
+        <label for="00NbU00000041jt" id="label_ritorno_luogo_destinazione"></label>
+        <select id="00NbU00000041jt"  name="00NbU00000041jt"   ></select>
         </div>
 
         <label for="description" id="label_descrizione"></label>
