@@ -38,7 +38,7 @@ const resources = {
           "L’operatore non ha saputo rispondere alla mia richiesta",
           "L’operatore mi ha dato una risposta sbagliata",
           "L’operatore è stato scortese o poco professionale",
-          "Altro"
+          "Altro (motiva nel dettaglio la tua scelta)",
         ],
         descrizione: "Descrizione dell'evento",
         introdescrizione: "Descrivi il problema in modo sintetico ma completo, fornendo tutte le informazioni utili per ricostruire la telefonata.",
@@ -109,7 +109,7 @@ const resources = {
           "The operator was unable to answer my request",
           "The operator gave me incorrect information",
           "The operator was rude or unprofessional",
-          "Other"
+          "Other (please explain your choice in detail)"
         ],
         descrizione: "Description of the event",
         introdescrizione: "Briefly but clearly describe the issue, providing all the useful details to help us reconstruct the call.",

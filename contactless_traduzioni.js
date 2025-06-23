@@ -70,10 +70,11 @@ const resources = {
             "Un biglietto valido risulta già convalidato",
             "Altro"
           ],
-          "App Tpl Fvg": ["Non visualizzo i biglietti acquistati",
-            "Non riesco ad accedere al mio profilo",
+          "App Tpl Fvg": ["Non riesco ad accedere al mio profilo",
             "Non riesco a convalidare i biglietti acquistati",
-            "Non visualizzo il mio abbonamento",
+         "Non visualizzo i biglietti acquistati",
+       "Non visualizzo il mio abbonamento",
+           "Chiedo il rimborso di un biglietto acquistato per errore",
             "Altro"
           ],
           "App Glimble": []
@@ -201,10 +202,11 @@ const resources = {
             "Other"
           ],
           "Tpl Fvg app": [
-            "Purchased tickets are not visible",
-            "Cannot access my profile",
-            "Cannot validate purchased tickets",
-            "My pass is not displayed",
+            "I can't access my profile",
+            "I can't validate the tickets I purchased",
+            "I can't see the tickets I purchased",
+            "I can't see my pass",
+            "I’m requesting a refund for a ticket purchased by mistake",
             "Other"
           ],
           "Glimble app": []

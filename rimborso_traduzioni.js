@@ -50,7 +50,7 @@ const resources = {
         numeroserialeabbonamento: "Numero seriale dell’abbonamento",
 
         tipoabbonamento: "Tipo di abbonamento",
-        tipoabbonamentoOptions: ["--Seleziona--", "Quindicinale", "Mensile", "Semestrale", "Scolastico agevolato per studenti residenti in FVG", "Scolastico ordinario (10 mesi)", "Annuale (12 mesi)", "Agevolato per persone con disabilità"],
+        tipoabbonamentoOptions: ["--Seleziona--", "Quindicinale", "Mensile", "Maggio prolungato fine scuola", "Semestrale", "Scolastico (10 mesi)", "Annuale (12 mesi)", "Agevolato per persone con disabilità"],
         canalediacquisto: "Canale di acquisto",
         canalediacquistoOptions: ["--Seleziona--", "Biglietteria aziendale", "Rivendita esterna", "Online (sito web Tpl Fvg)", "Dropticket", "Altro"],
 
@@ -107,9 +107,9 @@ const resources = {
         Indica l’importo effettivamente pagato riportato sull’abbonamento.<br/><br/>
 <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
 </div>`,
-        ibanrimborso: "Questa informazione è necessaria solo nel caso in cui l’abbonamento sia stato acquistato online dal sito https://abbonamentionline.tplfvg.it e sia stato pagato con MyBank o BancomatPay, oppure nel caso in cui sia stato acquistato presso una biglietteria aziendale o una rivendita e se ne richieda il rimborso tramite bonifico. Per tutti gli altri casi, i canali di rimborso ti saranno comunicati all’esito dell’istruttoria.",
-        nomecognomeintestatarioiban: "Questa informazione è necessaria solo nel caso in cui l’abbonamento sia stato acquistato online dal sito https://abbonamentionline.tplfvg.it e sia stato pagato con MyBank o BancomatPay, oppure nel caso in cui sia stato acquistato presso una biglietteria aziendale o una rivendita e se ne richieda il rimborso tramite bonifico. Per tutti gli altri casi, i canali di rimborso ti saranno comunicati all’esito dell’istruttoria.",
-        comuneiban: "Questa informazione è necessaria solo nel caso in cui l’abbonamento sia stato acquistato online dal sito https://abbonamentionline.tplfvg.it e sia stato pagato con MyBank o BancomatPay, oppure nel caso in cui sia stato acquistato presso una biglietteria aziendale o una rivendita e se ne richieda il rimborso tramite bonifico. Per tutti gli altri casi, i canali di rimborso ti saranno comunicati all’esito dell’istruttoria.",
+        ibanrimborso: "Questa informazione è necessaria solo nel caso in cui l’abbonamento sia stato acquistato online dal sito https://abbonamentionline.tplfvg.it e sia stato pagato con MyBank o BancomatPay, oppure nel caso in cui sia stato acquistato presso una biglietteria aziendale o una rivendita e se ne richieda il rimborso tramite bonifico. Se l'abbonamento è stato acquistato online con carta di credito, l'eventuale rimborso avverrà sulla carta stessa.",
+        nomecognomeintestatarioiban: "Da compilare solo in caso di rimborso tramite bonifico bancario.",
+        comuneiban: "Da compilare solo in caso di rimborso tramite bonifico bancario.",
 
         ultimo: ""
       }
@@ -167,9 +167,9 @@ const resources = {
           "--Select--",
           "Biweekly",
           "Monthly",
+          "May Extended (end of school)",
           "Half-yearly",
-          "Discounted school pass for FVG residents",
-          "Standard school pass (10 months)",
+          "School pass (10 months)",
           "Annual (12 months)",
           "Discounted pass for persons with disabilities"
         ],
@@ -241,11 +241,11 @@ const resources = {
       <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
     </div>`,
 
-    ibanrimborso: "This information is required only if the pass was purchased online from https://abbonamentionline.tplfvg.it and paid using MyBank or BancomatPay, or if it was purchased from a company ticket office or authorized retailer and reimbursement is requested via bank transfer. For all other cases, reimbursement instructions will be provided after the request is reviewed.",
+    ibanrimborso: "This information is required only if the pass was purchased online from https://abbonamentionline.tplfvg.it and paid with MyBank or BancomatPay, or if it was purchased at a company ticket office or authorized retailer and a refund by bank transfer is requested. If the pass was purchased online with a credit card, any refund will be made to the same card.",
 
-    nomecognomeintestatarioiban: "This information is required only if the pass was purchased online from https://abbonamentionline.tplfvg.it and paid using MyBank or BancomatPay, or if it was purchased from a company ticket office or authorized retailer and reimbursement is requested via bank transfer. For all other cases, reimbursement instructions will be provided after the request is reviewed.",
+    nomecognomeintestatarioiban: "To be filled in only in case of a refund by bank transfer.",
 
-    comuneiban: "This information is required only if the pass was purchased online from https://abbonamentionline.tplfvg.it and paid using MyBank or BancomatPay, or if it was purchased from a company ticket office or authorized retailer and reimbursement is requested via bank transfer. For all other cases, reimbursement instructions will be provided after the request is reviewed."
+    comuneiban: "To be filled in only in case of a refund by bank transfer.",
 }
 }
 }
