@@ -1,84 +1,75 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <title>Grazie</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background-color: #ffffff;
-      color: #1f1f1f;
-      height: 100%;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grazie</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        background-color: #f5f5f5;
+        color: #1f1f1f;
+        height: 100%;
+      }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start; /* messaggio in alto */
-    }
-
-    .container {
-      width: 100%;
-      max-width: 800px;
-      padding: 2rem;
-      background-color: #ffffff;
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-top: 2rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #007B87;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    @media (max-width: 600px) {
-      .container {
+      .thankyou-fixed {
+        position: fixed;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 2rem);
+        max-width: 600px;
+        background-color: #ffffff;
+        border-radius: 0.75rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         padding: 1.5rem;
+        z-index: 999;
+        text-align: center;
+        box-sizing: border-box;
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        color: #007B87;
+        margin-bottom: 1rem;
       }
 
       p {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        line-height: 1.5;
       }
-    }
-  </style>
-  <script>
-    window.addEventListener("load", function () {
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        document.body.scrollTop = 0;        // per Safari
-        document.documentElement.scrollTop = 0; // per altri browser
-      }, 200);
-    });
-  </script>
-</head>
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 0.95rem;
+        }
+
+        .thankyou-fixed {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
 <body>
-  <div class="container" lang="it">
-    <h1 id="thankYouTitleit">Grazie per averci contattato!</h1>
-    <p id="thankYouMessageit">
-      Abbiamo ricevuto la tua richiesta e ti risponderemo quanto prima. Se hai allegati da inviarci (immagini, titoli di viaggio o altri documenti), potrai farlo rispondendo all’e-mail di conferma che riceverai tra poco. Se hai presentato ricorso per una sanzione, ricordati di inviarci una copia fronte e retro del tuo documento di identità.
-    </p>
-  </div>
-  <div class="container" lang="en">
-    <h1 id="thankYouTitleen">Thank you for contacting us!</h1>
-    <p id="thankYouMessageen">
-      We have received your request and will reply as soon as possible. If you have any attachments to send us (such as images, travel passes, or other documents), you can do so by replying to the confirmation email you will receive shortly. If you have submitted an appeal against a fine, remember to send us a front and back copy of your ID document.
-    </p>
-  </div>
+ <div class="thankyou-fixed">
+      <div class="container" lang="it">
+        <h1 id="thankYouTitleit">Grazie per averci contattato!</h1>
+        <p id="thankYouMessageit">
+          Abbiamo ricevuto la tua richiesta e ti risponderemo quanto prima. Se hai allegati da inviarci (immagini, titoli di viaggio o altri documenti), potrai farlo rispondendo all’e-mail di conferma che riceverai tra poco. Se hai presentato ricorso per una sanzione, ricordati di inviarci una copia fronte e retro del tuo documento di identità.
+        </p>
+      </div>
+      <div class="container" lang="en">
+        <h1 id="thankYouTitleen">Thank you for contacting us!</h1>
+        <p id="thankYouMessageen">
+          We have received your request and will reply as soon as possible. If you have any attachments to send us (such as images, travel passes, or other documents), you can do so by replying to the confirmation email you will receive shortly. If you have submitted an appeal against a fine, remember to send us a front and back copy of your ID document.
+        </p>
+      </div>
+   </div> 
 </body>
 </html>
