@@ -29,8 +29,10 @@
       "nome",
       "cognome",
       "nazione",
+      "cfdichiarante",
       "datanascitadichiarante",
       "indirizzo",
+      "ncivico",
       "comune",
       "mail",
       "prefissotelefonico",
@@ -155,6 +157,26 @@
           toggleIndirizzo("00NbU0000001klm", "indirizzoItaliaWrapper", lang);
           toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
           toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper2", lang, true);
+
+
+
+          //logica custom nascondi cf per quelli che non sono in italia
+          const nazione = document.getElementById("00NbU0000001klm").value.toLowerCase();
+          const wrapper = document.getElementById("cfdichiaranteWrapper");
+          const isStraniero = !(nazione === "italia" || nazione === "italy");
+          wrapper.style.display = isStraniero ? "none" : "block";
+
+          const elements = wrapper.querySelectorAll("label");
+          elements.forEach((el) => {
+            if (isStraniero) {
+              el.classList.remove("required");
+            } else {
+              el.classList.add("required");
+            }
+          });
+          ////////////////////////////////
+          
+          
         });
 
         document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
@@ -179,6 +201,11 @@
         document.getElementById("00NbU0000003FLt")?.addEventListener("blur", () => {
           validaCampoCodiceFiscale("00NbU0000003FLt", t);
         });
+        document.getElementById("datanascitadichiarante_visible")?.addEventListener("blur", () => {
+          controllaEta("datanascitadichiarante_visible",t);//valida età
+        });
+
+        
 
 
 
@@ -278,8 +305,7 @@
 
 
 
-        <label for="00NbU0000003FDp" id="label_cfdichiarante"></label>
-        <input id="00NbU0000003FDp" maxlength="50" name="00NbU0000003FDp" size="20" type="text" />
+
 
 
 
@@ -290,6 +316,11 @@
         <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
         <datalist id="nazioniList"></datalist>
 
+
+        <div id="cfdichiaranteWrapper">
+        <label for="00NbU0000003FDp" id="label_cfdichiarante"></label>
+        <input id="00NbU0000003FDp" maxlength="50" name="00NbU0000003FDp" size="20" type="text" />
+        </div>
 
 
         <label for="00NbU0000001kli" id="label_indirizzo"></label>

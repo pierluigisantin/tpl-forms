@@ -534,6 +534,40 @@ function mostraErroreCampo(idCampo, messaggio) {
   error.textContent = messaggio;
 }
 
+
+function controllaEta(idCampo,t){
+  const input = document.getElementById(idCampo);
+  if (!input) return true;
+  const oggi = new Date();
+  const dataNascita = new Date(input.value.trim());
+  let eta = oggi.getFullYear() - dataNascita.getFullYear();
+  const m = oggi.getMonth() - dataNascita.getMonth();
+  if (m < 0 || (m === 0 && oggi.getDate() < dataNascita.getDate())) {
+    eta--;
+  }
+
+  var valido=true;
+  if (eta < 18) {
+      valido=false
+   }
+
+
+  input.classList.remove("error");
+  const erroreEsistente = document.getElementById("error_" + idCampo);
+  if (erroreEsistente) erroreEsistente.textContent = "";
+
+  if ( !valido) {
+    const messaggio =
+      t?.("labels.noseiminore") || "Sei minorenne non puoi presentare il reclamo";
+    mostraErroreCampo(idCampo, messaggio);
+    return false;
+  }
+
+   
+  
+  
+}
+
 function validaCampoCodiceFiscale(idCampo, t) {
   const input = document.getElementById(idCampo);
   if (!input) return true;
