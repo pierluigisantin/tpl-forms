@@ -19,6 +19,7 @@ body {
 label {
   display: block;
   margin: .4vw 0;
+  margin-top: 20px;
   font-size: 80%;
   color: #007B87;
   letter-spacing: 0.5px;
