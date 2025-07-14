@@ -29,14 +29,19 @@ function caricaPrefissiTelefonici(selectId, url, t) {
 
 var allAziende = [];
 // Caricamento aziende da Static Resource
-function caricaAziendeTPL(selectId, url, t) {
+function caricaAziendeTPL(selectId, url, t, excludeIds = []) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       const select = document.getElementById(selectId);
       if (!select) return;
       select.innerHTML = `<option value="">${t("labels.seleziona")}</option>`;
+
       data.aziende.forEach((account) => {
+        if (excludeIds.includes(account.id)) {
+          return; // salta l'account se è nella lista di esclusione
+        }
+
         const opt = document.createElement("option");
         opt.value = `${account.id}`;
         opt.textContent = account.name;
