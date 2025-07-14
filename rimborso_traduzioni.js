@@ -46,6 +46,7 @@ const resources = {
         provinciaintestatario: "Provincia",
         datiabbonamento: "DATI DELL’ABBONAMENTO DI CUI SI CHIEDE IL RIMBORSO",
         accountTpl: "Azienda che ha emesso l’abbonamento",
+        abbonamentoemessoconfattura:"Abbonamento emesso con fattura",
         numerotesserinoidentificativo: "Numero di tesserino identificativo",
         numeroserialeabbonamento: "Numero seriale dell’abbonamento",
 
@@ -160,6 +161,7 @@ const resources = {
         provinciaintestatario: "Province",
         datiabbonamento: "PASS DETAILS FOR WHICH THE REFUND IS REQUESTED",
         accountTpl: "Company that issued the pass",
+        abbonamentoemessoconfattura:"Pass paid with invoice",
         numerotesserinoidentificativo: "Personal pass ID number",
         numeroserialeabbonamento: "Subscription serial number",
         tipoabbonamento: "Type of pass",
