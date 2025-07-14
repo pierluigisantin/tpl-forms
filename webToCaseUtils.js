@@ -69,15 +69,13 @@ function caricaServizi(selectId, url, idAzienda, lang, t) {
       if (!select) return;
       select.innerHTML = `<option value="">${t("labels.seleziona")}</option>`;
 
-
-      /*
+ 
       const serviziFiltrati = data.filter(
         (s) =>
           !idAzienda ||
-          s.IdAzienda__c === idAzienda ||
-          idAzienda === "001bU000007Q8fWQAS" // TPL FVG
+          s.IdAzienda__c === idAzienda 
       );
-      */
+      
     
 
       serviziFiltrati.forEach((servizio) => {
