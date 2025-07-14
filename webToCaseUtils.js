@@ -69,7 +69,10 @@ function caricaServizi(selectId, url, idAzienda, lang, t) {
       if (!select) return;
       select.innerHTML = `<option value="">${t("labels.seleziona")}</option>`;
 
- 
+
+
+
+      
       const serviziFiltrati = data.filter(
         (s) =>
           !idAzienda ||
