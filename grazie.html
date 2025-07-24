@@ -77,7 +77,18 @@
       if (top && typeof top.scrollIntoView === "function") {
         top.scrollIntoView({ behavior: "auto" });
       }
+
+
+      parent.postMessage({
+          type: 'form-submitted',
+          success: true
+      }, 'https://tplfvg.it');
+
+      
     });
+
+
+
   </script>
 </body>
 </html>
