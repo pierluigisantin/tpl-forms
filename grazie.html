@@ -59,18 +59,7 @@
 <body>
   <div id="top"></div> <!-- punto di ancoraggio -->
 
-      <div class="container" lang="it">
-        <h1 id="thankYouTitleit">Grazie per averci contattato!</h1>
-        <p id="thankYouMessageit">
-          Abbiamo ricevuto la tua richiesta e ti risponderemo quanto prima. Se hai allegati da inviarci (immagini, titoli di viaggio o altri documenti), potrai farlo rispondendo all’e-mail di conferma che riceverai tra poco. Se hai presentato ricorso per una sanzione, ricordati di inviarci una copia fronte e retro del tuo documento di identità.
-        </p>
-      </div>
-      <div class="container" lang="en">
-        <h1 id="thankYouTitleen">Thank you for contacting us!</h1>
-        <p id="thankYouMessageen">
-          We have received your request and will reply as soon as possible. If you have any attachments to send us (such as images, travel passes, or other documents), you can do so by replying to the confirmation email you will receive shortly. If you have submitted an appeal against a fine, remember to send us a front and back copy of your ID document.
-        </p>
-      </div>
+    
   <script>
     window.addEventListener("load", function () {
       const top = document.getElementById("top");
@@ -83,6 +72,12 @@
           type: 'form-submitted',
           success: true
       }, 'https://tplfvg.it');
+
+
+      parent.postMessage({
+          type: 'form-submitted',
+          success: true
+      }, 'https://tpl.trapoco.online');
 
       
     });
