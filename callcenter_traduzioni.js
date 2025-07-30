@@ -64,7 +64,7 @@ const resources = {
         accounttpl: "Indica l’azienda a cui era riferita la tua chiamata: se non la conosci, o se la chiamata riguardava servizi non riconducibili a una singola azienda consorziata, seleziona l’opzione TPL FVG.",
         numerotesserinoidentificativo:`<div>
               È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/><br/>
-              <img src="immagine_tooltip_abbonamenti.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
+              <img src="immagine_tooltip_tesserino.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
             </div>`,
         ultimo: ""
       }
@@ -139,7 +139,7 @@ const resources = {
         accounttpl: "Indicate the company your call referred to. If you don’t know it, or if the call concerned services not linked to a specific consortium company, select the option TPL FVG.",
         numerotesserinoidentificativo: `<div>
         This is the seven-digit number that uniquely identifies a season ticket holder. It is shown on both the identification card and any season tickets purchased using that card.<br/><br/>             
-          <img src="immagine_tooltip_abbonamenti.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
+          <img src="immagine_tooltip_tesserino.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
         </div>`,
         ultimo: ""
 

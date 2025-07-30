@@ -80,7 +80,7 @@ const resources = {
         prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39",
         numerotesserinoidentificativo:`<div>
               È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/><br/>
-              <img src="immagine_tooltip_abbonamenti.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
+              <img src="immagine_tooltip_tesserino.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
             </div>`,
 
         accountTpl:"Seleziona l’azienda territorialmente competente. Se non sai quale azienda indicare, o se l’evento non è riconducibile a una singola azienda consorziata, scegli l’opzione TPL FVG.",
@@ -176,7 +176,7 @@ const resources = {
         prefissotelefonico: "Select the international dialing code from the list. The default value is +39",
         numerotesserinoidentificativo: `<div>
           This is the seven-digit number that uniquely identifies the pass holder. It can be found both on the ID card and on the passes purchased using that card.<br/><br/>
-          <img src="immagine_tooltip_abbonamenti.png" alt="Sample ID card" style="max-width: 100%; height: auto;"/>
+          <img src="immagine_tooltip_tesserino.png" alt="Sample ID card" style="max-width: 100%; height: auto;"/>
         </div>`,
 
         accountTpl: "Select the company responsible for the area. If you are unsure which company to choose, or if the event is not attributable to a single consortium company, select the TPL FVG option.",
