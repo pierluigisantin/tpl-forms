@@ -442,7 +442,8 @@ function aggiornaEtichette(t, fields) {
     labelEl.innerHTML = "";
 
     // Aggiunge testo etichetta
-    labelEl.appendChild(document.createTextNode(labelText + " "));
+    //labelEl.appendChild(document.createTextNode(labelText + " "));
+    labelEl.innerHTML = labelText + " ";
 
     // --- Tooltip ---
     const tooltipText = t(`tooltips.${key}`, { defaultValue: "" });

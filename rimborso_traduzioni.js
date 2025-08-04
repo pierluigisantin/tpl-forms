@@ -92,19 +92,19 @@ const resources = {
             Indica l'azienda che ha emesso l'abbonamento, come riportato sul documento stesso.<br/><br/>
             <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
           </div>`,
-        dataemissione: `</div>
+        dataemissione: `<div>
             Indica la data di emissione riportata sull’abbonamento.<br/><br/>
         <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
         </div>`,
-        numerotesserinoidentificativo: `</div>
+        numerotesserinoidentificativo: `<div>
               È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/><br/>
-              <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
+              <img src="immagine_tooltip_tesserino.png" style="max-width: 100%; height: auto;"/>
        </div>`,
-        numeroserialeabbonamento: `</div>
+        numeroserialeabbonamento: `<div>
           Indica il numero seriale riportato sull’abbonamento.<br/><br/>
           <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
           </div>`,
-        importopagato: `</div>
+        importopagato: `<div>
         Indica l’importo effettivamente pagato riportato sull’abbonamento.<br/><br/>
 <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
 </div>`,
@@ -223,22 +223,22 @@ const resources = {
       <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
     </div>`,
 
-    dataemissione: `</div>
+    dataemissione: `<div>
       Enter the issue date as shown on the pass.<br/><br/>
       <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
     </div>`,
 
-    numerotesserinoidentificativo: `</div>
+    numerotesserinoidentificativo: `<div>
       This is the seven-digit number that uniquely identifies the subscriber. It appears on both the personal ID card and on passes purchased using that card.<br/><br/>
-      <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
+      <img src="immagine_tooltip_tesserino.png" style="max-width: 100%; height: auto;"/>
     </div>`,
 
-    numeroserialeabbonamento: `</div>
+    numeroserialeabbonamento: `<div>
       Enter the serial number as shown on the pass.<br/><br/>
       <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
     </div>`,
 
-    importopagato: `</div>
+    importopagato: `<div>
       Enter the actual amount paid as shown on the pass.<br/><br/>
       <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
     </div>`,
