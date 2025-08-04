@@ -268,7 +268,7 @@ function toggleIndirizzo(nazioneId, wrapperId, lang, invertedLogic) {
 
   const elements = wrapper.querySelectorAll("label");
   elements.forEach((el) => {
-    if (isStraniero) {
+    if ( wrapper.style.display=="none") {
       el.classList.remove("required");
     } else {
       el.classList.add("required");

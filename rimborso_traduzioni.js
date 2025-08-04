@@ -53,7 +53,7 @@ const resources = {
         tipoabbonamento: "Tipo di abbonamento",
         tipoabbonamentoOptions: ["--Seleziona--", "Quindicinale", "Mensile", "Maggio prolungato fine scuola", "Semestrale", "Scolastico (10 mesi)", "Annuale (12 mesi)", "Agevolato per persone con disabilità"],
         canalediacquisto: "Canale di acquisto",
-        canalediacquistoOptions: ["--Seleziona--", "Biglietteria aziendale", "Rivendita esterna", "Online (sito web Tpl Fvg)", "Dropticket", "Altro"],
+        canalediacquistoOptions: ["--Seleziona--", "Biglietteria aziendale", "Rivendita esterna", "Online (sito web Tpl Fvg)","Emettitrici automatiche", "Dropticket"],
 
 
         dataemissione: "Data di emissione dell’abbonamento",
@@ -181,8 +181,9 @@ const resources = {
           "Company ticket office",
           "External retailer",
           "Online (Tpl Fvg website)",
-          "Dropticket",
-          "Other"
+          "Ticket vending machine",
+          "Dropticket"
+ 
         ],
         dataemissione: "Pass issue date",
         importopagato: "Amount paid",
