@@ -147,23 +147,37 @@
         //se lamodalità di rimporso è bonifico allora iban obbligatorio
        
         document.getElementById("00NbU0000004hsn")?.addEventListener("change", (e) => {
-          debugger;
+          
           const iban = document.getElementById("ibanrimborsoWrapper");
            const ibanNome = document.getElementById("nomecognomeintestatarioibanWrapper");
 
           if (getCanonicalItalianValue(e.target.value,  "modalitarimborsoOptions", i18next ) == "Bonifico bancario"){
             iban && (iban.style.display = "block");
             ibanNome &&(ibanNome.style.display = "block");
-            iban && (iban.classList.add("required"));
-            ibanNome &&(ibanNome.classList.add("required"));
+       
+
+            const inputIban = iban.querySelector("label");
+              if (inputIban) {
+                  inputIban.classList.add("required");           
+              }
+            const inputIbanNome = ibanNome.querySelector("label");
+            if (inputIbanNome) {
+                inputIbanNome.classList.add("required");           
+            }
 
 
           }else
           {
             iban && (iban.style.display = "none");
             ibanNome &&(ibanNome.style.display = "none");
-            iban && (iban.classList.add("remove"));
-            ibanNome &&(ibanNome.classList.add("remove"));
+            const inputIban = iban.querySelector("label");
+              if (inputIban) {
+                  inputIban.classList.remove("required");           
+              }
+            const inputIbanNome = ibanNome.querySelector("label");
+            if (inputIbanNome) {
+                inputIbanNome.classList.remove("required");           
+            }
           }
 
         });
