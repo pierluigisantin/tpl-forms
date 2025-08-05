@@ -756,38 +756,74 @@ function caricaSottoOptions(appValue, t, reslabel, target) {
   });
 }
 
-function getCanonicalValueFromTranslation({
+function getCanonicalItalianValue(
   translatedValue,
-  translationPath, // es: "tipoSoggettoOptions"
+  fieldKey,              // es: "tipoSoggettoOptions" oppure "modalitarimborsoOptions"
   i18nextInstance,
   sourceLang = "it"
-}) {
-  if (!translatedValue || !translationPath || !i18nextInstance) return null;
+) {
+  if (!translatedValue || !fieldKey || !i18nextInstance) return null;
 
-  const pathParts = translationPath.split(".");
-  let canonicalValues = i18nextInstance.getResource(sourceLang, "translation", pathParts[0]);
+  const base = i18nextInstance.store?.data;
+  if (!base) return null;
 
-  // Naviga nella struttura se nested (es: labels.tipoSoggettoOptions)
-  for (let i = 1; i < pathParts.length; i++) {
-    if (!canonicalValues) return null;
-    canonicalValues = canonicalValues[pathParts[i]];
+  const itResource = base?.[sourceLang]?.translation?.labels?.[fieldKey];
+  if (!itResource) return null;
+
+  const currentLang = i18nextInstance.resolvedLanguage || i18nextInstance.language;
+  const normalize = (s) => (s || "").toLowerCase().trim();
+
+  // 🔁 Scorciatoia: se siamo già in italiano, restituiamo direttamente il valore
+  if (currentLang === sourceLang) {
+    if (Array.isArray(itResource)) {
+      if (itResource.includes(translatedValue)) return translatedValue;
+    } else if (typeof itResource === "object") {
+      for (const optionsArray of Object.values(itResource)) {
+        if (Array.isArray(optionsArray) && optionsArray.includes(translatedValue)) {
+          return translatedValue;
+        }
+      }
+    }
   }
 
-  if (!Array.isArray(canonicalValues)) return null;
+  // Caso 1: array semplice (es. tipoSoggettoOptions)
+  if (Array.isArray(itResource)) {
+    for (let i = 0; i < itResource.length; i++) {
+      const translated = i18nextInstance.t(
+        ['labels', fieldKey, i],
+        { lng: currentLang }
+      );
 
-  const currentLang = i18nextInstance.language;
+      if (normalize(translated) === normalize(translatedValue)) {
+        return itResource[i]; // valore italiano
+      }
+    }
+  }
 
-  for (let i = 0; i < canonicalValues.length; i++) {
-    const canonical = canonicalValues[i];
-    const translated = i18nextInstance.t(`${translationPath}.${i}`, { lng: currentLang });
+  // Caso 2: oggetto con array (es. modalitarimborsoOptions)
+  if (typeof itResource === "object" && !Array.isArray(itResource)) {
+    for (const [groupKey, optionsArray] of Object.entries(itResource)) {
+      if (!Array.isArray(optionsArray)) continue;
 
-    if (translated.toLowerCase().trim() === translatedValue.toLowerCase().trim()) {
-      return canonical;
+      for (let i = 0; i < optionsArray.length; i++) {
+        const translated = i18nextInstance.t(
+          ['labels', fieldKey, groupKey, i],
+          { lng: currentLang }
+        );
+
+        if (normalize(translated) === normalize(translatedValue)) {
+          return optionsArray[i]; // valore italiano
+        }
+      }
     }
   }
 
   return null;
 }
+
+
+
+
 
 function toggleWrapperBySelectValue({
   selectId,

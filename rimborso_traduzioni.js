@@ -54,7 +54,11 @@ const resources = {
         tipoabbonamentoOptions: ["--Seleziona--", "Quindicinale", "Mensile", "Maggio prolungato fine scuola", "Semestrale", "Scolastico (10 mesi)", "Annuale (12 mesi)", "Agevolato per persone con disabilità"],
         canalediacquisto: "Canale di acquisto",
         canalediacquistoOptions: ["--Seleziona--", "Biglietteria aziendale", "Rivendita esterna", "Online (sito web Tpl Fvg)","Emettitrici automatiche", "Dropticket"],
-
+        modalitarimborso:"Modalità di rimborso",
+        modalitarimborsoOptions: {
+          "--Seleziona--": [],
+          "Biglietteria aziendale":["Bonifico bancario","Presso una biglietteria aziendale"], "Rivendita esterna":["Bonifico bancario","Presso una biglietteria aziendale"], "Online (sito web Tpl Fvg)":["Bonifico bancario"],"Emettitrici automatiche":["Bonifico bancario","Presso una biglietteria aziendale"], "Dropticket":["Bonifico bancario"]
+        },
 
         dataemissione: "Data di emissione dell’abbonamento",
         importopagato: "Importo pagato",
@@ -185,6 +189,12 @@ const resources = {
           "Dropticket"
  
         ],
+        modalitarimborso: "Refund method",
+        modalitarimborsoOptions: {
+          "--Seleziona--": [],
+          "Company ticket office":["Bank transfer","At a company ticket office"], "External retailer":["Bank transfer","At a company ticket office"], "Online (Tpl Fvg website)":["Bank transfer"],"Ticket vending machine":["Bank transfer","At a company ticket office"], "Dropticket":["Bank transfer"]
+        },
+        
         dataemissione: "Pass issue date",
         importopagato: "Amount paid",
         ibanrimborso: "IBAN of the bank account to which the refund should be made, if applicable",

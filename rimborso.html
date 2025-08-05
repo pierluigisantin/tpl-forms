@@ -31,6 +31,7 @@
       "nazione",
       "mail",
       "numerotelefonico",
+      "canalediacquisto",
       "accountTpl",
       "descrizione",
       "privacy"
@@ -122,6 +123,53 @@
           toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper", ["persona fisica", "individual"]);
         });
 
+        //modalità di rimborso a seconda del canale di vendita
+        document.getElementById("00NbU0000003trB").addEventListener("change", (e) => {
+          caricaSottoOptions(e.target.value, i18next.t.bind(i18next), "modalitarimborsoOptions", "00NbU0000004hsn");
+
+          if (getCanonicalItalianValue(e.target.value,  "canalediacquistoOptions", i18next ) == "Online (sito web Tpl Fvg)"){
+            //lascio solo arriva udine e disabilito il controllo arriva udine ha id = 001bU000007ZTeSQAW
+            const selectField = document.getElementById("00NbU0000002bl3");
+            selectField.value="001bU000007ZTeSQAW";
+            selectField.disabled = true;
+            
+          }else
+          {
+            const selectField = document.getElementById("00NbU0000002bl3");
+            selectField.disabled = false;
+          }
+              
+
+          
+        });
+
+        
+        //se lamodalità di rimporso è bonifico allora iban obbligatorio
+       
+        document.getElementById("00NbU0000004hsn")?.addEventListener("change", (e) => {
+          debugger;
+          const iban = document.getElementById("ibanrimborsoWrapper");
+           const ibanNome = document.getElementById("nomecognomeintestatarioibanWrapper");
+
+          if (getCanonicalItalianValue(e.target.value,  "modalitarimborsoOptions", i18next ) == "Bonifico bancario"){
+            iban && (iban.style.display = "block");
+            ibanNome &&(ibanNome.style.display = "block");
+            iban && (iban.classList.add("required"));
+            ibanNome &&(ibanNome.classList.add("required"));
+
+
+          }else
+          {
+            iban && (iban.style.display = "none");
+            ibanNome &&(ibanNome.style.display = "none");
+            iban && (iban.classList.add("remove"));
+            ibanNome &&(ibanNome.classList.add("remove"));
+          }
+
+        });
+
+        
+
 
         //nazione
         enforceDatalistConstraint(document.getElementById("00NbU0000001klm"), t);
@@ -129,13 +177,14 @@
         enforceDatalistConstraint(document.getElementById("00NbU0000001klg"), t);
         //nazione interessato
         enforceDatalistConstraint(document.getElementById("00NbU0000001oij"), t);
-        //comune <interessato></interessato>
+        //comune  
         enforceDatalistConstraint(document.getElementById("00NbU0000003jLZ"), t);
 
        
         caricaOptionsTradotte("00NbU0000001klb",t,"tipoSoggettoOptions");
         caricaOptionsTradotte("00NbU0000003tpZ",  t, "tipoabbonamentoOptions");
         caricaOptionsTradotte("00NbU0000003trB",  t, "canalediacquistoOptions");
+     
 
         aggiungiConfermaEmail();
 
@@ -152,7 +201,8 @@
             caricaOptionsTradotte("00NbU0000001klb",t,"tipoSoggettoOptions");
             caricaOptionsTradotte("00NbU0000003tpZ",  t, "tipoabbonamentoOptions");
             caricaOptionsTradotte("00NbU0000003trB",  t, "canalediacquistoOptions");
-             aggiungiConfermaEmail();
+   
+            aggiungiConfermaEmail();
 
           });
         });
@@ -357,7 +407,13 @@
       <fieldset>
         <legend><span id="label_datiabbonamento"> </span></legend>
 
+        <label for="00NbU0000003trB" id="label_canalediacquisto"></label>
+        <select  id="00NbU0000003trB"  name="00NbU0000003trB"  >
+            </select>
 
+        <label for="00NbU0000004hsn" id="label_modalitarimborso"></label>
+        <select  id="00NbU0000004hsn"   name="00NbU0000004hsn"   >
+        </select>
 
         <label for="00NbU0000002bl3" id="label_accountTpl">
         </label>
@@ -368,7 +424,7 @@
 
         <label for="00NbU0000004Fen" id="label_abbonamentoemessoconfattura"></label>
         <select  id="00NbU0000004Fen" name="00NbU0000004Fen"  >
-          <option value="">---</option><option value="Si/Yes">Si/Yes</option>
+          <option value="">---</option><option value="Si/Yes">Sì/Yes</option>
           <option value="No">No</option>
         </select>
 
@@ -391,21 +447,23 @@
         <select  id="00NbU0000003tpZ"  name="00NbU0000003tpZ"  >
         </select>  
 
-        <label for="00NbU0000003trB" id="label_canalediacquisto"></label>
-        <select  id="00NbU0000003trB"  name="00NbU0000003trB"  >
-            </select>
+       
         
 
         
         <label for="00NbU0000003VfB" id="label_importopagato"></label>
         <input id="00NbU0000003VfB" name="00NbU0000003VfB" size="20" type="text" />
 
+        <div id="ibanrimborsoWrapper">
+          <label for="00NbU0000003Vgn" id="label_ibanrimborso"></label>
+          <input id="00NbU0000003Vgn" maxlength="50" name="00NbU0000003Vgn" size="20" type="text" />
+          </div>
 
-        <label for="00NbU0000003Vgn" id="label_ibanrimborso"></label>
-        <input id="00NbU0000003Vgn" maxlength="50" name="00NbU0000003Vgn" size="20" type="text" />
 
+        <div id="nomecognomeintestatarioibanWrapper">
         <label for="00NbU0000003ViP" id="label_nomecognomeintestatarioiban"></label>
         <input id="00NbU0000003ViP" maxlength="255" name="00NbU0000003ViP" size="20" type="text" />
+          </div>
 
 
 
