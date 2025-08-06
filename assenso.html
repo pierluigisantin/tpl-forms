@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Assenso</title>
+  <link rel="stylesheet" href="webToCaseStyle.css" />
+
+  <script src="https://unpkg.com/i18next@22.4.10/i18next.min.js"></script>
+  <!-- PRIMA Popper.js -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <!-- POI Tippy.js -->
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+
+    function timestamp() {var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);} } setInterval(timestamp, 500); 
+  </script>
+  <script src="webToCaseUtils.js"></script>
+  <script src="assenso_traduzioni.js"></script>
+  <script>
+    var lang;
+    let t;
+    var aziendaId;
+
+    const requiredFields = [
+
+    ];
+
+    const comuneListId = "comuniList";
+    const nazioniListId = "nazioniList";
+    const campoNazioneId = "00NbU0000001klm";
+
+    var fields = [];
+    function attivaDebugSubmit() {
+      const campiDebug = [
+        "00NbU0000001kln", // nome
+        "00NbU0000001klf", // cognome
+        "email",           // email
+        "description",     // descrizione
+        "orgid", "retURL", "debug", "debugEmail"
+      ];
+
+      const form = document.getElementById("formReclamo");
+      Array.from(form.elements).forEach(el => {
+        if (!campiDebug.includes(el.name)) {
+          el.removeAttribute("name");
+        }
+      });
+    }
+/////////////////////////////////////////////////////////////////////////////////////
+////////////////////PER CONSENSI///////////////////////////////////////////////////////////////////////////
+    
+    function getQueryParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+    function decodeConsensiData(encodedData) {
+      try {
+        if (!encodedData) return null;
+
+        const urlDecoded = decodeURIComponent(encodedData);
+        const base64Decoded = atob(urlDecoded);
+        const consensi = JSON.parse(base64Decoded);
+
+        console.log('Dati consensi decodificati:', consensi);
+        return consensi;
+      } catch (e) {
+        console.error('Errore nella decodifica dei dati consensi:', e);
+        return null;
+      }
+    }
+
+   function PrepopolaDaQS()
+     {
+       const encoded = getQueryParam('data');
+       const consensi = decodeConsensiData(encoded);
+
+       if (consensi ){
+         if (consensi.p)//privacy
+           document.getElementById("00NbU0000000KEr").value = consensi.p;
+         if(consensi.a)//anlisi preferenze
+           document.getElementById("00NbU0000002hvJ").value = consensi.a;
+         if(consensi.m)//commerciali
+           document.getElementById("00NbU0000002hth").value = consensi.m;
+         if(consensi.t)//terzi
+           document.getElementById("00NbU0000002yOH").value = consensi.t;
+         if(consensi.x)//parter
+           document.getElementById("00NbU0000002hwv").value = consensi.x;
+         if(consensi.d)//demoscopiche
+           document.getElementById("00NbU0000002hs5").value = consensi.d;
+       }
+     }
+/////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      fields = estraiCampiDaLabel();
+
+      const langParam = new URLSearchParams(location.search).get("lang");
+      lang = langParam || "it";
+      if (langParam) {
+        document.getElementById("languageSwitcher")?.style.setProperty("display", "none");
+      }
+
+      i18next.init({lng: lang, resources}, (_, tInstance) => {
+        t = tInstance; // 👈 assegna t a una variabile globale
+        aggiornaEtichette(t, fields);
+        PrepopolaDaQS();
+
+    
+
+  
+
+        document.getElementById("languageSwitcher")?.addEventListener("change", e => {
+          const newLang = e.target.value;
+          lang = newLang;
+          i18next.changeLanguage(newLang, () => {
+            const newT = i18next.t.bind(i18next);
+            aggiornaEtichette(newT, fields);
+            
+           
+          });
+        });
+
+        document.getElementById("formReclamo")?.addEventListener("submit", e => {
+          //attivaDebugSubmit(); // <<<< Abilita solo alcuni campi
+
+
+          if (!validazioneCampiObbligatori("formReclamo", t)) {
+            e.preventDefault();
+          }
+        
+
+
+          const validCampi = validazioneCampiObbligatori("formReclamo", t);
+
+          const validCaptcha = validaCaptcha(t, "captchaError");
+
+          if (!validCampi || !validCaptcha) {
+            e.preventDefault();
+            return;
+          }
+
+
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="form-container">
+    <select id="languageSwitcher">
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+    <br>
+    <form id="formReclamo" method="POST"
+      action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D06000001Tz0T" novalidate>
+
+      <input type="hidden" name="orgid" value="00D06000001Tz0T" />
+      <input type="hidden" name="retURL" value="" />
+
+
+      <input type="hidden" name="captcha_settings"
+        value='{"keyname":"captchatplv2","fallback":"true","orgId":"00D06000001Tz0T","ts":""}'>
+
+      <!--
+       <input type="hidden" name="debug" value="1">
+        <input type="hidden" name="debugEmail" value="p.santin@e-deimos.it">
+-->
+
+     
+
+
+      <fieldset>
+        <legend><span id="label_consensoobbligatorio"> </span></legend>
+
+
+        <label for="00NbU0000000KEr" id="label_privacy"></label>
+        <select id="00NbU0000000KEr" name="00NbU0000000KEr">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
+        </select><br>
+      </fieldset>
+      <fieldset>
+
+        <legend><span id="label_consensofacoltativo"> </span></legend>
+
+        <label for="00NbU0000002hs5" id="label_indaginidemoscopiche"></label>
+        <select id="00NbU0000002hs5" name="00NbU0000002hs5">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
+
+        </select><br>
+
+        <label for="00NbU0000002hth" id="label_attivitacommerciali"></label>
+        <select id="00NbU0000002hth" name="00NbU0000002hth">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
+        </select><br>
+
+        <label for="00NbU0000002hvJ" id="label_analisipreferenze"></label>
+        <select id="00NbU0000002hvJ" name="00NbU0000002hvJ">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
+        </select><br>
+
+
+        <label for="00NbU0000002hwv" id="label_comunicazionepartner"></label>
+        <select id="00NbU0000002hwv" name="00NbU0000002hwv">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
+        </select><br>
+
+        <label for="00NbU0000002yOH" id="label_cessioneterzi"></label>
+        <select id="00NbU0000002yOH" name="00NbU0000002yOH" title="Acconsente cessione terzi">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
+        </select><br>
+
+
+
+
+
+
+
+      </fieldset>
+
+
+
+
+
+      <!--flag reclamo-->
+      <input id="00NJ6000006biAk" name="00NJ6000006biAk" type="hidden" value="1" />
+
+      <input type="hidden" id="external" name="external" value="1" /><br>
+      <br>
+      <div class="g-recaptcha" data-sitekey="6LcKTugqAAAAAB9mkWg5p3floGYNeNVAXY6Z6c8P"></div><br>
+      <div id="captchaError" class="error-message" style="display: none;"></div>
+
+      <input type="submit" id="submitBtn" value="Invia Reclamo" />
+    </form>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const retUrlInput = document.querySelector('input[name="retURL"]');
+      if (retUrlInput) {
+        const currentUrl = window.location.href;
+        const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf("/") + 1);
+        retUrlInput.value = baseUrl + "grazie.html";
+      }
+    });
+  </script>
+</body>
+
+</html>

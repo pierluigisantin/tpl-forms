@@ -929,3 +929,24 @@ function toggleCampi({
     }
   });
 }
+
+
+async function raccogliTracciamentoDatiConsenso() {
+  const dati = {
+    timestamp: new Date().toISOString(),
+    userAgent: navigator.userAgent || null,
+    pageUrl: window.location.href || null,
+    referrer: document.referrer || null,
+    ip: null
+  };
+
+  try {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const ipData = await response.json();
+    dati.ip = ipData.ip;
+  } catch (e) {
+    console.error('Errore nel recupero IP:', e);
+  }
+
+  return dati;
+}
