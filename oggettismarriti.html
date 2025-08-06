@@ -127,6 +127,23 @@
 
 
 
+
+
+        (async () => {
+          const contesto = await raccogliTracciamentoDatiConsenso();
+          const json = JSON.stringify(contesto, null, 2); // formato leggibile
+          console.log('JSON dei dati raccolti:\n', json);
+          document.getElementById("00NbU0000004ild").value=json;
+        })();
+
+
+
+
+
+        
+
+
+
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
           const newLang = e.target.value;
           lang = newLang;
@@ -411,7 +428,8 @@
 
 
 
-
+      <!--Dati tracciamento consenso:-->
+      <input  id="00NbU0000004ild" name="00NbU0000004ild"  type="hidden"  />
       <!--flag oggetti smarriti-->
       <input id="00NbU0000001shV" name="00NbU0000001shV" type="hidden" value="1" />
 

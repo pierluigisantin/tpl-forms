@@ -203,6 +203,19 @@
         aggiungiConfermaEmail();
 
 
+
+
+        (async () => {
+          const contesto = await raccogliTracciamentoDatiConsenso();
+          const json = JSON.stringify(contesto, null, 2); // formato leggibile
+          console.log('JSON dei dati raccolti:\n', json);
+          document.getElementById("00NbU0000004ild").value=json;
+        })();
+
+
+        
+
+
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
           const newLang = e.target.value;
           lang = newLang;
@@ -561,7 +574,8 @@
        </fieldset>  
 
 
-
+      <!--Dati tracciamento consenso:-->
+      <input  id="00NbU0000004ild" name="00NbU0000004ild"  type="hidden"  />
 
       <!--flag richiesta rimborso-->
       <input id="00NJ6000002ydRg" name="00NJ6000002ydRg" type="hidden" value="1" />

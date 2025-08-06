@@ -133,7 +133,12 @@
  
         caricaOptionsTradotte("00NbU00000041Tl", t, "tiposerviziooptions");
  
-
+        (async () => {
+          const contesto = await raccogliTracciamentoDatiConsenso();
+          const json = JSON.stringify(contesto, null, 2); // formato leggibile
+          console.log('JSON dei dati raccolti:\n', json);
+          document.getElementById("00NbU0000004ild").value=json;
+        })();
 
 
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
@@ -395,7 +400,8 @@
 
 
 
-
+      <!--Dati tracciamento consenso:-->
+      <input  id="00NbU0000004ild" name="00NbU0000004ild"  type="hidden"  />
       <!--flag trasporto bici-->
       <input id="00NbU00000041S9" name="00NbU00000041S9" type="hidden" value="1" />
 

@@ -114,7 +114,12 @@
         PrepopolaDaQS();
 
     
-
+        (async () => {
+          const contesto = await raccogliTracciamentoDatiConsenso();
+          const json = JSON.stringify(contesto, null, 2); // formato leggibile
+          console.log('JSON dei dati raccolti:\n', json);
+          document.getElementById("00NbU0000004ild").value=json;
+        })();
   
 
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
@@ -243,8 +248,8 @@
 
 
 
-      <!--flag reclamo-->
-      <input id="00NJ6000006biAk" name="00NJ6000006biAk" type="hidden" value="1" />
+      <!--Dati tracciamento consenso:-->
+      <input  id="00NbU0000004ild" name="00NbU0000004ild"  type="hidden"  />
 
       <input type="hidden" id="external" name="external" value="1" /><br>
       <br>
