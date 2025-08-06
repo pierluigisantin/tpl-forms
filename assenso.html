@@ -94,7 +94,7 @@
      }
 /////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
-
+    
 
 
 
@@ -113,14 +113,22 @@
         aggiornaEtichette(t, fields);
         PrepopolaDaQS();
 
+
+        
     
         (async () => {
           const contesto = await raccogliTracciamentoDatiConsenso();
           const json = JSON.stringify(contesto, null, 2); // formato leggibile
           console.log('JSON dei dati raccolti:\n', json);
           document.getElementById("00NbU0000004ild").value=json;
+          document.getElementById("00NbU0000004iqT").value=getQueryParam('token');
         })();
-  
+
+
+
+
+
+        
 
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
           const newLang = e.target.value;
@@ -246,7 +254,11 @@
 
 
 
+      <!--Conferma assenso:-->
+      <input  id="00NbU0000004ior" name="00NbU0000004ior" type="hidden" value="1" />
 
+      <!--TargetCaseToken:-->
+      <input  id="00NbU0000004iqT" maxlength="255" name="00NbU0000004iqT" size="20" type="hidden" />
 
       <!--Dati tracciamento consenso:-->
       <input  id="00NbU0000004ild" name="00NbU0000004ild"  type="hidden"  />
