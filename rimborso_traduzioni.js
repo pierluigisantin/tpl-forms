@@ -4,7 +4,7 @@ const resources = {
     translation: {
       labels: {
         legendanagrafica: "DATI ANAGRAFICI DELLA PERSONA CHE RICHIEDE IL RIMBORSO",
-        introtiposoggetto: "Inserisci i dati della persona che richiede il rimborso, ovvero il titolare dell’abbonamento se questo è maggiorenne oppure un genitore, un tutore o un’associazione se l’abbonamento è intestato a un minorenne o se è stato acquistato da un’organizzazione.",
+        introtiposoggetto: "Inserisci i dati della persona che richiede il rimborso: il titolare dell’abbonamento se questo è maggiorenne oppure un genitore, un tutore o un’associazione se l’abbonamento è intestato a un minorenne o se è stato acquistato da un’organizzazione.",
         erroreCampoObbligatorio: "",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
         seleziona: "--Seleziona--",
@@ -15,7 +15,7 @@ const resources = {
         nome: "Nome",
         cognome: "Cognome",
         datanascitadichiarante: "Data di nascita",
-        cfdichiarante: "Codice fiscale del richiedente (obbligatorio per chi ne sia in possesso)",
+        cfdichiarante: "Codice fiscale della persona che richiede il rimborso (solo per i residenti in Italia)",
         nazione: "Nazione di residenza",
         indirizzo: "Indirizzo di residenza o domicilio",
           ncivico:"Numero civico",
@@ -53,7 +53,7 @@ const resources = {
         tipoabbonamento: "Tipo di abbonamento",
         tipoabbonamentoOptions: ["--Seleziona--", "Quindicinale", "Mensile", "Maggio prolungato fine scuola", "Semestrale", "Scolastico (10 mesi)", "Annuale (12 mesi)", "Agevolato per persone con disabilità"],
         canalediacquisto: "Canale di acquisto",
-        canalediacquistoOptions: ["--Seleziona--", "Biglietteria aziendale", "Rivendita esterna", "Online (sito web Tpl Fvg)","Emettitrici automatiche", "Dropticket"],
+        canalediacquistoOptions: ["--Seleziona--", "Biglietteria aziendale", "Rivendita esterna", "Online","Emettitrici automatiche", "Dropticket"],
         modalitarimborso:"Modalità di rimborso",
         modalitarimborsoOptions: {
           "--Seleziona--": [],
@@ -89,7 +89,7 @@ const resources = {
           comune: "Seleziona un Comune e il relativo CAP tra quelli disponibili nel menù.",
           prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39",
         
-        cfintestatario: "Indica il codice fiscale riportato sull’abbonamento: se l’abbonamento è stato acquistato da una emettitrice automatica e non riporta i dati dell’abbonato, non se ne può in nessun caso richiedere il rimborso.",
+        cfintestatario: "Indica il codice fiscale riportato sull’abbonamento.",
         indirizzointestatario: "Indica l’indirizzo di residenza dell’intestatario dell’abbonamento, comprensivo di via, numero civico e località. Se la persona non è residente in Friuli Venezia Giulia, indica il luogo dove la persona risiede o ha risieduto durante la permanenza in Friuli Venezia Giulia.",
 
         accountTpl: `<div>
@@ -101,7 +101,7 @@ const resources = {
         <img src="immagine_tooltip_abbonamenti.png" style="max-width: 100%; height: auto;"/>
         </div>`,
         numerotesserinoidentificativo: `<div>
-              È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/><br/>
+              È il numero di sette cifre che identifica in modo univoco l'abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/><br/>
               <img src="immagine_tooltip_tesserino.png" style="max-width: 100%; height: auto;"/>
        </div>`,
         numeroserialeabbonamento: `<div>
