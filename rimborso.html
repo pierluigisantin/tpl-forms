@@ -127,7 +127,7 @@
         document.getElementById("00NbU0000003trB").addEventListener("change", (e) => {
           caricaSottoOptions(e.target.value, i18next.t.bind(i18next), "modalitarimborsoOptions", "00NbU0000004hsn");
 
-          if (getCanonicalItalianValue(e.target.value,  "canalediacquistoOptions", i18next ) == "Online (sito web Tpl Fvg)"){
+          if (getCanonicalItalianValue(e.target.value,  "canalediacquistoOptions", i18next ) == "Online"){
             //lascio solo arriva udine e disabilito il controllo arriva udine ha id = 001bU000007ZTeSQAW
             const selectField = document.getElementById("00NbU0000002bl3");
             selectField.value="001bU000007ZTeSQAW";
