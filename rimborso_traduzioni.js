@@ -57,7 +57,7 @@ const resources = {
         modalitarimborso:"Modalità di rimborso",
         modalitarimborsoOptions: {
           "--Seleziona--": [],
-          "Biglietteria aziendale":["Bonifico bancario","Presso una biglietteria aziendale"], "Rivendita esterna":["Bonifico bancario","Presso una biglietteria aziendale"], "Online (sito web Tpl Fvg)":["Bonifico bancario"],"Emettitrici automatiche":["Bonifico bancario","Presso una biglietteria aziendale"], "Dropticket":["Bonifico bancario"]
+          "Biglietteria aziendale":["Bonifico bancario","Presso una biglietteria aziendale"], "Rivendita esterna":["Bonifico bancario","Presso una biglietteria aziendale"], "Online":["Bonifico bancario"],"Emettitrici automatiche":["Bonifico bancario","Presso una biglietteria aziendale"], "Dropticket":["Bonifico bancario"]
         },
 
         dataemissione: "Data di emissione dell’abbonamento",
