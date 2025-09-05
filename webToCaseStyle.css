@@ -1,7 +1,12 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 0px;
   color: #333;
 }
 
