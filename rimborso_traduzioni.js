@@ -4,7 +4,7 @@ const resources = {
     translation: {
       labels: {
         legendanagrafica: "DATI ANAGRAFICI DELLA PERSONA CHE RICHIEDE IL RIMBORSO",
-        introtiposoggetto: "Inserisci i dati della persona che richiede il rimborso: il titolare dell’abbonamento se questo è maggiorenne oppure un genitore, un tutore o un’associazione se l’abbonamento è intestato a un minorenne o se è stato acquistato da un’organizzazione.",
+        introtiposoggetto: "Inserisci i dati della persona che richiede il rimborso (titolare dell’abbonamento se questo è maggiorenne oppure un genitore, un tutore o un’associazione se l’abbonamento è intestato a un minorenne o se è stato acquistato da un’organizzazione)",
         erroreCampoObbligatorio: "",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
         seleziona: "--Seleziona--",
@@ -66,7 +66,7 @@ const resources = {
         nomecognomeintestatarioiban: "Nome e cognome dell’intestatario del conto corrente dove effettuare il rimborso",
         comuneiban: "Comune o Stato estero di residenza dell’intestatario del conto corrente dove effettuare il rimborso",
         descrizione: "Motivare la richiesta di rimborso",
-        introdescrizione: "Descrivi brevemente il motivo per cui richiedi il rimborso. Al termine della compilazione riceverai una notifica via e-mail. Per completare la richiesta, rispondi all'e-mail allegando: la copia dell’abbonamento acquistato, la copia fronte e retro di un documento d’identità del richiedente e, se lo ritieni utile, eventuali altri documenti. La copia dell’abbonamento e del documento d’identità sono obbligatorie per la valutazione del rimborso.",
+        introdescrizione: "Descrivi brevemente il motivo per cui richiedi il rimborso. Al termine della compilazione riceverai una notifica via e-mail. Per completare la richiesta, rispondi all'e-mail allegando: 1) la copia dell’abbonamento acquistato; 2) la copia fronte e retro di un documento d’identità del richiedente; 3) eventuali altri documenti utili all'istruttoria. La copia dell’abbonamento e la copia del documento d’identità sono obbligatorie per la valutazione del rimborso.",
         consensoobbligatorio:"CONSENSO OBBLIGATORIO",
           privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto.",
           consensofacoltativo:"CONSENSI FACOLTATIVI",
