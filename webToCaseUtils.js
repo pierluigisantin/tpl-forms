@@ -101,9 +101,11 @@ function caricaLinee(selectId, url, servizioId, aziendaId, t, soloUrb = false) {
   select.innerHTML = `<option value="">${t("labels.seleziona")}</option>`;
 
   let qsServizio = servizioId;
+
+  /*
   if (aziendaId === "001bU000007Q8fWQAS") { // TPL FVG
     qsServizio = "";
-  }
+  }*/
 
   fetch(url + qsServizio)
     .then((response) => response.arrayBuffer())
@@ -118,19 +120,19 @@ function caricaLinee(selectId, url, servizioId, aziendaId, t, soloUrb = false) {
         if (soloUrb && linea.Servizio_urbano__c !== true) return;
 
         // Se specificata azienda diversa da TPL FVG, filtrare per azienda
-        if (aziendaId && aziendaId !== "001bU000007Q8fWQAS") {
+        //if (aziendaId && aziendaId !== "001bU000007Q8fWQAS") {
           if (linea.Azienda_TPL__c && aziendaId === linea.Azienda_TPL__c) {
             const opt = document.createElement("option");
             opt.value = linea.Id;
             opt.textContent = linea.Name || linea.Codice_Linea__c;
             select.appendChild(opt);
           }
-        } else {
-          const opt = document.createElement("option");
-          opt.value = linea.Id;
-          opt.textContent = linea.Name || linea.Codice_Linea__c;
-          select.appendChild(opt);
-        }
+        //} else {
+        //  const opt = document.createElement("option");
+        //  opt.value = linea.Id;
+        //  opt.textContent = linea.Name || linea.Codice_Linea__c;
+        //  select.appendChild(opt);
+        //}
       });
     })
     .catch((error) => console.error("Errore nel caricamento linee:", error));
