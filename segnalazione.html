@@ -66,45 +66,12 @@
     }
 
 
-    function caricaTipoLuogo() {
-      const selectTipoLuogo = document.getElementById("00NbU0000002yGD");
-      selectTipoLuogo.innerHTML = "";
-      const options = t("labels.tipoluogoOptions", {returnObjects: true});
-
-      options.forEach((opt, index) => {
-        const optionEl = document.createElement("option");
-        optionEl.textContent = opt;
-        optionEl.value = opt;
-
-
-
-        selectTipoLuogo.appendChild(optionEl);
-      });
-
-    }
+ 
 
 
 
     //carica tipo soggetto     
-    function caricaTipoSoggetto() {
-      const selectTipoSoggetto = document.getElementById("00NbU0000001klb");
-      selectTipoSoggetto.innerHTML = "";
-      const options = t("labels.tipoSoggettoOptions", {returnObjects: true});
-
-      options.forEach((opt, index) => {
-        const optionEl = document.createElement("option");
-        optionEl.textContent = opt;
-        optionEl.value = opt;
-
-        // Imposta la prima opzione come selezionata di default
-        if (index === 1) {
-          optionEl.selected = true;
-        }
-
-        selectTipoSoggetto.appendChild(optionEl);
-      });
-      toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper");
-    }
+ 
 
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -169,8 +136,8 @@
 
         aggiungiConfermaEmail();
 
-        caricaTipoSoggetto();
-        caricaTipoLuogo();
+     
+      
 
         (async () => {
           const contesto = await raccogliTracciamentoDatiConsenso();
@@ -191,8 +158,7 @@
             caricaDatalistComuni(comuniServizioUrl, t, "comuniServizioList");
             const aziendaId = document.getElementById("00NbU0000002bl3").value;
             caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
-            caricaTipoSoggetto();
-            caricaTipoLuogo();
+    
             aggiungiConfermaEmail();
           });
         });
