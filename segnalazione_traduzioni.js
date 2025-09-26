@@ -2,7 +2,7 @@ const resources = {
   it: {
     translation: {
       labels: {
-        legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE PRESENTA IL RECLAMO",
+        legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE PRESENTA LA SEGNALAZIONE",
         valoreNonValidoDatalist:"Seleziona un'opzione dall’elenco.",
         erroreCampoObbligatorio: "",
         seleziona: "--Seleziona--",
