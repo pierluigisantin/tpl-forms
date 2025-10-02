@@ -60,7 +60,7 @@ const resources = {
         comunicazionepartner:"Acconsento a ricevere comunicazioni pubblicitarie e informazioni commerciali relative a prodotti o servizi di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate.",
         cessioneterzi:"Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing.",
         
-
+        camporiservatotplfvg:"Campo riservato agli operatori Tpl Fvg",
        invia:"Invia"
 
 
@@ -156,7 +156,7 @@ const resources = {
         comunicazionepartner: "I agree to receive advertising and commercial information about products or services from third parties, partners of Tpl Fvg or of the consortium companies.",
         cessioneterzi: "I agree to the sharing of my personal data with third parties for commercial and marketing purposes.",
 
-
+        camporiservatotplfvg:"Reserved for TPL Fvg operators",
         invia:"Submit the form",
 
 
