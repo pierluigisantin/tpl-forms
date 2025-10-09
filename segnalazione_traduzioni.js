@@ -2,7 +2,7 @@ const resources = {
   it: {
     translation: {
       labels: {
-        legendanagrafica:"DATI ANAGRAFICI DELLA PERSONA CHE PRESENTA LA SEGNALAZIONE",
+        legendanagrafica:"INFORMAZIONI PERSONALI",
         valoreNonValidoDatalist:"Seleziona un'opzione dall’elenco.",
         erroreCampoObbligatorio: "",
         seleziona: "--Seleziona--",
@@ -27,10 +27,10 @@ const resources = {
         email_invalid:"Verifica l’indirizzo e-mail.",
           email_mismatch: "Verifica l’indirizzo e-mail.",
         abbonatosino:"Abbonato",
-        numerotesserinoidentificativo: `Numero di tesserino identificativo Tpl Fvg (se il reclamante ne è titolare)`,
+        numerotesserinoidentificativo: `Numero di tesserino identificativo Tpl Fvg (se chi scrive ne è titolare)`,
 
 
-        legendainfoevento:"INFORMAZIONI SULL’EVENTO",
+        legendainfoevento:"INFORMAZIONI SULLA SEGNALAZIONE",
         accountTpl: "Azienda di riferimento",
         servizio: "Tipo di servizio",
         dataoraevento: "Data e ora dell'evento",
@@ -49,7 +49,7 @@ const resources = {
 
 
         descrizione: "Descrizione dell'evento",
-        introdescrizione:"Descrivi l’evento o il problema in modo sintetico ma completo, includendo tutte le informazioni utili per ricostruire quanto successo. Se presenti il reclamo per conto di un’altra persona, indica anche i dati di quest'ultima. Potrai allegare immagini, titoli di viaggio o altri documenti rispondendo all’e-mail di conferma che riceverai dopo aver inviato questo modulo.",
+        introdescrizione:"Scrivi in modo chiaro e puntuale, senza omettere informazioni o dettagli, ciò che desideri comunicarci. Se necessario, potrai allegare immagini, titoli di viaggio o altri documenti rispondendo all’e-mail di conferma che riceverai dopo l’invio del modulo. Ricorda che con questo modulo non stai presentando un reclamo.",
 
         consensoobbligatorio:"CONSENSO OBBLIGATORIO",
         privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto.",
@@ -71,13 +71,13 @@ const resources = {
 
 
 
-        tipoSoggetto: "Indica se stai presentando un reclamo a titolo personale o se lo fai per conto di un’associazione, un’azienda o un ente pubblico.",
-        nome: "Anche se il reclamo è presentato per conto di un ente, un'associazione o un'azienda, è necessario indicare i dati del referente che compila questo modulo.",
-        cognome: "Anche se il reclamo è presentato per conto di un ente, un'associazione o un'azienda, è necessario indicare i dati del referente che compila questo modulo.",
+        tipoSoggetto: "Indica se stai scrivendo a titolo personale o se lo fai per conto di un’associazione, un’azienda o un ente pubblico.",
+        nome: "Anche se si sta scrivendo a nome di un ente, un'associazione o un'azienda, è necessario indicare i dati del referente che compila questo modulo.",
+        cognome: "Anche se si sta scrivendo a nome di un ente, un'associazione o un'azienda, è necessario indicare i dati del referente che compila questo modulo.",
         nazione: "Scrivi il nome del tuo Paese di residenza: è sufficiente digitare le prime lettere e poi selezionare il nome corretto dall’elenco proposto. Il campo è impostato di default su ITALIA.",
         indirizzo: "Inserisci un indirizzo presso cui desideri ricevere eventuali comunicazioni via posta ordinaria.",
         comune: "Seleziona un Comune e il relativo CAP tra quelli disponibili nel menù.",
-        prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39",
+        prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39 (Italia).",
         numerotesserinoidentificativo:`<div>
               È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati utilizzando quel tesserino.<br/><br/>
               <img src="immagine_tooltip_tesserino.png" alt="Tesserino esempio"style="max-width: 100%; height: auto;"/>
@@ -85,9 +85,9 @@ const resources = {
 
         accountTpl:"Seleziona l’azienda territorialmente competente. Se non sai quale azienda indicare, o se l’evento non è riconducibile a una singola azienda consorziata, scegli l’opzione TPL FVG.",
         servizio:"Indica il servizio a cui l’evento è collegato. Se l’evento non riguarda uno dei servizi indicati, o se l’evento non è direttamente riferibile a uno dei servizi in elenco, seleziona l’opzione ALTRI ASPETTI DEL SERVIZIO. Se non conosci il tipo di servizio, non compilare questo campo.",
-        linea:"Questo campo si attiva dopo aver selezionato l’azienda di riferimento, da cui dipendono le linee proposte. Se come azienda di riferimento hai selezionato TPL FVG, l’elenco includerà tutte le linee operate da Tpl Fvg in Friuli Venezia Giulia e nelle aree confinanti. Se la segnalazione o l’evento non sono collegati a una linea, puoi lasciare questo campo in bianco.",
+        linea:"Questo campo si attiva dopo aver selezionato l’azienda di riferimento, da cui dipendono le linee proposte. Se la segnalazione non riguarda una specifica linea, puoi lasciare questo campo in bianco.",
         fermata:"Indica, se lo ritieni utile, la fermata dove l’evento si è verificato. Per visualizzare l’elenco delle fermate, devi prima selezionare una linea nel campo precedente. Ti saranno mostrate solo le fermate servite dalla linea indicata. Se la fermata è servita da più linee, puoi selezionare una qualsiasi delle linee in transito. Se la segnalazione o l’evento non riguardano una fermata specifica, puoi lasciare questo campo in bianco.",
-        dataoraevento:"Indica la data e l’ora dell’evento. Se il problema non è legato a un singolo episodio, come nel caso di un dispositivo che non funziona o di un’anomalia al sito o a una delle nostre app, inserisci la data e l’ora in cui hai rilevato il problema.",
+        dataoraevento:"Indica la data e l’ora in cui si è svolto l'evento che stai segnalando oppure la data e l'ora in cui lo hai rilevato.",
         frazioneevento:"Se possibile, indica la località o la frazione in cui il fatto è avvenuto. Spesso è molto importante conoscere il luogo in cui l’evento si è verificato, per poter effettuare i necessari controlli e intervenire in modo più efficace.",
         nvettura:"Il numero di matricola dell’autobus è un codice identificativo composto da tre o quattro cifre, generalmente visibile sia all’esterno sia all’interno del mezzo. Il numero di matricola non coincide mai con il numero di linea.",
         descrizione:""
