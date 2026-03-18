@@ -6,7 +6,7 @@
 
         erroreCampoObbligatorio: "",
         seleziona: "--Seleziona--",
-        codiceFiscaleNonValido:"Il codice fiscale inserito non è valido",
+        codiceFiscaleNonValido:"Il codice fiscale inserito non è valido.",
         noseiminore:"Il ricorso non può essere presentato da una persona minorenne",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco",
         legendanagrafica:"Dati della persona che presenta il ricorso<br>(persona sanzionata oppure persona delegata, se maggiorenne; genitore o tutore se minorenne)",
