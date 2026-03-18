@@ -267,3 +267,32 @@ input[type="submit"] {
   padding-top: 12px;
   padding-bottom: 12px;
 }
+
+/* Tooltip Tippy.js - stile personalizzato */
+.tippy-box {
+  background-color: #f5f5f5;
+  color: rgb(64, 64, 64);
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-weight: normal;
+}
+
+.tippy-content {
+  padding: 8px 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.tippy-box[data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: #f5f5f5;
+}
+.tippy-box[data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: #f5f5f5;
+}
+.tippy-box[data-placement^='left'] > .tippy-arrow::before {
+  border-left-color: #f5f5f5;
+}
+.tippy-box[data-placement^='right'] > .tippy-arrow::before {
+  border-right-color: #f5f5f5;
+}
