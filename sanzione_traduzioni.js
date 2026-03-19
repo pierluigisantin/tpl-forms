@@ -9,7 +9,7 @@
         codiceFiscaleNonValido:"Il codice fiscale inserito non è valido.",
         noseiminore:"Il ricorso non può essere presentato da una persona minorenne.",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
-        legendanagrafica:"Dati della persona che presenta il ricorso<br>(persona sanzionata oppure persona delegata, se maggiorenne; genitore o tutore se minorenne)",
+        legendanagrafica:"Dati della persona che presenta il ricorso<br>(persona sanzionata oppure persona delegata, se maggiorenne; genitore o tutore legale se minorenne)",
         nome:"Nome",
         cognome:"Cognome",
         cfdichiarante:"Codice fiscale ",
@@ -35,7 +35,7 @@
 
 
         legendadatisazionato:"Dati della persona sanzionata",
-        introdatisanzionato:"Compila questa sezione solo se la persona sanzionata è diversa da chi presenta il ricorso. Se si tratta della stessa persona, puoi lasciare questa sezione in bianco",
+        introdatisanzionato:"Compila questa sezione solo se la persona sanzionata è diversa da chi presenta il ricorso. Se si tratta della stessa persona, puoi lasciare questa sezione in bianco.",
         nomesulverbale:"Nome",
         cognomesulverbale:"Cognome",
         datanascitasulverbale:"Data di nascita",
@@ -69,9 +69,9 @@
       },
       tooltips: {
         nome:"",
-        nazione: "Scrivi il nome del tuo Paese di residenza: è sufficiente digitare le prime lettere e poi selezionare il nome corretto dall’elenco proposto. Il campo è impostato di default su ITALIA.",
-          comune: "Seleziona un Comune e il relativo CAP tra quelli disponibili nel menù.",
-          prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39",
+        nazione: "Indica il tuo Paese di residenza: digita le prime lettere e poi seleziona il nome corretto dall’elenco proposto. Il campo è preimpostato su ITALIA.",
+          comune: "Seleziona il Comune e il relativo CAP tra quelli disponibili nel menù: digita le prime lettere e scegli la voce corretta dall’elenco proposto.",
+          prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è preimpostato sul prefisso +39",
         
         indirizzo:"Indica l’indirizzo di residenza o domicilio a cui inviare eventuali comunicazioni via posta ordinaria.",
         nomecassettalettere:"Indica il nome o la dicitura riportati sulla cassetta delle lettere, per evitare che eventuali comunicazioni inviate per posta ordinaria vengano restituite al mittente.",

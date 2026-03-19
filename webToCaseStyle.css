@@ -29,7 +29,7 @@ label {
   color: #007B87;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 400; /* oppure normal */
 }
 
 .required::after {
@@ -167,15 +167,13 @@ legend {
   font-size: 1rem;
   font-weight: 700;
   color: #007B87;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.5px;
   padding: 0 0.5rem;
   margin-left: 0.5rem;
 
-
   text-align: center;
   display: block;
-  /* width: 100%;*/
 }
 
 @media (max-width: 600px) {
