@@ -69,8 +69,8 @@
       },
       tooltips: {
         nome:"",
-        nazione: "Indica il tuo Paese di residenza: digita le prime lettere e poi seleziona il nome corretto dall’elenco proposto. Il campo è preimpostato su ITALIA.",
-          comune: "Seleziona il Comune e il relativo CAP tra quelli disponibili nel menù: digita le prime lettere e scegli la voce corretta dall’elenco proposto.",
+        nazione: "Indica il Paese di residenza: digita le prime lettere e poi seleziona il nome corretto dall’elenco proposto. Il campo è preimpostato su ITALIA.",
+          comune: "Seleziona il Comune e il relativo CAP: digita le prime lettere e scegli la voce corretta dall’elenco proposto.",
           prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è preimpostato sul prefisso +39",
         
         indirizzo:"Indica l’indirizzo di residenza o domicilio a cui inviare eventuali comunicazioni via posta ordinaria.",
