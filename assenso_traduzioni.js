@@ -5,7 +5,7 @@ const resources = {
 
 
         consensoobbligatorio:"CONSENSO OBBLIGATORIO",
-        privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto.",
+        privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it.",
         consensofacoltativo:"CONSENSI FACOLTATIVI",
         indaginidemoscopiche:"Acconsento a essere contattato da Tpl Fvg per partecipare a indagini demoscopiche o ricerche di mercato sul servizio di trasporto pubblico locale.",
         attivitacommerciali:"Acconsento a ricevere comunicazioni relative a offerte e agevolazioni sui servizi di Tpl Fvg e delle aziende consorziate.",
@@ -33,7 +33,7 @@ const resources = {
       labels: {
         
         consensoobbligatorio: "MANDATORY CONSENT",
-        privacy: "I declare that I have read and understood the Tpl Fvg privacy policy, available on the website www.tplfvg.it and accessible via the link below.",
+        privacy: "I declare that I have read and understood the Tpl Fvg privacy policy, available on the website www.tplfvg.it.",
         consensofacoltativo: "OPTIONAL CONSENTS",
         indaginidemoscopiche: "I agree to be contacted by Tpl Fvg to take part in surveys or market research about local public transport services.",
         attivitacommerciali: "I agree to receive information about offers and discounts on services provided by Tpl Fvg and the companies that are part of the consortium.",
