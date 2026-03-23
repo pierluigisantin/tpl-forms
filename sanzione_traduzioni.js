@@ -9,7 +9,7 @@
         codiceFiscaleNonValido:"Il codice fiscale inserito non è valido.",
         noseiminore:"Il ricorso non può essere presentato da una persona minorenne.",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
-        legendanagrafica:"Dati della persona che presenta il ricorso<br>(persona sanzionata oppure persona delegata, se maggiorenne; genitore o tutore legale se minorenne)",
+        legendanagrafica:"Dati della persona che presenta il ricorso<br>(persona sanzionata o persona delegata, se il sanzionato è maggiorenne; genitore o tutore legale se il sanzionato è minorenne)",
         nome:"Nome",
         cognome:"Cognome",
         cfdichiarante:"Codice fiscale ",
@@ -92,7 +92,7 @@
           <img src="immagine_tooltip_sanzioni.png" style="max-width: 100%; height: auto;"/>        
           </div>`,          
         comuneevento:`<div>       
-          Il comune dove la sanzione è stata emessa è di solito rilevabile anche dal verbale.<br><br>
+          Il comune dove la sanzione è stata emessa è di solito rilevabile dal verbale.<br><br>
           <img src="immagine_tooltip_sanzioni.png" style="max-width: 100%; height: auto;"/>        
           </div>`,  
         ultimo:""

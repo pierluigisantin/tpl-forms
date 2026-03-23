@@ -117,9 +117,9 @@ const resources = {
         nazione: "Scrivi il nome del tuo Paese di residenza: è sufficiente digitare le prime lettere e poi selezionare il nome corretto dall’elenco proposto. Il campo è impostato di default su ITALIA.",
         prefissotelefonico:"Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39",
         accountTpl: "Indica l’azienda sul cui servizio hai rilevato il problema. Se non sai quale azienda indicare, scegli l’opzione TPL FVG.",
-        panprime: "Il PAN (Primary Account Number) è il numero stampato sulla tua carta di pagamento. Le prime 4 e le ultime 4 cifre aiutano a identificare la transazione.",
-          panultime: "Il PAN (Primary Account Number) è il numero stampato sulla tua carta di pagamento. Le prime 4 e le ultime 4 cifre aiutano a identificare la transazione.",
-          panvirtuale: "Se hai aggiunto la tua carta a un wallet digitale, accedi al wallet per visualizzare il PAN virtuale. È composto da 4 cifre, diverse da quelle della carta fisica.",
+        panprime: "Il PAN (Primary Account Number) è il numero stampato sulla tua carta di pagamento. Le prime 4 e le ultime 4 cifre ci aiutano a identificare e a verificare la transazione.",
+          panultime: "Il PAN (Primary Account Number) è il numero stampato sulla tua carta di pagamento. Le prime 4 e le ultime 4 cifre ci aiutano a identificare e a verificare la transazione.",
+          panvirtuale: "Se la tua carta bancaria è associata a un wallet digitale (come Google Pay o Apple Pay), accedi al wallet per visualizzare il PAN virtuale. Il PAN virtuale è composto da 4 cifre, sempre diverse da quelle della carta fisica.",
       
         dataoraevento: "Indica la data e l’ora dell’operazione o del momento in cui hai rilevato il problema. Se non conosci l’orario esatto, indica quello approssimativo o il momento in cui ti sei accorto del problema.",
         linea: "Questo campo si attiva dopo aver selezionato l’azienda di riferimento, da cui dipendono le linee proposte. Se come azienda di riferimento hai selezionato TPL FVG, l’elenco includerà tutte le linee operate da Tpl Fvg. Se la segnalazione o l’evento non sono collegati a una linea, puoi lasciare questo campo in bianco.",
