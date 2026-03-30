@@ -80,29 +80,29 @@
         nomecassettalettere:"Indica il nome o la dicitura riportati sulla cassetta delle lettere, per evitare che eventuali comunicazioni inviate per posta ordinaria vengano restituite al mittente.",
         numeroverbale:`<div> 
         Indica il numero di verbale. <br><br>
-        <img src="immagine_tooltip_sanzioni.png" style="max-width: 70%; height: auto;"/>        
+        <img src="immagine_tooltip_sanzioni.png" style="max-width: 65%; height: auto;"/>        
         </div>`,
         dataoraevento:`<div> 
           Indica la data e l’ora di emissione del verbale. <br><br>
-          <img src="immagine_tooltip_sanzioni.png" style="max-width: 70%; height: auto;"/>        
+          <img src="immagine_tooltip_sanzioni.png" style="max-width: 65%; height: auto;"/>        
           </div>`,
         linea:`<div> 
           Questo campo si attiva dopo aver selezionato l’azienda che ha emesso la sanzione, da cui dipendono le linee proposte. La linea è di solito rilevabile dal verbale.<br><br>
-          <img src="immagine_tooltip_sanzioni.png" style="max-width: 70%; height: auto;"/>        
+          <img src="immagine_tooltip_sanzioni.png" style="max-width: 65%; height: auto;"/>        
           </div>`,
         nvettura:`<div>
           Il numero di matricola dell’autobus è un codice identificativo composto da tre o quattro cifre, generalmente visibile sia all’esterno sia all’interno del mezzo. Il numero di matricola (che non coincide mai con il numero di linea) è di solito rilevabile dal verbale.<br><br>
-          <img src="immagine_tooltip_sanzioni.png" style="max-width: 70%; height: auto;"/>        
+          <img src="immagine_tooltip_sanzioni.png" style="max-width: 65%; height: auto;"/>        
           </div>`,          
         comuneevento:`<div>       
           Il comune dove la sanzione è stata emessa è di solito rilevabile dal verbale.<br><br>
-          <img src="immagine_tooltip_sanzioni.png" style="max-width: 70%; height: auto;"/>        
+          <img src="immagine_tooltip_sanzioni.png" style="max-width: 65%; height: auto;"/>        
           </div>`,  
-        panprime4cifre:`Se il biglietto è stato acquistato con una carta bancaria sui dispositivi contactless di bordo, ma gli agenti verificatori non hanno potuto rilevare l’acquisto, indica le prime 4 cifre del PAN della carta con cui è stato effettuato il pagamento. Il PAN (Primary Account Number) è il numero riportato sulla carta di pagamento, in genere composto da 16 a 19 cifre. Le prime 4 e le ultime 4 cifre consentono di identificare e verificare la transazione.<br>             <img src="pan_carta_credito.png" style="max-width: 70%; height: auto;"/>    `,
+        panprime4cifre:`Se il biglietto è stato acquistato con una carta bancaria sui dispositivi contactless di bordo, ma gli agenti verificatori non hanno potuto rilevare l’acquisto, indica le prime 4 cifre del PAN della carta con cui è stato effettuato il pagamento. Il PAN (Primary Account Number) è il numero riportato sulla carta di pagamento, in genere composto da 16 a 19 cifre. Le prime 4 e le ultime 4 cifre consentono di identificare e verificare la transazione.<br><br>             <img src="pan_carta_credito.png" style="max-width: 55%; height: auto;"/>    `,
           
-        panultime4cifre:`Se il biglietto è stato acquistato con una carta bancaria sui dispositivi contactless di bordo, ma gli agenti verificatori non hanno potuto rilevare l’acquisto, indica le ultime 4 cifre del PAN della carta con cui è stato effettuato il pagamento. Il PAN (Primary Account Number) è il numero riportato sulla carta di pagamento, in genere composto da 16 a 19 cifre. Le prime 4 e le ultime 4 cifre consentono di identificare e verificare la transazione.<br>             <img src="pan_carta_credito.png" style="max-width: 70%; height: auto;"/>    `,
+        panultime4cifre:`Se il biglietto è stato acquistato con una carta bancaria sui dispositivi contactless di bordo, ma gli agenti verificatori non hanno potuto rilevare l’acquisto, indica le ultime 4 cifre del PAN della carta con cui è stato effettuato il pagamento. Il PAN (Primary Account Number) è il numero riportato sulla carta di pagamento, in genere composto da 16 a 19 cifre. Le prime 4 e le ultime 4 cifre consentono di identificare e verificare la transazione.<br><br>             <img src="pan_carta_credito.png" style="max-width: 55%; height: auto;"/>    `,
         
-          panvirtuale:`Se il biglietto è stato acquistato con un wallet digitale (come Google Pay o Apple Pay) sui dispositivi contactless di bordo, ma gli agenti verificatori non hanno potuto rilevare l’acquisto, indica il PAN virtuale associato al wallet utilizzato per il pagamento. Il PAN virtuale è diverso da quello della carta fisica ed è composto da 4 cifre. Per visualizzarlo, accedi all’app di pagamento..<br> <img src="wallet.png" style="max-width: 70%; height: auto;"/>  `  ,
+          panvirtuale:`Se il biglietto è stato acquistato con un wallet digitale (come Google Pay o Apple Pay) sui dispositivi contactless di bordo, ma gli agenti verificatori non hanno potuto rilevare l’acquisto, indica il PAN virtuale associato al wallet utilizzato per il pagamento. Il PAN virtuale è diverso da quello della carta fisica ed è composto da 4 cifre. Per visualizzarlo, accedi all’app di pagamento.<br><br> <img src="wallet.png" style="max-width: 55%; height: auto;"/>  `  ,
         
         ultimo:""
       }
