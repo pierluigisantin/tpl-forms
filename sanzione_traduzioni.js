@@ -51,9 +51,9 @@
         tipoluogo:"La sanzione è stata emessa",
         tipoluogoOptions: ["--Seleziona--", "a bordo", "a terra", "non lo so"],       
         comuneevento:"Comune dove la sanzione è stata emessa",
-        panprime4cifre:"(Prime 4 cifre del PAN) Se il biglietto è stato acquistato con una carta bancaria sui dispositivi contactless di bordo ma gli agenti verificatori non hanno rilevato l’acquisto, indica le prime 4 cifre del PAN (Primary Account Number). Il PAN è il numero riportato sulla carta di pagamento. Le prime 4 e le ultime 4 cifre consentono di identificare e verificare la transazione.",
-        panultime4cifre:"(Ultime 4 cifre del PAN) Se il biglietto è stato acquistato con una carta bancaria sui dispositivi contactless di bordo ma gli agenti verificatori non hanno rilevato l’acquisto, indica le ultime 4 cifre del PAN (Primary Account Number). Il PAN è il numero riportato sulla carta di pagamento. Le prime 4 e le ultime 4 cifre consentono di identificare e verificare la transazione.",
-        panvirtuale:"(Pagamento con wallet digitale)  Se il biglietto è stato acquistato sui dispositivi contactless di bordo con un wallet digitale (come Google Pay o Apple Pay) ma gli agenti verificatori non hanno rilevato l’acquisto, accedi al wallet per visualizzare il PAN virtuale. Il PAN virtuale è composto da 4 cifre, diverse da quelle riportate sulla carta fisica."  ,
+        panprime4cifre:"Prime 4 cifre del PAN",
+          panultime4cifre:"Ultime 4 cifre del PAN",
+          panvirtuale:"Pagamento con wallet digitale"  ,
         descrizione:"Scritto difensivo",
         introdescrizione:"Spiega in modo chiaro e completo perché la sanzione viene contestata. Tpl Fvg e le aziende consorziate effettueranno tutte le verifiche necessarie per ricostruire quanto successo. Presenta ricorso solo se ci sono motivazioni oggettive e documentabili a supporto della richiesta. Se il ricorso viene respinto, potrà essere richiesto il pagamento della sanzione nella misura massima di 210,00 euro, oltre al costo del biglietto e alle eventuali spese di procedimento. <a href='https://tplfvg.it/it/sanzioni/normesanzioni' target='_blank' rel='noopener noreferrer'>Fai clic qui per maggiori informazioni.</a>",
         avvertenzaprimadiinvio:"Dopo l’invio del modulo riceverai una e-mail di conferma. Per completare il ricorso, rispondi all'e-mail allegando: 1) copia del verbale (se disponibile); 2) copia fronte e retro del documento d’identità della persona sanzionata (o del genitore/tutore se la persona sanzionata è minorenne); 3) altri documenti utili all’istruttoria.",
@@ -98,6 +98,9 @@
           Il comune dove la sanzione è stata emessa è di solito rilevabile dal verbale.<br><br>
           <img src="immagine_tooltip_sanzioni.png" style="max-width: 100%; height: auto;"/>        
           </div>`,  
+        panprime4cifre:`(Prime 4 cifre del PAN) Se il biglietto è stato acquistato con una carta bancaria sui dispositivi contactless di bordo ma gli agenti verificatori non hanno rilevato l’acquisto, indica le prime 4 cifre del PAN (Primary Account Number). Il PAN è il numero riportato sulla carta di pagamento. Le prime 4 e le ultime 4 cifre consentono di identificare e verificare la transazione.<br>             <img src="pan_carta_credito.png" style="max-width: 100%; height: auto;"/>    `,
+          panultime4cifre:`(Ultime 4 cifre del PAN) Se il biglietto è stato acquistato con una carta bancaria sui dispositivi contactless di bordo ma gli agenti verificatori non hanno rilevato l’acquisto, indica le ultime 4 cifre del PAN (Primary Account Number). Il PAN è il numero riportato sulla carta di pagamento. Le prime 4 e le ultime 4 cifre consentono di identificare e verificare la transazione.<br>             <img src="pan_carta_credito.png" style="max-width: 100%; height: auto;"/>    `,
+          panvirtuale:`(Pagamento con wallet digitale)  Se il biglietto è stato acquistato sui dispositivi contactless di bordo con un wallet digitale (come Google Pay o Apple Pay) ma gli agenti verificatori non hanno rilevato l’acquisto, accedi al wallet per visualizzare il PAN virtuale. Il PAN virtuale è composto da 4 cifre, diverse da quelle riportate sulla carta fisica.<br>             <img src="wallet.png" style="max-width: 100%; height: auto;"/>  `  ,
         ultimo:""
       }
     }
@@ -213,5 +216,112 @@ The municipality where the fine was issued is also usually indicated on the repo
 
       }
     }
-  }
+  },
+       sl: {
+         translation: {
+           labels: {
+             erroreCampoObbligatorio: "",
+             seleziona: "--Izberite--",
+             codiceFiscaleNonValido: "Vnesena italijanska davčna številka ni veljavna.",
+             noseiminore: "Pritožbe ne more vložiti mladoletna oseba.",
+             valoreNonValidoDatalist: "Izberite možnost s seznama.",
+             legendanagrafica: "Podatki osebe, ki vlaga pritožbo<br>(kaznovana oseba ali pooblaščena oseba, če je kaznovani polnoleten; starš ali zakoniti skrbnik, če je kaznovani mladoleten)",
+             nome: "Ime",
+             cognome: "Priimek",
+             cfdichiarante: "Davčna številka ",
+             datanascitadichiarante: "Datum rojstva",
+             tipoSoggetto: "V vlogi",
+             tipoSoggettoOptions: [
+               "--Izberite--",
+               "Kaznovana oseba",
+               "Starš ali skrbnik kaznovane osebe",
+               "Pravna oseba ali združenje v zastopanju kaznovane osebe",
+               "Pooblaščena oseba ali pravni svetovalec"
+             ],
+             ragioneSociale: "Pravna oseba ali združenje",
+             nazione: "Država stalnega bivališča",
+             comune: "Občina",
+             indirizzo: "Naslov stalnega ali začasnega bivališča",
+             ncivico: "Hišna številka",
+             nomecassettalettere: "Ime na poštnem nabiralniku",
+             citta: "Mesto",
+             localita: "Kraj",
+             cap: "Poštna številka",
+             provincia: "Pokrajina / Regija / Država",
+             mail: "E-pošta",
+             email_confirm_label: "Ponovi e-pošto",
+             email_invalid: "Preverite e-poštni naslov",
+             email_mismatch: "Preverite e-poštni naslov",
+             prefissotelefonico: "Mednarodna klicna koda",
+             numerotelefonico: "Številka mobilnega telefona",
+
+             legendadatisazionato: "Podatki kaznovane osebe",
+             introdatisanzionato: "Izpolnite ta razdelek le, če je kaznovana oseba različna od osebe, ki vlaga pritožbo. Če gre za isto osebo, lahko ta razdelek pustite praznega.",
+             nomesulverbale: "Ime",
+             cognomesulverbale: "Priimek",
+             datanascitasulverbale: "Datum rojstva",
+             cfsulverbale: "Davčna številka",
+
+             legendainfoevento: "Podatki o sankciji",
+             accounttpl: "Podjetje, ki je izdalo sankcijo",
+             numeroverbale: "Številka zapisnika",
+             dataoraevento: "Datum in ura sankcije",
+             linea: "Linija",
+             nvettura: "Matična številka avtobusa",
+             tipoluogo: "Sankcija je bila izdana",
+             tipoluogoOptions: ["--Izberite--", "na krovu", "na postajališču", "ne vem"],
+             comuneevento: "Občina, kjer je bila sankcija izdana",
+             panprime4cifre: "Prve 4 cifre PAN",
+             panultime4cifre: "Zadnje 4 cifre PAN",
+             panvirtuale: "Plačilo z digitalnimi denarnicami",
+             descrizione: "Pritožbena vloga",
+             introdescrizione: "Jasno in izčrpno razložite, zakaj izpodbijate sankcijo. Tpl Fvg in konzorcijska podjetja bodo izvedla vse potrebne preveritve za rekonstrukcijo dogajanja. Pritožbo vložite le, če obstajajo objektivni in dokumentirani razlogi. Če je pritožba zavrnjena, bo morda zahtevano plačilo sankcije v višini do 210,00 EUR, skupaj s ceno vozovnice in morebitnimi procesnimi stroški. <a href='https://tplfvg.it/it/sanzioni/normesanzioni' target='_blank' rel='noopener noreferrer'>Kliknite tukaj za več informacij.</a>",
+             avvertenzaprimadiinvio: "Po oddaji obrazca boste prejeli potrditveno e-pošto. Za dokončanje pritožbe odgovorite na to e-pošto in priložite: 1) kopijo zapisnika (če je na voljo); 2) kopijo sprednje in zadnje strani osebnega dokumenta kaznovane osebe (ali starša/skrbnika, če je kaznovana oseba mladoletna); 3) druge dokumente, koristne za obravnavo.",
+             consensoobbligatorio: "OBVEZNO SOGLASJE",
+             privacy: "Izjavljam, da sem prebral/-a in razumel/-a obvestilo o zasebnosti Tpl Fvg, dostopno na spletnem mestu www.tplfvg.it.",
+             consensofacoltativo: "NEOBVEZNA SOGLASJA",
+             indaginidemoscopiche: "Soglašam, da me Tpl Fvg kontaktira za sodelovanje v anketah ali tržnih raziskavah o storitvi javnega lokalnega prevoza.",
+             attivitacommerciali: "Soglašam s prejemanjem sporočil o ponudbah in ugodnostih za storitve Tpl Fvg in konzorcijskih podjetij.",
+             analisipreferenze: "Soglašam z analizo mojih preferenc in navad pri uporabi javnega lokalnega prevoza, vključno z elektronsko obdelavo, z namenom izboljšanja ponudbe in prejemanja prilagojenih sporočil Tpl Fvg.",
+             comunicazionepartner: "Soglašam s prejemanjem oglaševalskih sporočil in komercialnih informacij o izdelkih ali storitvah tretjih oseb, partnerjev Tpl Fvg ali konzorcijskih podjetij.",
+             cessioneterzi: "Soglašam s posredovanjem mojih osebnih podatkov tretjim osebam v komercialne in trženjske namene.",
+
+             invia: "Pošlji",
+
+             ultimo: ""
+           },
+           tooltips: {
+             nome: "",
+             nazione: "Navedite državo stalnega bivališča: vtipkajte prve črke in nato izberite pravilno ime s predlaganega seznama. Polje je privzeto nastavljeno na ITALIJA.",
+             comune: "Izberite občino in ustrezno poštno številko: vtipkajte prve črke in izberite pravilni vnos s predlaganega seznama.",
+             prefissotelefonico: "Izberite mednarodno klicno kodo med razpoložljivimi v meniju. Polje je privzeto nastavljeno na predpono +39.",
+             indirizzo: "Navedite naslov stalnega ali začasnega bivališča, na katerega naj bodo poslana morebitna pisma.",
+             nomecassettalettere: "Navedite ime ali napis na poštnem nabiralniku, da morebitna pisma ne bi bila vrnjena pošiljatelju.",
+             numeroverbale: `<div>
+               Navedite številko zapisnika. <br><br>
+               <img src="immagine_tooltip_sanzioni.png" style="max-width: 100%; height: auto;"/>
+               </div>`,
+             dataoraevento: `<div>
+               Navedite datum in uro izdaje zapisnika. <br><br>
+               <img src="immagine_tooltip_sanzioni.png" style="max-width: 100%; height: auto;"/>
+               </div>`,
+             linea: `<div>
+               To polje se aktivira po izbiri podjetja, ki je izdalo sankcijo, od katerega so odvisne predlagane linije. Linija je običajno razvidna iz zapisnika.<br><br>
+               <img src="immagine_tooltip_sanzioni.png" style="max-width: 100%; height: auto;"/>
+               </div>`,
+             nvettura: `<div>
+               Matična številka avtobusa je identifikacijska koda, sestavljena iz treh ali štirih številk, ki je običajno vidna tako zunaj kot znotraj vozila. Matična številka (ki se nikoli ne ujema s številko linije) je običajno razvidna iz zapisnika.<br><br>
+               <img src="immagine_tooltip_sanzioni.png" style="max-width: 100%; height: auto;"/>
+               </div>`,
+             comuneevento: `<div>
+               Občina, kjer je bila sankcija izdana, je običajno razvidna iz zapisnika.<br><br>
+               <img src="immagine_tooltip_sanzioni.png" style="max-width: 100%; height: auto;"/>
+               </div>`,
+             panprime4cifre: `(Prve 4 cifre PAN) Če je bila vozovnica kupljena z bančno kartico na brezkontaktnih napravah na krovu, vendar inšpektorji nakupa niso zaznali, navedite prve 4 cifre PAN (Primary Account Number). PAN je številka, navedena na plačilni kartici. Prve 4 in zadnje 4 cifre omogočajo identifikacijo in preverjanje transakcije.<br>             <img src="pan_carta_credito.png" style="max-width: 100%; height: auto;"/>    `,
+             panultime4cifre: `(Zadnje 4 cifre PAN) Če je bila vozovnica kupljena z bančno kartico na brezkontaktnih napravah na krovu, vendar inšpektorji nakupa niso zaznali, navedite zadnje 4 cifre PAN (Primary Account Number). PAN je številka, navedena na plačilni kartici. Prve 4 in zadnje 4 cifre omogočajo identifikacijo in preverjanje transakcije.<br>             <img src="pan_carta_credito.png" style="max-width: 100%; height: auto;"/>    `,
+             panvirtuale: `(Plačilo z digitalnimi denarnicami) Če je bila vozovnica kupljena na brezkontaktnih napravah na krovu z digitalno denarnico (kot sta Google Pay ali Apple Pay), vendar inšpektorji nakupa niso zaznali, odprite denarnico in poiščite virtualni PAN. Virtualni PAN je sestavljen iz 4 številk, ki se razlikujejo od tistih na fizični kartici.<br>             <img src="wallet.png" style="max-width: 100%; height: auto;"/>  `,
+             ultimo: ""
+           }
+         }
+       }
 };
