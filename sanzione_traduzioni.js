@@ -51,10 +51,17 @@
         tipoluogo:"La sanzione è stata emessa",
         tipoluogoOptions: ["--Seleziona--", "a bordo", "a terra", "non lo so"],       
         comuneevento:"Comune dove la sanzione è stata emessa",
+
+        legendacontactless:"Dati della carta utilizzata per il pagamento contactless",
+
+        introcontactless:"Compila questa sezione solo se la sanzione è stata emessa perché l’agente non ha potuto rilevare l’acquisto di un biglietto a bordo con carta bancaria o con wallet digitale (come Google Pay o Apple Pay). I dati richiesti servono per individuare e verificare la data e l’ora della transazione.<br><br>Se il pagamento è stato effettuato con una carta fisica, inserisci le prime 4 e le ultime 4 cifre del PAN (il numero riportato sulla carta). Se il pagamento è stato effettuato con un wallet digitale, inserisci il PAN virtuale del wallet (4 cifre). Il PAN virtuale è sempre diverso da quello della carta fisica: per visualizzarlo è necessario accedere all’app di pagamento e consultare i dettagli della carta associata al wallet. Se il pagamento è stato effettuato con un wallet digitale e qui sotto viene indicato il PAN della carta fisica, la transazione non può essere verificata e la sanzione viene confermata.<br><br>",
+        
         panprime4cifre:"Prime 4 cifre del PAN della carta bancaria",
           panultime4cifre:"Ultime 4 cifre del PAN della carta bancaria",
           panvirtuale:"PAN virtuale (4 cifre) del wallet digitale"  ,
-        descrizione:"Scritto difensivo",
+        legendadescrizioneevento:"Scritto difensivo",
+        
+      
         introdescrizione:"Spiega in modo chiaro e completo perché la sanzione viene contestata. Tpl Fvg e le aziende consorziate effettueranno tutte le verifiche necessarie per ricostruire quanto successo. Presenta ricorso solo se ci sono motivazioni oggettive e documentabili a supporto della richiesta. Se il ricorso viene respinto, potrà essere richiesto il pagamento della sanzione nella misura massima di 210,00 euro, oltre al costo del biglietto e alle eventuali spese di procedimento. <a href='https://tplfvg.it/it/sanzioni/normesanzioni' target='_blank' rel='noopener noreferrer'>Fai clic qui per maggiori informazioni.</a>",
         avvertenzaprimadiinvio:"Dopo l’invio del modulo riceverai una e-mail di conferma. Per completare il ricorso, rispondi all'e-mail allegando: 1) copia del verbale (se disponibile); 2) copia fronte e retro del documento d’identità della persona sanzionata (o del genitore/tutore se la persona sanzionata è minorenne); 3) altri documenti utili all’istruttoria.",
         consensoobbligatorio:"CONSENSO OBBLIGATORIO",
@@ -102,7 +109,7 @@
           
         panultime4cifre:`Se il biglietto è stato acquistato con una carta bancaria sui dispositivi contactless di bordo, ma gli agenti verificatori non hanno potuto rilevare l’acquisto, indica le ultime 4 cifre del PAN della carta con cui è stato effettuato il pagamento. Il PAN (Primary Account Number) è il numero riportato sulla carta di pagamento, in genere composto da 16 a 19 cifre. Le prime 4 e le ultime 4 cifre consentono di identificare e verificare la transazione.<br><br>             <img src="pan_carta_credito.png" style="max-width: 55%; height: auto;"/>    `,
         
-          panvirtuale:`Se il biglietto è stato acquistato con un wallet digitale (come Google Pay o Apple Pay) sui dispositivi contactless di bordo, ma gli agenti verificatori non hanno potuto rilevare l’acquisto, indica il PAN virtuale associato al wallet utilizzato per il pagamento. Il PAN virtuale è diverso da quello della carta fisica ed è composto da 4 cifre. Per visualizzarlo, accedi all’app di pagamento.<br><br> <img src="wallet.png" style="max-width: 55%; height: auto;"/>  `  ,
+          panvirtuale:`Se il biglietto è stato acquistato sui dispositivi contactless di bordo con un wallet digitale (come Google Pay o Apple Pay), ma gli agenti verificatori non hanno potuto rilevare l’acquisto, indica il PAN virtuale associato al wallet utilizzato per il pagamento. Il PAN virtuale è sempre diverso da quello della carta fisica ed è composto da 4 cifre. Per visualizzarlo, accedi all’app di pagamento.<br><br> <img src="wallet.png" style="max-width: 55%; height: auto;"/>  `  ,
         
         ultimo:""
       }
