@@ -3,7 +3,7 @@ const resources = {
   it: {
     translation: {
       labels: {
-        legendanagrafica: "DATI ANAGRAFICI DELLA PERSONA CHE RICHIEDE IL RIMBORSO",
+        legendanagrafica: "DATI ANAGRAFICI DELLA PERSONA CHE RICHIEDE ASSISTENZA",
         introtiposoggetto: "Inserisci i dati della persona che richiede il rimborso, ovvero il titolare dell’abbonamento se questo è maggiorenne oppure un genitore, un tutore o un’associazione se l’abbonamento è intestato a un minorenne o se è stato acquistato da un’organizzazione.",
         erroreCampoObbligatorio: "",
         valoreNonValidoDatalist: "Seleziona un'opzione dall’elenco.",
