@@ -51,7 +51,7 @@ const resources = {
         numeroserialeabbonamento: "Numero seriale dell’abbonamento",
 
         tipoabbonamento: "Tipo di abbonamento",
-        tipoabbonamentoOptions: ["--Seleziona--", "Quindicinale", "Mensile", "Maggio prolungato fine scuola", "Semestrale", "Scolastico (10 mesi)", "Annuale (12 mesi)", "Agevolato per persone con disabilità"],
+        tipoabbonamentoOptions: [ "Scolastico (10 mesi)"],
         canalediacquisto: "Canale di acquisto",
         canalediacquistoOptions: ["--Seleziona--", "Biglietteria aziendale", "Rivendita esterna", "Online (sito web Tpl Fvg)","Emettitrici automatiche", "Dropticket"],
         modalitarimborso:"Modalità di rimborso",
@@ -67,6 +67,7 @@ const resources = {
         comuneiban: "Comune o Stato estero di residenza dell’intestatario del conto corrente dove effettuare il rimborso",
         descrizione: "Motivare la richiesta di rimborso",
         introdescrizione: "Descrivi brevemente il motivo per cui richiedi il rimborso. Al termine della compilazione riceverai una notifica via e-mail. Per completare la richiesta, rispondi all'e-mail allegando: la copia dell’abbonamento acquistato, la copia fronte e retro di un documento d’identità del richiedente e, se lo ritieni utile, eventuali altri documenti. La copia dell’abbonamento e del documento d’identità sono obbligatorie per la valutazione del rimborso.",
+        camporiservatotplfvg:"Campo riservato a Tpl Fvg",
         consensoobbligatorio:"CONSENSO OBBLIGATORIO",
           privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto.",
           consensofacoltativo:"CONSENSI FACOLTATIVI",
@@ -163,6 +164,7 @@ const resources = {
         localitaintestatario: "District",
         capintestatario: "Postal code",
         provinciaintestatario: "Province",
+        camporiservatotplfvg: "Reserved field for Tpl Fvg",
         datiabbonamento: "PASS DETAILS FOR WHICH THE REFUND IS REQUESTED",
         accountTpl: "Company that issued the pass",
         abbonamentoemessoconfattura:"Pass paid with invoice",
@@ -170,14 +172,8 @@ const resources = {
         numeroserialeabbonamento: "Subscription serial number",
         tipoabbonamento: "Type of pass",
         tipoabbonamentoOptions: [
-          "--Select--",
-          "Biweekly",
-          "Monthly",
-          "May Extended (end of school)",
-          "Half-yearly",
-          "School pass (10 months)",
-          "Annual (12 months)",
-          "Discounted pass for persons with disabilities"
+         
+          "School pass (10 months)"
         ],
         canalediacquisto: "Purchase channel",
         canalediacquistoOptions: [

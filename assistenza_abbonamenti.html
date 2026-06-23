@@ -124,24 +124,7 @@
         });
 
         //modalità di rimborso a seconda del canale di vendita
-        document.getElementById("00NbU0000003trB").addEventListener("change", (e) => {
-          caricaSottoOptions(e.target.value, i18next.t.bind(i18next), "modalitarimborsoOptions", "00NbU0000004hsn");
-
-          if (getCanonicalItalianValue(e.target.value,  "canalediacquistoOptions", i18next ) == "Online (sito web Tpl Fvg)"){
-            //lascio solo arriva udine e disabilito il controllo arriva udine ha id = 001bU000007ZTeSQAW
-            const selectField = document.getElementById("00NbU0000002bl3");
-            selectField.value="001bU000007ZTeSQAW";
-            selectField.disabled = true;
-            
-          }else
-          {
-            const selectField = document.getElementById("00NbU0000002bl3");
-            selectField.disabled = false;
-          }
-              
-
-          
-        });
+        
 
         
         //se lamodalità di rimporso è bonifico allora iban obbligatorio
@@ -197,7 +180,7 @@
        
         caricaOptionsTradotte("00NbU0000001klb",t,"tipoSoggettoOptions");
         caricaOptionsTradotte("00NbU0000003tpZ",  t, "tipoabbonamentoOptions");
-        caricaOptionsTradotte("00NbU0000003trB",  t, "canalediacquistoOptions");
+
      
 
         aggiungiConfermaEmail();
@@ -227,7 +210,7 @@
             caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
             caricaOptionsTradotte("00NbU0000001klb",t,"tipoSoggettoOptions");
             caricaOptionsTradotte("00NbU0000003tpZ",  t, "tipoabbonamentoOptions");
-            caricaOptionsTradotte("00NbU0000003trB",  t, "canalediacquistoOptions");
+  
    
             aggiungiConfermaEmail();
 
@@ -344,9 +327,7 @@
         </em>
         <br>
 
-        <label for="00NbU0000003trB" id="label_canalediacquisto"></label>
-        <select  id="00NbU0000003trB"  name="00NbU0000003trB"  >
-            </select>
+
 
 
 
