@@ -17,7 +17,7 @@ const resources = {
         email_mismatch: "Verifica l'indirizzo e-mail.",
         accountTpl: "Azienda di riferimento",
         descrizione: "Descrivi la tua richiesta",
-        introdescrizione: "Per aiutarci a identificare e risolvere il problema, indica l'indirizzo di posta elettronica associato al tuo account Tpl Fvg, il nome, il cognome, il codice fiscale e il numero di tesserino identificativo delle persone che richiedono l'agevolazione, il tipo di abbonamento e ogni altra informazione che ritieni utile.",
+        introdescrizione: "Per aiutarci a identificare e risolvere il problema, indica nel testo: l'indirizzo di posta elettronica associato al tuo account Tpl Fvg, il nome, il cognome, il codice fiscale e il numero di tesserino identificativo delle persone che richiedono l'agevolazione, il tipo di abbonamento e ogni altra informazione che ritieni utile.",
         camporiservatotplfvg: "Campo riservato a Tpl Fvg",
         consensoobbligatorio: "CONSENSO OBBLIGATORIO",
         privacy: "Dichiaro di aver letto e compreso l'informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto.",

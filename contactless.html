@@ -4,18 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Contactless</title>
+  <title>Form segnalazione problemi app e contactless</title>
   <link rel="stylesheet" href="webToCaseStyle.css" />
+  <link rel="stylesheet" href="toggleConsensi.css" />
 
   <script src="https://unpkg.com/i18next@22.4.10/i18next.min.js"></script>
-  <!-- PRIMA Popper.js -->
   <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <!-- POI Tippy.js -->
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="https://www.google.com/recaptcha/api.js"></script>
   <script>
-
-    function timestamp() {var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);} } setInterval(timestamp, 500); 
+    function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") { var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500);
   </script>
   <script src="webToCaseUtils.js"></script>
   <script src="contactless_traduzioni.js"></script>
@@ -25,44 +23,18 @@
     var aziendaId;
 
     const requiredFields = [
-      "tipoSoggetto",
       "nome",
       "cognome",
-      "nazione",
       "mail",
+      "numerotelefonico",
+      "tiposegnalazione",
       "accountTpl",
+      "dataevento",
       "descrizione",
       "privacy"
     ];
 
-    const comuneListId = "comuniList";
-    const nazioniListId = "nazioniList";
-    const campoNazioneId = "00NbU0000001klm";
-
     var fields = [];
-    function attivaDebugSubmit() {
-      const campiDebug = [
-        "00NbU0000001kln", // nome
-        "00NbU0000001klf", // cognome
-        "email",           // email
-        "description",     // descrizione
-        "orgid", "retURL", "debug", "debugEmail"
-      ];
-
-      const form = document.getElementById("formReclamo");
-      Array.from(form.elements).forEach(el => {
-        if (!campiDebug.includes(el.name)) {
-          el.removeAttribute("name");
-        }
-      });
-    }
-
-
-
-
-
-
-
 
     document.addEventListener("DOMContentLoaded", () => {
 
@@ -74,102 +46,29 @@
         document.getElementById("languageSwitcher")?.style.setProperty("display", "none");
       }
 
-      i18next.init({lng: lang, resources}, (_, tInstance) => {
-        t = tInstance; // 👈 assegna t a una variabile globale
+      i18next.init({ lng: lang, resources }, (_, tInstance) => {
+        t = tInstance;
         aggiornaEtichette(t, fields);
 
-        const comuniNazioniUrl = "valori_comuni_nazioni.json";
-        const comuniServizioUrl = "comuni_servizio.json";
         const aziendeTplUrl = "aziendeTPL.json";
-        const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
-        const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
-        const fermateUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
         const prefissiUrl = "prefissi.json";
 
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
-        caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
-        caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t);
-        caricaDatalistComuni(comuniServizioUrl, t, "comuniServizioList");
-
-        document.getElementById("00NbU0000002bl3")?.addEventListener("change", e => {
-          aziendaId = e.target.value;
-          const servizioId = '';
-          caricaServizi("00NbU0000002hld", serviziUrl, e.target.value, lang, t);
-          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t,true);
-        });
-
-        document.getElementById("00NbU0000002hld")?.addEventListener("change", e => {
-          const servizioId = e.target.value;
-          caricaLinee("00NbU0000001klj", lineeUrl, servizioId, aziendaId, t);
-        });
-
-        document.getElementById("00NbU0000001klj")?.addEventListener("change", e => {
-          caricaFermate("00NbU0000001klk", fermateUrl, e.target.value, t);
-        });
-
-        document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
-          toggleIndirizzo("00NbU0000001klm", "indirizzoItaliaWrapper", lang);
-          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
-          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper2", lang, true);
-        });
-
- 
-
-        document.getElementById("00NbU0000003uaL").addEventListener("change", (e) => {
-          caricaSottoOptions(e.target.value, i18next.t.bind(i18next), "tipoproblemacontactlessOptions", "00NbU0000003ubx");
-        });
-
-        document.getElementById("00NbU0000003uwv").addEventListener("change", function () {
-          toggleWrapperBySelectValue({
-            selectId: "00NbU0000003uwv",
-            valoriTrigger: ["Altro"],
-            logicalName: "altrocircuito",
-            translationPath: "circuitoCartaOptions",
-            i18nextInstance: i18next
-          });
-        });
-
-
-        document.getElementById("00NbU0000003vWP").addEventListener("change", function () {
-          toggleWrapperBySelectValue({
-            selectId: "00NbU0000003vWP",
-            valoriTrigger: ["Altro"],
-            logicalName: "altrowallet",
-            translationPath: "walletOptions",
-            i18nextInstance: i18next
-          });
-        });
-
-        document.getElementById("00NbU0000003uaL").addEventListener("change", function () {
-          toggleCampi({
-            selectId: "00NbU0000003uaL",
-            i18nextInstance: i18next,
-            configShowHide: "appcontactlessOptionsShowHide",
-            configRequired:"appcontactlessOptionsRequired"
-          });
-        });
-
-        //nazione
-        enforceDatalistConstraint(document.getElementById("00NbU0000001klm"), t);
-        //comune
-        enforceDatalistConstraint(document.getElementById("00NbU0000001klg"), t);
-        //comune-evento
-        enforceDatalistConstraint(document.getElementById("00NbU0000002yHp"), t);
+        caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t, []);
+        caricaOptionsTradotte("00NbU0000005F9x", t, "tipoSegnalazioneOptions");
 
         aggiungiConfermaEmail();
- 
-        caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
-        caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
-        caricaOptionsTradotte("00NbU0000003uwv", t, "circuitocartaOptions");
-        caricaOptionsTradotte("00NbU0000003vWP", t, "walletOptions");
-        caricaOptionsTradotte("00NbU0000003vg5", t, "tipoluogoproblemacontactlessOptions");
 
         (async () => {
           const contesto = await raccogliTracciamentoDatiConsenso();
-          const json = JSON.stringify(contesto, null, 2); // formato leggibile
+          const json = JSON.stringify(contesto, null, 2);
           console.log('JSON dei dati raccolti:\n', json);
-          document.getElementById("00NbU0000004ild").value=json;
+          document.getElementById("00NbU0000004ild").value = json;
         })();
+
+        document.getElementById("00NbU0000005F9x")?.addEventListener("change", () => {
+          gestisciCampiCondizionali();
+        });
 
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
           const newLang = e.target.value;
@@ -177,43 +76,36 @@
           i18next.changeLanguage(newLang, () => {
             const newT = i18next.t.bind(i18next);
             aggiornaEtichette(newT, fields);
-            caricaDatalistComuniENazioni(comuniNazioniUrl, newLang, comuneListId, nazioniListId, campoNazioneId);
-            caricaDatalistComuni(comuniServizioUrl, t, "comuniServizioList");
-            const aziendaId = document.getElementById("00NbU0000002bl3").value;
-            caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
-         
-            caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
-            caricaOptionsTradotte("00NbU0000003uaL", t, "appcontactlessOptions");
-            caricaOptionsTradotte("00NbU0000003uwv", t, "circuitocartaOptions");
-            caricaOptionsTradotte("00NbU0000003vg5", t, "tipoluogoproblemacontactlessOptions");
-             aggiungiConfermaEmail();
-
+            aggiungiConfermaEmail();
           });
         });
 
         document.getElementById("formReclamo")?.addEventListener("submit", e => {
-          //attivaDebugSubmit(); // <<<< Abilita solo alcuni campi
-
-
-          if (!validazioneCampiObbligatori("formReclamo", t)) {
-            e.preventDefault();
-          }
-          formattaDataEvento("data_evento_visible", "00NbU0000001klh");
-
-
           const validCampi = validazioneCampiObbligatori("formReclamo", t);
-
           const validCaptcha = validaCaptcha(t, "captchaError");
 
           if (!validCampi || !validCaptcha) {
             e.preventDefault();
             return;
           }
-
-
         });
       });
     });
+
+    function gestisciCampiCondizionali() {
+      const tipo = document.getElementById("00NbU0000005F9x").value.toLowerCase();
+      const wrapperApp = document.getElementById("wrapperApp");
+      const wrapperContactless = document.getElementById("wrapperContactless");
+
+      if (wrapperApp) wrapperApp.style.display = "none";
+      if (wrapperContactless) wrapperContactless.style.display = "none";
+
+      if (tipo.includes("app")) {
+        if (wrapperApp) wrapperApp.style.display = "block";
+      } else if (tipo.includes("contactless")) {
+        if (wrapperContactless) wrapperContactless.style.display = "block";
+      }
+    }
   </script>
 </head>
 
@@ -230,95 +122,23 @@
       <input type="hidden" name="orgid" value="00D06000001Tz0T" />
       <input type="hidden" name="retURL" value="" />
 
-
       <input type="hidden" name="captcha_settings"
         value='{"keyname":"captchatplv2","fallback":"true","orgId":"00D06000001Tz0T","ts":""}'>
 
-
-      <!--
-      <input type="hidden" name="debug" value="0">
-      <input type="hidden" name="debugEmail" value="p.santin@e-deimos.it">
-      -->
-
       <fieldset>
-        <legend><span id="label_legendanagrafica"> </span></legend>
-
-      
-
-        <div id="ragioneSocialeWrapper" style="display:none;">
-          <label for="00NbU0000001klq" id="label_ragioneSociale"></label>
-          <input id="00NbU0000001klq" name="00NbU0000001klq" type="text" />
-          <div class="error-message" id="error_ragioneSociale"></div>
-        </div>
-
+        <legend><span id="label_legendanagrafica"></span></legend>
+        <span id='label_introtiposoggetto'></span>
+        <br>
+        <br>
 
         <label for="00NbU0000001kln" id="label_nome"></label>
         <input id="00NbU0000001kln" name="00NbU0000001kln" type="text" />
 
-
         <label for="00NbU0000001klf" id="label_cognome"></label>
         <input id="00NbU0000001klf" name="00NbU0000001klf" type="text" />
 
-
-
-        <label for="00NbU0000001klm" id="label_nazione"></label>
-        <input id="00NbU0000001klm" name="00NbU0000001klm" list="nazioniList" />
-        <datalist id="nazioniList"></datalist>
-
-
-
-        <label for="00NbU0000001kli" id="label_indirizzo"></label>
-        <input id="00NbU0000001kli" name="00NbU0000001kli" type="text" />
-
-        <label for="00NbU0000003s77" id="label_ncivico"></label>
-        <input id="00NbU0000003s77" maxlength="5" name="00NbU0000003s77" size="20" type="text" />
-
-
-        <div id="indirizzoItaliaWrapper">
-
-
-          <label for="00NbU0000001klg" id="label_comune">Comune:</label>
-          <input id="00NbU0000001klg" name="00NbU0000001klg" list="comuniList" />
-          <datalist id="comuniList"></datalist>
-
-
-
-
-        </div>
-
-        <div id="indirizzoEsteroWrapper" style="display:none">
-
-
-
-          <label for="00NbU0000003Id7" id="label_citta"></label>
-          <input id="00NbU0000003Id7" maxlength="255" name="00NbU0000003Id7" size="20" type="text" />
-
-
-
-        </div>
-
-        <label for="00NbU0000003Iej" id="label_localita"></label>
-        <input id="00NbU0000003Iej" maxlength="255" name="00NbU0000003Iej" size="20" type="text" />
-
-
-        <div id="indirizzoEsteroWrapper2" style="display:none">
-
-
-          <label for="00NbU0000001kld" id="label_cap"></label>
-          <input id="00NbU0000001kld" maxlength="20" name="00NbU0000001kld" size="20" type="text" />
-
-
-          <label for="00NbU0000001klp" id="label_provincia"></label>
-          <input id="00NbU0000001klp" maxlength="100" name="00NbU0000001klp" size="20" type="text" />
-
-
-        </div>
-
-
-
         <label for="email" id="label_mail">Email:</label>
         <input id="email" maxlength="80" name="email" size="20" />
-
 
         <label for="00NbU0000002837" id="label_prefissotelefonico"></label>
         <select id="00NbU0000002837" name="00NbU0000002837">
@@ -326,215 +146,119 @@
 
         <label for="00NbU0000001klo" id="label_numerotelefonico"></label>
         <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
-
-
-
-
-
-
       </fieldset>
+
       <fieldset>
-        <legend><span id="label_legendainfoevento"> </span></legend>
+        <legend><span id="label_legendsegnalazione"></span></legend>
 
-
-        <label for="00NbU0000003uaL" id="label_appcontactless"></label>
-        <select id="00NbU0000003uaL" name="00NbU0000003uaL"></select>
-
-        <label for="00NbU0000002bl3" id="label_accountTpl">
-        </label>
-        <select id="00NbU0000002bl3" name="00NbU0000002bl3">
-
+        <label for="00NbU0000005F9x" id="label_tiposegnalazione"></label>
+        <select id="00NbU0000005F9x" name="00NbU0000005F9x">
         </select>
 
-        <div id="tipoproblemacontactlessWrapper" style="display: none;">
-          <label for="00NbU0000003ubx" id="label_tipoproblemacontactless"></label>
-          <select id="00NbU0000003ubx" name="00NbU0000003ubx"></select>
-        </div>
+        <label for="00NbU0000002bl3" id="label_accountTpl"></label>
+        <select id="00NbU0000002bl3" name="00NbU0000002bl3">
+        </select>
 
-        <div id="tipoluogoproblemacontactlessWrapper" style="display: none;">
-          <label for="00NbU0000003vg5" id="label_tipoluogoproblemacontactless"></label>
-          <select id="00NbU0000003vg5" name="00NbU0000003vg5"></select>
-        </div>
+        <label for="00NbU0000005FA1" id="label_dataevento"></label>
+        <input id="00NbU0000005FA1" name="00NbU0000005FA1" type="datetime-local" />
 
-        <div id="circuitocartaWrapper" style="display: none;">
-          <label for="00NbU0000003uwv" id="label_circuitocarta"></label>
-          <select id="00NbU0000003uwv" name="00NbU0000003uwv"></select>
-        </div>
-
-
-        <div id="altrocircuitoWrapper" style="display: none;">
-          <label for="00NbU0000003vHt" id="label_altrocircuito"></label>
-          <input id="00NbU0000003vHt" maxlength="255" name="00NbU0000003vHt" size="20" type="text" />
-        </div>
-<!--
-        <div id="panintroWrapper" style="display: none;">
-          <label id="label_panintro"></label>
-        </div>
--->
-
-        <div id="panprimeWrapper" style="display: none;">
-          <label for="00NbU0000003vRZ" id="label_panprime"></label>
-          <input id="00NbU0000003vRZ" maxlength="4" name="00NbU0000003vRZ" size="20" type="text" />
-        </div>
-
-        <div id="panultimeWrapper" style="display: none;">
-          <label for="00NbU0000003vTB" id="label_panultime"></label>
-          <input id="00NbU0000003vTB" maxlength="4" name="00NbU0000003vTB" size="20" type="text" />
-        </div>
-
-<!--
-        <div id="panvirtualeintroWrapper" style="display: none;">
-          <label id="label_panvirtualeintro"></label>
-        </div>
-        -->
-
-        <div id="panvirtualeWrapper" style="display: none;">
-          <label for="00NbU0000003vUn" id="label_panvirtuale"></label>
-          <input id="00NbU0000003vUn" maxlength="4" name="00NbU0000003vUn" size="20" type="text" />
-        </div>
-
-        <div id="walletWrapper" style="display: none;">
-          <label for="00NbU0000003vWP" id="label_wallet"></label>
-          <select id="00NbU0000003vWP" name="00NbU0000003vWP"></select>
-        </div>
-
-<!--
-        <div id="altrowalletWrapper" style="display: none;">
-          <label for="00NbU0000003vY1" id="label_altrowallet"> </label>
-          <input id="00NbU0000003vY1" maxlength="255" name="00NbU0000003vY1" size="20" type="text" />
-        </div>
-        -->
-
-
-        <label for="data_evento_visible" id="label_dataoraevento"></label>
-        <input id="data_evento_visible" type="datetime-local" />
-        <input id="00NbU0000001klh" name="00NbU0000001klh" size="20" type="text" style="display:none;" />
-
-
-
-
-
-
-
-        <div id="lineaWrapper" style="display: none;">
-          <label for="00NbU0000001klj" id="label_linea">
-          </label>
-          <select id="00NbU0000001klj" name="00NbU0000001klj">
+        <div id="wrapperApp" style="display:none;">
+          <label for="00NbU0000005FA6" id="label_sistemaoperativo"></label>
+          <select id="00NbU0000005FA6" name="00NbU0000005FA6">
+            <option value="">--</option>
+            <option value="Android">Android</option>
+            <option value="iOS">iOS</option>
           </select>
+
+          <label for="00NbU0000005FAB" id="label_versioneapp"></label>
+          <input id="00NbU0000005FAB" name="00NbU0000005FAB" type="text" />
         </div>
 
+        <div id="wrapperContactless" style="display:none;">
+          <label for="00NbU0000005FAG" id="label_tipocarta"></label>
+          <select id="00NbU0000005FAG" name="00NbU0000005FAG">
+            <option value="">--</option>
+            <option value="Carta di credito">Carta di credito</option>
+            <option value="Carta di debito">Carta di debito</option>
+            <option value="Prepagata">Prepagata</option>
+            <option value="Wallet">Wallet (Apple Pay, Google Pay, ecc.)</option>
+          </select>
 
-
-
-
-
-
-
-        <div id="nvetturaWrapper" style="display: none;">
-          <label for="00NJ6000002ydRf" id="label_nvettura"></label>
-          <input id="00NJ6000002ydRf" name="00NJ6000002ydRf" type="text" />
-        </div>
-
-        <div id="indirizzomailappWrapper" style="display: none;">
-          <label for="00NbU0000003vhh" id="label_indirizzomailapp"></label>
-          <input id="00NbU0000003vhh" maxlength="255" name="00NbU0000003vhh" size="20" type="text" />
-        </div>
-
-        <div id="numerotelefonicoappWrapper" style="display: none;">
-          <label for="00NbU0000003vjJ" id="label_numerotelefonicoapp"></label>
-          <input id="00NbU0000003vjJ" maxlength="255" name="00NbU0000003vjJ" size="20" type="text" />
+          <label for="00NbU0000005FAL" id="label_ultimequattrocifre"></label>
+          <input id="00NbU0000005FAL" name="00NbU0000005FAL" type="text" maxlength="4" />
         </div>
 
         <label for="description" id="label_descrizione"></label>
-        <em>
-          <span id='label_introdescrizione'></span>
-        </em>
+        <span id='label_introdescrizione'></span>
         <br>
         <br>
         <textarea id="description" name="description" rows="10" maxlength="30000"></textarea>
-
       </fieldset>
 
-
       <fieldset>
-        <legend><span id="label_consensoobbligatorio"> </span></legend>
-
+        <legend><span id="label_consensoobbligatorio"></span></legend>
 
         <label for="00NbU0000000KEr" id="label_privacy"></label>
-        <select id="00NbU0000000KEr" name="00NbU0000000KEr">
+        <select id="00NbU0000000KEr" name="00NbU0000000KEr" class="toggle-consenso-select" data-iniziale="si">
           <option value="">--</option>
           <option value="Si/Yes">Sì/Yes</option>
           <option value="No">No</option>
         </select><br>
       </fieldset>
-      <fieldset>
 
-        <legend><span id="label_consensofacoltativo"> </span></legend>
+      <fieldset>
+        <legend><span id="label_consensofacoltativo"></span></legend>
 
         <label for="00NbU0000002hs5" id="label_indaginidemoscopiche"></label>
-        <select id="00NbU0000002hs5" name="00NbU0000002hs5">
+        <select id="00NbU0000002hs5" name="00NbU0000002hs5" class="toggle-consenso-select" data-iniziale="no">
           <option value="">--</option>
           <option value="Si/Yes">Sì/Yes</option>
           <option value="No">No</option>
-
-        </select><br>
+        </select>
 
         <label for="00NbU0000002hth" id="label_attivitacommerciali"></label>
-        <select id="00NbU0000002hth" name="00NbU0000002hth">
+        <select id="00NbU0000002hth" name="00NbU0000002hth" class="toggle-consenso-select" data-iniziale="no">
           <option value="">--</option>
           <option value="Si/Yes">Sì/Yes</option>
           <option value="No">No</option>
-        </select><br>
+        </select>
 
         <label for="00NbU0000002hvJ" id="label_analisipreferenze"></label>
-        <select id="00NbU0000002hvJ" name="00NbU0000002hvJ">
+        <select id="00NbU0000002hvJ" name="00NbU0000002hvJ" class="toggle-consenso-select" data-iniziale="no">
           <option value="">--</option>
           <option value="Si/Yes">Sì/Yes</option>
           <option value="No">No</option>
-        </select><br>
-
+        </select>
 
         <label for="00NbU0000002hwv" id="label_comunicazionepartner"></label>
-        <select id="00NbU0000002hwv" name="00NbU0000002hwv">
+        <select id="00NbU0000002hwv" name="00NbU0000002hwv" class="toggle-consenso-select" data-iniziale="no">
           <option value="">--</option>
           <option value="Si/Yes">Sì/Yes</option>
           <option value="No">No</option>
-        </select><br>
+        </select>
 
         <label for="00NbU0000002yOH" id="label_cessioneterzi"></label>
-        <select id="00NbU0000002yOH" name="00NbU0000002yOH" title="Acconsente cessione terzi">
+        <select id="00NbU0000002yOH" name="00NbU0000002yOH" class="toggle-consenso-select" data-iniziale="no" title="Acconsente cessione terzi">
           <option value="">--</option>
           <option value="Si/Yes">Sì/Yes</option>
           <option value="No">No</option>
-        </select><br>
-
-
-
-
-
-
-
+        </select>
       </fieldset>
 
+      <fieldset>
+        <label for="00NbU0000005bQL" id="label_camporiservatotplfvg"></label>
+        <input id="00NbU0000005bQL" maxlength="255" name="00NbU0000005bQL" size="20" type="text" /><br>
+      </fieldset>
 
-       <fieldset>
-         <label for="00NbU0000005bQL" id="label_camporiservatotplfvg"></label>
-      <input  id="00NbU0000005bQL" maxlength="255" name="00NbU0000005bQL" size="20" type="text" /><br>
-         </fieldset>
-
-
-
-      <!--Dati tracciamento consenso:-->
-      <input  id="00NbU0000004ild" name="00NbU0000004ild"  type="hidden"  />
-      <!--flag reclamo contactless-->
-      <input id="00NbU0000003vd2" name="00NbU0000003vd2" type="hidden" value="1" />
-
+      <input id="00NbU0000004ild" name="00NbU0000004ild" type="hidden" />
+      <input id="00NbU0000005BSf" name="00NbU0000005BSf" type="hidden" value="1" />
       <input type="hidden" id="external" name="external" value="1" /><br>
       <br>
+
       <div class="g-recaptcha" data-sitekey="6LcKTugqAAAAAB9mkWg5p3floGYNeNVAXY6Z6c8P"></div><br>
       <div id="captchaError" class="error-message" style="display: none;"></div>
 
-      <input type="submit" id="submitBtn" value="Invia Reclamo" />
+      <input type="submit" id="submitBtn" value="Invia segnalazione" />
     </form>
   </div>
   <script>
@@ -547,6 +271,7 @@
       }
     });
   </script>
+  <script src="toggleConsensi.js"></script>
 </body>
 
 </html>
