@@ -6,16 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Form assistenza abbonamenti</title>
   <link rel="stylesheet" href="webToCaseStyle.css" />
+  <link rel="stylesheet" href="toggleConsensi.css" />
 
   <script src="https://unpkg.com/i18next@22.4.10/i18next.min.js"></script>
-  <!-- PRIMA Popper.js -->
   <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <!-- POI Tippy.js -->
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="https://www.google.com/recaptcha/api.js"></script>
   <script>
-
-    function timestamp() {var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);} } setInterval(timestamp, 500); 
+    function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") { var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500);
   </script>
   <script src="webToCaseUtils.js"></script>
   <script src="assistenza_abbonamenti_traduzioni.js"></script>
@@ -25,47 +23,16 @@
     var aziendaId;
 
     const requiredFields = [
-      "tipoSoggetto",
       "nome",
       "cognome",
-      "nazione",
       "mail",
       "numerotelefonico",
-      "canalediacquisto",
       "accountTpl",
       "descrizione",
       "privacy"
     ];
 
-    const comuneListId = "comuniList";
-    const nazioniListId = "nazioniList";
-    const campoNazioneId = "00NbU0000001klm";
-
     var fields = [];
-    function attivaDebugSubmit() {
-      const campiDebug = [
-        "00NbU0000001kln", // nome
-        "00NbU0000001klf", // cognome
-        "email",           // email
-        "description",     // descrizione
-        "orgid", "retURL", "debug", "debugEmail"
-      ];
-
-      const form = document.getElementById("formReclamo");
-      Array.from(form.elements).forEach(el => {
-        if (!campiDebug.includes(el.name)) {
-          el.removeAttribute("name");
-        }
-      });
-    }
-
-
-
-
-
-
-   
-
 
     document.addEventListener("DOMContentLoaded", () => {
 
@@ -77,127 +44,24 @@
         document.getElementById("languageSwitcher")?.style.setProperty("display", "none");
       }
 
-      i18next.init({lng: lang, resources}, (_, tInstance) => {
-        t = tInstance; // 👈 assegna t a una variabile globale
+      i18next.init({ lng: lang, resources }, (_, tInstance) => {
+        t = tInstance;
         aggiornaEtichette(t, fields);
 
-        const comuniNazioniUrl = "valori_comuni_nazioni.json";
         const aziendeTplUrl = "aziendeTPL.json";
-        const serviziUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Servizi";
-        const lineeUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/Linee?servizioId=";
-        const fermateUrl = "https://tplfvg.my.salesforce-sites.com/forms/services/apexrest/LineeFermate?lineaId=";
-        const prefissiUrl = "prefissi.json"
+        const prefissiUrl = "prefissi.json";
 
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
-        caricaDatalistComuniENazioni(comuniNazioniUrl, lang, comuneListId, nazioniListId, campoNazioneId);
-        //carico ma escludendo tpl
-        caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t,['001bU000007Q8fWQAS']);
-        
-
-
-
-
-        document.getElementById("00NbU0000003FDp")?.addEventListener("blur", () => {
-          validaCampoCodiceFiscale("00NbU0000003FDp", t);
-        });
-        document.getElementById("00NbU0000003FLt")?.addEventListener("blur", () => {
-          validaCampoCodiceFiscale("00NbU0000003FLt", t);
-        });
-
-
-        document.getElementById("00NbU0000001klm")?.addEventListener("change", () => {
-          toggleIndirizzo("00NbU0000001klm", "indirizzoItaliaWrapper", lang);
-          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper", lang, true);
-          toggleIndirizzo("00NbU0000001klm", "indirizzoEsteroWrapper2", lang, true);
-        });
-
-
-        document.getElementById("00NbU0000001oij")?.addEventListener("change", () => {
-          toggleIndirizzo("00NbU0000001oij", "indirizzoInteressatoItaliaWrapper", lang);
-          toggleIndirizzo("00NbU0000001oij", "indirizzoInteressatoEsteroWrapper", lang, true);
-          toggleIndirizzo("00NbU0000001oij", "indirizzoInteressatoEsteroWrapper2", lang, true);
-        });
-
-
-        document.getElementById("00NbU0000001klb")?.addEventListener("change", () => {
-          toggleRagioneSociale("00NbU0000001klb", "ragioneSocialeWrapper", ["persona fisica", "individual"]);
-        });
-
-        //modalità di rimborso a seconda del canale di vendita
-        
-
-        
-        //se lamodalità di rimporso è bonifico allora iban obbligatorio
-       
-        document.getElementById("00NbU0000004hsn")?.addEventListener("change", (e) => {
-          
-          const iban = document.getElementById("ibanrimborsoWrapper");
-           const ibanNome = document.getElementById("nomecognomeintestatarioibanWrapper");
-
-          if (getCanonicalItalianValue(e.target.value,  "modalitarimborsoOptions", i18next ) == "Bonifico bancario"){
-            iban && (iban.style.display = "block");
-            ibanNome &&(ibanNome.style.display = "block");
-       
-
-            const inputIban = iban.querySelector("label");
-              if (inputIban) {
-                  inputIban.classList.add("required");           
-              }
-            const inputIbanNome = ibanNome.querySelector("label");
-            if (inputIbanNome) {
-                inputIbanNome.classList.add("required");           
-            }
-
-
-          }else
-          {
-            iban && (iban.style.display = "none");
-            ibanNome &&(ibanNome.style.display = "none");
-            const inputIban = iban.querySelector("label");
-              if (inputIban) {
-                  inputIban.classList.remove("required");           
-              }
-            const inputIbanNome = ibanNome.querySelector("label");
-            if (inputIbanNome) {
-                inputIbanNome.classList.remove("required");           
-            }
-          }
-
-        });
-
-        
-
-
-        //nazione
-        enforceDatalistConstraint(document.getElementById("00NbU0000001klm"), t);
-        //comune
-        enforceDatalistConstraint(document.getElementById("00NbU0000001klg"), t);
-        //nazione interessato
-        enforceDatalistConstraint(document.getElementById("00NbU0000001oij"), t);
-        //comune  
-        enforceDatalistConstraint(document.getElementById("00NbU0000003jLZ"), t);
-
-       
-        caricaOptionsTradotte("00NbU0000001klb",t,"tipoSoggettoOptions");
-        caricaOptionsTradotte("00NbU0000003tpZ",  t, "tipoabbonamentoOptions");
-
-     
+        caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t, []);
 
         aggiungiConfermaEmail();
 
-
-
-
         (async () => {
           const contesto = await raccogliTracciamentoDatiConsenso();
-          const json = JSON.stringify(contesto, null, 2); // formato leggibile
+          const json = JSON.stringify(contesto, null, 2);
           console.log('JSON dei dati raccolti:\n', json);
-          document.getElementById("00NbU0000004ild").value=json;
+          document.getElementById("00NbU0000004ild").value = json;
         })();
-
-
-        
-
 
         document.getElementById("languageSwitcher")?.addEventListener("change", e => {
           const newLang = e.target.value;
@@ -205,40 +69,18 @@
           i18next.changeLanguage(newLang, () => {
             const newT = i18next.t.bind(i18next);
             aggiornaEtichette(newT, fields);
-            caricaDatalistComuniENazioni(comuniNazioniUrl, newLang, comuneListId, nazioniListId, campoNazioneId);
-            const aziendaId = document.getElementById("00NbU0000002bl3").value;
-            caricaServizi("00NbU0000002hld", serviziUrl, aziendaId, newLang, newT);
-            caricaOptionsTradotte("00NbU0000001klb",t,"tipoSoggettoOptions");
-            caricaOptionsTradotte("00NbU0000003tpZ",  t, "tipoabbonamentoOptions");
-  
-   
             aggiungiConfermaEmail();
-
           });
         });
 
         document.getElementById("formReclamo")?.addEventListener("submit", e => {
-          //attivaDebugSubmit(); // <<<< Abilita solo alcuni campi
-
-
-          if (!validazioneCampiObbligatori("formReclamo", t)) {
-            e.preventDefault();
-          }
-          formattaDataEvento("datanascitadichiarante_visible", "00NbU0000001oaf");
-          formattaDataEvento("datanascitaintestatario_visible", "00NbU0000001olx");
-          formattaDataEvento("dataemissione_visible", "00NbU0000003Vbx");
-
-
           const validCampi = validazioneCampiObbligatori("formReclamo", t);
-
           const validCaptcha = validaCaptcha(t, "captchaError");
 
           if (!validCampi || !validCaptcha) {
             e.preventDefault();
             return;
           }
-
-
         });
       });
     });
@@ -258,15 +100,9 @@
       <input type="hidden" name="orgid" value="00D06000001Tz0T" />
       <input type="hidden" name="retURL" value="" />
 
-
       <input type="hidden" name="captcha_settings"
         value='{"keyname":"captchatplv2","fallback":"true","orgId":"00D06000001Tz0T","ts":""}'>
 
-
-      <!--
-      <input type="hidden" name="debug" value="1">
-      <input type="hidden" name="debugEmail" value="p.santin@e-deimos.it">
--->
       <fieldset>
         <legend><span id="label_legendanagrafica"></span></legend>
         <em>
@@ -274,39 +110,15 @@
         </em>
         <br>
         <br>
-        <label for="00NbU0000001klb" id="label_tipoSoggetto"></label>
-      
-        <select id="00NbU0000001klb" name="00NbU0000001klb">
-        </select>
-
-
-        <div id="ragioneSocialeWrapper" style="display:none;">
-          <label for="00NbU0000001klq" id="label_ragionesociale"></label>
-          <input id="00NbU0000001klq" name="00NbU0000001klq" type="text" />
-
-        </div>
-
 
         <label for="00NbU0000001kln" id="label_nome"></label>
         <input id="00NbU0000001kln" name="00NbU0000001kln" type="text" />
 
-
         <label for="00NbU0000001klf" id="label_cognome"></label>
         <input id="00NbU0000001klf" name="00NbU0000001klf" type="text" />
 
-
-
-
-
-
-       
-
-
-
-
         <label for="email" id="label_mail">Email:</label>
         <input id="email" maxlength="80" name="email" size="20" />
-
 
         <label for="00NbU0000002837" id="label_prefissotelefonico"></label>
         <select id="00NbU0000002837" name="00NbU0000002837">
@@ -314,98 +126,12 @@
 
         <label for="00NbU0000001klo" id="label_numerotelefonico"></label>
         <input id="00NbU0000001klo" name="00NbU0000001klo" type="text" />
-
-
-
-
-
       </fieldset>
+
       <fieldset>
-
-        <em>
-          <span id='label_introdatiintestatario'></span>
-        </em>
-        <br>
-
-
-
-
-
-        <label for="00NbU0000002bl3" id="label_accountTpl">
-        </label>
+        <label for="00NbU0000002bl3" id="label_accountTpl"></label>
         <select id="00NbU0000002bl3" name="00NbU0000002bl3">
-
         </select>
-
-
-        
-        <legend><span id="label_datiintestatario"> </span></legend>
-
-        
-  
-        <label for="00NbU0000001odt" id="label_nomeintestatario">Nome </label>
-        <input id="00NbU0000001odt" maxlength="100" name="00NbU0000001odt" size="20" type="text" />
-
-        <label for="00NbU0000001ofV" id="label_cognomeintestatario"></label>
-        <input id="00NbU0000001ofV" maxlength="200" name="00NbU0000001ofV" size="20" type="text" />
-
-
-
-        <label for="00NbU0000003FLt" id="label_cfintestatario"></label>
-        <input id="00NbU0000003FLt" maxlength="50" name="00NbU0000003FLt" size="20" type="text" />
-
-
-
-        
-<!--
-        <label for="00NbU0000001oij" id="label_nazioneintestatario"></label>
-        <input id="00NbU0000001oij" name="00NbU0000001oij" list="nazioniList" />
--->
-      
-
-
-
-
-   
-
-        
-
-
-
-
-
-        <label for="00NbU0000001oSb" id="label_numerotesserinoidentificativo"></label>
-        <input id="00NbU0000001oSb" name="00NbU0000001oSb" type="text" />
-
-
-
-
-
-
-        <label for="00NbU0000003tpZ" id="label_tipoabbonamento">  </label>
-        <select  id="00NbU0000003tpZ"  name="00NbU0000003tpZ"  >
-        </select>  
-
-       
-        
-
-        
-   
-
-
-
-        <!--
-        <label for="00NbU0000003Vk1" id="label_comuneiban"></label>
-        <input id="00NbU0000003Vk1" maxlength="255" name="00NbU0000003Vk1" size="20" type="text" />
--->
-
-
-
-
-
-
-
-
 
         <label for="description" id="label_descrizione"></label>
         <em>
@@ -414,83 +140,72 @@
         <br>
         <br>
         <textarea id="description" name="description" rows="10" maxlength="30000"></textarea>
-
       </fieldset>
 
-
-
-
       <fieldset>
-        <legend><span id="label_consensoobbligatorio"> </span></legend>
+        <legend><span id="label_consensoobbligatorio"></span></legend>
 
-
-        <label for="00NbU0000000KEr"   id="label_privacy" ></label>
-        <select  id="00NbU0000000KEr" name="00NbU0000000KEr"  >
-          <option value="">--</option><option value="Si/Yes">Sì/Yes</option>
-        <option value="No">No</option>
+        <label for="00NbU0000000KEr" id="label_privacy"></label>
+        <select id="00NbU0000000KEr" name="00NbU0000000KEr" class="toggle-consenso-select" data-iniziale="si">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
         </select><br>
       </fieldset>
-      <fieldset>
 
-         <legend><span id="label_consensofacoltativo"> </span></legend>   
+      <fieldset>
+        <legend><span id="label_consensofacoltativo"></span></legend>
 
         <label for="00NbU0000002hs5" id="label_indaginidemoscopiche"></label>
-        <select  id="00NbU0000002hs5" name="00NbU0000002hs5"  >
-          <option value="">--</option><option value="Si/Yes">Sì/Yes</option>
-        <option value="No">No</option>       
-
+        <select id="00NbU0000002hs5" name="00NbU0000002hs5" class="toggle-consenso-select" data-iniziale="no">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
         </select>
 
-      <label for="00NbU0000002hth" id="label_attivitacommerciali"></label>
-        <select  id="00NbU0000002hth" name="00NbU0000002hth"  >
-          <option value="">--</option><option value="Si/Yes">Sì/Yes</option>
-        <option value="No">No</option>
+        <label for="00NbU0000002hth" id="label_attivitacommerciali"></label>
+        <select id="00NbU0000002hth" name="00NbU0000002hth" class="toggle-consenso-select" data-iniziale="no">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
         </select>
 
-       <label for="00NbU0000002hvJ" id="label_analisipreferenze"></label>
-        <select  id="00NbU0000002hvJ" name="00NbU0000002hvJ"  >
-          <option value="">--</option><option value="Si/Yes">Sì/Yes</option>
-        <option value="No">No</option>
+        <label for="00NbU0000002hvJ" id="label_analisipreferenze"></label>
+        <select id="00NbU0000002hvJ" name="00NbU0000002hvJ" class="toggle-consenso-select" data-iniziale="no">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
         </select>
 
-
-      <label for="00NbU0000002hwv"  id="label_comunicazionepartner"></label>
-        <select  id="00NbU0000002hwv" name="00NbU0000002hwv"  >
-          <option value="">--</option><option value="Si/Yes">Sì/Yes</option>
-        <option value="No">No</option>
+        <label for="00NbU0000002hwv" id="label_comunicazionepartner"></label>
+        <select id="00NbU0000002hwv" name="00NbU0000002hwv" class="toggle-consenso-select" data-iniziale="no">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
         </select>
 
         <label for="00NbU0000002yOH" id="label_cessioneterzi"></label>
-        <select  id="00NbU0000002yOH" name="00NbU0000002yOH" title="Acconsente cessione terzi"><option value="">--</option><option value="Si/Yes">Sì/Yes</option>
-        <option value="No">No</option>
+        <select id="00NbU0000002yOH" name="00NbU0000002yOH" class="toggle-consenso-select" data-iniziale="no" title="Acconsente cessione terzi">
+          <option value="">--</option>
+          <option value="Si/Yes">Sì/Yes</option>
+          <option value="No">No</option>
         </select>
+      </fieldset>
 
+      <fieldset>
+        <label for="00NbU0000005bQL" id="label_camporiservatotplfvg"></label>
+        <input id="00NbU0000005bQL" maxlength="255" name="00NbU0000005bQL" size="20" type="text" /><br>
+      </fieldset>
 
-
-
-
-
-
-       </fieldset>  
-
-       <fieldset>
-         <label for="00NbU0000005bQL" id="label_camporiservatotplfvg"></label>
-      <input  id="00NbU0000005bQL" maxlength="255" name="00NbU0000005bQL" size="20" type="text" /><br>
-         </fieldset>
-
-
-      <!--Dati tracciamento consenso:-->
-      <input  id="00NbU0000004ild" name="00NbU0000004ild"  type="hidden"  />
-
-      <!--flag richiesta assistenza abbonamenti-->
+      <input id="00NbU0000004ild" name="00NbU0000004ild" type="hidden" />
       <input id="00NbU0000005BSf" name="00NbU0000005BSf" type="hidden" value="1" />
-
       <input type="hidden" id="external" name="external" value="1" /><br>
       <br>
+
       <div class="g-recaptcha" data-sitekey="6LcKTugqAAAAAB9mkWg5p3floGYNeNVAXY6Z6c8P"></div><br>
       <div id="captchaError" class="error-message" style="display: none;"></div>
 
-      <input type="submit" id="submitBtn" value="Invia Reclamo" />
+      <input type="submit" id="submitBtn" value="Invia richiesta" />
     </form>
   </div>
   <script>
@@ -503,6 +218,7 @@
       }
     });
   </script>
+  <script src="toggleConsensi.js"></script>
 </body>
 
 </html>
