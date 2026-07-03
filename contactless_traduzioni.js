@@ -35,6 +35,10 @@ const resources = {
         comunicazionepartner: "Acconsento a ricevere comunicazioni pubblicitarie e informazioni commerciali relative a prodotti o servizi di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate.",
         cessioneterzi: "Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing.",
         invia: "Invia segnalazione",
+        tipoSegnalazioneOptions: [
+          { value: "App Tpl Fvg", label: "App Tpl Fvg" },
+          { value: "Contactless a bordo", label: "Acquisto contactless a bordo" }
+        ],
         ultimo: ""
       },
       tooltips: {
@@ -46,10 +50,6 @@ const resources = {
         ultimequattrocifre: "Indica le ultime quattro cifre della carta o del wallet utilizzato, per aiutarci a identificare la transazione.",
         ultimo: ""
       },
-      tipoSegnalazioneOptions: [
-        { value: "App Tpl Fvg", label: "App Tpl Fvg" },
-        { value: "Contactless a bordo", label: "Acquisto contactless a bordo" }
-      ]
     }
   },
   en: {
@@ -88,6 +88,10 @@ const resources = {
         comunicazionepartner: "I agree to receive advertising and commercial information about products or services from third parties, partners of Tpl Fvg or of the consortium companies.",
         cessioneterzi: "I agree to the sharing of my personal data with third parties for commercial and marketing purposes.",
         invia: "Submit the report",
+        tipoSegnalazioneOptions: [
+          { value: "App Tpl Fvg", label: "Tpl Fvg app" },
+          { value: "Contactless a bordo", label: "Contactless purchase on board" }
+        ],
         ultimo: ""
       },
       tooltips: {
@@ -98,11 +102,7 @@ const resources = {
         tiposegnalazione: "Choose the area concerned by your report. Depending on the choice, additional specific fields will appear.",
         ultimequattrocifre: "Enter the last four digits of the card or wallet used, to help us identify the transaction.",
         ultimo: ""
-      },
-      tipoSegnalazioneOptions: [
-        { value: "App Tpl Fvg", label: "Tpl Fvg app" },
-        { value: "Contactless a bordo", label: "Contactless purchase on board" }
-      ]
+      }
     }
   }
 };

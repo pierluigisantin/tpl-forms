@@ -55,7 +55,7 @@
 
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
         caricaAziendeTPL("00NbU0000002bl3", aziendeTplUrl, t, []);
-        caricaOptionsTradotte("00NbU0000005F9x", t, "tipoSegnalazioneOptions");
+        caricaOptionsTradotte("00NbU0000005lgx", t, "tipoSegnalazioneOptions");
 
         aggiungiConfermaEmail();
 
@@ -66,7 +66,7 @@
           document.getElementById("00NbU0000004ild").value = json;
         })();
 
-        document.getElementById("00NbU0000005F9x")?.addEventListener("change", () => {
+        document.getElementById("00NbU0000005lgx")?.addEventListener("change", () => {
           gestisciCampiCondizionali();
         });
 
@@ -93,7 +93,7 @@
     });
 
     function gestisciCampiCondizionali() {
-      const tipo = document.getElementById("00NbU0000005F9x").value.toLowerCase();
+      const tipo = document.getElementById("00NbU0000005lgx").value.toLowerCase();
       const wrapperApp = document.getElementById("wrapperApp");
       const wrapperContactless = document.getElementById("wrapperContactless");
 
@@ -151,32 +151,32 @@
       <fieldset>
         <legend><span id="label_legendsegnalazione"></span></legend>
 
-        <label for="00NbU0000005F9x" id="label_tiposegnalazione"></label>
-        <select id="00NbU0000005F9x" name="00NbU0000005F9x">
+        <label for="00NbU0000005lgx" id="label_tiposegnalazione"></label>
+        <select id="00NbU0000005lgx" name="00NbU0000005lgx">
         </select>
 
         <label for="00NbU0000002bl3" id="label_accountTpl"></label>
         <select id="00NbU0000002bl3" name="00NbU0000002bl3">
         </select>
 
-        <label for="00NbU0000005FA1" id="label_dataevento"></label>
-        <input id="00NbU0000005FA1" name="00NbU0000005FA1" type="datetime-local" />
+        <label for="00NbU0000005lh2" id="label_dataevento"></label>
+        <input id="00NbU0000005lh2" name="00NbU0000005lh2" type="datetime-local" />
 
         <div id="wrapperApp" style="display:none;">
-          <label for="00NbU0000005FA6" id="label_sistemaoperativo"></label>
-          <select id="00NbU0000005FA6" name="00NbU0000005FA6">
+          <label for="00NbU0000005lhH" id="label_sistemaoperativo"></label>
+          <select id="00NbU0000005lhH" name="00NbU0000005lhH">
             <option value="">--</option>
             <option value="Android">Android</option>
             <option value="iOS">iOS</option>
           </select>
 
-          <label for="00NbU0000005FAB" id="label_versioneapp"></label>
-          <input id="00NbU0000005FAB" name="00NbU0000005FAB" type="text" />
+          <label for="00NbU0000005lhM" id="label_versioneapp"></label>
+          <input id="00NbU0000005lhM" name="00NbU0000005lhM" type="text" />
         </div>
 
         <div id="wrapperContactless" style="display:none;">
-          <label for="00NbU0000005FAG" id="label_tipocarta"></label>
-          <select id="00NbU0000005FAG" name="00NbU0000005FAG">
+          <label for="00NbU0000005lhR" id="label_tipocarta"></label>
+          <select id="00NbU0000005lhR" name="00NbU0000005lhR">
             <option value="">--</option>
             <option value="Carta di credito">Carta di credito</option>
             <option value="Carta di debito">Carta di debito</option>
@@ -184,8 +184,8 @@
             <option value="Wallet">Wallet (Apple Pay, Google Pay, ecc.)</option>
           </select>
 
-          <label for="00NbU0000005FAL" id="label_ultimequattrocifre"></label>
-          <input id="00NbU0000005FAL" name="00NbU0000005FAL" type="text" maxlength="4" />
+          <label for="00NbU0000005lhW" id="label_ultimequattrocifre"></label>
+          <input id="00NbU0000005lhW" name="00NbU0000005lhW" type="text" maxlength="4" />
         </div>
 
         <label for="description" id="label_descrizione"></label>
