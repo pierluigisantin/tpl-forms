@@ -1,0 +1,9 @@
+{
+  "aziende": [
+    { "id": "001bU000007ZgOZQA0", "name": "Gorizia" },
+    { "id": "001bU000007ZTeSQAW", "name": "Udine" },
+    { "id": "001bU000007ZbggQAC", "name": "Pordenone" },
+  { "id": "001bU000007ZNZ2QAO", "name": "Trieste" },
+  { "id": "001bU000007Q8fWQAS", "name": "Fvg" }
+  ]
+}
