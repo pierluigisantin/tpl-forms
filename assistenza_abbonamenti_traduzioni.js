@@ -15,7 +15,7 @@ const resources = {
         email_confirm_label: "Ripeti e-mail",
         email_invalid: "Verifica l'indirizzo e-mail.",
         email_mismatch: "Verifica l'indirizzo e-mail.",
-        accountTpl: "Provincia di riferimento",
+        accountTpl: "Territorio di riferimento",
         descrizione: "Descrivi la tua richiesta",
         introdescrizione: "Per aiutarci a identificare e risolvere il problema, indica nel testo: l'indirizzo di posta elettronica associato al tuo account Tpl Fvg, il nome, il cognome, il codice fiscale e il numero di tesserino identificativo delle persone che richiedono l'agevolazione, il tipo di abbonamento e ogni altra informazione che ritieni utile.",
         camporiservatotplfvg: "Campo riservato a Tpl Fvg",
@@ -33,7 +33,7 @@ const resources = {
       tooltips: {
         prefissotelefonico: "Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39.",
         numerotelefonico: "Indica un numero di cellulare dove gli operatori di Tpl Fvg possano contattarti in caso di necessità.",
-        accountTpl: "Indica l'azienda consorziata di Tpl Fvg che gestisce la linea o il servizio a cui si riferisce la richiesta. Se non conosci l'azienda, seleziona l'opzione Tpl Fvg.",
+        accountTpl: "Scegli la provincia o il territorio dove usi prevalentemente il servizio, oppure quello dell'azienda consorziata da cui hai acquistato o intendi acquistare l'abbonamento.",
         ultimo: ""
       }
     }
