@@ -45,8 +45,8 @@ const resources = {
       tooltips: {
         prefissotelefonico: "Seleziona il prefisso internazionale fra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39.",
         numerotelefonico: "Indica un numero di cellulare dove gli operatori di Tpl Fvg possano contattarti in caso di necessità.",
-        numerotesserinoidentificativo: `<div>È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati con quel tesserino.<br/><br/><img src="abbonamento_numero_tesserino.png" alt="Tesserino esempio" style="max-width: 100%; height: auto;"/></div>`,
-        percorsoabbonamento: `<div>Scrivi il percorso esattamente come compare sull'abbonamento, nella riga evidenziata nell'immagine. Per esempio: GEMONA &gt;&gt; UDINE Via &gt; COMPRESO transito BUJA &lt;.<br/><br/><img src="abbonamento_percorso.png" alt="Esempio di abbonamento scolastico" style="max-width: 100%; height: auto;"/></div>`,
+        numerotesserinoidentificativo: `<div>È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati con quel tesserino.<br/><br/><img src="abbonamento_numero_tesserino.png" alt="Tesserino esempio" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
+        percorsoabbonamento: `<div>Scrivi il percorso esattamente come compare sull'abbonamento, nella riga evidenziata nell'immagine. Per esempio: GEMONA &gt;&gt; UDINE Via &gt; COMPRESO transito BUJA &lt;.<br/><br/><img src="abbonamento_percorso.png" alt="Esempio di abbonamento scolastico" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
         ultimo: ""
       }
     }
@@ -97,8 +97,8 @@ const resources = {
       tooltips: {
         prefissotelefonico: "Select the international dialing code from the list. The default value is +39.",
         numerotelefonico: "Please enter a mobile number where Tpl Fvg operators can contact you if necessary.",
-        numerotesserinoidentificativo: `<div>This is the seven-digit number that uniquely identifies the pass holder. It can be found both on the ID card and on the passes purchased with that card.<br/><br/><img src="abbonamento_numero_tesserino.png" alt="Sample ID card" style="max-width: 100%; height: auto;"/></div>`,
-        percorsoabbonamento: `<div>Enter the route exactly as it appears on the pass, in the line highlighted in the image. For example: GEMONA &gt;&gt; UDINE Via &gt; COMPRESO transito BUJA &lt;.<br/><br/><img src="abbonamento_percorso.png" alt="Example of a school pass" style="max-width: 100%; height: auto;"/></div>`,
+        numerotesserinoidentificativo: `<div>This is the seven-digit number that uniquely identifies the pass holder. It can be found both on the ID card and on the passes purchased with that card.<br/><br/><img src="abbonamento_numero_tesserino.png" alt="Sample ID card" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
+        percorsoabbonamento: `<div>Enter the route exactly as it appears on the pass, in the line highlighted in the image. For example: GEMONA &gt;&gt; UDINE Via &gt; COMPRESO transito BUJA &lt;.<br/><br/><img src="abbonamento_percorso.png" alt="Example of a school pass" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
         ultimo: ""
       }
     }
