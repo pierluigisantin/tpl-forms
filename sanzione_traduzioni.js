@@ -65,13 +65,12 @@
         introdescrizione:"Spiega in modo chiaro e completo perché la sanzione viene contestata. Tpl Fvg e le aziende consorziate effettueranno tutte le verifiche necessarie per ricostruire quanto successo. Presenta ricorso solo se ci sono motivazioni oggettive e documentabili a supporto della richiesta. Se il ricorso viene respinto, potrà essere richiesto il pagamento della sanzione nella misura massima di 210,00 euro, oltre al costo del biglietto e alle eventuali spese di procedimento. <a href='https://tplfvg.it/it/sanzioni/normesanzioni' target='_blank' rel='noopener noreferrer'>Fai clic qui per maggiori informazioni.</a>",
         avvertenzaprimadiinvio:"Dopo l’invio del modulo riceverai una e-mail di conferma. Per completare il ricorso, rispondi all'e-mail allegando: 1) copia del verbale (se disponibile); 2) copia fronte e retro del documento d’identità della persona sanzionata (o del genitore/tutore se la persona sanzionata è minorenne); 3) altri documenti utili all’istruttoria.",
         consensoobbligatorio:"CONSENSO OBBLIGATORIO",
-          privacy: "Dichiaro di aver letto e compreso l’informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it.",
+          privacy: "Ho letto e compreso l'informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e <a href=\"https://tplfvg.it/it/azienda/mia-privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">accessibile tramite questo link</a>.",
           consensofacoltativo:"CONSENSI FACOLTATIVI",
-          indaginidemoscopiche:"Acconsento a essere contattato da Tpl Fvg per partecipare a indagini demoscopiche o ricerche di mercato sul servizio di trasporto pubblico locale.",
-          attivitacommerciali:"Acconsento a ricevere comunicazioni relative a offerte e agevolazioni sui servizi di Tpl Fvg e delle aziende consorziate.",
-          analisipreferenze:"Acconsento all’analisi delle mie preferenze e abitudini di utilizzo del trasporto pubblico locale, anche mediante elaborazioni elettroniche, al fine di migliorare l’offerta e ricevere comunicazioni personalizzate da parte di Tpl Fvg.",
-          comunicazionepartner:"Acconsento a ricevere comunicazioni pubblicitarie e informazioni commerciali relative a prodotti o servizi di soggetti terzi, partner di Tpl Fvg o delle aziende consorziate.",
-          cessioneterzi:"Acconsento alla comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing.",
+          indaginidemoscopiche:"Partecipazione a indagini demoscopiche o ricerche di mercato sul servizio di trasporto pubblico locale.",
+          attivitacommerciali:"Comunicazioni relative a offerte e agevolazioni sui servizi di Tpl Fvg e delle aziende consorziate.",
+          comunicazionepartner:"Informazioni commerciali relative a prodotti o servizi di soggetti terzi, partner di Tpl Fvg.",
+          cessioneterzi:"Comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing.",
 
         invia:"Invia",
 
@@ -180,13 +179,12 @@
 
         
         consensoobbligatorio: "MANDATORY CONSENT",
-          privacy: "I declare that I have read and understood the Tpl Fvg privacy policy, available on the website www.tplfvg.it and accessible via the link below.",
+          privacy: "I have read and understood the Tpl Fvg privacy policy, available on the website www.tplfvg.it and <a href=\"https://tplfvg.it/it/azienda/mia-privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">accessible via this link</a>.",
           consensofacoltativo: "OPTIONAL CONSENTS",
-          indaginidemoscopiche: "I agree to be contacted by Tpl Fvg to take part in surveys or market research about local public transport services.",
-          attivitacommerciali: "I agree to receive information about offers and discounts on services provided by Tpl Fvg and the companies that are part of the consortium.",
-          analisipreferenze: "I agree to the analysis of my preferences and habits in using local public transport, including electronic processing, to improve the service and receive personalised messages from Tpl Fvg.",
-          comunicazionepartner: "I agree to receive advertising and commercial information about products or services from third parties, partners of Tpl Fvg or of the consortium companies.",
-          cessioneterzi: "I agree to the sharing of my personal data with third parties for commercial and marketing purposes.",
+          indaginidemoscopiche: "Taking part in surveys or market research on local public transport services.",
+          attivitacommerciali: "Information about offers and discounts on the services of Tpl Fvg and its consortium companies.",
+          comunicazionepartner: "Commercial information about products or services of third parties that are partners of Tpl Fvg.",
+          cessioneterzi: "Sharing of my personal data with third parties for commercial and marketing purposes.",
 
         invia:"Submit the form",
 
@@ -292,7 +290,6 @@ The municipality where the fine was issued is also usually indicated on the repo
              consensofacoltativo: "NEOBVEZNA SOGLASJA",
              indaginidemoscopiche: "Soglašam, da me Tpl Fvg kontaktira za sodelovanje v anketah ali tržnih raziskavah o storitvi javnega lokalnega prevoza.",
              attivitacommerciali: "Soglašam s prejemanjem sporočil o ponudbah in ugodnostih za storitve Tpl Fvg in konzorcijskih podjetij.",
-             analisipreferenze: "Soglašam z analizo mojih preferenc in navad pri uporabi javnega lokalnega prevoza, vključno z elektronsko obdelavo, z namenom izboljšanja ponudbe in prejemanja prilagojenih sporočil Tpl Fvg.",
              comunicazionepartner: "Soglašam s prejemanjem oglaševalskih sporočil in komercialnih informacij o izdelkih ali storitvah tretjih oseb, partnerjev Tpl Fvg ali konzorcijskih podjetij.",
              cessioneterzi: "Soglašam s posredovanjem mojih osebnih podatkov tretjim osebam v komercialne in trženjske namene.",
 
