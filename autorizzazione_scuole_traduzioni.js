@@ -17,12 +17,20 @@ const resources = {
         email_mismatch: "Verifica l'indirizzo e-mail.",
         prefissotelefonico: "Prefisso telefonico internazionale",
         numerotelefonico: "Numero di cellulare",
-        numerotesserinoidentificativo: "Numero di tesserino identificativo dell'intestatario",
-        nomeintestatario: "Nome dell'intestatario",
-        cognomeintestatario: "Cognome dell'intestatario",
+        numerotesserinoidentificativo: "Numero di tesserino identificativo dello studente intestatario",
+        nomeintestatario: "Nome dello studente intestatario",
+        cognomeintestatario: "Cognome dello studente intestatario",
         percorsoabbonamento: "Percorso indicato sull'abbonamento",
         descrizione: "Descrivi la soluzione che hai individuato",
-        introdescrizione: `Se hai individuato una linea o un percorso più adatti alle tue esigenze rispetto a quelli previsti dal tuo abbonamento, indica con esattezza:<br>1) i giorni della settimana in cui vorresti usare la soluzione alternativa;<br>2) la linea che intendi usare;<br>3) la località di origine e la località di destinazione del viaggio.<br><br>Per cercare una soluzione alternativa puoi usare il travel planner di Tpl Fvg: <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">Infomobilità Tpl Fvg</a>.<br><br>Gli uffici di Tpl Fvg valuteranno la soluzione che proponi. Se sarà autorizzata, potrà essere rilasciata solo a chi possiede già un abbonamento.<br><br>Se vuoi inviare allegati, invia prima questo modulo: riceverai un'e-mail di conferma dell'apertura della richiesta, a cui potrai rispondere allegando documenti o screenshot.`,
+        introdescrizione: `<p>Se hai individuato una linea o un percorso più adatti alle esigenze dello studente rispetto a quelli previsti dall'abbonamento, indica con esattezza:</p>
+          <ol>
+            <li>i giorni della settimana in cui vorresti usare la soluzione alternativa;</li>
+            <li>la linea che intendi usare;</li>
+            <li>la località di origine e la località di destinazione del tratto da integrare, non previsto dall'abbonamento già in tuo possesso.</li>
+          </ol>
+          <p>Per cercare una soluzione alternativa puoi usare il <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">travel planner di Tpl Fvg a questo link</a>.</p>
+          <p>Gli uffici di Tpl Fvg valuteranno la soluzione che proponi. Se sarà accolta, riceverai un'autorizzazione scritta, da portare sempre in viaggio ed esibire insieme con l'abbonamento. L'autorizzazione può essere rilasciata solo a chi possiede già un abbonamento per i servizi di Arriva Udine.</p>
+          <p>Per aggiungere allegati, compila e invia prima questo modulo: riceverai un'e-mail di presa in carico della richiesta. Rispondi a quell'e-mail allegando i documenti o gli screenshot che ritieni utili.</p>`,
         camporiservatotplfvg: "Campo riservato a Tpl Fvg",
         consensoobbligatorio: "CONSENSO OBBLIGATORIO",
         privacy: "Dichiaro di aver letto e compreso l'informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e accessibile tramite il link riportato qui sotto.",
@@ -62,12 +70,20 @@ const resources = {
         email_mismatch: "Please check the e-mail address.",
         prefissotelefonico: "International dialing code",
         numerotelefonico: "Mobile number",
-        numerotesserinoidentificativo: "Pass holder's ID card number",
-        nomeintestatario: "Pass holder's first name",
-        cognomeintestatario: "Pass holder's last name",
+        numerotesserinoidentificativo: "ID card number of the student holding the pass",
+        nomeintestatario: "First name of the student holding the pass",
+        cognomeintestatario: "Last name of the student holding the pass",
         percorsoabbonamento: "Route shown on the pass",
         descrizione: "Describe the solution you have found",
-        introdescrizione: `If you have found a line or route that suits your needs better than the one covered by your pass, please state exactly:<br>1) the days of the week when you would like to use the alternative solution;<br>2) the line you intend to use;<br>3) the place of departure and the place of destination of the journey.<br><br>To look for an alternative solution you can use the Tpl Fvg travel planner: <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">Tpl Fvg travel info</a>.<br><br>Tpl Fvg will assess the solution you propose. If approved, it can only be granted to holders of an existing pass.<br><br>If you want to send attachments, submit this form first: you will receive a confirmation e-mail, and you can reply to it attaching documents or screenshots.`,
+        introdescrizione: `<p>If you have found a line or route that suits the student's needs better than the ones covered by the pass, please state exactly:</p>
+          <ol>
+            <li>the days of the week when you would like to use the alternative solution;</li>
+            <li>the line you intend to use;</li>
+            <li>the place of departure and the place of destination of the section to be added, not covered by the pass you already hold.</li>
+          </ol>
+          <p>To look for an alternative solution you can use the <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">Tpl Fvg travel planner at this link</a>.</p>
+          <p>Tpl Fvg will assess the solution you propose. If it is accepted, you will receive a written authorisation, to be carried at all times when travelling and shown together with the pass. The authorisation can only be granted to holders of an existing pass for Arriva Udine services.</p>
+          <p>To add attachments, first fill in and submit this form: you will receive an e-mail confirming that your request has been taken in charge. Reply to that e-mail attaching any documents or screenshots you think useful.</p>`,
         camporiservatotplfvg: "Reserved field for Tpl Fvg",
         consensoobbligatorio: "MANDATORY CONSENT",
         privacy: "I declare that I have read and understood the Tpl Fvg privacy policy, available on the website www.tplfvg.it and accessible via the link below.",

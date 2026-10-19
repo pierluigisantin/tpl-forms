@@ -7,6 +7,40 @@
   <title>Form estensione abbonamento scolastico</title>
   <link rel="stylesheet" href="webToCaseStyle.css" />
   <link rel="stylesheet" href="toggleConsensi.css" />
+  <style>
+    #formReclamo #label_introanagrafica {
+      display: block;
+      text-align: center;
+    }
+
+    #formReclamo #label_descrizione {
+      margin-top: 4px;
+      font-weight: 700;
+    }
+
+    #formReclamo #label_introdescrizione {
+      display: block;
+      margin-bottom: 0.4em;
+      color: #333;
+      font-size: 1.1em;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    #formReclamo #label_introdescrizione p {
+      margin: 0 0 1em;
+    }
+
+    #formReclamo #label_introdescrizione p:last-child {
+      margin-bottom: 0;
+    }
+
+    #formReclamo #label_introdescrizione ol {
+      margin: 0 0 1em;
+      padding-left: 1.5em;
+    }
+  </style>
 
   <script src="https://unpkg.com/i18next@22.4.10/i18next.min.js"></script>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -143,11 +177,7 @@
         <legend><span id="label_legendasoluzione"></span></legend>
 
         <label for="description" id="label_descrizione"></label>
-        <em>
-          <span id='label_introdescrizione'></span>
-        </em>
-        <br>
-        <br>
+        <span id="label_introdescrizione"></span>
         <textarea id="description" name="description" rows="10" maxlength="30000"></textarea>
       </fieldset>
 
