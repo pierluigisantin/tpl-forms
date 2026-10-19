@@ -22,12 +22,12 @@ const resources = {
         cognomeintestatario: "Cognome dello studente intestatario",
         percorsoabbonamento: "Percorso indicato sull'abbonamento",
         descrizione: "Descrivi la soluzione che hai individuato",
-        introdescrizione: `<p>Se hai individuato una linea o un percorso più adatti alle esigenze dello studente rispetto a quelli previsti dall'abbonamento, indica con esattezza:</p>
-          <ol>
+        introdescrizione: `<p>Se hai individuato una linea o un percorso più adatti alle esigenze dello studente rispetto a quelli previsti dall'abbonamento in tuo possesso, indica con esattezza:</p>
+          <ul>
             <li>i giorni della settimana in cui vorresti usare la soluzione alternativa;</li>
             <li>la linea che intendi usare;</li>
-            <li>la località di origine e la località di destinazione del tratto da integrare, non previsto dall'abbonamento già in tuo possesso.</li>
-          </ol>
+            <li>la località di origine e la località di destinazione del tratto da integrare, non previsto dall'abbonamento.</li>
+          </ul>
           <p>Per cercare una soluzione alternativa puoi usare il <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">travel planner di Tpl Fvg a questo link</a>.</p>
           <p>Gli uffici di Tpl Fvg valuteranno la soluzione che proponi. Se sarà accolta, riceverai un'autorizzazione scritta da portare in viaggio ed <strong>esibire insieme con l'abbonamento</strong>. L'autorizzazione può essere rilasciata solo a chi possiede già un abbonamento per i servizi di Arriva Udine.</p>
           <p>Per aggiungere eventuali allegati, compila e invia prima questo modulo: riceverai un'e-mail di conferma a cui potrai rispondere allegando i documenti o gli screenshot che ritieni utili.</p>`,
@@ -45,8 +45,8 @@ const resources = {
       tooltips: {
         prefissotelefonico: "Seleziona il prefisso internazionale fra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39.",
         numerotelefonico: "Indica un numero di cellulare dove gli operatori di Tpl Fvg possano contattarti in caso di necessità.",
-        numerotesserinoidentificativo: `<div>È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati con quel tesserino.<br/><br/><img src="abbonamento_numero_tesserino.png" alt="Tesserino esempio" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
-        percorsoabbonamento: `<div>Scrivi il percorso esattamente come compare sull'abbonamento, nella riga evidenziata nell'immagine. Per esempio: GEMONA &gt;&gt; UDINE Via &gt; COMPRESO transito BUJA &lt;.<br/><br/><img src="abbonamento_percorso.png" alt="Esempio di abbonamento scolastico" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
+        numerotesserinoidentificativo: `<div><img src="abbonamento_numero_tesserino.png" alt="Tesserino esempio" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
+        percorsoabbonamento: `<div><img src="abbonamento_percorso.png" alt="Esempio di abbonamento scolastico" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
         ultimo: ""
       }
     }
@@ -74,12 +74,12 @@ const resources = {
         cognomeintestatario: "Last name of the student holding the pass",
         percorsoabbonamento: "Route shown on the pass",
         descrizione: "Describe the solution you have found",
-        introdescrizione: `<p>If you have found a line or route that suits the student's needs better than the ones covered by the pass, please state exactly:</p>
-          <ol>
+        introdescrizione: `<p>If you have found a line or route that suits the student's needs better than the ones covered by the pass you hold, please state exactly:</p>
+          <ul>
             <li>the days of the week when you would like to use the alternative solution;</li>
             <li>the line you intend to use;</li>
-            <li>the place of departure and the place of destination of the section to be added, not covered by the pass you already hold.</li>
-          </ol>
+            <li>the place of departure and the place of destination of the section to be added, not covered by the pass.</li>
+          </ul>
           <p>To look for an alternative solution you can use the <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">Tpl Fvg travel planner at this link</a>.</p>
           <p>Tpl Fvg will assess the solution you propose. If it is accepted, you will receive a written authorisation to be carried when travelling and <strong>shown together with the pass</strong>. The authorisation can only be granted to holders of an existing pass for Arriva Udine services.</p>
           <p>To add any attachments, first fill in and submit this form: you will receive a confirmation e-mail, which you can reply to attaching any documents or screenshots you think useful.</p>`,
@@ -97,8 +97,8 @@ const resources = {
       tooltips: {
         prefissotelefonico: "Select the international dialing code from the list. The default value is +39.",
         numerotelefonico: "Please enter a mobile number where Tpl Fvg operators can contact you if necessary.",
-        numerotesserinoidentificativo: `<div>This is the seven-digit number that uniquely identifies the pass holder. It can be found both on the ID card and on the passes purchased with that card.<br/><br/><img src="abbonamento_numero_tesserino.png" alt="Sample ID card" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
-        percorsoabbonamento: `<div>Enter the route exactly as it appears on the pass, in the line highlighted in the image. For example: GEMONA &gt;&gt; UDINE Via &gt; COMPRESO transito BUJA &lt;.<br/><br/><img src="abbonamento_percorso.png" alt="Example of a school pass" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
+        numerotesserinoidentificativo: `<div><img src="abbonamento_numero_tesserino.png" alt="Sample ID card" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
+        percorsoabbonamento: `<div><img src="abbonamento_percorso.png" alt="Example of a school pass" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
         ultimo: ""
       }
     }

@@ -26,6 +26,16 @@
       text-align: left;
     }
 
+    #formReclamo #label_introanagrafica,
+    #formReclamo #label_introdescrizione,
+    #formReclamo #label_introdescrizione p,
+    #formReclamo #label_introdescrizione ul,
+    #formReclamo #label_introdescrizione li {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      letter-spacing: normal;
+      line-height: 1.5;
+    }
+
     #formReclamo #label_introdescrizione p {
       margin: 0 0 1em;
     }
@@ -34,9 +44,31 @@
       margin-bottom: 0;
     }
 
-    #formReclamo #label_introdescrizione ol {
+    #formReclamo #label_introdescrizione ul {
+      list-style: none;
       margin: 0 0 1em;
-      padding-left: 1.5em;
+      padding: 0;
+    }
+
+    #formReclamo #label_introdescrizione li {
+      position: relative;
+      margin: 0 0 0.35em;
+      padding-left: 0.75em;
+    }
+
+    #formReclamo #label_introdescrizione li:last-child {
+      margin-bottom: 0;
+    }
+
+    #formReclamo #label_introdescrizione li::before {
+      content: "";
+      position: absolute;
+      top: 0.62em;
+      left: 0;
+      width: 0.3em;
+      height: 0.3em;
+      border-radius: 50%;
+      background-color: #007B87;
     }
   </style>
 
