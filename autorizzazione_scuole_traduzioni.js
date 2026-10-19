@@ -2,7 +2,8 @@ const resources = {
   it: {
     translation: {
       labels: {
-        legendanagrafica: "DATI ANAGRAFICI DEL GENITORE O DEL TUTORE, SE L'INTESTATARIO DELL'ABBONAMENTO SCOLASTICO È MINORENNE, OPPURE DELLO STUDENTE, SE È MAGGIORENNE",
+        legendanagrafica: "DATI DI CHI PRESENTA LA RICHIESTA",
+        introanagrafica: "Se l'intestatario dell'abbonamento scolastico è minorenne, inserisci i dati di un genitore o del tutore. Se è maggiorenne, inserisci i dati dello studente.",
         legendaabbonamento: "DATI DELL'ABBONAMENTO SCOLASTICO DA INTEGRARE",
         legendasoluzione: "SOLUZIONE DA INTEGRARE CON IL TUO ABBONAMENTO",
         erroreCampoObbligatorio: "",
@@ -19,7 +20,7 @@ const resources = {
         numerotesserinoidentificativo: "Numero di tesserino identificativo dell'intestatario",
         nomeintestatario: "Nome dell'intestatario",
         cognomeintestatario: "Cognome dell'intestatario",
-        percorsoabbonamento: "Percorso indicato sull'abbonamento in tuo possesso",
+        percorsoabbonamento: "Percorso indicato sull'abbonamento",
         descrizione: "Descrivi la soluzione che hai individuato",
         introdescrizione: `Se hai individuato una linea o un percorso più adatti alle tue esigenze rispetto a quelli previsti dal tuo abbonamento, indica con esattezza:<br>1) i giorni della settimana in cui vorresti usare la soluzione alternativa;<br>2) la linea che intendi usare;<br>3) la località di origine e la località di destinazione del viaggio.<br><br>Per cercare una soluzione alternativa puoi usare il travel planner di Tpl Fvg: <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">Infomobilità Tpl Fvg</a>.<br><br>Gli uffici di Tpl Fvg valuteranno la soluzione che proponi. Se sarà autorizzata, potrà essere rilasciata solo a chi possiede già un abbonamento.<br><br>Se vuoi inviare allegati, invia prima questo modulo: riceverai un'e-mail di conferma dell'apertura della richiesta, a cui potrai rispondere allegando documenti o screenshot.`,
         camporiservatotplfvg: "Campo riservato a Tpl Fvg",
@@ -35,10 +36,10 @@ const resources = {
         ultimo: ""
       },
       tooltips: {
-        prefissotelefonico: "Seleziona il prefisso internazionale tra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39.",
+        prefissotelefonico: "Seleziona il prefisso internazionale fra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39.",
         numerotelefonico: "Indica un numero di cellulare dove gli operatori di Tpl Fvg possano contattarti in caso di necessità.",
-        numerotesserinoidentificativo: `<div>È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati con quel tesserino.<br/><br/><img src="immagine_tooltip_tesserino.png" alt="Tesserino esempio" style="max-width: 100%; height: auto;"/></div>`,
-        percorsoabbonamento: `<div>Scrivi il percorso esattamente come compare sull'abbonamento scolastico, nel punto evidenziato nell'immagine.<br/><br/><img src="immagine_tooltip_abbonamenti.png" alt="Esempio di abbonamento scolastico" style="max-width: 100%; height: auto;"/></div>`,
+        numerotesserinoidentificativo: `<div>È il numero di sette cifre che identifica in modo univoco il cliente abbonato: si trova sia sul tesserino identificativo sia sugli abbonamenti acquistati con quel tesserino.<br/><br/><img src="immagine_tooltip_tesserino_scuole.png" alt="Tesserino esempio" style="max-width: 100%; height: auto;"/></div>`,
+        percorsoabbonamento: `<div>Scrivi il percorso esattamente come compare sull'abbonamento, nella riga evidenziata nell'immagine. Per esempio: GEMONA &gt;&gt; UDINE Via &gt; COMPRESO transito BUJA &lt;.<br/><br/><img src="immagine_tooltip_percorso_scuole.png" alt="Esempio di abbonamento scolastico" style="max-width: 100%; height: auto;"/></div>`,
         ultimo: ""
       }
     }
@@ -46,7 +47,8 @@ const resources = {
   en: {
     translation: {
       labels: {
-        legendanagrafica: "PERSONAL DETAILS OF THE PARENT OR GUARDIAN, IF THE SCHOOL PASS HOLDER IS UNDER 18, OR OF THE STUDENT, IF 18 OR OVER",
+        legendanagrafica: "DETAILS OF THE PERSON SUBMITTING THE REQUEST",
+        introanagrafica: "If the school pass holder is under 18, enter the details of a parent or guardian. If the pass holder is 18 or over, enter the student's details.",
         legendaabbonamento: "DETAILS OF THE SCHOOL PASS TO BE EXTENDED",
         legendasoluzione: "SOLUTION TO ADD TO YOUR PASS",
         erroreCampoObbligatorio: "",
@@ -63,7 +65,7 @@ const resources = {
         numerotesserinoidentificativo: "Pass holder's ID card number",
         nomeintestatario: "Pass holder's first name",
         cognomeintestatario: "Pass holder's last name",
-        percorsoabbonamento: "Route shown on your current pass",
+        percorsoabbonamento: "Route shown on the pass",
         descrizione: "Describe the solution you have found",
         introdescrizione: `If you have found a line or route that suits your needs better than the one covered by your pass, please state exactly:<br>1) the days of the week when you would like to use the alternative solution;<br>2) the line you intend to use;<br>3) the place of departure and the place of destination of the journey.<br><br>To look for an alternative solution you can use the Tpl Fvg travel planner: <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">Tpl Fvg travel info</a>.<br><br>Tpl Fvg will assess the solution you propose. If approved, it can only be granted to holders of an existing pass.<br><br>If you want to send attachments, submit this form first: you will receive a confirmation e-mail, and you can reply to it attaching documents or screenshots.`,
         camporiservatotplfvg: "Reserved field for Tpl Fvg",
@@ -81,8 +83,8 @@ const resources = {
       tooltips: {
         prefissotelefonico: "Select the international dialing code from the list. The default value is +39.",
         numerotelefonico: "Please enter a mobile number where Tpl Fvg operators can contact you if necessary.",
-        numerotesserinoidentificativo: `<div>This is the seven-digit number that uniquely identifies the pass holder. It can be found both on the ID card and on the passes purchased with that card.<br/><br/><img src="immagine_tooltip_tesserino.png" alt="Sample ID card" style="max-width: 100%; height: auto;"/></div>`,
-        percorsoabbonamento: `<div>Enter the route exactly as it appears on your school pass, in the area highlighted in the image.<br/><br/><img src="immagine_tooltip_abbonamenti.png" alt="Example of a school pass" style="max-width: 100%; height: auto;"/></div>`,
+        numerotesserinoidentificativo: `<div>This is the seven-digit number that uniquely identifies the pass holder. It can be found both on the ID card and on the passes purchased with that card.<br/><br/><img src="immagine_tooltip_tesserino_scuole.png" alt="Sample ID card" style="max-width: 100%; height: auto;"/></div>`,
+        percorsoabbonamento: `<div>Enter the route exactly as it appears on the pass, in the line highlighted in the image. For example: GEMONA &gt;&gt; UDINE Via &gt; COMPRESO transito BUJA &lt;.<br/><br/><img src="immagine_tooltip_percorso_scuole.png" alt="Example of a school pass" style="max-width: 100%; height: auto;"/></div>`,
         ultimo: ""
       }
     }
