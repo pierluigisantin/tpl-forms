@@ -5,10 +5,9 @@ const resources = {
         legendanagrafica: "DATI DI CHI PRESENTA LA RICHIESTA",
         introanagrafica: "Se l'intestatario dell'abbonamento scolastico è minorenne, inserisci i dati di un genitore o del tutore. Se è maggiorenne, inserisci i dati dello studente.",
         legendaabbonamento: "DATI DELL'ABBONAMENTO SCOLASTICO DA INTEGRARE",
-        legendasoluzione: "SOLUZIONE DA INTEGRARE PER IL RITORNO DA SCUOLA",
+        legendasoluzione: "SOLUZIONE DA INTEGRARE CON IL TUO ABBONAMENTO",
         erroreCampoObbligatorio: "Compila questo campo.",
         giorniObbligatori: "Seleziona almeno un giorno della settimana.",
-        erroreOrarioFascia: "Puoi indicare solo corse in partenza fra le 12:00 e le 18:00.",
         erroreCaptcha: "Conferma di non essere un robot spuntando la casella.",
         valoreNonValidoDatalist: "Seleziona un'opzione dall'elenco.",
         seleziona: "--Seleziona--",
@@ -44,7 +43,7 @@ const resources = {
             <li>la fermata o la località di partenza e quella di arrivo del tratto da integrare.</li>
           </ul>
           <p>L'integrazione vale solo per le corse in partenza fra le 12:00 e le 18:00, dal lunedì al sabato, esclusi i giorni festivi.</p>
-          <p>Per cercare una soluzione alternativa puoi usare il <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">travel planner di Tpl Fvg a questo link</a>. Per evitare ambiguità, riporta nel modulo gli orari e i nomi delle fermate indicati nel travel planner. Se ci sono cambi intermedi o altre informazioni utili, scrivile nel campo NOTE O CAMBI INTERMEDI.</p>
+          <p>Per cercare una soluzione alternativa puoi usare il <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">travel planner di Tpl Fvg a questo link</a>. Per evitare ambiguità, riporta nel modulo gli orari e i nomi delle fermate indicati nel travel planner. Se ci sono cambi intermedi o altre informazioni che ritieni utili, scrivile nel campo NOTE O CAMBI INTERMEDI.</p>
           <p>Gli uffici di Tpl Fvg valuteranno la soluzione che proponi. Se sarà accolta, riceverai un'autorizzazione scritta da portare in viaggio ed <strong>esibire insieme con l'abbonamento</strong>. L'autorizzazione può essere rilasciata solo a chi possiede già un abbonamento per i servizi erogati da Arriva Udine.</p>`,
         camporiservatotplfvg: "Campo riservato a Tpl Fvg",
         consensoobbligatorio: "CONSENSO OBBLIGATORIO",
@@ -72,10 +71,9 @@ const resources = {
         legendanagrafica: "DETAILS OF THE PERSON SUBMITTING THE REQUEST",
         introanagrafica: "If the school pass holder is under 18, enter the details of a parent or guardian. If the pass holder is 18 or over, enter the student's details.",
         legendaabbonamento: "DETAILS OF THE SCHOOL PASS TO BE EXTENDED",
-        legendasoluzione: "SOLUTION TO ADD FOR THE RETURN TRIP FROM SCHOOL",
+        legendasoluzione: "SOLUTION TO ADD TO YOUR PASS",
         erroreCampoObbligatorio: "Please fill in this field.",
         giorniObbligatori: "Please select at least one day of the week.",
-        erroreOrarioFascia: "You can only enter runs departing between 12:00 and 18:00.",
         erroreCaptcha: "Please confirm you are not a robot by ticking the box.",
         valoreNonValidoDatalist: "Select an option from the list.",
         seleziona: "--Select--",
@@ -111,7 +109,7 @@ const resources = {
             <li>the departure stop or place and the arrival stop or place of the section to be added.</li>
           </ul>
           <p>The integration only applies to runs departing between 12:00 and 18:00, Monday to Saturday, excluding public holidays.</p>
-          <p>To look for an alternative solution you can use the <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">Tpl Fvg travel planner at this link</a>. To avoid any ambiguity, enter in the form the times and stop names shown in the travel planner. If there are intermediate changes or other useful information, write them in the NOTES OR INTERMEDIATE CHANGES field.</p>
+          <p>To look for an alternative solution you can use the <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">Tpl Fvg travel planner at this link</a>. To avoid any ambiguity, enter in the form the times and stop names shown in the travel planner. If there are intermediate changes or other information you think useful, write them in the NOTES OR INTERMEDIATE CHANGES field.</p>
           <p>Tpl Fvg will assess the solution you propose. If it is accepted, you will receive a written authorisation to be carried when travelling and <strong>shown together with the pass</strong>. The authorisation can only be granted to holders of an existing pass for services operated by Arriva Udine.</p>`,
         camporiservatotplfvg: "Reserved field for Tpl Fvg",
         consensoobbligatorio: "MANDATORY CONSENT",

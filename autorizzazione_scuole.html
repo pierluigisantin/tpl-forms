@@ -14,9 +14,26 @@
     }
 
     #formReclamo #label_descrizione {
-      margin-top: 4px;
+      display: none;
+    }
+
+    #formReclamo .orario-selects {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 5px;
+    }
+
+    #formReclamo .orario-selects select {
+      width: 90px;
+      min-width: 90px;
+      margin-top: 0;
+    }
+
+    #formReclamo .orario-separatore {
+      font-size: 1.3rem;
       font-weight: 700;
-      text-align: left;
+      color: #495057;
     }
 
     #formReclamo .giorni-settimana {
@@ -152,13 +169,75 @@
       "cognomeintestatario",
       "percorsoabbonamento",
       "linea_andata",
-      "orario_partenza_andata",
       "partenza_andata",
       "arrivo_andata",
       "privacy"
     ];
 
     var fields = [];
+
+    // L'orario di partenza non è nell'elenco dei campi obbligatori standard
+    // (è composto da due tendine): l'asterisco si aggiunge a mano.
+    function segnaOrarioObbligatorio() {
+      document.getElementById("label_orario_partenza_andata")?.classList.add("required");
+    }
+
+    // Costruisce il valore "HH:MM" nel campo nascosto usato dal riepilogo.
+    function aggiornaOrarioPartenza() {
+      const ore = document.getElementById("orario_partenza_ore");
+      const minuti = document.getElementById("orario_partenza_minuti");
+      const nascosto = document.getElementById("orario_partenza_andata");
+      if (!ore || !minuti || !nascosto) return;
+
+      // Con le 18 si può scegliere solo :00
+      const soloZero = ore.value === "18";
+      [...minuti.options].forEach(opt => {
+        if (opt.value === "" || opt.value === "00") {
+          opt.disabled = false;
+        } else {
+          opt.disabled = soloZero;
+        }
+      });
+      if (soloZero) minuti.value = "00";
+
+      nascosto.value = ore.value && minuti.value ? `${ore.value}:${minuti.value}` : "";
+    }
+
+    function caricaOpzioniOrario() {
+      const ore = document.getElementById("orario_partenza_ore");
+      const minuti = document.getElementById("orario_partenza_minuti");
+      if (!ore || !minuti) return;
+
+      ore.innerHTML = '<option value="">--</option>';
+      for (let h = 12; h <= 18; h++) {
+        const opt = document.createElement("option");
+        opt.value = String(h);
+        opt.textContent = String(h);
+        ore.appendChild(opt);
+      }
+
+      minuti.innerHTML = '<option value="">--</option>';
+      for (let m = 0; m <= 59; m++) {
+        const valore = String(m).padStart(2, "0");
+        const opt = document.createElement("option");
+        opt.value = valore;
+        opt.textContent = valore;
+        minuti.appendChild(opt);
+      }
+
+      ore.addEventListener("change", () => {
+        aggiornaOrarioPartenza();
+        if (document.getElementById("error_orario_partenza_andata")?.style.display === "block") {
+          validaOrarioPartenza(false);
+        }
+      });
+      minuti.addEventListener("change", () => {
+        aggiornaOrarioPartenza();
+        if (document.getElementById("error_orario_partenza_andata")?.style.display === "block") {
+          validaOrarioPartenza(false);
+        }
+      });
+    }
 
     document.addEventListener("DOMContentLoaded", () => {
       fields = estraiCampiDaLabel();
@@ -169,12 +248,7 @@
           if (errore?.style.display === "block") validaGiorni(false);
         });
       });
-      const orarioPartenza = document.getElementById("orario_partenza_andata");
-      orarioPartenza?.addEventListener("change", () => validaOrarioPartenza(false));
-      orarioPartenza?.addEventListener("invalid", event => {
-        event.preventDefault();
-        validaOrarioPartenza(true);
-      });
+      caricaOpzioniOrario();
 
       const langParam = new URLSearchParams(location.search).get("lang");
       lang = langParam || "it";
@@ -185,6 +259,7 @@
       i18next.init({ lng: lang, resources }, (_, tInstance) => {
         t = tInstance;
         aggiornaEtichette(t, fields);
+        segnaOrarioObbligatorio();
 
         const prefissiUrl = "prefissi.json";
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
@@ -207,6 +282,7 @@
               erroreCaptcha.textContent = newT("labels.erroreCaptcha");
             }
             aggiornaEtichette(newT, fields);
+            segnaOrarioObbligatorio();
             const erroreGiorni = document.getElementById("error_giorni_andata");
             if (erroreGiorni?.style.display === "block") validaGiorni(false, newT);
             const erroreOrario = document.getElementById("error_orario_partenza_andata");
@@ -216,6 +292,7 @@
         });
 
         document.getElementById("formReclamo")?.addEventListener("submit", e => {
+          aggiornaOrarioPartenza();
           const descrizione = document.getElementById("description");
           if (descrizione) descrizione.value = creaRiepilogoSoluzione();
 
@@ -260,52 +337,31 @@
       return validi;
     }
 
+    // Controlla solo che ore e minuti siano stati scelti:
+    // la fascia 12:00-18:00 è garantita dalle tendine stesse.
     function validaOrarioPartenza(mettiFocus = false, traduttore = t) {
-      const input = document.getElementById("orario_partenza_andata");
+      const ore = document.getElementById("orario_partenza_ore");
+      const minuti = document.getElementById("orario_partenza_minuti");
       const errore = document.getElementById("error_orario_partenza_andata");
-      if (!input) return false;
+      if (!ore || !minuti) return false;
 
-      const valore = input.value;
-      const messaggioObbligatorio =
+      const valido = ore.value !== "" && minuti.value !== "";
+      const messaggio =
         (typeof traduttore === "function" ? traduttore("labels.erroreCampoObbligatorio") : "") ||
         (lang === "en" ? "Please fill in this field." : "Compila questo campo.");
-      const messaggioFascia =
-        (typeof traduttore === "function" ? traduttore("labels.erroreOrarioFascia") : "") ||
-        (lang === "en"
-          ? "You can only enter runs departing between 12:00 and 18:00."
-          : "Puoi indicare solo corse in partenza fra le 12:00 e le 18:00.");
 
-      if (!valore) {
-        const giaInErrore = input.classList.contains("error") || errore?.style.display === "block";
-        if (giaInErrore && errore) {
-          input.classList.add("error");
-          input.setAttribute("aria-invalid", "true");
-          errore.textContent = messaggioObbligatorio;
-          errore.style.display = "block";
-        }
-        if (giaInErrore && mettiFocus) input.focus();
-        return false;
-      }
+      [ore, minuti].forEach(sel => {
+        sel.classList.toggle("error", !valido);
+        if (valido) sel.removeAttribute("aria-invalid");
+        else sel.setAttribute("aria-invalid", "true");
+      });
 
-      const valido = valore >= "12:00" && valore <= "18:00";
-      if (valido) {
-        input.classList.remove("error");
-        input.removeAttribute("aria-invalid");
-        if (errore) {
-          errore.textContent = "";
-          errore.style.display = "none";
-        }
-        return true;
-      }
-
-      input.classList.add("error");
-      input.setAttribute("aria-invalid", "true");
       if (errore) {
-        errore.textContent = messaggioFascia;
-        errore.style.display = "block";
+        errore.textContent = valido ? "" : messaggio;
+        errore.style.display = valido ? "none" : "block";
       }
-      if (mettiFocus) input.focus();
-      return false;
+      if (!valido && mettiFocus) (ore.value === "" ? ore : minuti).focus();
+      return valido;
     }
 
     function giorniSelezionati() {
@@ -430,8 +486,14 @@
         </div>
         <div class="error-message" id="error_giorni_andata" role="alert" style="display:none;"></div>
 
+        <!-- for punta al campo nascosto: così la validazione standard lo salta e lo controlla validaOrarioPartenza -->
         <label for="orario_partenza_andata" id="label_orario_partenza_andata"></label>
-        <input id="orario_partenza_andata" type="time" min="12:00" max="18:00" />
+        <div class="orario-selects">
+          <select id="orario_partenza_ore" aria-label="Ore"></select>
+          <span class="orario-separatore">:</span>
+          <select id="orario_partenza_minuti" aria-label="Minuti"></select>
+        </div>
+        <input id="orario_partenza_andata" type="hidden" />
         <div class="error-message" id="error_orario_partenza_andata" role="alert" style="display:none;"></div>
 
         <label for="partenza_andata" id="label_partenza_andata"></label>
