@@ -42,7 +42,7 @@ const resources = {
             <li>l'orario di partenza della corsa;</li>
             <li>la fermata o la località di partenza e quella di arrivo del tratto da integrare.</li>
           </ul>
-          <p><strong>L'integrazione vale solo per le corse in partenza fra le 12:00 e le 18:00, dal lunedì al sabato, esclusi i giorni festivi.</strong></p>
+          <p><strong>L'integrazione vale solo per le corse in partenza fra le 12:00 e le 18:00, dal lunedì al sabato.</strong></p>
           <p>Per cercare una soluzione alternativa puoi usare il <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">travel planner di Tpl Fvg a questo link</a>. Per evitare ambiguità, riporta nel modulo gli orari e i nomi delle fermate indicati nel travel planner. Se ci sono cambi intermedi o altre informazioni che ritieni utili, scrivile nel campo NOTE O CAMBI INTERMEDI.</p>
           <p>Gli uffici di Tpl Fvg valuteranno la soluzione che proponi. Se sarà accolta, riceverai un'autorizzazione scritta da portare in viaggio ed <strong>esibire insieme con l'abbonamento</strong>. L'autorizzazione può essere rilasciata solo a chi possiede già un abbonamento per i servizi erogati da Arriva Udine.</p>`,
         camporiservatotplfvg: "Campo riservato a Tpl Fvg",
