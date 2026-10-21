@@ -183,12 +183,10 @@
       "linea_andata",
       "orario_partenza_andata",
       "partenza_andata",
-      "orario_arrivo_andata",
       "arrivo_andata",
       "linea_ritorno",
       "orario_partenza_ritorno",
       "partenza_ritorno",
-      "orario_arrivo_ritorno",
       "arrivo_ritorno",
       "privacy"
     ];
@@ -203,7 +201,6 @@
         "linea_ritorno",
         "orario_partenza_ritorno",
         "partenza_ritorno",
-        "orario_arrivo_ritorno",
         "arrivo_ritorno"
       ];
       const aggiornaCampiRitorno = () => {
@@ -358,7 +355,7 @@
           `Linea: ${valore(`linea_${direzione}`)}`,
           `Giorni: ${giorniSelezionati(direzione)}`,
           `Partenza: ${valore(`orario_partenza_${direzione}`)} - ${valore(`partenza_${direzione}`)}`,
-          `Arrivo: ${valore(`orario_arrivo_${direzione}`)} - ${valore(`arrivo_${direzione}`)}`,
+          `Arrivo: ${valore(`arrivo_${direzione}`)}`,
           note ? `Note: ${note}` : ""
         ].filter(Boolean).join("\n");
       };
@@ -464,9 +461,6 @@
         <label for="partenza_andata" id="label_partenza_andata"></label>
         <input id="partenza_andata" type="text" />
 
-        <label for="orario_arrivo_andata" id="label_orario_arrivo_andata"></label>
-        <input id="orario_arrivo_andata" type="time" />
-
         <label for="arrivo_andata" id="label_arrivo_andata"></label>
         <input id="arrivo_andata" type="text" />
 
@@ -507,9 +501,6 @@
 
           <label for="partenza_ritorno" id="label_partenza_ritorno"></label>
           <input id="partenza_ritorno" type="text" />
-
-          <label for="orario_arrivo_ritorno" id="label_orario_arrivo_ritorno"></label>
-          <input id="orario_arrivo_ritorno" type="time" />
 
           <label for="arrivo_ritorno" id="label_arrivo_ritorno"></label>
           <input id="arrivo_ritorno" type="text" />

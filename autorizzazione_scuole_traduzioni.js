@@ -33,7 +33,6 @@ const resources = {
         dom_andata: "Dom",
         orario_partenza_andata: "Orario di partenza",
         partenza_andata: "Fermata o località di partenza",
-        orario_arrivo_andata: "Orario di arrivo",
         arrivo_andata: "Fermata o località di arrivo",
         note_andata: "Note o cambi intermedi",
         ritorno: "Ritorno",
@@ -48,7 +47,6 @@ const resources = {
         dom_ritorno: "Dom",
         orario_partenza_ritorno: "Orario di partenza",
         partenza_ritorno: "Fermata o località di partenza",
-        orario_arrivo_ritorno: "Orario di arrivo",
         arrivo_ritorno: "Fermata o località di arrivo",
         note_ritorno: "Note o cambi intermedi",
         introdescrizione: `<p>Se hai individuato una linea o un percorso più adatti alle esigenze dello studente rispetto a quelli previsti dall'abbonamento in tuo possesso, indica con esattezza:</p>
@@ -114,7 +112,6 @@ const resources = {
         dom_andata: "Sun",
         orario_partenza_andata: "Departure time",
         partenza_andata: "Departure stop or place",
-        orario_arrivo_andata: "Arrival time",
         arrivo_andata: "Arrival stop or place",
         note_andata: "Notes or intermediate changes",
         ritorno: "Return trip",
@@ -129,7 +126,6 @@ const resources = {
         dom_ritorno: "Sun",
         orario_partenza_ritorno: "Departure time",
         partenza_ritorno: "Departure stop or place",
-        orario_arrivo_ritorno: "Arrival time",
         arrivo_ritorno: "Arrival stop or place",
         note_ritorno: "Notes or intermediate changes",
         introdescrizione: `<p>If you have found a line or route that suits the student's needs better than the ones covered by the pass you hold, please state exactly:</p>
