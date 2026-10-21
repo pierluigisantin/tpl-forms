@@ -273,6 +273,10 @@
           lang = newLang;
           i18next.changeLanguage(newLang, () => {
             const newT = i18next.t.bind(i18next);
+            const erroreCaptcha = document.getElementById("captchaError");
+            if (erroreCaptcha?.style.display === "block") {
+              erroreCaptcha.textContent = newT("labels.erroreCaptcha");
+            }
             aggiornaEtichette(newT, fields);
             aggiornaCampiRitorno();
             ["andata", "ritorno"].forEach(direzione => {
@@ -298,6 +302,10 @@
             validCampi && validGiorniAndata
           );
           const validCaptcha = validaCaptcha(t, "captchaError");
+          if (!validCaptcha) {
+            const erroreCaptcha = document.getElementById("captchaError");
+            if (erroreCaptcha) erroreCaptcha.textContent = t("labels.erroreCaptcha");
+          }
 
           if (!validCampi || !validGiorniAndata || !validGiorniRitorno || !validCaptcha) {
             e.preventDefault();
@@ -313,8 +321,10 @@
       const validi = !richiesto || checkbox.some(input => input.checked);
       const errore = document.getElementById(`error_giorni_${direzione}`);
       const messaggio =
-        (typeof t === "function" ? t("labels.erroreCampoObbligatorio") : "") ||
-        (lang === "en" ? "This field is required." : "Questo campo è obbligatorio.");
+        (typeof t === "function" ? t("labels.giorniObbligatori") : "") ||
+        (lang === "en"
+          ? "Please select at least one day of the week."
+          : "Seleziona almeno un giorno della settimana.");
 
       checkbox.forEach(input => {
         if (validi) input.removeAttribute("aria-invalid");
