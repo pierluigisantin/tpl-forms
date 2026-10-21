@@ -19,35 +19,6 @@
       text-align: left;
     }
 
-    #formReclamo .ritorno-toggle {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 1rem 0;
-    }
-
-    #formReclamo .ritorno-toggle input[type="checkbox"] {
-      display: inline-block;
-      flex: 0 0 auto;
-      width: 1.1rem;
-      height: 1.1rem;
-      margin: 0;
-      padding: 0;
-      accent-color: #007B87;
-      cursor: pointer;
-    }
-
-    #formReclamo .ritorno-toggle label {
-      display: inline;
-      margin: 0;
-      color: #007B87;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: normal;
-      text-transform: none;
-      cursor: pointer;
-    }
-
     #formReclamo .giorni-settimana {
       display: flex;
       flex-wrap: wrap;
@@ -184,10 +155,6 @@
       "orario_partenza_andata",
       "partenza_andata",
       "arrivo_andata",
-      "linea_ritorno",
-      "orario_partenza_ritorno",
-      "partenza_ritorno",
-      "arrivo_ritorno",
       "privacy"
     ];
 
@@ -195,55 +162,18 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       fields = estraiCampiDaLabel();
-      const checkboxRitorno = document.getElementById("ritorno");
-      const campiRitorno = document.getElementById("campiRitorno");
-      const chiaviCampiObbligatoriRitorno = [
-        "linea_ritorno",
-        "orario_partenza_ritorno",
-        "partenza_ritorno",
-        "arrivo_ritorno"
-      ];
-      const aggiornaCampiRitorno = () => {
-        const ritornoAttivo = Boolean(checkboxRitorno?.checked);
-        if (campiRitorno) campiRitorno.hidden = !ritornoAttivo;
-        document.getElementById("label_giorni_andata")?.classList.add("required-day-group");
-        document.getElementById("label_giorni_ritorno")
-          ?.classList.toggle("required-day-group", ritornoAttivo);
-
-        chiaviCampiObbligatoriRitorno.forEach(key => {
-          const label = document.getElementById(`label_${key}`);
-          label?.classList.toggle("required", ritornoAttivo);
-
-          if (!ritornoAttivo && key !== "giorni_ritorno") {
-            const input = document.getElementById(key);
-            if (input) input.value = "";
-          }
+      document.getElementById("label_giorni_andata")?.classList.add("required-day-group");
+      document.querySelectorAll("#gruppo_giorni_andata input[type=\"checkbox\"]").forEach(input => {
+        input.addEventListener("change", () => {
+          const errore = document.getElementById("error_giorni_andata");
+          if (errore?.style.display === "block") validaGiorni(false);
         });
-
-        if (!ritornoAttivo) {
-          document.querySelectorAll("#gruppo_giorni_ritorno input[type=\"checkbox\"]").forEach(input => {
-            input.checked = false;
-            input.removeAttribute("aria-invalid");
-          });
-          const erroreGiorniRitorno = document.getElementById("error_giorni_ritorno");
-          if (erroreGiorniRitorno) {
-            erroreGiorniRitorno.textContent = "";
-            erroreGiorniRitorno.style.display = "none";
-          }
-        }
-      };
-      checkboxRitorno?.addEventListener("change", aggiornaCampiRitorno);
-
-      ["andata", "ritorno"].forEach(direzione => {
-        document.querySelectorAll(`#gruppo_giorni_${direzione} input[type="checkbox"]`).forEach(input => {
-          input.addEventListener("change", () => {
-            const errore = document.getElementById(`error_giorni_${direzione}`);
-            if (errore?.style.display === "block") {
-              const richiesto = direzione === "andata" || Boolean(checkboxRitorno?.checked);
-              validaGiorni(direzione, richiesto, false);
-            }
-          });
-        });
+      });
+      const orarioPartenza = document.getElementById("orario_partenza_andata");
+      orarioPartenza?.addEventListener("change", () => validaOrarioPartenza(false));
+      orarioPartenza?.addEventListener("invalid", event => {
+        event.preventDefault();
+        validaOrarioPartenza(true);
       });
 
       const langParam = new URLSearchParams(location.search).get("lang");
@@ -255,7 +185,6 @@
       i18next.init({ lng: lang, resources }, (_, tInstance) => {
         t = tInstance;
         aggiornaEtichette(t, fields);
-        aggiornaCampiRitorno();
 
         const prefissiUrl = "prefissi.json";
         caricaPrefissiTelefonici("00NbU0000002837", prefissiUrl, t);
@@ -278,14 +207,10 @@
               erroreCaptcha.textContent = newT("labels.erroreCaptcha");
             }
             aggiornaEtichette(newT, fields);
-            aggiornaCampiRitorno();
-            ["andata", "ritorno"].forEach(direzione => {
-              const errore = document.getElementById(`error_giorni_${direzione}`);
-              if (errore?.style.display === "block") {
-                const richiesto = direzione === "andata" || Boolean(checkboxRitorno?.checked);
-                validaGiorni(direzione, richiesto, false);
-              }
-            });
+            const erroreGiorni = document.getElementById("error_giorni_andata");
+            if (erroreGiorni?.style.display === "block") validaGiorni(false, newT);
+            const erroreOrario = document.getElementById("error_orario_partenza_andata");
+            if (erroreOrario?.style.display === "block") validaOrarioPartenza(false, newT);
             aggiungiConfermaEmail();
           });
         });
@@ -295,19 +220,15 @@
           if (descrizione) descrizione.value = creaRiepilogoSoluzione();
 
           const validCampi = validazioneCampiObbligatori("formReclamo", t);
-          const validGiorniAndata = validaGiorni("andata", true, validCampi);
-          const validGiorniRitorno = validaGiorni(
-            "ritorno",
-            Boolean(checkboxRitorno?.checked),
-            validCampi && validGiorniAndata
-          );
+          const validGiorniAndata = validaGiorni(validCampi);
+          const validOrarioPartenza = validaOrarioPartenza(validCampi && validGiorniAndata);
           const validCaptcha = validaCaptcha(t, "captchaError");
           if (!validCaptcha) {
             const erroreCaptcha = document.getElementById("captchaError");
             if (erroreCaptcha) erroreCaptcha.textContent = t("labels.erroreCaptcha");
           }
 
-          if (!validCampi || !validGiorniAndata || !validGiorniRitorno || !validCaptcha) {
+          if (!validCampi || !validGiorniAndata || !validOrarioPartenza || !validCaptcha) {
             e.preventDefault();
             return;
           }
@@ -315,13 +236,13 @@
       });
     });
 
-    function validaGiorni(direzione, richiesto, mettiFocus) {
-      const gruppo = document.getElementById(`gruppo_giorni_${direzione}`);
+    function validaGiorni(mettiFocus, traduttore = t) {
+      const gruppo = document.getElementById("gruppo_giorni_andata");
       const checkbox = [...(gruppo?.querySelectorAll('input[type="checkbox"]') || [])];
-      const validi = !richiesto || checkbox.some(input => input.checked);
-      const errore = document.getElementById(`error_giorni_${direzione}`);
+      const validi = checkbox.some(input => input.checked);
+      const errore = document.getElementById("error_giorni_andata");
       const messaggio =
-        (typeof t === "function" ? t("labels.giorniObbligatori") : "") ||
+        (typeof traduttore === "function" ? traduttore("labels.giorniObbligatori") : "") ||
         (lang === "en"
           ? "Please select at least one day of the week."
           : "Seleziona almeno un giorno della settimana.");
@@ -339,17 +260,64 @@
       return validi;
     }
 
-    function giorniSelezionati(direzione) {
+    function validaOrarioPartenza(mettiFocus = false, traduttore = t) {
+      const input = document.getElementById("orario_partenza_andata");
+      const errore = document.getElementById("error_orario_partenza_andata");
+      if (!input) return false;
+
+      const valore = input.value;
+      const messaggioObbligatorio =
+        (typeof traduttore === "function" ? traduttore("labels.erroreCampoObbligatorio") : "") ||
+        (lang === "en" ? "Please fill in this field." : "Compila questo campo.");
+      const messaggioFascia =
+        (typeof traduttore === "function" ? traduttore("labels.erroreOrarioFascia") : "") ||
+        (lang === "en"
+          ? "You can only enter runs departing between 12:00 and 18:00."
+          : "Puoi indicare solo corse in partenza fra le 12:00 e le 18:00.");
+
+      if (!valore) {
+        const giaInErrore = input.classList.contains("error") || errore?.style.display === "block";
+        if (giaInErrore && errore) {
+          input.classList.add("error");
+          input.setAttribute("aria-invalid", "true");
+          errore.textContent = messaggioObbligatorio;
+          errore.style.display = "block";
+        }
+        if (giaInErrore && mettiFocus) input.focus();
+        return false;
+      }
+
+      const valido = valore >= "12:00" && valore <= "18:00";
+      if (valido) {
+        input.classList.remove("error");
+        input.removeAttribute("aria-invalid");
+        if (errore) {
+          errore.textContent = "";
+          errore.style.display = "none";
+        }
+        return true;
+      }
+
+      input.classList.add("error");
+      input.setAttribute("aria-invalid", "true");
+      if (errore) {
+        errore.textContent = messaggioFascia;
+        errore.style.display = "block";
+      }
+      if (mettiFocus) input.focus();
+      return false;
+    }
+
+    function giorniSelezionati() {
       const nomiGiorni = {
         lunedi: "lunedì",
         martedi: "martedì",
         mercoledi: "mercoledì",
         giovedi: "giovedì",
         venerdi: "venerdì",
-        sabato: "sabato",
-        domenica: "domenica"
+        sabato: "sabato"
       };
-      const gruppo = document.getElementById(`gruppo_giorni_${direzione}`);
+      const gruppo = document.getElementById("gruppo_giorni_andata");
       return [...(gruppo?.querySelectorAll('input[type="checkbox"]:checked') || [])]
         .map(input => nomiGiorni[input.value])
         .filter(Boolean)
@@ -358,29 +326,22 @@
 
     function creaRiepilogoSoluzione() {
       const valore = id => document.getElementById(id)?.value.trim() || "";
-      const creaSezione = (titolo, direzione) => {
-        const note = valore(`note_${direzione}`);
-        return [
-          titolo,
-          `Linea: ${valore(`linea_${direzione}`)}`,
-          `Giorni: ${giorniSelezionati(direzione)}`,
-          `Partenza: ${valore(`orario_partenza_${direzione}`)} - ${valore(`partenza_${direzione}`)}`,
-          `Arrivo: ${valore(`arrivo_${direzione}`)}`,
-          note ? `Note: ${note}` : ""
-        ].filter(Boolean).join("\n");
-      };
-
-      const sezioni = [creaSezione("ANDATA", "andata")];
-      if (document.getElementById("ritorno")?.checked) {
-        sezioni.push(creaSezione("RITORNO", "ritorno"));
-      }
+      const note = valore("note_andata");
       const sezioneAbbonamento = [
         "ABBONAMENTO",
         `Studente intestatario: ${valore("intestatario_nome")} ${valore("intestatario_cognome")}`,
         `Tesserino: ${valore("00NbU0000001kls")}`,
         `Percorso indicato sull'abbonamento: ${valore("percorso_abbonamento")}`
       ].join("\n");
-      return `${sezioneAbbonamento}\n\n${sezioni.join("\n\n")}`;
+      const sezioneRitornoDaScuola = [
+        "RITORNO DA SCUOLA",
+        `Linea: ${valore("linea_andata")}`,
+        `Giorni: ${giorniSelezionati()}`,
+        `Partenza: ${valore("orario_partenza_andata")} - ${valore("partenza_andata")}`,
+        `Arrivo: ${valore("arrivo_andata")}`,
+        note ? `Note: ${note}` : ""
+      ].filter(Boolean).join("\n");
+      return `${sezioneAbbonamento}\n\n${sezioneRitornoDaScuola}`;
     }
   </script>
 </head>
@@ -466,13 +427,12 @@
               for="giorni_andata_venerdi" id="label_ven_andata"></label></span>
           <span class="giorno-opzione"><input id="giorni_andata_sabato" type="checkbox" value="sabato" /><label
               for="giorni_andata_sabato" id="label_sab_andata"></label></span>
-          <span class="giorno-opzione"><input id="giorni_andata_domenica" type="checkbox" value="domenica" /><label
-              for="giorni_andata_domenica" id="label_dom_andata"></label></span>
         </div>
         <div class="error-message" id="error_giorni_andata" role="alert" style="display:none;"></div>
 
         <label for="orario_partenza_andata" id="label_orario_partenza_andata"></label>
-        <input id="orario_partenza_andata" type="time" />
+        <input id="orario_partenza_andata" type="time" min="12:00" max="18:00" />
+        <div class="error-message" id="error_orario_partenza_andata" role="alert" style="display:none;"></div>
 
         <label for="partenza_andata" id="label_partenza_andata"></label>
         <input id="partenza_andata" type="text" />
@@ -482,48 +442,6 @@
 
         <label for="note_andata" id="label_note_andata"></label>
         <textarea id="note_andata" rows="3"></textarea>
-
-        <div class="ritorno-toggle">
-          <input id="ritorno" type="checkbox" aria-controls="campiRitorno" />
-          <label for="ritorno" id="label_ritorno"></label>
-        </div>
-
-        <div id="campiRitorno" hidden>
-          <label for="linea_ritorno" id="label_linea_ritorno"></label>
-          <input id="linea_ritorno" type="text" />
-
-          <div class="giorni-label" id="label_giorni_ritorno"></div>
-          <div class="giorni-settimana" id="gruppo_giorni_ritorno" role="group"
-            aria-labelledby="label_giorni_ritorno" aria-describedby="error_giorni_ritorno">
-            <span class="giorno-opzione"><input id="giorni_ritorno_lunedi" type="checkbox" value="lunedi" /><label
-                for="giorni_ritorno_lunedi" id="label_lun_ritorno"></label></span>
-            <span class="giorno-opzione"><input id="giorni_ritorno_martedi" type="checkbox" value="martedi" /><label
-                for="giorni_ritorno_martedi" id="label_mar_ritorno"></label></span>
-            <span class="giorno-opzione"><input id="giorni_ritorno_mercoledi" type="checkbox" value="mercoledi" /><label
-                for="giorni_ritorno_mercoledi" id="label_mer_ritorno"></label></span>
-            <span class="giorno-opzione"><input id="giorni_ritorno_giovedi" type="checkbox" value="giovedi" /><label
-                for="giorni_ritorno_giovedi" id="label_gio_ritorno"></label></span>
-            <span class="giorno-opzione"><input id="giorni_ritorno_venerdi" type="checkbox" value="venerdi" /><label
-                for="giorni_ritorno_venerdi" id="label_ven_ritorno"></label></span>
-            <span class="giorno-opzione"><input id="giorni_ritorno_sabato" type="checkbox" value="sabato" /><label
-                for="giorni_ritorno_sabato" id="label_sab_ritorno"></label></span>
-            <span class="giorno-opzione"><input id="giorni_ritorno_domenica" type="checkbox" value="domenica" /><label
-                for="giorni_ritorno_domenica" id="label_dom_ritorno"></label></span>
-          </div>
-          <div class="error-message" id="error_giorni_ritorno" role="alert" style="display:none;"></div>
-
-          <label for="orario_partenza_ritorno" id="label_orario_partenza_ritorno"></label>
-          <input id="orario_partenza_ritorno" type="time" />
-
-          <label for="partenza_ritorno" id="label_partenza_ritorno"></label>
-          <input id="partenza_ritorno" type="text" />
-
-          <label for="arrivo_ritorno" id="label_arrivo_ritorno"></label>
-          <input id="arrivo_ritorno" type="text" />
-
-          <label for="note_ritorno" id="label_note_ritorno"></label>
-          <textarea id="note_ritorno" rows="3"></textarea>
-        </div>
 
         <textarea id="description" name="description" rows="10" maxlength="30000" style="display:none;"></textarea>
       </fieldset>
