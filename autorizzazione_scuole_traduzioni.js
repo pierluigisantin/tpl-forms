@@ -51,7 +51,7 @@ const resources = {
         note_ritorno: "Note o cambi intermedi",
         introdescrizione: `<p>Se hai individuato una linea o un percorso più adatti alle esigenze dello studente rispetto a quelli previsti dall'abbonamento in tuo possesso, indica con esattezza:</p>
           <ul>
-            <li>la linea che intendi usare e in quali giorni della settimana;</li>
+            <li>la linea che hai individuato e i giorni della settimana in cui vuoi usarla;</li>
             <li>l'orario di partenza;</li>
             <li>la fermata o la località di partenza e quella di arrivo del tratto da integrare.</li>
           </ul>
@@ -130,7 +130,7 @@ const resources = {
         note_ritorno: "Notes or intermediate changes",
         introdescrizione: `<p>If you have found a line or route that suits the student's needs better than the ones covered by the pass you hold, please state exactly:</p>
           <ul>
-            <li>the line you intend to use and on which days of the week;</li>
+            <li>the line you have found and the days of the week when you want to use it;</li>
             <li>the departure time;</li>
             <li>the departure stop or place and the arrival stop or place of the section to be added.</li>
           </ul>

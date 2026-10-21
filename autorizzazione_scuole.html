@@ -364,7 +364,13 @@
       if (document.getElementById("ritorno")?.checked) {
         sezioni.push(creaSezione("RITORNO", "ritorno"));
       }
-      return sezioni.join("\n\n");
+      const sezioneAbbonamento = [
+        "ABBONAMENTO",
+        `Studente intestatario: ${valore("intestatario_nome")} ${valore("intestatario_cognome")}`,
+        `Tesserino: ${valore("00NbU0000001kls")}`,
+        `Percorso indicato sull'abbonamento: ${valore("percorso_abbonamento")}`
+      ].join("\n");
+      return `${sezioneAbbonamento}\n\n${sezioni.join("\n\n")}`;
     }
   </script>
 </head>
