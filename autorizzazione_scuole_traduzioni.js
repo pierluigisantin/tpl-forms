@@ -45,8 +45,8 @@ const resources = {
       tooltips: {
         prefissotelefonico: "Seleziona il prefisso internazionale fra quelli disponibili nel menù. Il campo è impostato di default sul prefisso +39.",
         numerotelefonico: "Indica un numero di cellulare dove gli operatori di Tpl Fvg possano contattarti in caso di necessità.",
-        numerotesserinoidentificativo: `<div><img src="abbonamento_numero_tesserino.png" alt="Tesserino esempio" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
-        percorsoabbonamento: `<div><img src="abbonamento_percorso.png" alt="Esempio di abbonamento scolastico" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
+        numerotesserinoidentificativo: `<span style="display: inline-block; width: min(420px, 80vw); line-height: 0;"><img src="abbonamento_numero_tesserino.png" alt="Tesserino esempio" style="display: block; width: 100%; height: auto;"/></span>`,
+        percorsoabbonamento: `<span style="display: inline-block; width: min(420px, 80vw); line-height: 0;"><img src="abbonamento_percorso.png" alt="Esempio di abbonamento scolastico" style="display: block; width: 100%; height: auto;"/></span>`,
         ultimo: ""
       }
     }
@@ -97,8 +97,8 @@ const resources = {
       tooltips: {
         prefissotelefonico: "Select the international dialing code from the list. The default value is +39.",
         numerotelefonico: "Please enter a mobile number where Tpl Fvg operators can contact you if necessary.",
-        numerotesserinoidentificativo: `<div><img src="abbonamento_numero_tesserino.png" alt="Sample ID card" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
-        percorsoabbonamento: `<div><img src="abbonamento_percorso.png" alt="Example of a school pass" style="display: block; margin: 0 auto; max-width: 80%; height: auto;"/></div>`,
+        numerotesserinoidentificativo: `<span style="display: inline-block; width: min(420px, 80vw); line-height: 0;"><img src="abbonamento_numero_tesserino.png" alt="Sample ID card" style="display: block; width: 100%; height: auto;"/></span>`,
+        percorsoabbonamento: `<span style="display: inline-block; width: min(420px, 80vw); line-height: 0;"><img src="abbonamento_percorso.png" alt="Example of a school pass" style="display: block; width: 100%; height: auto;"/></span>`,
         ultimo: ""
       }
     }
