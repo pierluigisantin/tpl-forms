@@ -51,13 +51,12 @@ const resources = {
         note_ritorno: "Note o cambi intermedi",
         introdescrizione: `<p>Se hai individuato una linea o un percorso più adatti alle esigenze dello studente rispetto a quelli previsti dall'abbonamento in tuo possesso, indica con esattezza:</p>
           <ul>
-            <li>la linea che intendi usare;</li>
-            <li>i giorni della settimana in cui intendi usare quella linea;</li>
+            <li>la linea che intendi usare e in quali giorni della settimana;</li>
             <li>l'orario di partenza;</li>
             <li>la fermata o la località di partenza e quella di arrivo del tratto da integrare.</li>
           </ul>
           <p>Per trovare una soluzione alternativa puoi usare il <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">travel planner di Tpl Fvg a questo link</a>. Per evitare ambiguità, riporta nel modulo gli orari e i nomi delle fermate indicati nel travel planner.</p>
-          <p>Se ci sono cambi intermedi o altre informazioni utili, scrivile nel campo NOTE O CAMBI INTERMEDI. Se vuoi integrare anche il viaggio di ritorno, spunta la casella RITORNO e compila i campi del tratto di ritorno.</p>
+          <p>Se ci sono cambi intermedi o altre informazioni utili, scrivile nel campo NOTE O CAMBI INTERMEDI. Se vuoi integrare anche il viaggio di ritorno, spunta la casella RITORNO.</p>
           <p>Gli uffici di Tpl Fvg valuteranno la soluzione che proponi. Se sarà accolta, riceverai un'autorizzazione scritta da portare in viaggio ed <strong>esibire insieme con l'abbonamento</strong>. L'autorizzazione può essere rilasciata solo a chi possiede già un abbonamento per i servizi erogati da Arriva Udine.</p>`,
         camporiservatotplfvg: "Campo riservato a Tpl Fvg",
         consensoobbligatorio: "CONSENSO OBBLIGATORIO",
@@ -131,13 +130,12 @@ const resources = {
         note_ritorno: "Notes or intermediate changes",
         introdescrizione: `<p>If you have found a line or route that suits the student's needs better than the ones covered by the pass you hold, please state exactly:</p>
           <ul>
-            <li>the line you intend to use;</li>
-            <li>the days of the week when you intend to use that line;</li>
+            <li>the line you intend to use and on which days of the week;</li>
             <li>the departure time;</li>
             <li>the departure stop or place and the arrival stop or place of the section to be added.</li>
           </ul>
           <p>To find an alternative solution you can use the <a href="https://www.mycicero.it/tplfvg-go/TPWebPortal/it/" target="_blank" rel="noopener noreferrer">Tpl Fvg travel planner at this link</a>. To avoid any ambiguity, enter in the form the times and stop names shown in the travel planner.</p>
-          <p>If there are intermediate changes or other useful information, write them in the NOTES OR INTERMEDIATE CHANGES field. If you also want to add the return trip, tick the RETURN TRIP box and fill in the fields for the return section.</p>
+          <p>If there are intermediate changes or other useful information, write them in the NOTES OR INTERMEDIATE CHANGES field. If you also want to add the return trip, tick the RETURN TRIP box.</p>
           <p>Tpl Fvg will assess the solution you propose. If it is accepted, you will receive a written authorisation to be carried when travelling and <strong>shown together with the pass</strong>. The authorisation can only be granted to holders of an existing pass for services operated by Arriva Udine.</p>`,
         camporiservatotplfvg: "Reserved field for Tpl Fvg",
         consensoobbligatorio: "MANDATORY CONSENT",
