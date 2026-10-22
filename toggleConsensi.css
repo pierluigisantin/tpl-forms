@@ -119,6 +119,18 @@ label.consenso-testo a:hover {
   outline-offset: 2px;
 }
 
+/* Pulsante di invio disattivato finché manca il consenso obbligatorio */
+input[type="submit"]:disabled,
+button[type="submit"]:disabled {
+  background-color: #B8C2C6;
+  cursor: not-allowed;
+}
+
+input[type="submit"]:disabled:hover,
+button[type="submit"]:disabled:hover {
+  background-color: #B8C2C6;
+}
+
 @media (max-width: 600px) {
   .consenso-blocco {
     padding: 12px 14px;

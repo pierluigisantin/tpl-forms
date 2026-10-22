@@ -75,8 +75,13 @@
       blocco.classList.add("has-error");
     }
 
+    // Pulsante di invio del modulo: si disattiva se il consenso obbligatorio è spento
+    const form = selectEl.closest("form");
+    const pulsante = obbligatorio && form ? form.querySelector('[type="submit"]') : null;
+
     function aggiorna(valore) {
       selectEl.value = valore;
+      if (pulsante) pulsante.disabled = valore !== "Si/Yes";
       wrapper.setAttribute("aria-checked", valore === "Si/Yes");
       if (valore === "Si/Yes") {
         track.classList.add("is-on");
@@ -85,6 +90,8 @@
       } else {
         track.classList.remove("is-on");
         labelText.textContent = "No";
+        // Spiega subito perché il pulsante di invio non è più attivo
+        if (obbligatorio && pulsante) mostraErrore();
       }
       selectEl.dispatchEvent(new Event("change", { bubbles: true }));
     }
@@ -117,9 +124,8 @@
       startX = null;
     });
 
-    // Blocca l'invio del modulo se il consenso obbligatorio non è attivo
+    // Blocca comunque l'invio del modulo se il consenso obbligatorio non è attivo
     if (obbligatorio) {
-      const form = selectEl.closest("form");
       if (form) {
         form.addEventListener("submit", (e) => {
           if (selectEl.value !== "Si/Yes") {
