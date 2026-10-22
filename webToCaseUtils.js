@@ -72,14 +72,14 @@ function caricaServizi(selectId, url, idAzienda, lang, t) {
 
 
 
-      
+
       const serviziFiltrati = data.filter(
         (s) =>
           !idAzienda ||
           s.IdAzienda__c === idAzienda 
       );
-      
-    
+
+
 
       serviziFiltrati.forEach((servizio) => {
         const opt = document.createElement("option");
@@ -308,7 +308,11 @@ function toggleRagioneSociale(tipoId, wrapperId, valoriPrivato) {
     ? "none"
     : "block";
 
-  const label = document.getElementById("label_ragioneSociale");
+  // Alcune pagine usano "label_ragioneSociale", altre "label_ragionesociale"
+  const label =
+    document.getElementById("label_ragioneSociale") ||
+    document.getElementById("label_ragionesociale");
+  if (!label) return;
   if (isPrivato) {
     label.classList.remove("required");
   } else {
@@ -343,7 +347,7 @@ function initTooltips(t = null) {
     hideOnClick: true,
     zIndex: 9999,
     duration: [200, 100] // animazione più veloce
- 
+
   };
 
   // Se non abbiamo i18next, fallback a tooltip statici
@@ -379,8 +383,8 @@ function initTooltips(t = null) {
       }, 5000); // aspetta 200ms prima di chiudere
     });
   }
-  
-  
+
+
 }
 
 
@@ -574,9 +578,9 @@ function controllaEta(idCampo,t){
     return false;
   }
 
-   
-  
-  
+
+
+
 }
 
 function validaCampoCodiceFiscale(idCampo, t) {
@@ -601,21 +605,20 @@ function validaCampoCodiceFiscale(idCampo, t) {
   return true;
 }
 
-   function caricaOptionsTradotte(selectid,t, Options) {
-        const selectTipoLuogo = document.getElementById(selectid);
-        selectTipoLuogo.innerHTML = "";
-        const options = t("labels."+Options, { returnObjects: true });
+function caricaOptionsTradotte(selectid, t, Options) {
+  const select = document.getElementById(selectid);
+  if (!select) return; // il campo non esiste in questa pagina
+  select.innerHTML = "";
+  const options = t("labels." + Options, { returnObjects: true });
+  if (!Array.isArray(options)) return; // traduzione mancante per questa lingua
 
-        options.forEach((opt, index) => {
-          const optionEl = document.createElement("option");
-          optionEl.textContent = opt;
-          optionEl.value = opt;
-
-
-
-          selectTipoLuogo.appendChild(optionEl);
-        });
-
+  options.forEach((opt, index) => {
+    const optionEl = document.createElement("option");
+    optionEl.textContent = opt;
+    // La prima voce "--Seleziona--" / "--Select--" non deve inviare nessun valore a Salesforce
+    optionEl.value = (index === 0 && String(opt).trim().startsWith("--")) ? "" : opt;
+    select.appendChild(optionEl);
+  });
 }
 
 
@@ -838,7 +841,15 @@ function toggleWrapperBySelectValue({
   if (!selectElem || !i18nextInstance) return;
 
   const selectedValue = selectElem.value?.toLowerCase().trim();
-  if (!selectedValue) return;
+
+  // Nessuna scelta ("--Seleziona--"): nasconde il campo collegato e toglie l'obbligo
+  if (!selectedValue) {
+    const wrapperVuoto = document.getElementById(`${logicalName}Wrapper`);
+    if (wrapperVuoto) wrapperVuoto.style.display = "none";
+    const labelVuota = document.getElementById(`label_${logicalName}`);
+    if (labelVuota) labelVuota.classList.remove("required");
+    return;
+  }
 
   let tradotti = i18nextInstance.t(`labels.${translationPath}`, {
     returnObjects: true
