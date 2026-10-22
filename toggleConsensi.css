@@ -17,14 +17,27 @@
 }
 
 /* Toglie l'a capo vuoto che nei moduli segue il consenso obbligatorio */
-.consenso-blocco + br {
+.consenso-blocco + br,
+.consenso-errore + br {
   display: none;
 }
 
 /* Consenso obbligatorio: fondino verde chiaro */
-.consenso-blocco:has(.is-locked) {
+.consenso-blocco.is-obbligatorio {
   background-color: #E6F2F3;
   border-color: #CDE5E7;
+}
+
+/* Consenso obbligatorio non attivato al momento dell'invio */
+.consenso-blocco.has-error {
+  border-color: #D93025;
+  background-color: #FDF1F0;
+}
+
+.consenso-errore {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #D93025;
 }
 
 /* Testo del consenso */
@@ -97,14 +110,13 @@ label.consenso-testo a:hover {
   min-width: 22px;
 }
 
+.toggle-consenso:focus {
+  outline: none;
+}
+
 .toggle-consenso:focus-visible .toggle-consenso-track {
   outline: 2px solid #007B87;
   outline-offset: 2px;
-}
-
-/* Consenso obbligatorio: sempre acceso, non modificabile */
-.toggle-consenso.is-locked {
-  cursor: default;
 }
 
 @media (max-width: 600px) {

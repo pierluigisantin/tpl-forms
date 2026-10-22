@@ -1,8 +1,19 @@
 (function () {
+  const MESSAGGIO_ERRORE = {
+    it: "Per inviare il modulo, conferma di aver letto l'informativa sulla privacy.",
+    en: "To submit the form, please confirm that you have read the privacy policy."
+  };
+
+  function lingua() {
+    const lng = (window.i18next && window.i18next.language) || document.documentElement.lang || "it";
+    return lng.toLowerCase().startsWith("en") ? "en" : "it";
+  }
+
   function creaToggle(selectEl) {
+    // Il consenso obbligatorio (privacy) è quello marcato con data-iniziale="si" nei moduli:
+    // parte acceso, il cliente può spegnerlo, ma se è spento il modulo non si invia.
+    const obbligatorio = selectEl.dataset.iniziale === "si" || selectEl.dataset.obbligatorio === "si";
     const iniziale = selectEl.dataset.iniziale === "si" ? "Si/Yes" : "No";
-    // Il consenso obbligatorio (data-iniziale="si") resta sempre acceso e non si può spegnere
-    const bloccato = selectEl.dataset.iniziale === "si";
 
     selectEl.value = iniziale;
     selectEl.style.display = "none";
@@ -14,16 +25,10 @@
     const wrapper = document.createElement("div");
     wrapper.className = "toggle-consenso";
     wrapper.setAttribute("role", "switch");
-    if (bloccato) {
-      wrapper.classList.add("is-locked");
-      wrapper.setAttribute("aria-disabled", "true");
-    } else {
-      wrapper.setAttribute("tabindex", "0");
-    }
+    wrapper.setAttribute("tabindex", "0");
 
     const track = document.createElement("div");
     track.className = "toggle-consenso-track";
-    if (iniziale === "Si/Yes") track.classList.add("is-on");
 
     const thumb = document.createElement("div");
     thumb.className = "toggle-consenso-thumb";
@@ -31,7 +36,6 @@
 
     const labelText = document.createElement("span");
     labelText.className = "toggle-consenso-label";
-    labelText.textContent = iniziale === "Si/Yes" ? "Sì" : "No";
 
     wrapper.appendChild(track);
     wrapper.appendChild(labelText);
@@ -40,11 +44,36 @@
     // Raggruppa testo e interruttore in un unico blocco
     const blocco = document.createElement("div");
     blocco.className = "consenso-blocco";
+    if (obbligatorio) blocco.classList.add("is-obbligatorio");
     const primo = label && label.parentNode === selectEl.parentNode ? label : selectEl;
     primo.parentNode.insertBefore(blocco, primo);
     if (label && label.parentNode === selectEl.parentNode) blocco.appendChild(label);
     blocco.appendChild(selectEl);
     blocco.appendChild(wrapper);
+
+    // Messaggio di errore sotto il consenso obbligatorio
+    let errore = null;
+    if (obbligatorio) {
+      errore = document.createElement("div");
+      errore.className = "consenso-errore";
+      errore.setAttribute("role", "alert");
+      errore.style.display = "none";
+      blocco.parentNode.insertBefore(errore, blocco.nextSibling);
+    }
+
+    function nascondiErrore() {
+      if (!errore) return;
+      errore.style.display = "none";
+      errore.textContent = "";
+      blocco.classList.remove("has-error");
+    }
+
+    function mostraErrore() {
+      if (!errore) return;
+      errore.textContent = MESSAGGIO_ERRORE[lingua()];
+      errore.style.display = "block";
+      blocco.classList.add("has-error");
+    }
 
     function aggiorna(valore) {
       selectEl.value = valore;
@@ -52,6 +81,7 @@
       if (valore === "Si/Yes") {
         track.classList.add("is-on");
         labelText.textContent = "Sì";
+        nascondiErrore();
       } else {
         track.classList.remove("is-on");
         labelText.textContent = "No";
@@ -60,9 +90,6 @@
     }
 
     aggiorna(iniziale);
-
-    // Il consenso obbligatorio non reagisce a clic, tastiera o trascinamento
-    if (bloccato) return;
 
     wrapper.addEventListener("click", () => {
       aggiorna(selectEl.value === "Si/Yes" ? "No" : "Si/Yes");
@@ -89,6 +116,21 @@
       else aggiorna(selectEl.value === "Si/Yes" ? "No" : "Si/Yes");
       startX = null;
     });
+
+    // Blocca l'invio del modulo se il consenso obbligatorio non è attivo
+    if (obbligatorio) {
+      const form = selectEl.closest("form");
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          if (selectEl.value !== "Si/Yes") {
+            e.preventDefault();
+            mostraErrore();
+            blocco.scrollIntoView({ behavior: "smooth", block: "center" });
+            wrapper.focus({ preventScroll: true });
+          }
+        });
+      }
+    }
   }
 
   function inizializza() {
