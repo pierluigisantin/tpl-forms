@@ -209,6 +209,10 @@
           const descrizione = document.getElementById("description");
           if (descrizione) descrizione.value = creaRiepilogoSoluzione();
 
+          // Campi del fieldset "soluzione" salvati nel long text Salesforce
+          const campoSoluzione = document.getElementById("00NR200000F62BN");
+          if (campoSoluzione) campoSoluzione.value = riepilogoRitorno();
+
           const validCampi = validazioneCampiObbligatori("formReclamo", t);
           const validGiorniAndata = validaGiorni(validCampi);
           const validCaptcha = validaCaptcha(t, "captchaError");
@@ -265,24 +269,30 @@
         .join(", ");
     }
 
-    function creaRiepilogoSoluzione() {
-      const valore = id => document.getElementById(id)?.value.trim() || "";
-      const note = valore("note_andata");
-      const sezioneAbbonamento = [
-        "ABBONAMENTO",
-        `Studente intestatario: ${valore("intestatario_nome")} ${valore("intestatario_cognome")}`,
-        `Tesserino: ${valore("00NbU0000001kls")}`,
-        `Percorso indicato sull'abbonamento: ${valore("percorso_abbonamento")}`
-      ].join("\n");
-      const sezioneRitornoDaScuola = [
-        "RITORNO DA SCUOLA",
-        `Linea: ${valore("linea_andata")}`,
+    function valoreCampo(id) {
+      return document.getElementById(id)?.value?.trim() || "";
+    }
+
+    function riepilogoRitorno() {
+      const note = valoreCampo("note_andata");
+      return [
+        `Linea: ${valoreCampo("linea_andata")}`,
         `Giorni: ${giorniSelezionati()}`,
-        `Partenza: ${valore("orario_partenza_andata")} - ${valore("partenza_andata")}`,
-        `Arrivo: ${valore("arrivo_andata")}`,
+        `Orario partenza: ${valoreCampo("orario_partenza_andata")}`,
+        `Fermata partenza: ${valoreCampo("partenza_andata")}`,
+        `Fermata arrivo: ${valoreCampo("arrivo_andata")}`,
         note ? `Note: ${note}` : ""
       ].filter(Boolean).join("\n");
-      return `${sezioneAbbonamento}\n\n${sezioneRitornoDaScuola}`;
+    }
+
+    function creaRiepilogoSoluzione() {
+      const sezioneAbbonamento = [
+        "ABBONAMENTO",
+        `Studente intestatario: ${valoreCampo("00NbU0000001odt")} ${valoreCampo("00NbU0000001ofV")}`,
+        `Tesserino: ${valoreCampo("00NbU0000001kls")}`,
+        `Percorso indicato sull'abbonamento: ${valoreCampo("00NJ6000002ydRZ")}`
+      ].join("\n");
+      return `${sezioneAbbonamento}\n\nRITORNO DA SCUOLA\n${riepilogoRitorno()}`;
     }
   </script>
 </head>
@@ -332,15 +342,14 @@
         <label for="00NbU0000001kls" id="label_numerotesserinoidentificativo"></label>
         <input id="00NbU0000001kls" name="00NbU0000001kls" type="text" />
 
-        <!-- These three fields must still be created in Salesforce; replace their provisional ids and names afterward. -->
         <label for="00NbU0000001odt" id="label_nomeintestatario"></label>
         <input id="00NbU0000001odt" name="00NbU0000001odt" type="text" />
 
-        <label for="00NbU0000001ofV" id="00NbU0000001ofV"></label>
-        <input id="00NbU0000001ofV" name="intestatario_cognome" type="text" />
+        <label for="00NbU0000001ofV" id="label_cognomeintestatario"></label>
+        <input id="00NbU0000001ofV" name="00NbU0000001ofV" type="text" />
 
-        <label for="00NJ6000002ydRZ" id="00NJ6000002ydRZ"></label>
-        <input id="00NJ6000002ydRZ" maxlength="255" name="percorso_abbonamento" type="text" />
+        <label for="00NJ6000002ydRZ" id="label_percorsoabbonamento"></label>
+        <input id="00NJ6000002ydRZ" maxlength="255" name="00NJ6000002ydRZ" type="text" />
       </fieldset>
 
       <fieldset>
@@ -349,7 +358,7 @@
         <label for="description" id="label_descrizione"></label>
         <span id="label_introdescrizione"></span>
 
-        <!-- These provisional fields must be mapped to Salesforce fields later. -->
+        <!-- Questi campi non hanno "name": vengono composti in 00NR200000F62BN al submit -->
         <label for="linea_andata" id="label_linea_andata"></label>
         <input id="linea_andata" type="text" />
 
@@ -384,6 +393,9 @@
         <textarea id="note_andata" rows="3"></textarea>
 
         <textarea id="description" name="description" rows="10" maxlength="30000" style="display:none;"></textarea>
+
+        <!-- Long text Salesforce con il riepilogo del fieldset soluzione -->
+        <input type="hidden" id="00NR200000F62BN" name="00NR200000F62BN" />
       </fieldset>
 
       <fieldset>
