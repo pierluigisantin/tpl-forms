@@ -1,9 +1,41 @@
+/* Blocco di un consenso: testo + interruttore */
+.consenso-blocco {
+  margin-top: 8px;
+}
+
+.consenso-blocco + .consenso-blocco,
+.consenso-blocco ~ .consenso-blocco {
+  margin-top: 28px;
+}
+
+/* Testo del consenso: minuscolo normale, grigio scuro, leggibile */
+label.consenso-testo {
+  text-transform: none;
+  letter-spacing: 0;
+  color: #333F48;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Link nel testo del consenso (informativa privacy) */
+label.consenso-testo a {
+  color: #007B87;
+  text-decoration: underline;
+}
+
+label.consenso-testo a:hover {
+  color: #005b66;
+}
+
+/* Interruttore */
 .toggle-consenso {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
   user-select: none;
-  margin-top: 8px;
+  margin-top: 10px;
   gap: 12px;
 }
 
@@ -47,4 +79,15 @@
 .toggle-consenso:focus-visible .toggle-consenso-track {
   outline: 2px solid #007B87;
   outline-offset: 2px;
+}
+
+/* Consenso obbligatorio: sempre acceso, non modificabile */
+.toggle-consenso.is-locked {
+  cursor: default;
+}
+
+@media (max-width: 600px) {
+  label.consenso-testo {
+    font-size: 0.95rem;
+  }
 }

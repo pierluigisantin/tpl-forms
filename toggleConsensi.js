@@ -1,13 +1,25 @@
 (function () {
   function creaToggle(selectEl) {
     const iniziale = selectEl.dataset.iniziale === "si" ? "Si/Yes" : "No";
+    // Il consenso obbligatorio (data-iniziale="si") resta sempre acceso e non si può spegnere
+    const bloccato = selectEl.dataset.iniziale === "si";
+
     selectEl.value = iniziale;
     selectEl.style.display = "none";
+
+    // Etichetta del consenso: testo leggibile invece del maiuscolo verde
+    const label = document.querySelector(`label[for="${selectEl.id}"]`);
+    if (label) label.classList.add("consenso-testo");
 
     const wrapper = document.createElement("div");
     wrapper.className = "toggle-consenso";
     wrapper.setAttribute("role", "switch");
-    wrapper.setAttribute("tabindex", "0");
+    if (bloccato) {
+      wrapper.classList.add("is-locked");
+      wrapper.setAttribute("aria-disabled", "true");
+    } else {
+      wrapper.setAttribute("tabindex", "0");
+    }
 
     const track = document.createElement("div");
     track.className = "toggle-consenso-track";
@@ -25,6 +37,15 @@
     wrapper.appendChild(labelText);
     selectEl.parentNode.insertBefore(wrapper, selectEl.nextSibling);
 
+    // Raggruppa testo e interruttore in un unico blocco
+    const blocco = document.createElement("div");
+    blocco.className = "consenso-blocco";
+    const primo = label && label.parentNode === selectEl.parentNode ? label : selectEl;
+    primo.parentNode.insertBefore(blocco, primo);
+    if (label && label.parentNode === selectEl.parentNode) blocco.appendChild(label);
+    blocco.appendChild(selectEl);
+    blocco.appendChild(wrapper);
+
     function aggiorna(valore) {
       selectEl.value = valore;
       wrapper.setAttribute("aria-checked", valore === "Si/Yes");
@@ -39,6 +60,9 @@
     }
 
     aggiorna(iniziale);
+
+    // Il consenso obbligatorio non reagisce a clic, tastiera o trascinamento
+    if (bloccato) return;
 
     wrapper.addEventListener("click", () => {
       aggiorna(selectEl.value === "Si/Yes" ? "No" : "Si/Yes");

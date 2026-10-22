@@ -52,13 +52,13 @@ const resources = {
         introdescrizione:"Descrivi l’evento o il problema in modo sintetico ma completo, includendo tutte le informazioni utili per ricostruire quanto successo. Se presenti il reclamo per conto di un’altra persona, indica anche i dati di quest'ultima. Potrai allegare immagini, titoli di viaggio o altri documenti rispondendo all’e-mail di conferma che riceverai dopo aver inviato questo modulo.",
 
         consensoobbligatorio:"CONSENSO OBBLIGATORIO",
-        privacy: "Ho letto e compreso l'informativa sulla privacy di Tpl Fvg, disponibile sul sito www.tplfvg.it e <a href=\"https://tplfvg.it/it/azienda/mia-privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">accessibile tramite questo link</a>.",
+        privacy: "Ho letto e compreso l'informativa sulla privacy di Tpl Fvg, disponibile <a href=\"https://tplfvg.it/it/azienda/mia-privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">a questo link</a>.",
         consensofacoltativo:"CONSENSI FACOLTATIVI",
-        indaginidemoscopiche:"Partecipazione a indagini demoscopiche o ricerche di mercato sul servizio di trasporto pubblico locale.",
-        attivitacommerciali:"Comunicazioni relative a offerte e agevolazioni sui servizi di Tpl Fvg e delle aziende consorziate.",
-        comunicazionepartner:"Informazioni commerciali relative a prodotti o servizi di soggetti terzi, partner di Tpl Fvg.",
-        cessioneterzi:"Comunicazione dei miei dati personali a soggetti terzi per finalità commerciali e di marketing.",
-        
+        indaginidemoscopiche:"Partecipazione a indagini demoscopiche e ricerche di mercato sul trasporto pubblico locale.",
+        attivitacommerciali:"Promozioni e offerte commerciali di Tpl Fvg e delle aziende consorziate.",
+        comunicazionepartner:"Promozioni e offerte commerciali di soggetti terzi, partner di Tpl Fvg.",
+        cessioneterzi:"Cessione dei miei dati personali a soggetti terzi, per finalità commerciali e di marketing.",
+
         camporiservatotplfvg:"Campo riservato agli operatori Tpl Fvg",
        invia:"Invia"
 
@@ -147,12 +147,12 @@ const resources = {
         introdescrizione:"Briefly but clearly describe the event or issue, including all the information needed to understand what happened. If you are submitting the complaint on behalf of someone else, please include their details as well. You will be able to attach images, tickets, or other relevant documents by replying to the confirmation e-mail you will receive after submitting this form.",
 
         consensoobbligatorio: "MANDATORY CONSENT",
-        privacy: "I have read and understood the Tpl Fvg privacy policy, available on the website www.tplfvg.it and <a href=\"https://tplfvg.it/it/azienda/mia-privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">accessible via this link</a>.",
+        privacy: "I have read and understood the Tpl Fvg privacy policy, available <a href=\"https://tplfvg.it/it/azienda/mia-privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">at this link</a>.",
         consensofacoltativo: "OPTIONAL CONSENTS",
-        indaginidemoscopiche: "Taking part in surveys or market research on local public transport services.",
-        attivitacommerciali: "Information about offers and discounts on the services of Tpl Fvg and its consortium companies.",
-        comunicazionepartner: "Commercial information about products or services of third parties that are partners of Tpl Fvg.",
-        cessioneterzi: "Sharing of my personal data with third parties for commercial and marketing purposes.",
+        indaginidemoscopiche: "Taking part in surveys and market research on local public transport.",
+        attivitacommerciali: "Promotions and commercial offers from Tpl Fvg and its consortium companies.",
+        comunicazionepartner: "Promotions and commercial offers from third parties that are partners of Tpl Fvg.",
+        cessioneterzi: "Transfer of my personal data to third parties for commercial and marketing purposes.",
 
         camporiservatotplfvg:"Reserved for TPL Fvg operators",
         invia:"Submit the form",
